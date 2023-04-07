@@ -13,13 +13,13 @@ namespace PBL3_QuanLyTiemSach.DTO
     {
         [Key]
         [Required]
-        [StringLength(10)]
+        [StringLength(30)]
         public string ID_CaNV { get; set; }
 
-        [StringLength(10)]
+        [StringLength(30)]
         public string MaCa { get; set; }
 
-        [StringLength(10)]
+        [StringLength(30)]
         public string MaNV { get; set; }
     }
 }

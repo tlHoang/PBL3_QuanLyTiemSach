@@ -13,13 +13,13 @@ namespace PBL3_QuanLyTiemSach.DTO
 	{
 		[Key]
 		[Required]
-		[StringLength(10)]
+		[StringLength(30)]
 		public string MaHDNhap { get; set; }
 
-		[StringLength(10)]
+		[StringLength(30)]
 		public string MaNV { get; set; }
 
-		[StringLength(10)]
+		[StringLength(30)]
 		public string MaDV { get; set; }
 
 		public double TongTien { get; set; }

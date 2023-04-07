@@ -13,10 +13,10 @@ namespace PBL3_QuanLyTiemSach.DTO
     {
         [Key]
         [Required]
-        [StringLength(10)]
+        [StringLength(30)]
         public string MaKH { get; set; }
         public string TenKH { get; set; }
-        [StringLength(10)]
+        [StringLength(12)]
         public string SDT { get; set; }
     }
 }

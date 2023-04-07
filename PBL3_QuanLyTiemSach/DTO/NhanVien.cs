@@ -13,14 +13,15 @@ namespace PBL3_QuanLyTiemSach.DTO
 	{
 		[Key]
 		[Required]
-		[StringLength(10)]
+		[StringLength(30)]
 		public string MaNV { get; set; }
 		public string TenNV { get; set; }
 		public bool GioiTinh { get; set; }
 		public DateTime date { get; set; }
+		[StringLength(50)]
 		public string DiaChi { get; set; }
 		public double Luong { get; set; }
-		[StringLength(10)]
+		[StringLength(12)]
 		public string SDT { get; set; }
 	}
 }

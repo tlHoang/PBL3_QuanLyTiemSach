@@ -13,7 +13,7 @@ namespace PBL3_QuanLyTiemSach.DTO
     {
         [Key]
         [Required]
-        [StringLength(10)]
+        [StringLength(30)]
         public string MaDV { get; set; }
 
         public string TenDV { get; set; }
