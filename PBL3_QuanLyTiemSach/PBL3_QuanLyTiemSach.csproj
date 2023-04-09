@@ -62,6 +62,12 @@
     <Compile Include="DTO\HoaDonNhap.cs" />
     <Compile Include="DTO\KhachHang.cs" />
     <Compile Include="DTO\NhanVien.cs" />
+    <Compile Include="DTO\HoaDonBan.cs" />
+    <Compile Include="DTO\HoaDonBanSach.cs" />
+    <Compile Include="DTO\HoaDonNhapSach.cs" />
+    <Compile Include="DTO\Kho.cs" />
+    <Compile Include="DTO\Sach.cs" />
+    <Compile Include="DTO\SachTheLoai.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,10 +102,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="bin\Debug\" />
-    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
