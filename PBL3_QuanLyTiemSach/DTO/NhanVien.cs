@@ -32,9 +32,13 @@ namespace PBL3_QuanLyTiemSach.DTO
 		public string SDT { get; set; }
 
 		public virtual ICollection<CaNV> CaNVs { get; set; }
-		public NhanVien()
+        public virtual ICollection<HoaDonNhap> HoaDonNhaps { get; set; }
+		public virtual ICollection<HoaDonBan> HoaDonBans { get; set; }
+        public NhanVien()
 		{
 			CaNVs = new HashSet<CaNV>();
+			HoaDonNhaps = new HashSet<HoaDonNhap>();
+			HoaDonBans = new HashSet<HoaDonBan>();
 		}
 	}
 }

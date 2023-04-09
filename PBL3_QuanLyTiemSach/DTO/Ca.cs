@@ -15,14 +15,12 @@ namespace PBL3_QuanLyTiemSach.DTO
 		[Required]
 		[StringLength(30)]
 		public string MaCa { get; set; }
-
 		public int Thu { get; set; }
-
 		public int GioBatDau { get; set; }
-
 		public int GioKetThuc { get; set; }
 
         public virtual ICollection<CaNV> CaNVs { get; set; }
+
 		public Ca()
 		{
 			CaNVs = new HashSet<CaNV>();

@@ -16,10 +16,10 @@ namespace PBL3_QuanLyTiemSach.DTO
         public string MaHDBanSach { get; set; }
         [Required]
         [StringLength(20)]
-        public string MaHDBan { get; set; } //fk
+        public string MaHDBan { get; set; }
         [Required]
         [StringLength(20)]
-        public string MaSach { get; set; } // fk
+        public string MaSach { get; set; }
         public int SoLuong { get; set; }
 
         [ForeignKey("MaSach")]

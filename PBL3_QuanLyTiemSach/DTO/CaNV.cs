@@ -15,11 +15,9 @@ namespace PBL3_QuanLyTiemSach.DTO
         [Required]
         [StringLength(30)]
         public string MaCaNV { get; set; }
-
         [Required]
         [StringLength(30)]
         public string MaCa { get; set; }
-
         [Required]
         [StringLength(30)]
         public string MaNV { get; set; }

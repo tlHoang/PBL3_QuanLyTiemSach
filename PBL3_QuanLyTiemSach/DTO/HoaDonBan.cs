@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,19 +12,26 @@ namespace PBL3_QuanLyTiemSach.DTO
     {
         [Key]
         [Required]
-        [StringLength(20)]
+        [StringLength(30)]
         public string MaHDBan { get; set; }
         [Required]
-        [StringLength(10)]
-        public string MaSV { get; set; } //fk
+        [StringLength(30)]
+        public string MaNV { get; set; }
         [Required]
-        [StringLength(10)]
-        public string MaKH { get; set; } // fk
+        [StringLength(30)]
+        public string MaKH { get; set; }
         public double TongTien { get; set; }
-        public  virtual ICollection<HoaDonBanSach> HoaDonBanSaches { get; set; }
+
+        [ForeignKey("MaNV")]
+        public virtual NhanVien NhanVien { get; set; }
+        [ForeignKey("MaKH")]
+        public virtual KhachHang KhachHang { get; set; }
+
+        public  virtual ICollection<HoaDonBanSach> HoaDonBanSachs { get; set; }
+
         public HoaDonBan()
         {
-            this.HoaDonBanSaches = new HashSet<HoaDonBanSach>();
+            HoaDonBanSachs = new HashSet<HoaDonBanSach>();
         }
     }
 }
