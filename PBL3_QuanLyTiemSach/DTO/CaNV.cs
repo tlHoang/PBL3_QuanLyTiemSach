@@ -14,12 +14,19 @@ namespace PBL3_QuanLyTiemSach.DTO
         [Key]
         [Required]
         [StringLength(30)]
-        public string ID_CaNV { get; set; }
+        public string MaCaNV { get; set; }
 
+        [Required]
         [StringLength(30)]
         public string MaCa { get; set; }
 
+        [Required]
         [StringLength(30)]
         public string MaNV { get; set; }
+
+        [ForeignKey("MaCa")]
+        public virtual Ca Ca { get; set; }
+        [ForeignKey("MaNV")]
+        public virtual NhanVien NhanVien { get; set; }
     }
 }

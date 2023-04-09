@@ -15,13 +15,26 @@ namespace PBL3_QuanLyTiemSach.DTO
 		[Required]
 		[StringLength(30)]
 		public string MaNV { get; set; }
-		public string TenNV { get; set; }
+
+        [StringLength(50)]
+        public string TenNV { get; set; }
+
 		public bool GioiTinh { get; set; }
-		public DateTime date { get; set; }
+
+		public DateTime NgaySinh { get; set; }
+
 		[StringLength(50)]
 		public string DiaChi { get; set; }
+
 		public double Luong { get; set; }
-		[StringLength(12)]
+
+		[StringLength(10)]
 		public string SDT { get; set; }
+
+		public virtual ICollection<CaNV> CaNVs { get; set; }
+		public NhanVien()
+		{
+			CaNVs = new HashSet<CaNV>();
+		}
 	}
 }

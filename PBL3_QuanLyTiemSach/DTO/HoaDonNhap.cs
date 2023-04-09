@@ -16,12 +16,19 @@ namespace PBL3_QuanLyTiemSach.DTO
 		[StringLength(30)]
 		public string MaHDNhap { get; set; }
 
+		[Required]
 		[StringLength(30)]
 		public string MaNV { get; set; }
 
+		[Required]
 		[StringLength(30)]
-		public string MaDV { get; set; }
+		public string MaDVCC { get; set; }
 
 		public double TongTien { get; set; }
+
+        [ForeignKey("MaNV")]
+		public virtual NhanVien NhanVien { get; set; }
+        [ForeignKey("MaDVCC")]
+		public virtual DonViCungCap DonViCungCap { get; set; }
 	}
 }

@@ -16,6 +16,13 @@ namespace PBL3_QuanLyTiemSach.DTO
         [StringLength(30)]
         public string MaDV { get; set; }
 
+        [StringLength(30)]
         public string TenDV { get; set; }
+
+        public virtual ICollection<HoaDonNhap> HoaDonNhaps { get; set; }
+        public DonViCungCap()
+        {
+            HoaDonNhaps = new HashSet<HoaDonNhap>();
+        }
     }
 }
