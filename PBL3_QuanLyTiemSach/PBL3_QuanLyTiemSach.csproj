@@ -56,18 +56,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBQuanLyTiemSach.cs" />
-    <Compile Include="DTO\Ca.cs" />
-    <Compile Include="DTO\CaNV.cs" />
-    <Compile Include="DTO\DonViCungCap.cs" />
-    <Compile Include="DTO\HoaDonNhap.cs" />
-    <Compile Include="DTO\KhachHang.cs" />
-    <Compile Include="DTO\NhanVien.cs" />
-    <Compile Include="DTO\HoaDonBan.cs" />
-    <Compile Include="DTO\HoaDonBanSach.cs" />
-    <Compile Include="DTO\HoaDonNhapSach.cs" />
-    <Compile Include="DTO\Kho.cs" />
-    <Compile Include="DTO\Sach.cs" />
-    <Compile Include="DTO\SachTheLoai.cs" />
+    <Compile Include="DTO\CodeFirst\Ca.cs" />
+    <Compile Include="DTO\CodeFirst\CaNV.cs" />
+    <Compile Include="DTO\CodeFirst\DonViCungCap.cs" />
+    <Compile Include="DTO\CodeFirst\HoaDonNhap.cs" />
+    <Compile Include="DTO\CodeFirst\KhachHang.cs" />
+    <Compile Include="DTO\CodeFirst\NhanVien.cs" />
+    <Compile Include="DTO\CodeFirst\HoaDonBan.cs" />
+    <Compile Include="DTO\CodeFirst\HoaDonBanSach.cs" />
+    <Compile Include="DTO\CodeFirst\HoaDonNhapSach.cs" />
+    <Compile Include="DTO\CodeFirst\Kho.cs" />
+    <Compile Include="DTO\CodeFirst\Sach.cs" />
+    <Compile Include="DTO\CodeFirst\SachTheLoai.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
