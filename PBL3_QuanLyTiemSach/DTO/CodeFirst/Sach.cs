@@ -12,31 +12,32 @@ namespace PBL3_QuanLyTiemSach.DTO
     {
         [Key]
         [Required]
-        [StringLength(20)]
+        [StringLength(30)]
         public string MaSach { get; set; }
-        [StringLength(int.MaxValue)]
+        [StringLength(100)]
         public string TenSach { get; set; }
-        [StringLength(20)]
+        [StringLength(50)]
         public string TacGia { get; set; }
         public double GiaBan { get; set; }
-        [StringLength(20)]
         [Required]
-        public string ID_TheLoai { get; set; }//Fk
-        [StringLength(20)]
+        [StringLength(30)]
+        public string MaTheLoai { get; set; }
         [Required]
-        public string MaKho { get; set; } //fk
+        [StringLength(30)]
+        public string MaKho { get; set; }
+
         [ForeignKey("MaKho")]
         public virtual Kho Kho { get; set; }
-        [ForeignKey("ID_TheLoai")]
+        [ForeignKey("MaTheLoai")]
         public virtual SachTheLoai SachTheLoai { get; set; }
 
-        public virtual ICollection<HoaDonNhapSach> HoaDonNhapSaches { get; set; }
-        public virtual ICollection<HoaDonBanSach> HoaDonBanSaches { get; set; }
+        public virtual ICollection<HoaDonNhapSach> HoaDonNhapSachs { get; set; }
+        public virtual ICollection<HoaDonBanSach> HoaDonBanSachs { get; set; }
 
         public Sach()
         {
-            this.HoaDonBanSaches = new HashSet<HoaDonBanSach>();
-            this.HoaDonNhapSaches = new HashSet<HoaDonNhapSach>();
+            HoaDonBanSachs = new HashSet<HoaDonBanSach>();
+            HoaDonNhapSachs = new HashSet<HoaDonNhapSach>();
         }
     }
 }

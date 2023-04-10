@@ -12,20 +12,16 @@ namespace PBL3_QuanLyTiemSach.DTO
     {
         [Key]
         [Required]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [StringLength(20)]
-        public string ID { get; set; }
-        [StringLength(20)]
-        [Required]
-        public string ID_Sach { get; set; }
-        [StringLength(int.MaxValue)]
+        [StringLength(30)]
+        public string MaKho { get; set; }
+        [StringLength(100)]
         public string TenSach { get; set; }
-        public int SLSachConLai { get; set; }
+        public int SoLuongSachConLai { get; set; }
 
         public virtual ICollection<Sach> Saches { get; set; }
         public Kho()
         {
-            this.Saches = new HashSet<Sach>();
+            Saches = new HashSet<Sach>();
         }
     }
 }

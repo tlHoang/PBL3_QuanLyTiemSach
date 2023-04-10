@@ -8,21 +8,23 @@ using System.Threading.Tasks;
 
 namespace PBL3_QuanLyTiemSach.DTO
 {
-    public class HoaDonNhapSach
+    public class HoaDonBanSach
     {
         [Key]
         [Required]
         [StringLength(20)]
-        public string MaHDNhapSach { get; set; }
-        [Required]
-        [StringLength(10)]
-        public string MaHDNhap { get; set; }//fk
+        public string MaHDBanSach { get; set; }
         [Required]
         [StringLength(20)]
-        public string MaSach { get; set; }//fk
+        public string MaHDBan { get; set; }
+        [Required]
+        [StringLength(20)]
+        public string MaSach { get; set; }
         public int SoLuong { get; set; }
-        public double DonGiaNhap { get; set; }
+
         [ForeignKey("MaSach")]
         public virtual Sach Sach { get; set; }
+        [ForeignKey("MaHDBan")]
+        public virtual HoaDonBan HoaDonBan { get; set; }
     }
 }
