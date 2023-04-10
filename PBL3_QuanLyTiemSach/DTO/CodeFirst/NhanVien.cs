@@ -1,3 +1,4 @@
+using PBL3_QuanLyTiemSach.DTO.CodeFirst;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -12,28 +13,26 @@ namespace PBL3_QuanLyTiemSach.DTO
 	public class NhanVien
 	{
 		[Key]
+		[ForeignKey("Account")]
 		[Required]
 		[StringLength(30)]
 		public string MaNV { get; set; }
-
         [StringLength(50)]
         public string TenNV { get; set; }
-
 		public bool GioiTinh { get; set; }
-
 		public DateTime NgaySinh { get; set; }
-
 		[StringLength(50)]
 		public string DiaChi { get; set; }
-
 		public double Luong { get; set; }
-
 		[StringLength(10)]
 		public string SDT { get; set; }
+
+		public virtual Account Account { get; set; }
 
 		public virtual ICollection<CaNV> CaNVs { get; set; }
         public virtual ICollection<HoaDonNhap> HoaDonNhaps { get; set; }
 		public virtual ICollection<HoaDonBan> HoaDonBans { get; set; }
+
         public NhanVien()
 		{
 			CaNVs = new HashSet<CaNV>();

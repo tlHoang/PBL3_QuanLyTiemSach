@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBQuanLyTiemSach.cs" />
+    <Compile Include="DTO\CodeFirst\Account.cs" />
     <Compile Include="DTO\CodeFirst\Ca.cs" />
     <Compile Include="DTO\CodeFirst\CaNV.cs" />
     <Compile Include="DTO\CodeFirst\DonViCungCap.cs" />
