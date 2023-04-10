@@ -56,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBQuanLyTiemSach.cs" />
+    <Compile Include="DTO\HoaDonBan.cs" />
+    <Compile Include="DTO\HoaDonBanSach.cs" />
+    <Compile Include="DTO\HoaDonNhapSach.cs" />
+    <Compile Include="DTO\Kho.cs" />
+    <Compile Include="DTO\Sach.cs" />
+    <Compile Include="DTO\SachTheLoai.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,8 +93,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+<<<<<<< HEAD
   <ItemGroup>
     <Folder Include="DTO\" />
   </ItemGroup>
+=======
+  <ItemGroup />
+>>>>>>> 64d256333c4c71ffd3fb2a961e0242569a8272c2
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
