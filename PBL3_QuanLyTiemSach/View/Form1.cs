@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PBL3_QuanLyTiemSach.View;
 
 namespace PBL3_QuanLyTiemSach
 {
@@ -48,7 +49,25 @@ namespace PBL3_QuanLyTiemSach
 
         private void button3_Click(object sender, EventArgs e)
         {
+            panel_Side.Top = button3.Top;
+            panel_Side.Height = button3.Height;
+            OpenForm(new Form4());
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            panel_Side.Top = button4.Top;
+            OpenForm(new Form5());
+        }
+
+        private void button_Close_Click(object sender, EventArgs e)
+        {
             this.Close();
+        }
+
+        private void button_Hide_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

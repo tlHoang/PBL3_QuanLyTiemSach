@@ -31,9 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel_Left = new System.Windows.Forms.Panel();
             this.panel_Side = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel_Top = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
             this.button_Close = new System.Windows.Forms.Button();
             this.panel_Body = new System.Windows.Forms.Panel();
             this.panel_Left.SuspendLayout();
@@ -44,6 +47,8 @@
             // 
             this.panel_Left.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
             this.panel_Left.Controls.Add(this.panel_Side);
+            this.panel_Left.Controls.Add(this.button4);
+            this.panel_Left.Controls.Add(this.button3);
             this.panel_Left.Controls.Add(this.button2);
             this.panel_Left.Controls.Add(this.button1);
             this.panel_Left.Dock = System.Windows.Forms.DockStyle.Left;
@@ -59,6 +64,34 @@
             this.panel_Side.Name = "panel_Side";
             this.panel_Side.Size = new System.Drawing.Size(9, 54);
             this.panel_Side.TabIndex = 0;
+            // 
+            // button4
+            // 
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(0, 257);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(153, 54);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Thống kê";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(0, 197);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(153, 54);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Nhập hàng";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -90,6 +123,7 @@
             // 
             // panel_Top
             // 
+            this.panel_Top.Controls.Add(this.button5);
             this.panel_Top.Controls.Add(this.button_Close);
             this.panel_Top.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Top.Location = new System.Drawing.Point(153, 0);
@@ -97,18 +131,31 @@
             this.panel_Top.Size = new System.Drawing.Size(647, 36);
             this.panel_Top.TabIndex = 1;
             // 
+            // button5
+            // 
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.Location = new System.Drawing.Point(585, 1);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(30, 30);
+            this.button5.TabIndex = 1;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button_Hide_Click);
+            // 
             // button_Close
             // 
             this.button_Close.FlatAppearance.BorderSize = 0;
             this.button_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Close.ForeColor = System.Drawing.Color.White;
             this.button_Close.Image = ((System.Drawing.Image)(resources.GetObject("button_Close.Image")));
-            this.button_Close.Location = new System.Drawing.Point(611, -1);
+            this.button_Close.Location = new System.Drawing.Point(615, 1);
             this.button_Close.Name = "button_Close";
-            this.button_Close.Size = new System.Drawing.Size(36, 36);
+            this.button_Close.Size = new System.Drawing.Size(30, 30);
             this.button_Close.TabIndex = 0;
             this.button_Close.UseVisualStyleBackColor = true;
-            this.button_Close.Click += new System.EventHandler(this.button3_Click);
+            this.button_Close.Click += new System.EventHandler(this.button_Close_Click);
             // 
             // panel_Body
             // 
@@ -144,7 +191,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel_Side;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button_Close;
+        private System.Windows.Forms.Button button5;
     }
 }
 
