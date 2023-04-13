@@ -34,12 +34,14 @@ namespace PBL3_QuanLyTiemSach
 
         private void button1_Click(object sender, EventArgs e)
         {
+            panel_Side.Top = button1.Top;
             panel_Side.Height = button1.Height;
             OpenForm(new Form2());
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            panel_Side.Top = button2.Top;
             panel_Side.Height = button2.Height;
             OpenForm(new Form3());
         }
