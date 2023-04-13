@@ -16,5 +16,37 @@ namespace PBL3_QuanLyTiemSach
         {
             InitializeComponent();
         }
+        private Form currentForm; 
+        private void OpenForm(Form f)
+        {
+            if (currentForm != null)
+            {
+                currentForm.Close();
+            }
+            currentForm = f;
+            f.TopLevel = false;
+            f.FormBorderStyle = FormBorderStyle.None;
+            f.Dock = DockStyle.Fill;
+            panel_Body.Controls.Add(f);
+            f.BringToFront();
+            f.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panel_Side.Height = button1.Height;
+            OpenForm(new Form2());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panel_Side.Height = button2.Height;
+            OpenForm(new Form3());
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
