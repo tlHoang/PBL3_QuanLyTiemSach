@@ -16,8 +16,8 @@ namespace PBL3_QuanLyTiemSach.DTO
 		[StringLength(30)]
 		public string MaCa { get; set; }
 		public int Thu { get; set; }
-		public int GioBatDau { get; set; }
-		public int GioKetThuc { get; set; }
+		public TimeSpan GioBatDau { get; set; }
+		public TimeSpan GioKetThuc { get; set; }
 
         public virtual ICollection<CaNV> CaNVs { get; set; }
 
