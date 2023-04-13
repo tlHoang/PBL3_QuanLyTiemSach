@@ -1,4 +1,5 @@
 using PBL3_QuanLyTiemSach.DTO;
+using PBL3_QuanLyTiemSach.DTO.CodeFirst;
 using System;
 using System.Data.Entity;
 using System.Linq;
@@ -34,6 +35,7 @@ namespace PBL3_QuanLyTiemSach
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<Sach> Sachs { get; set; }
         public virtual DbSet<SachTheLoai> SachTheLoais { get; set; }
+        public virtual DbSet<Account> Accounts { get; set; }
     }
 
     //public class MyEntity
