@@ -19,6 +19,8 @@ namespace PBL3_QuanLyTiemSach.DTO.CodeFirst
         [Required]
         [StringLength(30)]
         public string Password { get; set; }
+        [Required]
+        public string Salt { get; set; }
 
         public virtual NhanVien NhanVien { get; set; }
     }
