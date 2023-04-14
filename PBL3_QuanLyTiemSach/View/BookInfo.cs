@@ -42,23 +42,30 @@ namespace PBL3_QuanLyTiemSach.View
         {
             string txtTenSach = txtBookInfoTenSach.Text;
             string txtTacGia = txtBookInfoTacGia.Text;
+            string txtTheLoai = txtBookInfoTheLoai.Text;
             using(DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
                 List<Sach> sach = db.Sachs.ToList();
                 List<Kho> kho = db.Khos.ToList();
                 List<SachTheLoai> theLoai = db.SachTheLoais.ToList();
-                var dataView = sach.Select(s => new
+                var dataView = sach.Where(s => (string.IsNullOrEmpty(txtTenSach)||s.TenSach.Contains(txtTenSach))
+                                            && (string.IsNullOrEmpty(txtTacGia)||s.TacGia.Contains(txtTacGia))
+                                            && (string.IsNullOrEmpty(txtTheLoai)||
+                                            theLoai.Any(tl => tl.MaTheLoai == s.MaTheLoai && tl.TenTheLoai.Contains(txtTheLoai))))
+                    .Select(s => new
                 {
                     ID = s.MaSach,
                     TenSach = s.TenSach,
-                    TheLoai = theLoai.Where( tl => tl.MaTheLoai == s.MaTheLoai).Select(tl => tl.TenTheLoai).Single(),
+                    TacGia = s.TacGia,
+                    TheLoai = theLoai.Where( tl => tl.MaTheLoai == s.MaTheLoai).Select(tl => tl.TenTheLoai).FirstOrDefault(),
                     SL = kho.Where(k => k.MaKho == s.MaKho).Select(k => k.SoLuongSachConLai).Single()
                 }).ToList();
-                dataView.Where(sach.Where(s => s.TenSach == txtTenSach && s.TacGia == txtTacGia).Single();
+                
                 dgvBookInfo.DataSource = dataView;
             }
             dgvBookInfo.Columns["ID"].HeaderText = "Mã Sách";
             dgvBookInfo.Columns["TenSach"].HeaderText = "Tên Sách";
+            dgvBookInfo.Columns["TacGia"].HeaderText = "Tác Giả";
             dgvBookInfo.Columns["TheLoai"].HeaderText = "Thể Loại";
             dgvBookInfo.Columns["SL"].HeaderText = "Số Lượng";
         }
