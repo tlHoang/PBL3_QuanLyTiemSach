@@ -54,6 +54,7 @@ namespace PBL3_QuanLyTiemSach.View
                     TheLoai = theLoai.Where( tl => tl.MaTheLoai == s.MaTheLoai).Select(tl => tl.TenTheLoai).Single(),
                     SL = kho.Where(k => k.MaKho == s.MaKho).Select(k => k.SoLuongSachConLai).Single()
                 }).ToList();
+                dataView.Where(sach.Where(s => s.TenSach == txtTenSach && s.TacGia == txtTacGia).Single();
                 dgvBookInfo.DataSource = dataView;
             }
             dgvBookInfo.Columns["ID"].HeaderText = "Mã Sách";
