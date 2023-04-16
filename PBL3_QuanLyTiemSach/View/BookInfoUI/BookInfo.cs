@@ -35,6 +35,8 @@ namespace PBL3_QuanLyTiemSach.View
             }
             dgvBookInfo.Columns["ID"].HeaderText = "Mã Sách";
             dgvBookInfo.Columns["TenSach"].HeaderText = "Tên Sách";
+            dgvBookInfo.Columns["TenSach"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            dgvBookInfo.Columns["TenSach"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvBookInfo.Columns["SL"].HeaderText = "Số Lượng";
 
         }
@@ -65,7 +67,11 @@ namespace PBL3_QuanLyTiemSach.View
                 dgvBookInfo.DataSource = dataView;
             }
             dgvBookInfo.Columns["ID"].HeaderText = "Mã Sách";
+
             dgvBookInfo.Columns["TenSach"].HeaderText = "Tên Sách";
+            dgvBookInfo.Columns["TenSach"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            dgvBookInfo.Columns["TenSach"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
             dgvBookInfo.Columns["TacGia"].HeaderText = "Tác Giả";
             dgvBookInfo.Columns["TheLoai"].HeaderText = "Thể Loại";
             dgvBookInfo.Columns["SL"].HeaderText = "Số Lượng";

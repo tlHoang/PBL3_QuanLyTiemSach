@@ -83,6 +83,7 @@
     <Compile Include="DTO\CodeFirst\Kho.cs" />
     <Compile Include="DTO\CodeFirst\Sach.cs" />
     <Compile Include="DTO\CodeFirst\SachTheLoai.cs" />
+    <Compile Include="CreateDB.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

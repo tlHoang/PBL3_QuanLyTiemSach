@@ -17,6 +17,7 @@ namespace PBL3_QuanLyTiemSach
         public DBQuanLyTiemSach()
             : base("name=DBQuanLyTiemSach")
         {
+            Database.SetInitializer<DBQuanLyTiemSach>(new CreateDB());
         }
 
         // Add a DbSet for each entity type that you want to include in your model. For more information 
