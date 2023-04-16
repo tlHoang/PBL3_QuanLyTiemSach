@@ -86,11 +86,17 @@
     <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\BookInfo.cs">
+    <Compile Include="View\BookInfoUI\BookInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\BookInfo.Designer.cs">
+    <Compile Include="View\BookInfoUI\BookInfo.Designer.cs">
       <DependentUpon>BookInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\BookInfoUI\BookInfo_XemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BookInfoUI\BookInfo_XemForm.Designer.cs">
+      <DependentUpon>BookInfo_XemForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
@@ -137,8 +143,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\BookInfo.resx">
+    <EmbeddedResource Include="View\BookInfoUI\BookInfo.resx">
       <DependentUpon>BookInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BookInfoUI\BookInfo_XemForm.resx">
+      <DependentUpon>BookInfo_XemForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

@@ -13,6 +13,7 @@ namespace PBL3_QuanLyTiemSach.View
 {
     public partial class BookInfo : MetroFramework.Forms.MetroForm
     {
+        
         public BookInfo()
         {
             InitializeComponent();
@@ -68,6 +69,26 @@ namespace PBL3_QuanLyTiemSach.View
             dgvBookInfo.Columns["TacGia"].HeaderText = "Tác Giả";
             dgvBookInfo.Columns["TheLoai"].HeaderText = "Thể Loại";
             dgvBookInfo.Columns["SL"].HeaderText = "Số Lượng";
+        }
+
+        private void btnBookInfoXem_Click(object sender, EventArgs e)
+        {
+            if(dgvBookInfo.SelectedRows.Count == 1 )
+            {
+
+                DataGridViewRow selectedRow = dgvBookInfo.CurrentRow;
+                string BookID = selectedRow.Cells["ID"].Value.ToString();
+                BookInfo_XemForm BIXF = new BookInfo_XemForm(BookID);
+                if(BIXF == null || BIXF.IsDisposed)
+                {
+                    BIXF = new BookInfo_XemForm(BookID);
+                }
+                BIXF.Show();
+            }
+            else
+            {
+                MessageBox.Show("Choose one row !!! ", MessageBoxIcon.Information.ToString());
+            }
         }
     }
 }

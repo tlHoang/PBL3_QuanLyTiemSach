@@ -245,6 +245,7 @@
             this.btnBookInfoXem.TabIndex = 5;
             this.btnBookInfoXem.Text = "Xem";
             this.btnBookInfoXem.UseSelectable = true;
+            this.btnBookInfoXem.Click += new System.EventHandler(this.btnBookInfoXem_Click);
             // 
             // metroLabel3
             // 
