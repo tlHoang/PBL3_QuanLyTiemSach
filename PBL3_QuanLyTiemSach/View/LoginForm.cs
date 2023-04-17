@@ -34,7 +34,7 @@ namespace PBL3_QuanLyTiemSach.View
                 MessageBox.Show("Tài khoản hoặc mật khẩu không hợp lệ");
                 return;
             }
-            AccountBLL bll = new AccountBLL();
+            TaiKhoanBLL bll = new TaiKhoanBLL();
             string MaNV = bll.CheckPassword(username, password);
             if (MaNV == null)
             {

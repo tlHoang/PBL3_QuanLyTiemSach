@@ -13,7 +13,7 @@ namespace PBL3_QuanLyTiemSach.DTO
 	public class NhanVien
 	{
 		[Key]
-		[ForeignKey("Account")]
+		[ForeignKey("TaiKhoan")]
 		[Required]
 		[StringLength(30)]
 		public string MaNV { get; set; }
@@ -27,7 +27,7 @@ namespace PBL3_QuanLyTiemSach.DTO
 		[StringLength(10)]
 		public string SDT { get; set; }
 
-		public virtual Account Account { get; set; }
+		public virtual TaiKhoan TaiKhoan { get; set; }
 
 		public virtual ICollection<CaNV> CaNVs { get; set; }
         public virtual ICollection<HoaDonNhap> HoaDonNhaps { get; set; }

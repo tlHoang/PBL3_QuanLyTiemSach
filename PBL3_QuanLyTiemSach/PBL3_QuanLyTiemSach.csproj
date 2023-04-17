@@ -65,9 +65,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\AccountBLL.cs" />
+    <Compile Include="BLL\TaiKhoanBLL.cs" />
+    <Compile Include="CreateDB.cs" />
     <Compile Include="DBQuanLyTiemSach.cs" />
-    <Compile Include="DTO\CodeFirst\Account.cs" />
+    <Compile Include="DTO\CodeFirst\TaiKhoan.cs" />
     <Compile Include="DTO\CodeFirst\Ca.cs" />
     <Compile Include="DTO\CodeFirst\CaNV.cs" />
     <Compile Include="DTO\CodeFirst\DonViCungCap.cs" />
