@@ -69,6 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateDB.cs" />
     <Compile Include="DBQuanLyTiemSach.cs" />
     <Compile Include="DTO\CodeFirst\Account.cs" />
     <Compile Include="DTO\CodeFirst\Ca.cs" />
@@ -83,10 +84,6 @@
     <Compile Include="DTO\CodeFirst\Kho.cs" />
     <Compile Include="DTO\CodeFirst\Sach.cs" />
     <Compile Include="DTO\CodeFirst\SachTheLoai.cs" />
-    <Compile Include="Form1.cs" />
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -96,10 +93,16 @@
     <Compile Include="View\BookInfoUI\BookInfo.Designer.cs">
       <DependentUpon>BookInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ShiftManage.cs">
+    <Compile Include="View\BookInfoUI\BookInfo_XemForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ShiftManage.Designer.cs">
+    <Compile Include="View\BookInfoUI\BookInfo_XemForm.Designer.cs">
+      <DependentUpon>BookInfo_XemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ShifManageUI\ShiftManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ShifManageUI\ShiftManage.Designer.cs">
       <DependentUpon>ShiftManage.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -114,7 +117,10 @@
     <EmbeddedResource Include="View\BookInfoUI\BookInfo.resx">
       <DependentUpon>BookInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ShiftManage.resx">
+    <EmbeddedResource Include="View\BookInfoUI\BookInfo_XemForm.resx">
+      <DependentUpon>BookInfo_XemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ShifManageUI\ShiftManage.resx">
       <DependentUpon>ShiftManage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />

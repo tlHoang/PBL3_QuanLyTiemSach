@@ -23,7 +23,9 @@ namespace PBL3_QuanLyTiemSach.View
         {
             using(DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
-                List<Sach> sach = db.Sachs.ToList();
+                List<Sach> SachFilter = db.Sachs.ToList();
+                List<Sach> sach = SachFilter.GroupBy(sf => sf.TenSach)
+                                            .Select(g => g.First()).ToList();
                 List<Kho> kho = db.Khos.ToList();
                 var dataView = sach.Select(s => new
                 {
@@ -34,6 +36,7 @@ namespace PBL3_QuanLyTiemSach.View
                 dgvBookInfo.DataSource = dataView;
             }
             dgvBookInfo.Columns["ID"].HeaderText = "Mã Sách";
+            dgvBookInfo.Columns["ID"].Visible = false;
             dgvBookInfo.Columns["TenSach"].HeaderText = "Tên Sách";
             dgvBookInfo.Columns["TenSach"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             dgvBookInfo.Columns["TenSach"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -48,7 +51,9 @@ namespace PBL3_QuanLyTiemSach.View
             string txtTheLoai = txtBookInfoTheLoai.Text;
             using(DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
-                List<Sach> sach = db.Sachs.ToList();
+                List<Sach> SachFilter = db.Sachs.ToList();
+                List<Sach> sach = SachFilter.GroupBy(sf => sf.TenSach)
+                                            .Select(g => g.First()).ToList();
                 List<Kho> kho = db.Khos.ToList();
                 List<SachTheLoai> theLoai = db.SachTheLoais.ToList();
                 var dataView = sach.Where(s => (string.IsNullOrEmpty(txtTenSach)||s.TenSach.Contains(txtTenSach))
@@ -63,11 +68,10 @@ namespace PBL3_QuanLyTiemSach.View
                     TheLoai = theLoai.Where( tl => tl.MaTheLoai == s.MaTheLoai).Select(tl => tl.TenTheLoai).FirstOrDefault(),
                     SL = kho.Where(k => k.MaKho == s.MaKho).Select(k => k.SoLuongSachConLai).Single()
                 }).ToList();
-                dataView.Where(sach.Where(s => s.TenSach == txtTenSach && s.TacGia == txtTacGia).Single();
                 dgvBookInfo.DataSource = dataView;
             }
             dgvBookInfo.Columns["ID"].HeaderText = "Mã Sách";
-
+            dgvBookInfo.Columns["ID"].Visible = false;
             dgvBookInfo.Columns["TenSach"].HeaderText = "Tên Sách";
             dgvBookInfo.Columns["TenSach"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             dgvBookInfo.Columns["TenSach"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -95,6 +99,11 @@ namespace PBL3_QuanLyTiemSach.View
             {
                 MessageBox.Show("Choose one row !!! ", MessageBoxIcon.Information.ToString());
             }
+        }
+
+        private void btnBIThoat_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

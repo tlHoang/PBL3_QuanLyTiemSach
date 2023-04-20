@@ -23,7 +23,6 @@ namespace PBL3_QuanLyTiemSach.View
         }
         private void setTextBox()
         {
-            txtMaSach.Enabled = false;
             txtTenSach.Enabled = false;
             txtTacGia.Enabled = false;
             txtTheLoai.Enabled = false;
@@ -42,7 +41,6 @@ namespace PBL3_QuanLyTiemSach.View
                     List<SachTheLoai> theLoai = db.SachTheLoais.ToList();
                     string MaTheLoai = sach.Where(s => s.MaSach == id).Select(s => s.MaTheLoai).FirstOrDefault().ToString();
                     string MaKho = sach.Where(s => s.MaSach == id).Select(s => s.MaKho).FirstOrDefault().ToString(); 
-                    txtMaSach.Text = sach.Where(s => s.MaSach == id).Select(s => s.MaSach).FirstOrDefault().ToString();
                     txtTenSach.Text = sach.Where(s => s.MaSach == id).Select(s => s.TenSach).FirstOrDefault().ToString();
                     txtTacGia.Text = sach.Where(s => s.MaSach == id).Select(s => s.TacGia).FirstOrDefault().ToString();
                     txtGiaBan.Text = sach.Where(s => s.MaSach == id).Select(s => s.GiaBan).FirstOrDefault().ToString();

@@ -16,5 +16,13 @@ namespace PBL3_QuanLyTiemSach.View
         {
             InitializeComponent();
         }
+        private void setCBB()
+        {
+
+        }
+        private void btnSMThoat_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
