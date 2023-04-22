@@ -34,20 +34,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
-    <Reference Include="MetroFramework.Design, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
     </Reference>
-    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -68,7 +67,6 @@
     <Compile Include="BLL\TaiKhoanBLL.cs" />
     <Compile Include="CreateDB.cs" />
     <Compile Include="DBQuanLyTiemSach.cs" />
-    <Compile Include="DTO\CodeFirst\TaiKhoan.cs" />
     <Compile Include="DTO\CodeFirst\Ca.cs" />
     <Compile Include="DTO\CodeFirst\CaNV.cs" />
     <Compile Include="DTO\CodeFirst\DonViCungCap.cs" />
@@ -81,6 +79,19 @@
     <Compile Include="DTO\CodeFirst\Kho.cs" />
     <Compile Include="DTO\CodeFirst\Sach.cs" />
     <Compile Include="DTO\CodeFirst\SachTheLoai.cs" />
+    <Compile Include="DTO\CodeFirst\TaiKhoan.cs" />
+    <Compile Include="View\BookInfoUI\BookInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BookInfoUI\BookInfo.Designer.cs">
+      <DependentUpon>BookInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\BookInfoUI\BookInfo_XemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BookInfoUI\BookInfo_XemForm.Designer.cs">
+      <DependentUpon>BookInfo_XemForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ChiTietNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,8 +137,17 @@
     <Compile Include="View\Form5.Designer.cs">
       <DependentUpon>Form5.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\ChiTietNhanVien.resx">
-      <DependentUpon>ChiTietNhanVien.cs</DependentUpon>
+    <Compile Include="View\ShifManageUI\ShiftManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ShifManageUI\ShiftManage.Designer.cs">
+      <DependentUpon>ShiftManage.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\BookInfoUI\BookInfo.resx">
+      <DependentUpon>BookInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BookInfoUI\BookInfo_XemForm.resx">
+      <DependentUpon>BookInfo_XemForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -149,6 +169,9 @@
     </Compile>
     <EmbeddedResource Include="View\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ShifManageUI\ShiftManage.resx">
+      <DependentUpon>ShiftManage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
