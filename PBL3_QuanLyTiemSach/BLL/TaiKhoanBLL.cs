@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace PBL3_QuanLyTiemSach.BLL
 {
-    public class AccountBLL
+    public class TaiKhoanBLL
     {
         public string HashPassword(string pass, string salt)
         {
@@ -25,12 +25,12 @@ namespace PBL3_QuanLyTiemSach.BLL
 
         public string RandomString(int size)
         {
-            string givenChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            string givenChars = "ABCDEFGHIJ KLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             char[] result = new char[size];
             Random random = new Random();
             for (int i = 0; i < size; i++)
             {
-                result[i] = givenChars[random.Next(size)]; // random.Next(int a) -> 0..a-1
+                result[i] = givenChars[random.Next(givenChars.Length)]; // random.Next(int a) -> 0..a-1
             }
             return new string(result);
         }
@@ -39,7 +39,7 @@ namespace PBL3_QuanLyTiemSach.BLL
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
-                Account acc = db.Accounts
+                TaiKhoan acc = db.TaiKhoans
                     .Where(p => p.Username == username)
                     .FirstOrDefault();
                 if (acc == null)

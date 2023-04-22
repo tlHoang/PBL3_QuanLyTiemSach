@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PBL3_QuanLyTiemSach.DTO.CodeFirst
 {
-    public class Account
+    public class TaiKhoan
     {
         [Key]
         [Required]
@@ -20,6 +20,7 @@ namespace PBL3_QuanLyTiemSach.DTO.CodeFirst
         [StringLength(64)]
         public string Password { get; set; }
         [Required]
+        [StringLength(12)]
         public string Salt { get; set; }
 
         public virtual NhanVien NhanVien { get; set; }
