@@ -11,14 +11,15 @@ using PBL3_QuanLyTiemSach.View;
 
 namespace PBL3_QuanLyTiemSach
 {
-    public partial class Form1 : Form
+    public partial class Form1 : System.Windows.Forms.Form
     {
         public Form1()
         {
             InitializeComponent();
+            panel_Side.Hide();
         }
-        private Form currentForm; 
-        private void OpenForm(Form f)
+        private System.Windows.Forms.Form currentForm; 
+        private void OpenForm(System.Windows.Forms.Form f)
         {
             if (currentForm != null)
             {
@@ -33,30 +34,35 @@ namespace PBL3_QuanLyTiemSach
             f.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button_Home_Click(object sender, EventArgs e)
         {
-            panel_Side.Top = button1.Top;
-            panel_Side.Height = button1.Height;
+            panel_Side.Top = button_Home.Top;
+            panel_Side.Height = button_Home.Height;
+            panel_Side.Show();
             OpenForm(new Form2());
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button_BanHang_Click(object sender, EventArgs e)
         {
-            panel_Side.Top = button2.Top;
-            panel_Side.Height = button2.Height;
-            OpenForm(new Form3());
+            panel_Side.Top = button_BanHang.Top;
+            panel_Side.Height = button_BanHang.Height;
+            panel_Side.Show();
+            OpenForm(new Sell());
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button_NhapHang_Click(object sender, EventArgs e)
         {
-            panel_Side.Top = button3.Top;
-            panel_Side.Height = button3.Height;
+            panel_Side.Top = button_NhapHang.Top;
+            panel_Side.Height = button_NhapHang.Height;
+            panel_Side.Show();
             OpenForm(new Form4());
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button_ThongKe_Click(object sender, EventArgs e)
         {
-            panel_Side.Top = button4.Top;
+            panel_Side.Top = button_ThongKe.Top;
+            panel_Side.Height = button_ThongKe.Height;
+            panel_Side.Show();
             OpenForm(new Form5());
         }
 

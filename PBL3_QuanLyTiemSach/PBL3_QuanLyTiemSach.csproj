@@ -109,11 +109,17 @@
     <Compile Include="View\Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form3.cs">
+    <Compile Include="View\N.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="View\N.Designer.cs">
+      <DependentUpon>N.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SellUI\Sell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SellUI\Sell.Designer.cs">
+      <DependentUpon>Sell.cs</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
@@ -136,6 +142,12 @@
     <Compile Include="View\Form5.Designer.cs">
       <DependentUpon>Form5.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\SellUI\SearchBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SellUI\SearchBook.Designer.cs">
+      <DependentUpon>SearchBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ShifManageUI\ShiftManage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,8 +166,11 @@
     <EmbeddedResource Include="View\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="View\N.resx">
+      <DependentUpon>N.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SellUI\Sell.resx">
+      <DependentUpon>Sell.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -168,6 +183,9 @@
     </Compile>
     <EmbeddedResource Include="View\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SellUI\SearchBook.resx">
+      <DependentUpon>SearchBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ShifManageUI\ShiftManage.resx">
       <DependentUpon>ShiftManage.cs</DependentUpon>
@@ -192,5 +210,6 @@
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

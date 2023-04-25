@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace PBL3_QuanLyTiemSach.View
 {
-    public partial class Form5 : Form
+    public partial class Form5 : System.Windows.Forms.Form
     {
         public Form5()
         {
