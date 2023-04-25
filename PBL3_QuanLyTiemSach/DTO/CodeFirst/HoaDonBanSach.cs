@@ -12,15 +12,16 @@ namespace PBL3_QuanLyTiemSach.DTO
     {
         [Key]
         [Required]
-        [StringLength(20)]
+        [StringLength(30)]
         public string MaHDBanSach { get; set; }
         [Required]
-        [StringLength(20)]
+        [StringLength(30)]
         public string MaHDBan { get; set; }
         [Required]
-        [StringLength(20)]
+        [StringLength(30)]
         public string MaSach { get; set; }
-        public int SoLuong { get; set; }
+        public double DonGiaBan { get; set; }
+        public int SoLuongBan { get; set; }
 
         [ForeignKey("MaSach")]
         public virtual Sach Sach { get; set; }

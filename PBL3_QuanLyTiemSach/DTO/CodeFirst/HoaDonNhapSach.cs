@@ -20,8 +20,8 @@ namespace PBL3_QuanLyTiemSach.DTO
         [Required]
         [StringLength(30)]
         public string MaSach { get; set; }
-        public int SoLuong { get; set; }
         public double DonGiaNhap { get; set; }
+        public int SoLuongNhap { get; set; }
 
         [ForeignKey("MaSach")]
         public virtual Sach Sach { get; set; }

@@ -15,7 +15,7 @@ namespace PBL3_QuanLyTiemSach.DTO
 		[Required]
 		[StringLength(30)]
 		public string MaCa { get; set; }
-		public int Thu { get; set; }
+		public DateTime Ngay { get; set; }
 		public TimeSpan GioBatDau { get; set; }
 		public TimeSpan GioKetThuc { get; set; }
 

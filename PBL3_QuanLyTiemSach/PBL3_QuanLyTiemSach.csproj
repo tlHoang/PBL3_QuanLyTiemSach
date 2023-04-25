@@ -76,7 +76,6 @@
     <Compile Include="DTO\CodeFirst\HoaDonBan.cs" />
     <Compile Include="DTO\CodeFirst\HoaDonBanSach.cs" />
     <Compile Include="DTO\CodeFirst\HoaDonNhapSach.cs" />
-    <Compile Include="DTO\CodeFirst\Kho.cs" />
     <Compile Include="DTO\CodeFirst\Sach.cs" />
     <Compile Include="DTO\CodeFirst\SachTheLoai.cs" />
     <Compile Include="DTO\CodeFirst\TaiKhoan.cs" />
