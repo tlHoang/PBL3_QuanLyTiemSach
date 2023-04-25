@@ -18,16 +18,12 @@ namespace PBL3_QuanLyTiemSach.DTO
         public string TenSach { get; set; }
         [StringLength(50)]
         public string TacGia { get; set; }
+        public int SoLuongConLai { get; set; }
         public double GiaBan { get; set; }
         [Required]
         [StringLength(30)]
         public string MaTheLoai { get; set; }
-        [Required]
-        [StringLength(30)]
-        public string MaKho { get; set; }
 
-        [ForeignKey("MaKho")]
-        public virtual Kho Kho { get; set; }
         [ForeignKey("MaTheLoai")]
         public virtual SachTheLoai SachTheLoai { get; set; }
 

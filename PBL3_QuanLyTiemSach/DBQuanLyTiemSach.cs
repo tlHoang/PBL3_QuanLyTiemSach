@@ -32,7 +32,6 @@ namespace PBL3_QuanLyTiemSach
         public virtual DbSet<HoaDonNhap> HoaDonNhaps { get; set; }
         public virtual DbSet<HoaDonNhapSach> HoaDonNhapSachs { get; set; }
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
-        public virtual DbSet<Kho> Khos { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<Sach> Sachs { get; set; }
         public virtual DbSet<SachTheLoai> SachTheLoais { get; set; }
