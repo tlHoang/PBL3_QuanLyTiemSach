@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace PBL3_QuanLyTiemSach.View
 {
-    public partial class LoginForm : Form
+    public partial class LoginForm : System.Windows.Forms.Form
     {
         public LoginForm()
         {
