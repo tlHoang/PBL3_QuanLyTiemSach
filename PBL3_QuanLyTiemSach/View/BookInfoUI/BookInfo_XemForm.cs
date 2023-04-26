@@ -19,7 +19,7 @@ namespace PBL3_QuanLyTiemSach.View
             InitializeComponent();
             this.BookID = id;
             setTextBox();
-            setGUI(id);
+            //setGUI(id);
         }
         private void setTextBox()
         {
@@ -29,7 +29,7 @@ namespace PBL3_QuanLyTiemSach.View
             txtSoLuong.Enabled = false;
             txtGiaBan.Enabled = false;
         }
-        private void setGUI(string id)
+        /*private void setGUI(string id)
         {
             
             try
@@ -53,7 +53,7 @@ namespace PBL3_QuanLyTiemSach.View
                 MessageBox.Show("Error!!!", MessageBoxIcon.Error.ToString());
             }
         }
-
+*/
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Dispose();

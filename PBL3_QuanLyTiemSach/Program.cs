@@ -18,7 +18,7 @@ namespace PBL3_QuanLyTiemSach
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new BookInfo());
         }
     }
 }
