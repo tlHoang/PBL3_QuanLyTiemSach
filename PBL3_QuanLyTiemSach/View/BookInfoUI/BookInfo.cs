@@ -23,61 +23,55 @@ namespace PBL3_QuanLyTiemSach.View
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
-                var SachFilter = db.Sachs.GroupBy(sf => sf.TenSach).
-                                        Select(g => new
-                                        {
-                                            TenSach = g.FirstOrDefault().TenSach,
-                                            SoLuongNhap = db.HoaDonNhapSachs.
-                                                            Where(ns => ns.MaSach == g.FirstOrDefault().MaSach).
-                                                            Sum(ns => ns.SoLuongNhap),
 
-                                            SoLuongBan = db.HoaDonBanSachs.
-                                                                Where(bs => bs.MaSach == g.FirstOrDefault().MaSach)
-                                                                .Sum(bs => bs.SoLuongBan)
-
-                                        }).ToList();
-                dgvBookInfo.DataSource = SachFilter;
+                List<Sach> sach = db.Sachs.ToList();
+                
+                /*List<Sach> sach = SachFilter.GroupBy(sf => sf.TenSach)
+                                            .Select(g => g.First()).ToList();*/
+                var data = sach.Select(s => new
+                {
+                    ID = s.MaSach,
+                    TenSach = s.TenSach,
+                    SL = s.SoLuongConLai
+                }).ToList() ;
+                dgvBookInfo.DataSource = data ;
+            }
                 dgvBookInfo.Columns["TenSach"].HeaderText = "Tên Sách";
                 dgvBookInfo.Columns["TenSach"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
                 dgvBookInfo.Columns["TenSach"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgvBookInfo.Columns["SoLuongNhap"].HeaderText = "Số Lượng Nhập";
-                dgvBookInfo.Columns["SoLuongBan"].HeaderText = "Số Lượng Bán";
-            }
-            
-            /*                dgvBookInfo.Columns["ID"].HeaderText = "Mã Sách";
-                            dgvBookInfo.Columns["ID"].Visible = false;*/
-            
-
+                dgvBookInfo.Columns["SL"].HeaderText = "Số Lượng Còn Lại";
+                dgvBookInfo.Columns["ID"].HeaderText = "Mã Sách";
+                dgvBookInfo.Columns["ID"].Visible = false;
         }
 
         private void btnBookInfoTimKiem_Click(object sender, EventArgs e)
         {
-            /*string txtTenSach = txtBookInfoTenSach.Text;
+           /* string txtTenSach = txtBookInfoTenSach.Text;
             string txtTacGia = txtBookInfoTacGia.Text;
             string txtTheLoai = txtBookInfoTheLoai.Text;
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
-                List<Sach> SachFilter = db.Sachs.ToList();
-                List<Sach> sach = SachFilter.GroupBy(sf => sf.TenSach)
-                                            .Select(g => g.First()).ToList();
-                List<Kho> kho = db.Khos.ToList();
+                List<Sach> SachFilter = db.Sachs.ToList(); 
                 List<SachTheLoai> theLoai = db.SachTheLoais.ToList();
-                var dataView = sach.Where(s => (string.IsNullOrEmpty(txtTenSach) || s.TenSach.Contains(txtTenSach))
+                List<Sach> sach = SachFilter.GroupBy(sf => sf.TenSach).Select(g => g.)
+               *//* var dataSach = SachFilter.GroupBy(sf => sf.TenSach)
+                                            .Select(g => new
+                                            {
+                                            TenSach = g.Key,
+                                            TacGia = g.FirstOrDefault().TacGia,
+                                            TheLoai = theLoai.Where(tl => tl.MaTheLoai == g.FirstOrDefault().MaTheLoai).ToList(),
+                                            SL = g.Sum(sf => sf.SoLuongConLai)
+                                            }).ToList();
+               
+                var dataView = dataSach.Where(s => (string.IsNullOrEmpty(txtTenSach) || s.TenSach.Contains(txtTenSach))
                                             && (string.IsNullOrEmpty(txtTacGia) || s.TacGia.Contains(txtTacGia))
                                             && (string.IsNullOrEmpty(txtTheLoai) ||
                                             theLoai.Any(tl => tl.MaTheLoai == s.MaTheLoai && tl.TenTheLoai.Contains(txtTheLoai))))
-                    .Select(s => new
-                    {
-                        ID = s.MaSach,
-                        TenSach = s.TenSach,
-                        TacGia = s.TacGia,
-                        TheLoai = theLoai.Where(tl => tl.MaTheLoai == s.MaTheLoai).Select(tl => tl.TenTheLoai).FirstOrDefault(),
-                        SL = kho.Where(k => k.MaKho == s.MaKho).Select(k => k.SoLuongSachConLai).Single()
-                    }).ToList();
-                dgvBookInfo.DataSource = dataView;
+                    .ToList();
+                dgvBookInfo.DataSource = dataView;*//*
             }
-            dgvBookInfo.Columns["ID"].HeaderText = "Mã Sách";
-            dgvBookInfo.Columns["ID"].Visible = false;
+            *//*dgvBookInfo.Columns["ID"].HeaderText = "Mã Sách";
+            dgvBookInfo.Columns["ID"].Visible = false;*//*
             dgvBookInfo.Columns["TenSach"].HeaderText = "Tên Sách";
             dgvBookInfo.Columns["TenSach"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             dgvBookInfo.Columns["TenSach"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
