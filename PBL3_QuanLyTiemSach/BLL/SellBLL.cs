@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using PBL3_QuanLyTiemSach.DTO;
@@ -37,14 +38,27 @@ namespace PBL3_QuanLyTiemSach.BLL
         {
             for (int i = 0; i < ls.Count; i++)
             {
-                while (ls[i].SoLuongConLai > 0)
+                int slcl = ls[i].SoLuongConLai;
+                while (slcl > 0)
                 {
                     using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
                     {
-                        (from p in db.Sachs
-                         where p.TenSach == ls[i].TenSach && p.SoLuongConLai > 0
-                         select p)
-                        .ToList().ForEach(x => x.SoLuongConLai -= 1);
+                        Sach s = 
+                            (from p in db.Sachs
+                            where p.TenSach == ls[i].TenSach && p.SoLuongConLai > 0
+                            select p)
+                            .SingleOrDefault();
+                        //.ToList().ForEach(x => x.SoLuongConLai -= 1);
+                        if (s.SoLuongConLai > slcl)
+                        {
+                            s.SoLuongConLai -= slcl;
+                            slcl = 0;
+                        }
+                        else
+                        {
+                            slcl -= s.SoLuongConLai;
+                            s.SoLuongConLai = 0;
+                        }
                         db.SaveChanges();
                     }
                 }

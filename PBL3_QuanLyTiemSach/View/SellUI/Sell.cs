@@ -204,14 +204,22 @@ namespace PBL3_QuanLyTiemSach
             DialogResult dr = MetroMessageBox.Show(f, "\nBạn có muốn lưu hóa đơn?", "Lưu hóa đơn", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 140);
             if (dr == DialogResult.Yes)
             {
-                foreach (DataGridViewRow i in dgvHoaDonBan.Rows)
+                for (int i = 0; i < dgvHoaDonBan.Rows.Count - 1; i++)
                 {
                     Sach_HoaDon.Add(new Sach
                     {
-                        TenSach = i.Cells[0].Value.ToString(),
-                        SoLuongConLai = Convert.ToInt32(i.Cells[2].Value.ToString()),
+                        TenSach = dgvHoaDonBan.Rows[i].Cells[0].Value.ToString(),
+                        SoLuongConLai = Convert.ToInt32(dgvHoaDonBan.Rows[i].Cells[2].Value.ToString()),
                     });
                 }
+                //foreach (DataGridViewRow i in dgvHoaDonBan.Rows)
+                //{
+                //    Sach_HoaDon.Add(new Sach
+                //    {
+                //        TenSach = i.Cells[0].Value.ToString(),
+                //        SoLuongConLai = Convert.ToInt32(i.Cells[2].Value.ToString()),
+                //    });
+                //}
                 SellBLL sellBLL = new SellBLL();
                 sellBLL.updateSachinDatabase(Sach_HoaDon);
             }
