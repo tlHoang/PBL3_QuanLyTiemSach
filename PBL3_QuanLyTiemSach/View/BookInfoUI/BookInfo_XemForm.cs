@@ -13,13 +13,13 @@ namespace PBL3_QuanLyTiemSach.View
 {
     public partial class BookInfo_XemForm : MetroFramework.Forms.MetroForm
     {
-        private string BookID ; 
-        public BookInfo_XemForm(string id)
+        private string BookName ; 
+        public BookInfo_XemForm(string name)
         {
             InitializeComponent();
-            this.BookID = id;
+            this.BookName = name;
             setTextBox();
-            //setGUI(id);
+            setGUI(name);
         }
         private void setTextBox()
         {
@@ -29,31 +29,38 @@ namespace PBL3_QuanLyTiemSach.View
             txtSoLuong.Enabled = false;
             txtGiaBan.Enabled = false;
         }
-        /*private void setGUI(string id)
+        private void setGUI(string tenSach)
         {
-            
+
             try
             {
-                using(DBQuanLyTiemSach db = new DBQuanLyTiemSach())
-                {
-                    List<Sach> sach = db.Sachs.ToList();
-                    List<Kho> kho = db.Khos.ToList();
-                    List<SachTheLoai> theLoai = db.SachTheLoais.ToList();
-                    string MaTheLoai = sach.Where(s => s.MaSach == id).Select(s => s.MaTheLoai).FirstOrDefault().ToString();
-                    string MaKho = sach.Where(s => s.MaSach == id).Select(s => s.MaKho).FirstOrDefault().ToString(); 
-                    txtTenSach.Text = sach.Where(s => s.MaSach == id).Select(s => s.TenSach).FirstOrDefault().ToString();
-                    txtTacGia.Text = sach.Where(s => s.MaSach == id).Select(s => s.TacGia).FirstOrDefault().ToString();
-                    txtGiaBan.Text = sach.Where(s => s.MaSach == id).Select(s => s.GiaBan).FirstOrDefault().ToString();
-                    txtTheLoai.Text = theLoai.Where(tl => tl.MaTheLoai == MaTheLoai).FirstOrDefault()?.TenTheLoai.ToString();
-                    txtSoLuong.Text = kho.Where(k => k.MaKho == MaKho).FirstOrDefault()?.SoLuongSachConLai.ToString();
+                using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+                {               
+                        List<Sach> SachFilter = db.Sachs.ToList();
+                        List<SachTheLoai> theLoai = db.SachTheLoais.ToList();
+                        var dataSach = SachFilter.GroupBy(sf => sf.TenSach)
+                                                    .Where(g => (string.IsNullOrEmpty(tenSach) || g.FirstOrDefault().TenSach.Contains(tenSach)))                                              
+                                                    .Select(g => new
+                                                    {
+                                                        TenSach = g.Key,
+                                                        TacGia = g.FirstOrDefault().TacGia,
+                                                        GiaBan = g.FirstOrDefault().GiaBan,
+                                                        TheLoai = theLoai.Where(tl => tl.MaTheLoai == g.FirstOrDefault().MaTheLoai).Select(tl => tl.TenTheLoai),
+                                                        SL = g.Sum(sf => sf.SoLuongConLai)
+                                                    }).ToList();
+                    txtTenSach.Text = dataSach[0].TenSach.ToString();
+                    txtTacGia.Text = dataSach[0].TacGia.ToString();
+                    txtGiaBan.Text = dataSach[0].GiaBan.ToString();
+                    txtTheLoai.Text = string.Join(", ", dataSach[0].TheLoai); //Note Join
+                    txtSoLuong.Text = dataSach[0].SL.ToString();
                 }
             }
-            catch 
+            catch
             {
                 MessageBox.Show("Error!!!", MessageBoxIcon.Error.ToString());
             }
         }
-*/
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Dispose();
