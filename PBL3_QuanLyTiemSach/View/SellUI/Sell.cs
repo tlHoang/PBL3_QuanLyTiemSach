@@ -32,10 +32,12 @@ namespace PBL3_QuanLyTiemSach
             txtDonGia.Enabled = false;
             SearchText = "";
             TenSach = new List<Sach>();
+            Sach_HoaDon = new List<Sach>();
         }
         public string SearchText { get; set; }
         public int SL { get; set; }
         public List<Sach> TenSach { get; set; }
+        public List<Sach> Sach_HoaDon { get; set; }
         public void SetBookInfo(string TenSach)
         {
             SellBLL sellBLL = new SellBLL();
@@ -199,10 +201,21 @@ namespace PBL3_QuanLyTiemSach
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow i in dgvHoaDonBan.Rows)
+            DialogResult dr = MetroMessageBox.Show(f, "\nBạn có muốn lưu hóa đơn?", "Lưu hóa đơn", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 140);
+            if (dr == DialogResult.Yes)
             {
-
+                foreach (DataGridViewRow i in dgvHoaDonBan.Rows)
+                {
+                    Sach_HoaDon.Add(new Sach
+                    {
+                        TenSach = i.Cells[0].Value.ToString(),
+                        SoLuongConLai = Convert.ToInt32(i.Cells[2].Value.ToString()),
+                    });
+                }
+                SellBLL sellBLL = new SellBLL();
+                sellBLL.updateSachinDatabase(Sach_HoaDon);
             }
+            else return;
         }
     }
 }
