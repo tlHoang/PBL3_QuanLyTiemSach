@@ -107,11 +107,11 @@
     <Compile Include="View\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form4.cs">
+    <Compile Include="View\ImportUI\Import.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form4.Designer.cs">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <Compile Include="View\ImportUI\Import.Designer.cs">
+      <DependentUpon>Import.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Form5.cs">
       <SubType>Form</SubType>
@@ -130,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ImportUI\Import.resx">
+      <DependentUpon>Import.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SellUI\Sell.resx">
       <DependentUpon>Sell.cs</DependentUpon>

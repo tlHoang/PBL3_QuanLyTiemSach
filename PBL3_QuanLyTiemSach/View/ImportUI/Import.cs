@@ -10,11 +10,15 @@ using System.Windows.Forms;
 
 namespace PBL3_QuanLyTiemSach.View
 {
-    public partial class Form4 : System.Windows.Forms.Form
+    public partial class Import : MetroFramework.Forms.MetroForm
     {
-        public Form4()
+        public Import()
         {
             InitializeComponent();
+            this.TopMost = true;
+            this.ControlBox = false;
+            this.Style = MetroFramework.MetroColorStyle.White;
         }
+
     }
 }

@@ -16,6 +16,7 @@ namespace PBL3_QuanLyTiemSach
         public Form1()
         {
             InitializeComponent();
+            this.TopMost = true;
             panel_Side.Hide();
         }
         private System.Windows.Forms.Form currentForm; 
@@ -55,7 +56,7 @@ namespace PBL3_QuanLyTiemSach
             panel_Side.Top = button_NhapHang.Top;
             panel_Side.Height = button_NhapHang.Height;
             panel_Side.Show();
-            OpenForm(new Form4());
+            OpenForm(new Import());
         }
 
         private void button_ThongKe_Click(object sender, EventArgs e)

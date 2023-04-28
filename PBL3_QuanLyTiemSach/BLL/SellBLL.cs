@@ -39,16 +39,16 @@ namespace PBL3_QuanLyTiemSach.BLL
             for (int i = 0; i < ls.Count; i++)
             {
                 int slcl = ls[i].SoLuongConLai;
+                string ten = ls[i].TenSach;
                 while (slcl > 0)
                 {
                     using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
                     {
                         Sach s = 
                             (from p in db.Sachs
-                            where p.TenSach == ls[i].TenSach && p.SoLuongConLai > 0
+                            where p.TenSach == ten && p.SoLuongConLai > 0
                             select p)
-                            .SingleOrDefault();
-                        //.ToList().ForEach(x => x.SoLuongConLai -= 1);
+                            .FirstOrDefault();
                         if (s.SoLuongConLai > slcl)
                         {
                             s.SoLuongConLai -= slcl;

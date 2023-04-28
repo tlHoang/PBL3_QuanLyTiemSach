@@ -222,6 +222,8 @@ namespace PBL3_QuanLyTiemSach
                 //}
                 SellBLL sellBLL = new SellBLL();
                 sellBLL.updateSachinDatabase(Sach_HoaDon);
+                delInfo();
+                dgvHoaDonBan.Rows.Clear();
             }
             else return;
         }
