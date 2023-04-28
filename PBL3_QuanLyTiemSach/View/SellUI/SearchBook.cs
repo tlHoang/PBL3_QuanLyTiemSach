@@ -13,25 +13,37 @@ namespace PBL3_QuanLyTiemSach.View.SellUI
 {
     public partial class SearchBook : MetroFramework.Forms.MetroForm
     {
-        public SearchBook()
+        Sell f;
+        public delegate void SetBookInfo(string txt);
+        public SetBookInfo setBookInfo;
+        private string TenSach { get; set; }
+        public SearchBook(Sell f1)
         {
             InitializeComponent();
+            this.f = f1;
+            this.TopMost = true;
+            TenSach = string.Empty;
         }
         private void SearchBook_Load(object sender, EventArgs e)
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
-                var data = db.Khos.GroupBy(p => p.TenSach)
+                var data = db.Sachs.GroupBy(p => p.TenSach)
                     .Select(p1 => new
                     {
                         TenSach = p1.Key,
-                        SLCL = p1.Sum(p => p.SoLuongSachConLai)
-                    }).Where(p => p.SLCL > 0).ToList();
-
-                dgvSearchBook.DataSource = data;
+                        SLCL = p1.Sum(p => p.SoLuongConLai)
+                    })
+                    //.Where(p => f.TenSach.All(p2 => p2.TenSach != p.TenSach) && p.SLCL > 0 && p.TenSach.Contains(f.SearchText)).ToList();
+                    .ToList();
+                var tmp = f.TenSach.Select(p => new
+                {
+                    TenSach = p.TenSach,
+                    SLCL = 1
+                }).ToList();
+                dgvSearchBook.DataSource = data.Where(p => tmp.All(p1 => p1.TenSach != p.TenSach)).ToList();
 
                 dgvSearchBook.Columns[0].HeaderText = "Tên sách";
-                dgvSearchBook.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 dgvSearchBook.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
                 for (int i = 0; i <= dgvSearchBook.ColumnCount - 1; i++)
@@ -52,14 +64,15 @@ namespace PBL3_QuanLyTiemSach.View.SellUI
         {
             if(dgvSearchBook.SelectedRows.Count > 1)
             {
-                //DialogResult dr = MetroFramework.MetroMessageBox.Show(this,"\nChỉ được chọn 1 sách!","Thông báo",150);
-                //if (dr == DialogResult.OK)
-                //{
-
-                //}
-                MessageBox.Show(this, "\nChỉ được chọn 1 sách!", "Thông báo");
+                MetroFramework.MetroMessageBox.Show(this, "\nChỉ được chọn 1 sách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning, 140);
+                this.TopMost = true;
             }
-
+            else
+            {
+                TenSach = dgvSearchBook.SelectedRows[0].Cells[0].Value.ToString();
+                setBookInfo(TenSach);
+                this.Close();
+            }
         }
     }
 }

@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\SellBLL.cs" />
     <Compile Include="BLL\TaiKhoanBLL.cs" />
     <Compile Include="CreateDB.cs" />
     <Compile Include="DBQuanLyTiemSach.cs" />
@@ -79,24 +80,6 @@
     <Compile Include="DTO\CodeFirst\Sach.cs" />
     <Compile Include="DTO\CodeFirst\SachTheLoai.cs" />
     <Compile Include="DTO\CodeFirst\TaiKhoan.cs" />
-    <Compile Include="View\BookInfoUI\BookInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\BookInfoUI\BookInfo.Designer.cs">
-      <DependentUpon>BookInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\BookInfoUI\BookInfo_XemForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\BookInfoUI\BookInfo_XemForm.Designer.cs">
-      <DependentUpon>BookInfo_XemForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\ChiTietNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ChiTietNhanVien.Designer.cs">
-      <DependentUpon>ChiTietNhanVien.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,12 +91,6 @@
     </Compile>
     <Compile Include="View\Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\N.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\N.Designer.cs">
-      <DependentUpon>N.cs</DependentUpon>
     </Compile>
     <Compile Include="View\SellUI\Sell.cs">
       <SubType>Form</SubType>
@@ -148,26 +125,11 @@
     <Compile Include="View\SellUI\SearchBook.Designer.cs">
       <DependentUpon>SearchBook.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ShifManageUI\ShiftManage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ShifManageUI\ShiftManage.Designer.cs">
-      <DependentUpon>ShiftManage.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="View\BookInfoUI\BookInfo.resx">
-      <DependentUpon>BookInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\BookInfoUI\BookInfo_XemForm.resx">
-      <DependentUpon>BookInfo_XemForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\N.resx">
-      <DependentUpon>N.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SellUI\Sell.resx">
       <DependentUpon>Sell.cs</DependentUpon>
@@ -186,9 +148,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\SellUI\SearchBook.resx">
       <DependentUpon>SearchBook.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ShifManageUI\ShiftManage.resx">
-      <DependentUpon>ShiftManage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
