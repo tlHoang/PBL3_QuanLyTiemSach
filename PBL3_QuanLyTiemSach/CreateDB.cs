@@ -20,6 +20,11 @@ namespace PBL3_QuanLyTiemSach
                 new TaiKhoan { MaNV = "101", Username = "nhanvien1", Password = "f4039dd867feb007a8a1f0ef934a720fbcbab0bbb30ced0e7290fba592fee9c0", Salt = "cAPfg5Qa0e6h" },
                 new TaiKhoan { MaNV = "102", Username = "nhanvien2", Password = "87089c1da28a685648a603452fecaaa6bca8ef651861b9b5c512e81ff576a456", Salt = "WMAbPKk73KUh" },
             });
+            context.NhanViens.AddRange(new NhanVien[]
+            {
+                new NhanVien { MaNV = "101", TenNV = "Trần Lê Huy Hoàng", GioiTinh = true, NgaySinh = Convert.ToDateTime("2003-03-02"), DiaChi = "Đà Nẵng, Việt Nam", Luong = 100000.0, SDT = "0123456789"}
+            });
+            /*
             context.Sachs.AddRange(new Sach[]
             {
                 new Sach {MaSach ="1", MaKho ="1", TenSach = "Duy Tân", TacGia = "Huy Cận", MaTheLoai ="1", GiaBan =50000},
@@ -52,6 +57,7 @@ namespace PBL3_QuanLyTiemSach
                 new SachTheLoai{ MaTheLoai = "5", TenTheLoai ="Ngụ Ngôn" },
                 //new SachTheLoai{ MaTheLoai = "", TenTheLoai ="" },
             });
+            */
         }
     }
 }

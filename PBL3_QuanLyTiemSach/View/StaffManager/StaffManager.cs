@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PBL3_QuanLyTiemSach.View
+namespace PBL3_QuanLyTiemSach.View.StaffManager
 {
-    public partial class ChiTietNhanVien : Form
+    public partial class StaffManager : MetroFramework.Forms.MetroForm
     {
-        public ChiTietNhanVien()
+        public StaffManager()
         {
             InitializeComponent();
         }

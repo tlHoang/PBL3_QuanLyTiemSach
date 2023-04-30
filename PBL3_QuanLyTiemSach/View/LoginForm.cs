@@ -1,4 +1,5 @@
-﻿using PBL3_QuanLyTiemSach.BLL;
+﻿using MetroFramework;
+using PBL3_QuanLyTiemSach.BLL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace PBL3_QuanLyTiemSach.View
 {
-    public partial class LoginForm : System.Windows.Forms.Form
+    public partial class LoginForm : MetroFramework.Forms.MetroForm
     {
         public LoginForm()
         {
@@ -31,19 +32,19 @@ namespace PBL3_QuanLyTiemSach.View
             string password = metroTextBox_password.Text;
             if (InvalidInput(username) || InvalidInput(password))
             {
-                MessageBox.Show("Tài khoản hoặc mật khẩu không hợp lệ");
+                MetroMessageBox.Show(this, "Tài khoản hoặc mật khẩu không hợp lệ");
                 return;
             }
             TaiKhoanBLL bll = new TaiKhoanBLL();
             string MaNV = bll.CheckPassword(username, password);
             if (MaNV == null)
             {
-                MessageBox.Show("Sai tài khoản hoặc mật khẩu");
+                MetroMessageBox.Show(this, "Sai tài khoản hoặc mật khẩu");
             }
             else
             {
-                MessageBox.Show("thang cong");
-                // call form and pass MaNV
+                StaffInfo staffInfo = new StaffInfo(MaNV);
+                staffInfo.Show();
             }
         }
     }

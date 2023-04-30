@@ -47,7 +47,7 @@ namespace PBL3_QuanLyTiemSach
             panel_Side.Top = button_BanHang.Top;
             panel_Side.Height = button_BanHang.Height;
             panel_Side.Show();
-            OpenForm(new Sell());
+            // OpenForm(new Sell());
         }
 
         private void button_NhapHang_Click(object sender, EventArgs e)
