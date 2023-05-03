@@ -11,8 +11,8 @@ namespace PBL3_QuanLyTiemSach.DTO
     {
         [Key]
         [Required]
-        [StringLength(30)]
-        public string MaTheLoai { get; set; }
+		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int MaTheLoai { get; set; }
         [StringLength(30)]
         public string TenTheLoai { get; set; }
 
