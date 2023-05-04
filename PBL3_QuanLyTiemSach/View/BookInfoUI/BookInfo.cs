@@ -24,24 +24,22 @@ namespace PBL3_QuanLyTiemSach.View
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
 
-                List<Sach> sach = db.Sachs.ToList();
+                List<Sach> SachFilter = db.Sachs.ToList();
                 
-                /*List<Sach> sach = SachFilter.GroupBy(sf => sf.TenSach)
-                                            .Select(g => g.First()).ToList();*/
-                var data = sach.Select(s => new
-                {
-                    ID = s.MaSach,
-                    TenSach = s.TenSach,
-                    SL = s.SoLuongConLai
-                }).ToList() ;
-                dgvBookInfo.DataSource = data ;
+                var sach = SachFilter.GroupBy(sf => sf.TenSach)
+                                            .Select(g => new
+                                            {
+                                                TenSach = g.Key,
+                                                SL = g.Sum( sf => sf.SoLuongConLai)
+                                            });
+                dgvBookInfo.DataSource = SachFilter.ToList() ;
             }
                 dgvBookInfo.Columns["TenSach"].HeaderText = "Tên Sách";
                 dgvBookInfo.Columns["TenSach"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
                 dgvBookInfo.Columns["TenSach"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 dgvBookInfo.Columns["SL"].HeaderText = "Số Lượng Còn Lại";
-                dgvBookInfo.Columns["ID"].HeaderText = "Mã Sách";
-                dgvBookInfo.Columns["ID"].Visible = false;
+/*                dgvBookInfo.Columns["ID"].HeaderText = "Mã Sách";
+                dgvBookInfo.Columns["ID"].Visible = false;*/
         }
 
         private void btnBookInfoTimKiem_Click(object sender, EventArgs e)

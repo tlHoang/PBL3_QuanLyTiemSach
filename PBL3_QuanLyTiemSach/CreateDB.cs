@@ -10,7 +10,8 @@ using System.Threading.Tasks;
 namespace PBL3_QuanLyTiemSach
 {
     public class CreateDB
-        : CreateDatabaseIfNotExists<DBQuanLyTiemSach>
+        //: CreateDatabaseIfNotExists<DBQuanLyTiemSach>
+        : DropCreateDatabaseAlways<DBQuanLyTiemSach>
     {
         protected override void Seed(DBQuanLyTiemSach context)
         {
@@ -61,28 +62,28 @@ namespace PBL3_QuanLyTiemSach
                 new SachTheLoai{ MaTheLoai = "5", TenTheLoai ="Ngụ Ngôn" }
                 //new SachTheLoai{ MaTheLoai = "", TenTheLoai ="" },
             });
-           /* context.HoaDonNhapSachs.AddRange(new HoaDonNhapSach[]
-            {
-                new HoaDonNhapSach{MaHDNhapSach = "111", MaHDNhap = "11", MaSach= "1", DonGiaNhap =40000 , SoLuongNhap =6000},
-                new HoaDonNhapSach{MaHDNhapSach = "112", MaHDNhap = "12", MaSach= "2", DonGiaNhap =35000 , SoLuongNhap =4000},
-                new HoaDonNhapSach{MaHDNhapSach = "113", MaHDNhap = "13", MaSach= "3", DonGiaNhap =30000 , SoLuongNhap =3500},
-                new HoaDonNhapSach{MaHDNhapSach = "114", MaHDNhap = "14", MaSach= "4", DonGiaNhap =41000 , SoLuongNhap =5000},
-                new HoaDonNhapSach{MaHDNhapSach = "115", MaHDNhap = "15", MaSach= "5", DonGiaNhap =90000 , SoLuongNhap =2000},
-                new HoaDonNhapSach{MaHDNhapSach = "116", MaHDNhap = "16", MaSach= "6", DonGiaNhap =35000 , SoLuongNhap =1500},
-                new HoaDonNhapSach{MaHDNhapSach = "117", MaHDNhap = "17", MaSach= "7", DonGiaNhap =37000 , SoLuongNhap =1560},
-                new HoaDonNhapSach{MaHDNhapSach = "118", MaHDNhap = "18", MaSach= "8", DonGiaNhap =36000 , SoLuongNhap =2130}
+            //context.HoaDonNhapSachs.AddRange(new HoaDonNhapSach[]
+            //{
+            //    new HoaDonNhapSach{MaHDNhapSach = "111", MaHDNhap = "11", MaSach= "1", DonGiaNhap =40000 , SoLuongNhap =6000},
+            //    new HoaDonNhapSach{MaHDNhapSach = "112", MaHDNhap = "12", MaSach= "2", DonGiaNhap =35000 , SoLuongNhap =4000},
+            //    new HoaDonNhapSach{MaHDNhapSach = "113", MaHDNhap = "13", MaSach= "3", DonGiaNhap =30000 , SoLuongNhap =3500},
+            //    new HoaDonNhapSach{MaHDNhapSach = "114", MaHDNhap = "14", MaSach= "4", DonGiaNhap =41000 , SoLuongNhap =5000},
+            //    new HoaDonNhapSach{MaHDNhapSach = "115", MaHDNhap = "15", MaSach= "5", DonGiaNhap =90000 , SoLuongNhap =2000},
+            //    new HoaDonNhapSach{MaHDNhapSach = "116", MaHDNhap = "16", MaSach= "6", DonGiaNhap =35000 , SoLuongNhap =1500},
+            //    new HoaDonNhapSach{MaHDNhapSach = "117", MaHDNhap = "17", MaSach= "7", DonGiaNhap =37000 , SoLuongNhap =1560},
+            //    new HoaDonNhapSach{MaHDNhapSach = "118", MaHDNhap = "18", MaSach= "8", DonGiaNhap =36000 , SoLuongNhap =2130}
 
-                // new HoaDonNhapSach{MaHDNhapSach = "", MaHDNhap = "", MaSach= "", DonGiaNhap = , SoLuongNhap =},
-            });
-            context.HoaDonBanSachs.AddRange(new HoaDonBanSach[]
-            {
-                new HoaDonBanSach{MaHDBanSach = "211", MaHDBan = "21",MaSach = "1", DonGiaBan = 50000 ,SoLuongBan = 500},
-                new HoaDonBanSach{MaHDBanSach = "212", MaHDBan = "22",MaSach = "3", DonGiaBan = 65000,SoLuongBan = 500},
-                new HoaDonBanSach{MaHDBanSach = "213", MaHDBan = "23",MaSach = "6", DonGiaBan = 65000,SoLuongBan = 500},
-                new HoaDonBanSach{MaHDBanSach = "214", MaHDBan = "24",MaSach = "7", DonGiaBan = 65000,SoLuongBan = 500}
-              //  new HoaDonBanSach{MaHDBanSach = "", MaHDBan = "",MaSach = "", DonGiaBan = ,SoLuongBan = },
-            });*/
-            
+            //    // new HoaDonNhapSach{MaHDNhapSach = "", MaHDNhap = "", MaSach= "", DonGiaNhap = , SoLuongNhap =},
+            //});
+            //context.HoaDonBanSachs.AddRange(new HoaDonBanSach[]
+            //{
+            //    new HoaDonBanSach{MaHDBanSach = "211", MaHDBan = "21",MaSach = "1", DonGiaBan = 50000 ,SoLuongBan = 500},
+            //    new HoaDonBanSach{MaHDBanSach = "212", MaHDBan = "22",MaSach = "3", DonGiaBan = 65000,SoLuongBan = 500},
+            //    new HoaDonBanSach{MaHDBanSach = "213", MaHDBan = "23",MaSach = "6", DonGiaBan = 65000,SoLuongBan = 500},
+            //    new HoaDonBanSach{MaHDBanSach = "214", MaHDBan = "24",MaSach = "7", DonGiaBan = 65000,SoLuongBan = 500}
+            //  //  new HoaDonBanSach{MaHDBanSach = "", MaHDBan = "",MaSach = "", DonGiaBan = ,SoLuongBan = },
+            //});
+
         }
     }
 }
