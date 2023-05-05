@@ -10,7 +10,7 @@ namespace PBL3_QuanLyTiemSach.BLL
 {
     public class StaffInfoBLL
     {
-        public NhanVien GetNhanVienInfo(string maNhanVien)
+        public NhanVien GetNhanVienInfo(int maNhanVien)
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
@@ -21,7 +21,7 @@ namespace PBL3_QuanLyTiemSach.BLL
             }
         }
         
-        public TaiKhoan GetTaiKhoanInfo(string maNhanVien)
+        public TaiKhoan GetTaiKhoanInfo(int maNhanVien)
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {

@@ -36,8 +36,8 @@ namespace PBL3_QuanLyTiemSach.View
                 return;
             }
             TaiKhoanBLL bll = new TaiKhoanBLL();
-            string MaNV = bll.CheckPassword(username, password);
-            if (MaNV == null)
+            int MaNV = bll.CheckPassword(username, password);
+            if (MaNV == -1)
             {
                 MetroMessageBox.Show(this, "Sai tài khoản hoặc mật khẩu");
             }

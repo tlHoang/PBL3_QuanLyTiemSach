@@ -35,7 +35,7 @@ namespace PBL3_QuanLyTiemSach.BLL
             }
         }
 
-        public List<NhanVien> GetStaffsByIDs(List<string> IDs)
+        public List<NhanVien> GetStaffsByIDs(List<int> IDs)
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
@@ -51,7 +51,7 @@ namespace PBL3_QuanLyTiemSach.BLL
             }
         }
 
-        public List<NhanVien> SortStaff(List<string> IDs, int sortby)
+        public List<NhanVien> SortStaff(List<int> IDs, int sortby)
         {
             List<NhanVien> result = new List<NhanVien>();
             result = GetStaffsByIDs(IDs);
@@ -67,7 +67,7 @@ namespace PBL3_QuanLyTiemSach.BLL
             return result;
         }
 
-        public void DeleteStaffs(List<string> IDs)
+        public void DeleteStaffs(List<int> IDs)
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {

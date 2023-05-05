@@ -17,19 +17,19 @@ namespace PBL3_QuanLyTiemSach.View
 {
     public partial class StaffInfo : MetroFramework.Forms.MetroForm
     {
-        public string MaNhanVien { get; set; }
+        public int MaNhanVien { get; set; }
         public bool IsAdmin { get; set; }
 
         //public delegate void isAdmin();
         //public isAdmin IsAdmin { get; set; }
 
-        public StaffInfo(string maNhanVien, bool isAdmin = false)
+        public StaffInfo(int maNhanVien, bool isAdmin = false)
         {
             MaNhanVien = maNhanVien;
             IsAdmin = isAdmin;
             InitializeComponent();
             SetUIAlway();
-            if (maNhanVien != "")
+            if (maNhanVien == -1)
             {
                 SetUI();
                 LoadInfo();
@@ -69,7 +69,7 @@ namespace PBL3_QuanLyTiemSach.View
             NhanVien nhanvien = staffInfoBLL.GetNhanVienInfo(MaNhanVien);
             TaiKhoan taikhoan = staffInfoBLL.GetTaiKhoanInfo(MaNhanVien);
 
-            metroTextBox_ma.Text = nhanvien.MaNV;
+            metroTextBox_ma.Text = nhanvien.MaNV.ToString();
             metroTextBox_ten.Text = nhanvien.TenNV;
             if (nhanvien.GioiTinh == true) metroRadioButton_nam.Checked = true;
             else metroRadioButton_nu.Checked = true;
@@ -118,7 +118,7 @@ namespace PBL3_QuanLyTiemSach.View
             if (!ValidateNewPassword(metroTextBox_matkhau.Text)) return;
             if (metroTextBox_matkhau.Text != metroTextBox_nhaplaimk.Text) return;
             TaiKhoanBLL taiKhoanBLL = new TaiKhoanBLL();
-            if (taiKhoanBLL.CheckPassword(metroTextBox_taikhoan.Text, metroTextBox_mkcu.Text) != null || true)
+            if (taiKhoanBLL.CheckPassword(metroTextBox_taikhoan.Text, metroTextBox_mkcu.Text) != -1 || true)
             {
                 MetroMessageBox.Show(this, "Đổi mật khẩu thành công", "Thông báo");
                 taiKhoanBLL.UpdatePassword(metroTextBox_taikhoan.Text, metroTextBox_matkhau.Text);

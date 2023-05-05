@@ -68,12 +68,12 @@ namespace PBL3_QuanLyTiemSach.View.StaffManager
             if (metroComboBox_sort.SelectedIndex >= 0)
             {
                 StaffManagerBLL staffManagerBLL = new StaffManagerBLL();
-                List<string> staffID = new List<string>();
+                List<int> staffIDs = new List<int>();
                 foreach (DataGridViewRow dr in metroGrid_nhanvien.Rows)
                 {
-                    staffID.Add(dr.Cells[0].Value.ToString());
+                    staffIDs.Add(Convert.ToInt32(dr.Cells[0].Value.ToString()));
                 }
-                metroGrid_nhanvien.DataSource = staffManagerBLL.SortStaff(staffID, ((CBBItem)metroComboBox_sort.SelectedItem).Value)
+                metroGrid_nhanvien.DataSource = staffManagerBLL.SortStaff(staffIDs, ((CBBItem)metroComboBox_sort.SelectedItem).Value)
                     .Select(p => new { p.MaNV, p.TaiKhoan.Username, p.TenNV, p.SDT })
                     .ToList();
             }
@@ -84,10 +84,10 @@ namespace PBL3_QuanLyTiemSach.View.StaffManager
             if (metroGrid_nhanvien.SelectedRows.Count > 0)
             {
                 StaffManagerBLL staffManagerBLL = new StaffManagerBLL();
-                List<string> deleteIDs = new List<string>();
+                List<int> deleteIDs = new List<int>();
                 foreach (DataGridViewRow dr in metroGrid_nhanvien.Rows)
                 {
-                    deleteIDs.Add(dr.Cells[0].Value.ToString());
+                    deleteIDs.Add(Convert.ToInt32(dr.Cells[0].Value.ToString()));
                 }
                 staffManagerBLL.DeleteStaffs(deleteIDs);
             }
@@ -95,7 +95,7 @@ namespace PBL3_QuanLyTiemSach.View.StaffManager
 
         private void metroButton_them_Click(object sender, EventArgs e)
         {
-            StaffInfo staffInfoForm = new StaffInfo("", true);
+            StaffInfo staffInfoForm = new StaffInfo(-1, true);
             staffInfoForm.ShowDialog();
         }
 
@@ -103,7 +103,7 @@ namespace PBL3_QuanLyTiemSach.View.StaffManager
         {
             if (metroGrid_nhanvien.SelectedRows.Count == 1)
             {
-                StaffInfo staffInfoForm = new StaffInfo(metroGrid_nhanvien.SelectedRows[0].Cells[0].Value.ToString(), true);
+                StaffInfo staffInfoForm = new StaffInfo(Convert.ToInt32(metroGrid_nhanvien.SelectedRows[0].Cells[0].Value.ToString()), true);
                 staffInfoForm.ShowDialog();
             }
         }

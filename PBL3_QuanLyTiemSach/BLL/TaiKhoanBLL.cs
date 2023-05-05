@@ -35,7 +35,7 @@ namespace PBL3_QuanLyTiemSach.BLL
             return new string(result);
         }
 
-        public string CheckPassword(string username, string password)
+        public int CheckPassword(string username, string password)
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
@@ -43,10 +43,10 @@ namespace PBL3_QuanLyTiemSach.BLL
                     .Where(p => p.Username == username)
                     .FirstOrDefault();
                 if (acc == null)
-                    return null;
+                    return -1;
                 if (acc.Password == HashPassword(password, acc.Salt))
                     return acc.MaNV;
-                return null;
+                return -1;
             }
         }
         

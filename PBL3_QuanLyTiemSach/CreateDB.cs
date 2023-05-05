@@ -17,16 +17,16 @@ namespace PBL3_QuanLyTiemSach
         {
             context.TaiKhoans.AddRange(new TaiKhoan[]
             {
-                new TaiKhoan { MaNV = "100", Username = "admin", Password = "3d18e7c3f354879667c3964c6fd1ed01348b02eed41a321391dcfb01f07150ab", Salt = "cV6kF5idUxGu" },
-                new TaiKhoan { MaNV = "101", Username = "nv3", Password = "f4039dd867feb007a8a1f0ef934a720fbcbab0bbb30ced0e7290fba592fee9c0", Salt = "cAPfg5Qa0e6h" },
-                new TaiKhoan { MaNV = "102", Username = "nv1", Password = "87089c1da28a685648a603452fecaaa6bca8ef651861b9b5c512e81ff576a456", Salt = "WMAbPKk73KUh" },
-                new TaiKhoan { MaNV = "103", Username = "nv2", Password = "87089c1da28a685648a603452fecaaa6bca8ef651861b9b5c512e81ff576a456", Salt = "WMAbPKk73KUh" }
+                new TaiKhoan { MaNV = 0, Username = "admin", Password = "3d18e7c3f354879667c3964c6fd1ed01348b02eed41a321391dcfb01f07150ab", Salt = "cV6kF5idUxGu" },
+                new TaiKhoan { MaNV = 1, Username = "nv3", Password = "f4039dd867feb007a8a1f0ef934a720fbcbab0bbb30ced0e7290fba592fee9c0", Salt = "cAPfg5Qa0e6h" },
+                new TaiKhoan { MaNV = 2, Username = "nv1", Password = "87089c1da28a685648a603452fecaaa6bca8ef651861b9b5c512e81ff576a456", Salt = "WMAbPKk73KUh" },
+                new TaiKhoan { MaNV = 3, Username = "nv2", Password = "87089c1da28a685648a603452fecaaa6bca8ef651861b9b5c512e81ff576a456", Salt = "WMAbPKk73KUh" }
             });
             context.NhanViens.AddRange(new NhanVien[]
             {
-                new NhanVien { MaNV = "101", TenNV = "Nguyễn Văn A", GioiTinh = true, NgaySinh = Convert.ToDateTime("2003-03-02"), DiaChi = "Đà Nẵng, Việt Nam", Luong = 100000.0, SDT = "0123456789"},
-                new NhanVien { MaNV = "102", TenNV = "Nguyễn Thị B", GioiTinh = false, NgaySinh = Convert.ToDateTime("2004-12-30"), DiaChi = "Đà Nẵng, Việt Nam", Luong = 150000.0, SDT = "0912345678"},
-                new NhanVien { MaNV = "103", TenNV = "Trần Thị B", GioiTinh = false, NgaySinh = Convert.ToDateTime("2004-01-01"), DiaChi = "Huế, Việt Nam", Luong = 150000.0, SDT = "0914569978"},
+                new NhanVien { MaNV = 0, TenNV = "Nguyễn Văn A", GioiTinh = true, NgaySinh = Convert.ToDateTime("2003-03-02"), DiaChi = "Đà Nẵng, Việt Nam", Luong = 100000.0, SDT = "0123456789"},
+                new NhanVien { MaNV = 1, TenNV = "Nguyễn Thị B", GioiTinh = false, NgaySinh = Convert.ToDateTime("2004-12-30"), DiaChi = "Đà Nẵng, Việt Nam", Luong = 150000.0, SDT = "0912345678"},
+                new NhanVien { MaNV = 2, TenNV = "Trần Thị B", GioiTinh = false, NgaySinh = Convert.ToDateTime("2004-01-01"), DiaChi = "Huế, Việt Nam", Luong = 150000.0, SDT = "0914569978"},
             });
             /*
             context.Sachs.AddRange(new Sach[]
