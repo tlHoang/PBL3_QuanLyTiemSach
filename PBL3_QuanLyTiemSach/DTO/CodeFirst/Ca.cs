@@ -12,9 +12,8 @@ namespace PBL3_QuanLyTiemSach.DTO
 	public class Ca
 	{
 		[Key]
-		[Required]
-		[StringLength(30)]
-		public string MaCa { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int MaCa { get; set; }
 		public DateTime Ngay { get; set; }
 		public TimeSpan GioBatDau { get; set; }
 		public TimeSpan GioKetThuc { get; set; }

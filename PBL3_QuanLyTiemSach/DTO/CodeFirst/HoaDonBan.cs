@@ -14,9 +14,7 @@ namespace PBL3_QuanLyTiemSach.DTO
         [Required]
         [StringLength(30)]
         public string MaHDBan { get; set; }
-        [Required]
-        [StringLength(30)]
-        public string MaNV { get; set; }
+        public int MaNV { get; set; }
         [Required]
         [StringLength(30)]
         public string MaKH { get; set; }
