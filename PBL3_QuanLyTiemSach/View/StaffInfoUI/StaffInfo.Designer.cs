@@ -43,12 +43,15 @@
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.tabControl_nhanvien = new System.Windows.Forms.TabControl();
             this.tabPage_thongtin = new System.Windows.Forms.TabPage();
+            this.metroButton_xacnhan = new MetroFramework.Controls.MetroButton();
+            this.metroButton_thoat = new MetroFramework.Controls.MetroButton();
             this.metroPanel_thongtin = new MetroFramework.Controls.MetroPanel();
             this.metroRadioButton_nu = new MetroFramework.Controls.MetroRadioButton();
             this.metroRadioButton_nam = new MetroFramework.Controls.MetroRadioButton();
             this.tabPage_taikhoan = new System.Windows.Forms.TabPage();
             this.metroPanel_taikhoan = new MetroFramework.Controls.MetroPanel();
             this.metroPanel_pass = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel_noti1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel_noti2 = new MetroFramework.Controls.MetroLabel();
             this.metroButton_pass_huy = new MetroFramework.Controls.MetroButton();
             this.metroButton_pass_xacnhan = new MetroFramework.Controls.MetroButton();
@@ -61,7 +64,6 @@
             this.metroLabel_taikhoan = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox_taikhoan = new MetroFramework.Controls.MetroTextBox();
             this.metroButton_doimk = new MetroFramework.Controls.MetroButton();
-            this.metroLabel_noti1 = new MetroFramework.Controls.MetroLabel();
             this.tabControl_nhanvien.SuspendLayout();
             this.tabPage_thongtin.SuspendLayout();
             this.metroPanel_thongtin.SuspendLayout();
@@ -290,19 +292,40 @@
             this.tabControl_nhanvien.Location = new System.Drawing.Point(52, 63);
             this.tabControl_nhanvien.Name = "tabControl_nhanvien";
             this.tabControl_nhanvien.SelectedIndex = 0;
-            this.tabControl_nhanvien.Size = new System.Drawing.Size(351, 354);
+            this.tabControl_nhanvien.Size = new System.Drawing.Size(351, 350);
             this.tabControl_nhanvien.TabIndex = 0;
             // 
             // tabPage_thongtin
             // 
+            this.tabPage_thongtin.Controls.Add(this.metroButton_xacnhan);
             this.tabPage_thongtin.Controls.Add(this.metroPanel_thongtin);
             this.tabPage_thongtin.Location = new System.Drawing.Point(4, 22);
             this.tabPage_thongtin.Name = "tabPage_thongtin";
             this.tabPage_thongtin.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_thongtin.Size = new System.Drawing.Size(343, 328);
+            this.tabPage_thongtin.Size = new System.Drawing.Size(343, 324);
             this.tabPage_thongtin.TabIndex = 0;
             this.tabPage_thongtin.Text = "Cá nhân";
             this.tabPage_thongtin.UseVisualStyleBackColor = true;
+            // 
+            // metroButton_xacnhan
+            // 
+            this.metroButton_xacnhan.Location = new System.Drawing.Point(212, 295);
+            this.metroButton_xacnhan.Name = "metroButton_xacnhan";
+            this.metroButton_xacnhan.Size = new System.Drawing.Size(75, 23);
+            this.metroButton_xacnhan.TabIndex = 1;
+            this.metroButton_xacnhan.Text = "Xác nhận";
+            this.metroButton_xacnhan.UseSelectable = true;
+            this.metroButton_xacnhan.Click += new System.EventHandler(this.metroButton_xacnhan_Click);
+            // 
+            // metroButton_thoat
+            // 
+            this.metroButton_thoat.Location = new System.Drawing.Point(268, 465);
+            this.metroButton_thoat.Name = "metroButton_thoat";
+            this.metroButton_thoat.Size = new System.Drawing.Size(75, 23);
+            this.metroButton_thoat.TabIndex = 2;
+            this.metroButton_thoat.Text = "Thoát";
+            this.metroButton_thoat.UseSelectable = true;
+            this.metroButton_thoat.Click += new System.EventHandler(this.metroButton_thoat_Click);
             // 
             // metroPanel_thongtin
             // 
@@ -355,17 +378,17 @@
             // tabPage_taikhoan
             // 
             this.tabPage_taikhoan.Controls.Add(this.metroPanel_taikhoan);
-            this.tabPage_taikhoan.Controls.Add(this.metroButton_doimk);
             this.tabPage_taikhoan.Location = new System.Drawing.Point(4, 22);
             this.tabPage_taikhoan.Name = "tabPage_taikhoan";
             this.tabPage_taikhoan.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_taikhoan.Size = new System.Drawing.Size(343, 328);
+            this.tabPage_taikhoan.Size = new System.Drawing.Size(343, 324);
             this.tabPage_taikhoan.TabIndex = 1;
             this.tabPage_taikhoan.Text = "Tài khoản";
             this.tabPage_taikhoan.UseVisualStyleBackColor = true;
             // 
             // metroPanel_taikhoan
             // 
+            this.metroPanel_taikhoan.Controls.Add(this.metroButton_doimk);
             this.metroPanel_taikhoan.Controls.Add(this.metroPanel_pass);
             this.metroPanel_taikhoan.Controls.Add(this.metroLabel_taikhoan);
             this.metroPanel_taikhoan.Controls.Add(this.metroTextBox_taikhoan);
@@ -374,7 +397,7 @@
             this.metroPanel_taikhoan.HorizontalScrollbarSize = 10;
             this.metroPanel_taikhoan.Location = new System.Drawing.Point(3, 3);
             this.metroPanel_taikhoan.Name = "metroPanel_taikhoan";
-            this.metroPanel_taikhoan.Size = new System.Drawing.Size(337, 258);
+            this.metroPanel_taikhoan.Size = new System.Drawing.Size(337, 315);
             this.metroPanel_taikhoan.TabIndex = 11;
             this.metroPanel_taikhoan.VerticalScrollbarBarColor = true;
             this.metroPanel_taikhoan.VerticalScrollbarHighlightOnWheel = false;
@@ -397,11 +420,23 @@
             this.metroPanel_pass.HorizontalScrollbarSize = 10;
             this.metroPanel_pass.Location = new System.Drawing.Point(4, 29);
             this.metroPanel_pass.Name = "metroPanel_pass";
-            this.metroPanel_pass.Size = new System.Drawing.Size(330, 167);
+            this.metroPanel_pass.Size = new System.Drawing.Size(330, 195);
             this.metroPanel_pass.TabIndex = 2;
             this.metroPanel_pass.VerticalScrollbarBarColor = true;
             this.metroPanel_pass.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel_pass.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel_noti1
+            // 
+            this.metroLabel_noti1.AutoSize = true;
+            this.metroLabel_noti1.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel_noti1.ForeColor = System.Drawing.Color.Red;
+            this.metroLabel_noti1.Location = new System.Drawing.Point(3, 55);
+            this.metroLabel_noti1.Name = "metroLabel_noti1";
+            this.metroLabel_noti1.Size = new System.Drawing.Size(30, 15);
+            this.metroLabel_noti1.TabIndex = 12;
+            this.metroLabel_noti1.Text = "noti1";
+            this.metroLabel_noti1.UseCustomForeColor = true;
             // 
             // metroLabel_noti2
             // 
@@ -410,14 +445,14 @@
             this.metroLabel_noti2.ForeColor = System.Drawing.Color.Red;
             this.metroLabel_noti2.Location = new System.Drawing.Point(3, 103);
             this.metroLabel_noti2.Name = "metroLabel_noti2";
-            this.metroLabel_noti2.Size = new System.Drawing.Size(38, 19);
+            this.metroLabel_noti2.Size = new System.Drawing.Size(32, 15);
             this.metroLabel_noti2.TabIndex = 11;
             this.metroLabel_noti2.Text = "noti2";
             this.metroLabel_noti2.UseCustomForeColor = true;
             // 
             // metroButton_pass_huy
             // 
-            this.metroButton_pass_huy.Location = new System.Drawing.Point(61, 141);
+            this.metroButton_pass_huy.Location = new System.Drawing.Point(33, 149);
             this.metroButton_pass_huy.Name = "metroButton_pass_huy";
             this.metroButton_pass_huy.Size = new System.Drawing.Size(75, 23);
             this.metroButton_pass_huy.TabIndex = 4;
@@ -427,7 +462,7 @@
             // 
             // metroButton_pass_xacnhan
             // 
-            this.metroButton_pass_xacnhan.Location = new System.Drawing.Point(194, 141);
+            this.metroButton_pass_xacnhan.Location = new System.Drawing.Point(205, 149);
             this.metroButton_pass_xacnhan.Name = "metroButton_pass_xacnhan";
             this.metroButton_pass_xacnhan.Size = new System.Drawing.Size(75, 23);
             this.metroButton_pass_xacnhan.TabIndex = 3;
@@ -595,7 +630,7 @@
             // 
             // metroButton_doimk
             // 
-            this.metroButton_doimk.Location = new System.Drawing.Point(191, 299);
+            this.metroButton_doimk.Location = new System.Drawing.Point(198, 289);
             this.metroButton_doimk.Name = "metroButton_doimk";
             this.metroButton_doimk.Size = new System.Drawing.Size(96, 23);
             this.metroButton_doimk.TabIndex = 0;
@@ -603,23 +638,12 @@
             this.metroButton_doimk.UseSelectable = true;
             this.metroButton_doimk.Click += new System.EventHandler(this.metroButton_doimk_Click);
             // 
-            // metroLabel_noti1
-            // 
-            this.metroLabel_noti1.AutoSize = true;
-            this.metroLabel_noti1.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.metroLabel_noti1.ForeColor = System.Drawing.Color.Red;
-            this.metroLabel_noti1.Location = new System.Drawing.Point(3, 55);
-            this.metroLabel_noti1.Name = "metroLabel_noti1";
-            this.metroLabel_noti1.Size = new System.Drawing.Size(36, 19);
-            this.metroLabel_noti1.TabIndex = 12;
-            this.metroLabel_noti1.Text = "noti1";
-            this.metroLabel_noti1.UseCustomForeColor = true;
-            // 
             // StaffInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(462, 530);
+            this.Controls.Add(this.metroButton_thoat);
             this.Controls.Add(this.tabControl_nhanvien);
             this.Name = "StaffInfo";
             this.Text = "Thông tin chi tiết";
@@ -670,5 +694,7 @@
         private MetroFramework.Controls.MetroButton metroButton_pass_xacnhan;
         private MetroFramework.Controls.MetroLabel metroLabel_noti2;
         private MetroFramework.Controls.MetroLabel metroLabel_noti1;
+        private MetroFramework.Controls.MetroButton metroButton_xacnhan;
+        private MetroFramework.Controls.MetroButton metroButton_thoat;
     }
 }

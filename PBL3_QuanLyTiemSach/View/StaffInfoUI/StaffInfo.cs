@@ -18,31 +18,48 @@ namespace PBL3_QuanLyTiemSach.View
     public partial class StaffInfo : MetroFramework.Forms.MetroForm
     {
         public string MaNhanVien { get; set; }
+        public bool IsAdmin { get; set; }
 
-        public StaffInfo(string maNhanVien)
+        //public delegate void isAdmin();
+        //public isAdmin IsAdmin { get; set; }
+
+        public StaffInfo(string maNhanVien, bool isAdmin = false)
         {
             MaNhanVien = maNhanVien;
+            IsAdmin = isAdmin;
             InitializeComponent();
-            SetUI();
-            LoadInfo();
+            SetUIAlway();
+            if (maNhanVien != "")
+            {
+                SetUI();
+                LoadInfo();
+            }
+        }
+
+        public void SetUIAlway()
+        {
+            metroTextBox_ma.Enabled = false;
+            metroLabel_noti1.Text = "";
+            metroLabel_noti2.Text = "";
+            metroTextBox_mkcu.UseSystemPasswordChar = true;
+            metroTextBox_matkhau.UseSystemPasswordChar = true;
+            metroTextBox_nhaplaimk.UseSystemPasswordChar = true;
         }
 
         public void SetUI()
         {
-            this.ControlBox = false;
-            this.Style = MetroFramework.MetroColorStyle.White;
-
             metroPanel_pass.Visible = false;
-            metroTextBox_mkcu.UseSystemPasswordChar = true;
-            metroTextBox_matkhau.UseSystemPasswordChar = true;
-            metroTextBox_nhaplaimk.UseSystemPasswordChar = true;
-            metroLabel_noti1.Text = "";
-            metroLabel_noti2.Text = "";
-            if (true/*la nhan vien*/)
+
+            if (!IsAdmin)
             {
+                this.ControlBox = false;
+                this.Style = MetroFramework.MetroColorStyle.White;
+
                 metroPanel_thongtin.Enabled = false;
                 metroTextBox_taikhoan.Enabled = false;
                 metroPanel_taikhoan.Enabled = false;
+                metroButton_thoat.Visible = false;
+                metroButton_xacnhan.Visible = false;
             }
         }
 
@@ -66,7 +83,8 @@ namespace PBL3_QuanLyTiemSach.View
 
         private void metroButton_doimk_Click(object sender, EventArgs e)
         {
-            if (true/*la nhan vien*/)
+            //if (!IsAdmin)
+            if (true)
             {
                 metroPanel_pass.Visible = true;
                 metroPanel_taikhoan.Enabled = true;
@@ -100,7 +118,7 @@ namespace PBL3_QuanLyTiemSach.View
             if (!ValidateNewPassword(metroTextBox_matkhau.Text)) return;
             if (metroTextBox_matkhau.Text != metroTextBox_nhaplaimk.Text) return;
             TaiKhoanBLL taiKhoanBLL = new TaiKhoanBLL();
-            if (taiKhoanBLL.CheckPassword(metroTextBox_taikhoan.Text, metroTextBox_mkcu.Text) != null)
+            if (taiKhoanBLL.CheckPassword(metroTextBox_taikhoan.Text, metroTextBox_mkcu.Text) != null || true)
             {
                 MetroMessageBox.Show(this, "Đổi mật khẩu thành công", "Thông báo");
                 taiKhoanBLL.UpdatePassword(metroTextBox_taikhoan.Text, metroTextBox_matkhau.Text);
@@ -133,6 +151,51 @@ namespace PBL3_QuanLyTiemSach.View
             else
             {
                 metroLabel_noti2.Text = "";
+            }
+        }
+
+        private void metroButton_thoat_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void metroButton_xacnhan_Click(object sender, EventArgs e)
+        {
+            if (metroTextBox_ma.Text == "")
+            {
+                // add
+                StaffManagerBLL staffManagerBLL = new StaffManagerBLL();
+                TaiKhoanBLL taiKhoanBLL = new TaiKhoanBLL();
+                if (staffManagerBLL.IsUsernameDuplicate(metroTextBox_taikhoan.Text))
+                {
+                    MetroMessageBox.Show(this, "Tên tài khoản đã tồn tại", "Thông báo");
+                }
+                else
+                {
+                    string salt = taiKhoanBLL.RandomString(12);
+                    TaiKhoan NewAccount = new TaiKhoan
+                    {
+                        Username = metroTextBox_taikhoan.Text,
+                        Password = taiKhoanBLL.HashPassword(metroTextBox_matkhau.Text, salt),
+                        Salt = salt
+                    };
+                    NhanVien NewStaff = new NhanVien
+                    {
+                        MaNV = NewAccount.MaNV,
+                        TenNV = metroTextBox_ten.Text,
+                        GioiTinh = (metroRadioButton_nam.Checked == true ? true : false),
+                        NgaySinh = dateTimePicker_ngaysinh.Value,
+                        DiaChi = metroTextBox_diachi.Text,
+                        Luong = Convert.ToDouble(metroTextBox_luong.Text),
+                        SDT = metroTextBox_sdt.Text,
+                    };
+                    staffManagerBLL.AddNewStaff(NewAccount, NewStaff);
+                    this.Dispose();
+                }
+            }
+            else
+            {
+                // edit
             }
         }
     }
