@@ -12,14 +12,12 @@ namespace PBL3_QuanLyTiemSach.DTO
     {
         [Key]
         [Required]
-        [StringLength(30)]
-        public string MaHDBanSach { get; set; }
+		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int MaHDBanSach { get; set; }
         [Required]
-        [StringLength(30)]
-        public string MaHDBan { get; set; }
+        public int MaHDBan { get; set; }
         [Required]
-        [StringLength(30)]
-        public string MaSach { get; set; }
+        public int MaSach { get; set; }
         public double DonGiaBan { get; set; }
         public int SoLuongBan { get; set; }
 
