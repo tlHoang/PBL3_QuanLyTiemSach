@@ -12,9 +12,12 @@ namespace PBL3_QuanLyTiemSach.DTO
     public class CaNV
     {
         [Key]
+        [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int MaCaNV { get; set; }
+        [Required]
         public int MaCa { get; set; }
+        [Required]
         public int MaNV { get; set; }
 
         [ForeignKey("MaCa")]

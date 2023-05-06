@@ -13,12 +13,13 @@ namespace PBL3_QuanLyTiemSach.DTO
 	{
 		[Key]
 		[Required]
-		[StringLength(30)]
-		public string MaHDNhap { get; set; }
+		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+		public int MaHDNhap { get; set; }
+		[Required]
+
 		public int MaNV { get; set; }
 		[Required]
-		[StringLength(30)]
-		public string MaDVCC { get; set; }
+		public int MaDVCC { get; set; }
 		public double TongTien { get; set; }
 
         [ForeignKey("MaNV")]

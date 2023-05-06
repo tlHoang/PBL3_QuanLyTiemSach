@@ -11,7 +11,8 @@ namespace PBL3_QuanLyTiemSach.DTO.CodeFirst
     public class TaiKhoan
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Required]
+		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int MaNV { get; set; }
         [Required]
         [StringLength(30)]

@@ -26,7 +26,7 @@ namespace PBL3_QuanLyTiemSach.View
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
-        {
+        {/*
             string username = metroTextBox_username.Text;
             string password = metroTextBox_password.Text;
             if (InvalidInput(username) || InvalidInput(password))
@@ -43,8 +43,8 @@ namespace PBL3_QuanLyTiemSach.View
             else
             {
                 MessageBox.Show("thang cong");
-                // call form and pass MaNV
-            }
+                // call form and pass MaNV*/
+            //}
         }
     }
 }

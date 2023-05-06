@@ -68,7 +68,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\QLTS_BLL.cs" />
-    <Compile Include="BLL\TaiKhoanBLL.cs" />
     <Compile Include="CreateDB.cs" />
     <Compile Include="DBQuanLyTiemSach.cs" />
     <Compile Include="DTO\CodeFirst\Ca.cs" />
@@ -83,6 +82,7 @@
     <Compile Include="DTO\CodeFirst\Sach.cs" />
     <Compile Include="DTO\CodeFirst\SachTheLoai.cs" />
     <Compile Include="DTO\CodeFirst\TaiKhoan.cs" />
+    <Compile Include="DTO\SMCBBItems_Start_End_Time.cs" />
     <Compile Include="View\BookInfoUI\BookInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +134,12 @@
     <Compile Include="View\Form5.Designer.cs">
       <DependentUpon>Form5.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ShifManageUI\FormSMDangKiCa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ShifManageUI\FormSMDangKiCa.Designer.cs">
+      <DependentUpon>FormSMDangKiCa.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ShifManageUI\ShiftManage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +169,9 @@
     </Compile>
     <EmbeddedResource Include="View\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ShifManageUI\FormSMDangKiCa.resx">
+      <DependentUpon>FormSMDangKiCa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ShifManageUI\ShiftManage.resx">
       <DependentUpon>ShiftManage.cs</DependentUpon>

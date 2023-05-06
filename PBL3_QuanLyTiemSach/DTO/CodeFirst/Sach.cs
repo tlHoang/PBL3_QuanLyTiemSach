@@ -12,8 +12,8 @@ namespace PBL3_QuanLyTiemSach.DTO
     {
         [Key]
         [Required]
-        [StringLength(30)]
-        public string MaSach { get; set; }
+		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int MaSach { get; set; }
         [StringLength(100)]
         public string TenSach { get; set; }
         [StringLength(50)]
@@ -21,8 +21,7 @@ namespace PBL3_QuanLyTiemSach.DTO
         public int SoLuongConLai { get; set; }
         public double GiaBan { get; set; }
         [Required]
-        [StringLength(30)]
-        public string MaTheLoai { get; set; }
+        public int MaTheLoai { get; set; }
 
         [ForeignKey("MaTheLoai")]
         public virtual SachTheLoai SachTheLoai { get; set; }

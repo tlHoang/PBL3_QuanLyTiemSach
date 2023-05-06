@@ -14,7 +14,8 @@ namespace PBL3_QuanLyTiemSach.DTO
 	{
 		[Key]
 		[ForeignKey("TaiKhoan")]
-		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+		[Required]
+		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		public int MaNV { get; set; }
         [StringLength(50)]
         public string TenNV { get; set; }
