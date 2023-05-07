@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace PBL3_QuanLyTiemSach.View.SellUI
 {
-    public partial class SearchBook : MetroFramework.Forms.MetroForm
+    public partial class SearchBookInfo : MetroFramework.Forms.MetroForm
     {
         Sell f;
         public delegate void SetBookInfo(string txt);
         public SetBookInfo setBookInfo;
         private string TenSach { get; set; }
-        public SearchBook(Sell f1)
+        public SearchBookInfo(Sell f1)
         {
             InitializeComponent();
             this.f = f1;
@@ -34,7 +34,6 @@ namespace PBL3_QuanLyTiemSach.View.SellUI
                         TenSach = p1.Key,
                         SLCL = p1.Sum(p => p.SoLuongConLai)
                     })
-                    //.Where(p => f.TenSach.All(p2 => p2.TenSach != p.TenSach) && p.SLCL > 0 && p.TenSach.Contains(f.SearchText)).ToList();
                     .ToList();
                 var tmp = f.TenSach.Select(p => new
                 {
@@ -44,14 +43,14 @@ namespace PBL3_QuanLyTiemSach.View.SellUI
                 dgvSearchBook.DataSource = data.Where(p => tmp.All(p1 => p1.TenSach != p.TenSach)).ToList();
 
                 dgvSearchBook.Columns[0].HeaderText = "Tên sách";
-                dgvSearchBook.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                //dgvSearchBook.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
-                for (int i = 0; i <= dgvSearchBook.ColumnCount - 1; i++)
-                {
-                    int colw = dgvSearchBook.Columns[i].Width;
-                    dgvSearchBook.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-                    dgvSearchBook.Columns[i].Width = colw;
-                }
+                //for (int i = 0; i <= dgvSearchBook.ColumnCount - 1; i++)
+                //{
+                //    int colw = dgvSearchBook.Columns[i].Width;
+                //    dgvSearchBook.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                //    dgvSearchBook.Columns[i].Width = colw;
+                //}
             }
         }
 

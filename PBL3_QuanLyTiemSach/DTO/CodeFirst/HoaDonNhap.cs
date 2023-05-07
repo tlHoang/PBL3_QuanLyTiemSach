@@ -8,31 +8,29 @@ using System.Threading.Tasks;
 
 namespace PBL3_QuanLyTiemSach.DTO
 {
-	[Table("HoaDonNhap")]
-	public class HoaDonNhap
-	{
-		[Key]
-		[Required]
-		[StringLength(30)]
-		public string MaHDNhap { get; set; }
-		[Required]
-		[StringLength(30)]
-		public string MaNV { get; set; }
-		[Required]
-		[StringLength(30)]
-		public string MaDVCC { get; set; }
-		public double TongTien { get; set; }
+    [Table("HoaDonNhap")]
+    public class HoaDonNhap
+    {
+        [Key]
+        [Required]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int MaHDNhap { get; set; }
+        [Required]
+        public int MaNV { get; set; }
+        [Required]
+        public int MaDVCC { get; set; }
+        public double TongTien { get; set; }
 
         [ForeignKey("MaNV")]
-		public virtual NhanVien NhanVien { get; set; }
+        public virtual NhanVien NhanVien { get; set; }
         [ForeignKey("MaDVCC")]
-		public virtual DonViCungCap DonViCungCap { get; set; }
+        public virtual DonViCungCap DonViCungCap { get; set; }
 
-		public virtual ICollection<HoaDonNhapSach> HoaDonNhapSachs { get; set; }
+        public virtual ICollection<HoaDonNhapSach> HoaDonNhapSachs { get; set; }
 
-		public HoaDonNhap()
-		{
-			HoaDonNhapSachs = new HashSet<HoaDonNhapSach>();
-		}
-	}
+        public HoaDonNhap()
+        {
+            HoaDonNhapSachs = new HashSet<HoaDonNhapSach>();
+        }
+    }
 }

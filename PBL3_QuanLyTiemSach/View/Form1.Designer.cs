@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel_Left = new System.Windows.Forms.Panel();
+            this.labelRole = new System.Windows.Forms.Label();
+            this.labelName = new System.Windows.Forms.Label();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.panel_Side = new System.Windows.Forms.Panel();
             this.button_ThongKe = new System.Windows.Forms.Button();
             this.button_NhapHang = new System.Windows.Forms.Button();
@@ -39,12 +42,9 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button_Close = new System.Windows.Forms.Button();
             this.panel_Body = new System.Windows.Forms.Panel();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.labelName = new System.Windows.Forms.Label();
-            this.labelRole = new System.Windows.Forms.Label();
             this.panel_Left.SuspendLayout();
-            this.panel_Top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            this.panel_Top.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_Left
@@ -63,6 +63,38 @@
             this.panel_Left.Name = "panel_Left";
             this.panel_Left.Size = new System.Drawing.Size(153, 450);
             this.panel_Left.TabIndex = 0;
+            // 
+            // labelRole
+            // 
+            this.labelRole.AutoSize = true;
+            this.labelRole.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
+            this.labelRole.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.labelRole.Location = new System.Drawing.Point(66, 51);
+            this.labelRole.Name = "labelRole";
+            this.labelRole.Size = new System.Drawing.Size(40, 13);
+            this.labelRole.TabIndex = 6;
+            this.labelRole.Text = "Admin";
+            // 
+            // labelName
+            // 
+            this.labelName.AutoSize = true;
+            this.labelName.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelName.ForeColor = System.Drawing.Color.SkyBlue;
+            this.labelName.Location = new System.Drawing.Point(65, 25);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(78, 17);
+            this.labelName.TabIndex = 5;
+            this.labelName.Text = "Huy Hoàng";
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
+            this.pictureBox.Location = new System.Drawing.Point(12, 25);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(47, 40);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox.TabIndex = 4;
+            this.pictureBox.TabStop = false;
             // 
             // panel_Side
             // 
@@ -174,38 +206,6 @@
             this.panel_Body.Size = new System.Drawing.Size(647, 417);
             this.panel_Body.TabIndex = 2;
             // 
-            // pictureBox
-            // 
-            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
-            this.pictureBox.Location = new System.Drawing.Point(12, 25);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(47, 40);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox.TabIndex = 4;
-            this.pictureBox.TabStop = false;
-            // 
-            // labelName
-            // 
-            this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.ForeColor = System.Drawing.Color.SkyBlue;
-            this.labelName.Location = new System.Drawing.Point(65, 25);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(78, 17);
-            this.labelName.TabIndex = 5;
-            this.labelName.Text = "Huy Hoàng";
-            // 
-            // labelRole
-            // 
-            this.labelRole.AutoSize = true;
-            this.labelRole.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
-            this.labelRole.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.labelRole.Location = new System.Drawing.Point(66, 51);
-            this.labelRole.Name = "labelRole";
-            this.labelRole.Size = new System.Drawing.Size(40, 13);
-            this.labelRole.TabIndex = 6;
-            this.labelRole.Text = "Admin";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -218,10 +218,11 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel_Left.ResumeLayout(false);
             this.panel_Left.PerformLayout();
-            this.panel_Top.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            this.panel_Top.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -13,8 +13,8 @@ namespace PBL3_QuanLyTiemSach.DTO
     {
         [Key]
         [Required]
-        [StringLength(30)]
-        public string MaDV { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int MaDV { get; set; }
         [StringLength(30)]
         public string TenDV { get; set; }
 

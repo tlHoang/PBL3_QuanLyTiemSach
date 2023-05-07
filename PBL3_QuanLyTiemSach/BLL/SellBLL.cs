@@ -36,11 +36,12 @@ namespace PBL3_QuanLyTiemSach.BLL
         }
         public void updateSachinDatabase(List<Sach> ls)
         {
+            //Trừ số lượng sách được mua
             for (int i = 0; i < ls.Count; i++)
             {
-                int slcl = ls[i].SoLuongConLai;
+                int sl = ls[i].SoLuongConLai;
                 string ten = ls[i].TenSach;
-                while (slcl > 0)
+                while (sl > 0)
                 {
                     using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
                     {
@@ -49,19 +50,29 @@ namespace PBL3_QuanLyTiemSach.BLL
                             where p.TenSach == ten && p.SoLuongConLai > 0
                             select p)
                             .FirstOrDefault();
-                        if (s.SoLuongConLai > slcl)
+                        if (s.SoLuongConLai > sl)
                         {
-                            s.SoLuongConLai -= slcl;
-                            slcl = 0;
+                            s.SoLuongConLai -= sl;
+                            sl = 0;
                         }
                         else
                         {
-                            slcl -= s.SoLuongConLai;
+                            sl -= s.SoLuongConLai;
                             s.SoLuongConLai = 0;
                         }
                         db.SaveChanges();
                     }
                 }
+            }
+        }
+        public void createHoaDonBanSach(List<Sach> ls)
+        {
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                HoaDonBanSach dhbs = new HoaDonBanSach
+                {
+
+                };
             }
         }
     }

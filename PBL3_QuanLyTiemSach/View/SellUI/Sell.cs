@@ -23,13 +23,6 @@ namespace PBL3_QuanLyTiemSach
         {
             InitializeComponent();
             this.f = f1;
-            this.TopMost = true;
-            this.ControlBox = false;
-            this.Style = MetroFramework.MetroColorStyle.White;
-            txtSearch.Text = "Tìm kiếm";
-            txtSearch.ForeColor = Color.Silver;
-            txtTenSach.Enabled = false;
-            txtDonGia.Enabled = false;
             SearchText = "";
             TenSach = new List<Sach>();
             Sach_HoaDon = new List<Sach>();
@@ -74,7 +67,7 @@ namespace PBL3_QuanLyTiemSach
             {
                 SearchText = txtSearch.Text;
             }
-            SearchBook f = new SearchBook(this);
+            SearchBookInfo f = new SearchBookInfo(this);
             f.setBookInfo = SetBookInfo;
             f.Show();
             delInfo();
@@ -188,17 +181,6 @@ namespace PBL3_QuanLyTiemSach
             }
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
-            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
-            {
-                (from p in db.Sachs
-                where p.TenSach == "Duy Tân" select p)
-                .ToList().ForEach(x => x.SoLuongConLai -= 1);
-                db.SaveChanges();
-            }
-        }
-
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             DialogResult dr = MetroMessageBox.Show(f, "\nBạn có muốn lưu hóa đơn?", "Lưu hóa đơn", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 140);
@@ -209,7 +191,9 @@ namespace PBL3_QuanLyTiemSach
                     Sach_HoaDon.Add(new Sach
                     {
                         TenSach = dgvHoaDonBan.Rows[i].Cells[0].Value.ToString(),
+                        GiaBan = Convert.ToDouble(dgvHoaDonBan.Rows[i].Cells[1].Value.ToString()),
                         SoLuongConLai = Convert.ToInt32(dgvHoaDonBan.Rows[i].Cells[2].Value.ToString()),
+                        //SoLuongConLai ở đây là số lượng sách có tên là TenSach mà khách mua được lưu trong hóa đơn
                     });
                 }
                 //foreach (DataGridViewRow i in dgvHoaDonBan.Rows)

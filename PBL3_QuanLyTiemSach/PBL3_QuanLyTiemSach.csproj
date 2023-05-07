@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
@@ -64,6 +67,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\GetBookInfoBLL.cs" />
+    <Compile Include="BLL\ImportBLL.cs" />
     <Compile Include="BLL\SellBLL.cs" />
     <Compile Include="BLL\TaiKhoanBLL.cs" />
     <Compile Include="CreateDB.cs" />
@@ -92,6 +97,12 @@
     <Compile Include="View\Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ImportUI\SearchBookTitle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ImportUI\SearchBookTitle.Designer.cs">
+      <DependentUpon>SearchBookTitle.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\SellUI\Sell.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,11 +130,11 @@
     <Compile Include="View\Form5.Designer.cs">
       <DependentUpon>Form5.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\SellUI\SearchBook.cs">
+    <Compile Include="View\SellUI\SearchBookInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\SellUI\SearchBook.Designer.cs">
-      <DependentUpon>SearchBook.cs</DependentUpon>
+    <Compile Include="View\SellUI\SearchBookInfo.Designer.cs">
+      <DependentUpon>SearchBookInfo.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -133,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ImportUI\Import.resx">
       <DependentUpon>Import.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ImportUI\SearchBookTitle.resx">
+      <DependentUpon>SearchBookTitle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SellUI\Sell.resx">
       <DependentUpon>Sell.cs</DependentUpon>
@@ -149,8 +163,8 @@
     <EmbeddedResource Include="View\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\SellUI\SearchBook.resx">
-      <DependentUpon>SearchBook.cs</DependentUpon>
+    <EmbeddedResource Include="View\SellUI\SearchBookInfo.resx">
+      <DependentUpon>SearchBookInfo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />

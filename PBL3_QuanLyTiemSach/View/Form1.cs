@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PBL3_QuanLyTiemSach.BLL;
 using PBL3_QuanLyTiemSach.View;
 
 namespace PBL3_QuanLyTiemSach
@@ -19,6 +20,7 @@ namespace PBL3_QuanLyTiemSach
             this.TopMost = true;
             panel_Side.Hide();
         }
+        public int MaNV { get; set; }
         private System.Windows.Forms.Form currentForm; 
         private void OpenForm(System.Windows.Forms.Form f)
         {
@@ -34,7 +36,12 @@ namespace PBL3_QuanLyTiemSach
             f.BringToFront();
             f.Show();
         }
-
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            TaiKhoanBLL bll = new TaiKhoanBLL();
+            string[] fullName = bll.getNameFromMaNV(this.MaNV).Split(' ');
+            labelName.Text = fullName[fullName.Length - 2] + " " + fullName[fullName.Length - 1];
+        }
         private void button_Home_Click(object sender, EventArgs e)
         {
             panel_Side.Top = button_Home.Top;
@@ -56,7 +63,7 @@ namespace PBL3_QuanLyTiemSach
             panel_Side.Top = button_NhapHang.Top;
             panel_Side.Height = button_NhapHang.Height;
             panel_Side.Show();
-            OpenForm(new Import());
+            OpenForm(new Import(this));
         }
 
         private void button_ThongKe_Click(object sender, EventArgs e)
