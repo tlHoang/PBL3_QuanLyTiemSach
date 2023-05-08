@@ -17,46 +17,47 @@ namespace PBL3_QuanLyTiemSach.View
     public partial class ShiftManage : MetroFramework.Forms.MetroForm
     {
         int IDStaff = 2;
+        string flagDGV = "";
+        string flagButton = "";
         public delegate void updateForm();
         public ShiftManage()
         {
             InitializeComponent();
             setCBBMain();
+            offGUIButton();
+            setTenNhanVien(IDStaff);
         }
-        private void setGUIButton()
+        private void setTenNhanVien(int maNV)
         {
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            txtbxTenNhanVien.Text = bll.getTenNhanVien(maNV);
+            txtbxTenNhanVien.ReadOnly = true;
+            txtbxTenNhanVien.Enabled = false;
+        }
+        private void offGUIButton()
+        {        
             btnSMDangKiCa.Enabled= false;
             btnXoaCa.Enabled= false;
+            flagButton = "off";
+        }
+        private void onGUIButton()
+        {
+            btnSMDangKiCa.Enabled= true;
+            btnXoaCa.Enabled= true;
+            flagButton = "on";
         }
         private void setCBBLichLam()
         {
-            QLTS_BLL bll = new QLTS_BLL();
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
             dgvShift.DataSource = bll.getCaNhanVien(IDStaff);
             dgvShift.Columns["Tên"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             dgvShift.Columns["Tên"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
         private void setCBBMain()
         {
-            using(DBQuanLyTiemSach db = new DBQuanLyTiemSach())
-            {
-                List<Ca> ca = db.Cas.ToList();
-                List<NhanVien> nhanVien = db.NhanViens.ToList();
-                List<CaNV> caNV = db.CaNVs.ToList();
-                //
-                DateTime txtTime = dtSMChonNgay.Value;
-                // next version Trong này có ca của ai thì hiển thị lên 
-                var dataNV = nhanVien.Select(nv => new 
-                {
-                    MaNV = nv.MaNV.ToString(),
-                    TenNhanVien = nv.TenNV.ToString(),
-                    GioBatDau = ca.Where(c => c.MaCa == caNV.Where(cnv => cnv.MaNV == nv.MaNV).Select(cnv => cnv.MaCa).FirstOrDefault())
-                                .Select(c => c.GioBatDau).FirstOrDefault(),
-                    GioKetThuc = ca.Where(c => c.MaCa == caNV.Where(cnv => cnv.MaNV == nv.MaNV).Select(cnv => cnv.MaCa).FirstOrDefault())
-                                .Select(c => c.GioKetThuc).FirstOrDefault()
-
-                }).ToList();
-                dgvShift.DataSource = dataNV;
-            }
+            DateTime txtTime = dtSMChonNgay.Value;// next version Trong này có ca của ai thì hiển thị lên
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            dgvShift.DataSource = bll.getCaLamTrongNgay();    
             dgvShift.Columns["MaNV"].HeaderText = "Mã Nhân Viên";
             dgvShift.Columns["TenNhanVien"].HeaderText = "Tên Nhân Viên";
             dgvShift.Columns["TenNhanVien"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;           
@@ -84,6 +85,31 @@ namespace PBL3_QuanLyTiemSach.View
         private void btnSMLichLam_Click(object sender, EventArgs e)
         {
             setCBBLichLam();
+            flagDGV = "LichLam";
+            onGUIButton();
+        }
+
+        private void btnXoaCa_Click(object sender, EventArgs e)
+        {
+            if(dgvShift.SelectedRows.Count == 1) 
+            {
+                DataGridViewRow selectedRow = dgvShift.CurrentRow;
+                int maCa = Convert.ToInt32(selectedRow.Cells["Mã Ca"].Value.ToString());
+                QLTS_SM_BLL bll = new QLTS_SM_BLL();
+                bll.DeleteCa(maCa,IDStaff);
+                setCBBLichLam();
+             }
+            else
+            {
+                MessageBox.Show("Chọn ca cần xóa");
+            }
+            
+        }
+
+        private void btnSMQuayLai_Click(object sender, EventArgs e)
+        {
+            offGUIButton();
+            setCBBMain();
         }
     }
 }

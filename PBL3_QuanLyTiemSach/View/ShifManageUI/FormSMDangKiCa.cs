@@ -25,7 +25,7 @@ namespace PBL3_QuanLyTiemSach.View.ShifManageUI
         }
         public void setCBB_ChonGio()
         {
-            QLTS_BLL bll = new QLTS_BLL();
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
             cbbGioBatDau.Items.AddRange(bll.setSMDangKiCaCBB_GioBatDau().ToArray());
             cbbGioKetThuc.Items.AddRange(bll.setSMDangKiCaCBB_GioKetThuc().ToArray());
 
@@ -76,7 +76,7 @@ namespace PBL3_QuanLyTiemSach.View.ShifManageUI
                     newCa.GioBatDau = newGioBatDau;
                     newCa.GioKetThuc = newGioKetThuc;
 
-                    QLTS_BLL bll = new QLTS_BLL();
+                    QLTS_SM_BLL bll = new QLTS_SM_BLL();
                     bll.AddCa(newCa, MaNV);
                 
                 MessageBox.Show("Đăng Kí thành công");

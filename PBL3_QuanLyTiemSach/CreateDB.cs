@@ -9,9 +9,10 @@ using System.Threading.Tasks;
 
 namespace PBL3_QuanLyTiemSach
 {
-    public class CreateDB
-        //: CreateDatabaseIfNotExists<DBQuanLyTiemSach>
-        : DropCreateDatabaseAlways<DBQuanLyTiemSach>
+        public class CreateDB
+            //: CreateDatabaseIfNotExists<DBQuanLyTiemSach>
+            //: DropCreateDatabaseAlways<DBQuanLyTiemSach>
+            : DropCreateDatabaseIfModelChanges<DBQuanLyTiemSach>
     {
         protected override void Seed(DBQuanLyTiemSach context)
         {

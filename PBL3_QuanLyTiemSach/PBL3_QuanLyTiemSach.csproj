@@ -67,7 +67,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\QLTS_BLL.cs" />
+    <Compile Include="BLL\QLTS_BI_BLL.cs" />
+    <Compile Include="BLL\QLTS_SM_BLL.cs" />
     <Compile Include="CreateDB.cs" />
     <Compile Include="DBQuanLyTiemSach.cs" />
     <Compile Include="DTO\CodeFirst\Ca.cs" />
