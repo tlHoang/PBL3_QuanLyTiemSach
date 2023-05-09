@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,19 @@ namespace PBL3_QuanLyTiemSach.BLL
 {
     internal class QLTS_SM_BLL
     {
+        private const string UserRole = "admin";
+        public bool IsAdmin(int maNV)
+        {
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                string role = db.TaiKhoans
+                       .Where(p => p.MaNV == maNV)
+                       .Select(p => p.Username)
+                       .SingleOrDefault();
+                       
+                return role == UserRole;
+            }        
+        }
         public string getTenNhanVien(int maNV)
         {
             string tenNV = "";
@@ -21,45 +35,112 @@ namespace PBL3_QuanLyTiemSach.BLL
             }
             return tenNV;
         }
-        public void AddCa(Ca newCa, int maNV)
+        public bool IsDuplicateCa(Ca CaValided, int maNV)
         {
-            DBQuanLyTiemSach db = new DBQuanLyTiemSach();
-            CaNV newCaNV = new CaNV();
-
-            newCaNV.MaCa = newCa.MaCa;
-            newCaNV.MaNV = maNV;
-
-            db.Cas.Add(newCa);
-            db.CaNVs.Add(newCaNV);
-            try
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
-                db.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                var dataNV = db.CaNVs
+                                .Join(db.Cas, cnv => cnv.MaCa, c => c.MaCa, (cnv, c) => new { cnv, c })
+                                .Join(db.NhanViens, canv => canv.cnv.MaNV, nv => nv.MaNV, (canv, nv) => new
+                                {
+                                    IDNV = nv.MaNV,
+                                    IDCa = canv.c.MaCa,
+                                    Ten = nv.TenNV,
+                                    NgayLam = canv.c.Ngay,
+                                    GioBatDau = canv.c.GioBatDau,
+                                    GioKetThuc = canv.c.GioKetThuc
+                                }).ToList();
+                return dataNV.Any(nv => nv.NgayLam.Date == CaValided.Ngay.Date
+                                    && nv.IDNV == maNV
+                                    && nv.GioBatDau == CaValided.GioBatDau) ? true : false;
             }
         }
-        public DataTable getCaLamTrongNgay()
+        public bool isFull(Ca CurrentCa)
+        {
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                int count = 2;
+                int CaDuration = db.Cas.Where(c => c.GioBatDau == CurrentCa.GioBatDau && c.GioKetThuc == CurrentCa.GioKetThuc).Count();
+                return (CaDuration >= count)? true: false;
+            }
+        }
+        public bool isHasExist(Ca currentCa)
+        {
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                return db.Cas.Any(c =>
+                    c.GioBatDau == currentCa.GioBatDau &&
+                    c.GioKetThuc == currentCa.GioKetThuc &&
+                    DbFunctions.TruncateTime(c.Ngay) == DbFunctions.TruncateTime(currentCa.Ngay)
+                );
+            }
+        }
+
+        public Ca getCa(Ca currentCa)
+        {
+            using(DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                return db.Cas.FirstOrDefault(c => c.GioBatDau == currentCa.GioBatDau
+                                    && c.GioKetThuc == currentCa.GioKetThuc
+                                    && DbFunctions.TruncateTime(c.Ngay) == DbFunctions.TruncateTime(currentCa.Ngay));
+            }
+        }
+        public void AddCa(Ca newCa, int maNV)
+        {
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                CaNV newCaNV = new CaNV();
+                
+                if (isHasExist(newCa))
+                {
+                    newCaNV.MaCa = getCa(newCa).MaCa;
+                    newCaNV.MaNV = maNV;
+                    db.CaNVs.Add(newCaNV);
+                }
+                else
+                {
+                    newCaNV.MaCa = newCa.MaCa;
+                    newCaNV.MaNV = maNV;
+                    db.Cas.Add(newCa);
+                    db.CaNVs.Add(newCaNV);
+                }
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            
+            
+        }
+        public DataTable getCaLamTrongNgay(DateTime ngayLam)
         {
             DataTable dt = new DataTable();
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
-                List<Ca> ca = db.Cas.ToList();
-                List<NhanVien> nhanVien = db.NhanViens.ToList();
-                List<CaNV> caNV = db.CaNVs.ToList();
-                //
-                // next version Trong này có ca của ai thì hiển thị lên 
-                var dataNV = nhanVien.Select(nv => new
-                {
-                    MaNV = nv.MaNV.ToString(),
-                    TenNhanVien = nv.TenNV.ToString(),
-                    GioBatDau = ca.Where(c => c.MaCa == caNV.Where(cnv => cnv.MaNV == nv.MaNV).Select(cnv => cnv.MaCa).FirstOrDefault())
-                                .Select(c => c.GioBatDau).FirstOrDefault(),
-                    GioKetThuc = ca.Where(c => c.MaCa == caNV.Where(cnv => cnv.MaNV == nv.MaNV).Select(cnv => cnv.MaCa).FirstOrDefault())
-                                .Select(c => c.GioKetThuc).FirstOrDefault()
-
-                }).ToList();
+                var dataNV = db.CaNVs
+                                .Join(db.Cas, cnv => cnv.MaCa, c => c.MaCa, (cnv, c) => new { cnv, c })
+                                .Join(db.NhanViens, canv => canv.cnv.MaNV, nv => nv.MaNV, (canv, nv) => new
+                                {
+                                    IDNV = nv.MaNV,
+                                    IDCa = canv.c.MaCa,
+                                    Ten = nv.TenNV,
+                                    NgayLam = canv.c.Ngay,
+                                    GioBatDau = canv.c.GioBatDau,
+                                    GioKetThuc = canv.c.GioKetThuc
+                                }).ToList()
+                                .Where(nv => nv.NgayLam.Date == ngayLam.Date)
+                                .Select(nv => new
+                                {
+                                    MaNV = nv.IDNV,
+                                    TenNhanVien = nv.Ten,
+                                    GioBatDau = nv.GioBatDau,
+                                    GioKetThuc = nv.GioKetThuc,
+                                });
+               
                 dt.Columns.Add("MaNV");
                 dt.Columns.Add("TenNhanVien");
                 dt.Columns.Add("GioBatDau");
@@ -98,35 +179,41 @@ namespace PBL3_QuanLyTiemSach.BLL
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
                 var dataView = db.CaNVs
-                     .Join(db.Cas, cnv => cnv.MaCa, c => c.MaCa, (cnv, c) => new { cnv, c })
-                     .Join(db.NhanViens, canv => canv.cnv.MaNV, nv => nv.MaNV, (canv, nv) => new
-                     {
-                         ID = nv.MaNV,
-                         IDCa = canv.c.MaCa,
-                         Ten = nv.TenNV,
-                         NgayLam = canv.c.Ngay,
-                         GioBatDau = canv.c.GioBatDau,
-                         GioKetThuc = canv.c.GioKetThuc
-                     })
-                     .Where(nv => nv.ID == maNV)
-                     .ToList()
-                     .Select(llnv => new
-                     {
-                         IDCa = llnv.IDCa,
-                         Ten = llnv.Ten,
-                         NgayLam = llnv.NgayLam.ToString("dd/MM/yyyy"),
-                         GioBatDau = llnv.GioBatDau,
-                         GioKetThuc = llnv.GioKetThuc
-                     })
-                     .ToList();
-
+                                .Join(db.Cas, cnv => cnv.MaCa, c => c.MaCa, (cnv, c) => new { cnv, c })
+                                .Join(db.NhanViens, canv => canv.cnv.MaNV, nv => nv.MaNV, (canv, nv) => new
+                                {
+                                    ID = nv.MaNV,
+                                    IDCa = canv.c.MaCa,
+                                    Ten = nv.TenNV,
+                                    NgayLam = canv.c.Ngay,
+                                    GioBatDau = canv.c.GioBatDau,
+                                    GioKetThuc = canv.c.GioKetThuc
+                                }).ToList();
+                if (IsAdmin(maNV))
+                {
+                    dataView = dataView.ToList();
+                }
+                else
+                {
+                    dataView = dataView.Where(nv => nv.ID == maNV).ToList();
+                }
+                var finalData = dataView
+                                .Select(llnv => new
+                                {
+                                    IDCa = llnv.IDCa,
+                                    Ten = llnv.Ten,
+                                    NgayLam = llnv.NgayLam.ToString("dd/MM/yyyy"),
+                                    GioBatDau = llnv.GioBatDau,
+                                    GioKetThuc = llnv.GioKetThuc
+                                })
+                                .ToList();
                 dt.Columns.Add("Mã Ca");
                 dt.Columns.Add("Tên");
                 dt.Columns.Add("Ngày Làm");
                 dt.Columns.Add("Giờ Bắt Đầu");
                 dt.Columns.Add("Giờ Kết Thúc");
 
-                foreach (var item in dataView)
+                foreach (var item in finalData)
                 {
                     dt.Rows.Add(item.IDCa, item.Ten, item.NgayLam, item.GioBatDau, item.GioKetThuc);
                 }

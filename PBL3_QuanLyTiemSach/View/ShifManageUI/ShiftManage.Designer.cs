@@ -72,7 +72,7 @@
             this.dgvShift.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgvShift.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dgvShift.Location = new System.Drawing.Point(165, 70);
-            this.dgvShift.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvShift.Margin = new System.Windows.Forms.Padding(2);
             this.dgvShift.Name = "dgvShift";
             this.dgvShift.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -93,7 +93,7 @@
             // btnSMLichLam
             // 
             this.btnSMLichLam.Location = new System.Drawing.Point(35, 70);
-            this.btnSMLichLam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSMLichLam.Margin = new System.Windows.Forms.Padding(2);
             this.btnSMLichLam.Name = "btnSMLichLam";
             this.btnSMLichLam.Size = new System.Drawing.Size(119, 32);
             this.btnSMLichLam.TabIndex = 1;
@@ -104,7 +104,7 @@
             // btnSMDangKiCa
             // 
             this.btnSMDangKiCa.Location = new System.Drawing.Point(35, 122);
-            this.btnSMDangKiCa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSMDangKiCa.Margin = new System.Windows.Forms.Padding(2);
             this.btnSMDangKiCa.Name = "btnSMDangKiCa";
             this.btnSMDangKiCa.Size = new System.Drawing.Size(119, 32);
             this.btnSMDangKiCa.TabIndex = 1;
@@ -115,7 +115,7 @@
             // btnXoaCa
             // 
             this.btnXoaCa.Location = new System.Drawing.Point(35, 168);
-            this.btnXoaCa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoaCa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoaCa.Name = "btnXoaCa";
             this.btnXoaCa.Size = new System.Drawing.Size(119, 32);
             this.btnXoaCa.TabIndex = 1;
@@ -126,7 +126,7 @@
             // btnSMThoat
             // 
             this.btnSMThoat.Location = new System.Drawing.Point(35, 417);
-            this.btnSMThoat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSMThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btnSMThoat.Name = "btnSMThoat";
             this.btnSMThoat.Size = new System.Drawing.Size(119, 32);
             this.btnSMThoat.TabIndex = 2;
@@ -147,7 +147,7 @@
             // dtSMChonNgay
             // 
             this.dtSMChonNgay.Location = new System.Drawing.Point(301, 32);
-            this.dtSMChonNgay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtSMChonNgay.Margin = new System.Windows.Forms.Padding(2);
             this.dtSMChonNgay.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtSMChonNgay.Name = "dtSMChonNgay";
             this.dtSMChonNgay.Size = new System.Drawing.Size(171, 29);
@@ -156,12 +156,13 @@
             // btnSMXem
             // 
             this.btnSMXem.Location = new System.Drawing.Point(183, 32);
-            this.btnSMXem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSMXem.Margin = new System.Windows.Forms.Padding(2);
             this.btnSMXem.Name = "btnSMXem";
             this.btnSMXem.Size = new System.Drawing.Size(96, 25);
             this.btnSMXem.TabIndex = 5;
             this.btnSMXem.Text = "Xem";
             this.btnSMXem.UseSelectable = true;
+            this.btnSMXem.Click += new System.EventHandler(this.btnSMXem_Click);
             // 
             // txtbxTenNhanVien
             // 
@@ -218,7 +219,7 @@
             this.Controls.Add(this.btnSMDangKiCa);
             this.Controls.Add(this.btnSMLichLam);
             this.Controls.Add(this.dgvShift);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ShiftManage";
             this.Padding = new System.Windows.Forms.Padding(13, 60, 13, 13);
             this.Text = "Shift";

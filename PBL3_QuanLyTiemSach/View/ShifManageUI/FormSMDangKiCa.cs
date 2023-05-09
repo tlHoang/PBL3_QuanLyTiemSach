@@ -69,26 +69,40 @@ namespace PBL3_QuanLyTiemSach.View.ShifManageUI
                 TimeSpan newGioBatDau = selectedGioBatDau.Text;
                 TimeSpan newGioKetThuc = selectedGioKetThuc.Text;
                 DBQuanLyTiemSach db = new DBQuanLyTiemSach();
-                
-                    Ca newCa = new Ca();
 
-                    newCa.Ngay = newDT;
-                    newCa.GioBatDau = newGioBatDau;
-                    newCa.GioKetThuc = newGioKetThuc;
+                Ca newCa = new Ca();
 
-                    QLTS_SM_BLL bll = new QLTS_SM_BLL();
-                    bll.AddCa(newCa, MaNV);
-                
-                MessageBox.Show("Đăng Kí thành công");
+                newCa.Ngay = newDT;
+                newCa.GioBatDau = newGioBatDau;
+                newCa.GioKetThuc = newGioKetThuc;
+
+                QLTS_SM_BLL bll = new QLTS_SM_BLL();
+                if (bll.IsDuplicateCa(newCa, MaNV) == true)
+                {
+                    MessageBox.Show("Bạn đã đăng kí ca này rồi !");
+                }
+                else
+                {
+                    if (bll.isFull(newCa))
+                    {
+                        MessageBox.Show("Ca này đã đủ người làm !");
+                    }
+                    else
+                    {
+                        bll.AddCa(newCa, MaNV);
+                        MessageBox.Show("Đăng Kí thành công");
+                        this.Dispose();
+                    }
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+
             }
             finally
             {
                 updateLichLam?.Invoke();
-                this.Dispose();
             }
         }
     }
