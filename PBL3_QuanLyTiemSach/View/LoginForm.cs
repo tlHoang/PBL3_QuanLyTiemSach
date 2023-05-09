@@ -1,5 +1,7 @@
 ﻿using MetroFramework;
 using PBL3_QuanLyTiemSach.BLL;
+using PBL3_QuanLyTiemSach.View.StaffInfoUI;
+using PBL3_QuanLyTiemSach.View.StaffManager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,11 +20,18 @@ namespace PBL3_QuanLyTiemSach.View
         public LoginForm()
         {
             InitializeComponent();
+            SetUI();
+        }
+
+        private void SetUI()
+        {
+            metroTextBox_password.UseSystemPasswordChar = true;
         }
 
         public bool InvalidInput(string input)
         {
-            string pattern = @"(\s|^$)";
+            //string pattern = @"(\s|^$)";
+            string pattern = @"(^\s*$)";
             return Regex.IsMatch(input, pattern);
         }
 
@@ -41,10 +50,29 @@ namespace PBL3_QuanLyTiemSach.View
             {
                 MetroMessageBox.Show(this, "Sai tài khoản hoặc mật khẩu");
             }
+            else if (MaNV == 1)
+            {
+                StaffManager.StaffManager staffMangerForm = new StaffManager.StaffManager();
+                staffMangerForm.ShowDialog();
+            }
             else
             {
-                StaffInfo staffInfo = new StaffInfo(MaNV);
-                staffInfo.Show();
+                StaffInfo staffInfoForm = new StaffInfo(MaNV);
+                staffInfoForm.Show();
+            }
+        }
+
+        private void metroLabel_showpass_Click(object sender, EventArgs e)
+        {
+            if (metroLabel_showpass.Text == "Hiện")
+            {
+                metroLabel_showpass.Text = "Ẩn";
+                metroTextBox_password.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                metroLabel_showpass.Text = "Hiện";
+                metroTextBox_password.UseSystemPasswordChar = true;
             }
         }
     }

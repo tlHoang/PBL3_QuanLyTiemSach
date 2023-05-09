@@ -10,23 +10,23 @@ namespace PBL3_QuanLyTiemSach.BLL
 {
     public class StaffInfoBLL
     {
-        public NhanVien GetNhanVienInfo(int maNhanVien)
+        public NhanVien GetStaffInfo(int staffID)
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
                 NhanVien nhanvien = db.NhanViens
-                    .Where(p => p.MaNV == maNhanVien)
+                    .Where(p => p.MaNV == staffID)
                     .FirstOrDefault();
                 return nhanvien;
             }
         }
         
-        public TaiKhoan GetTaiKhoanInfo(int maNhanVien)
+        public TaiKhoan GetAccountInfo(int staffID)
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
                 TaiKhoan taikhoan = db.TaiKhoans
-                    .Where(p => p.MaNV == maNhanVien)
+                    .Where(p => p.MaNV == staffID)
                     .FirstOrDefault();
                 return taikhoan;
             }

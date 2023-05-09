@@ -33,12 +33,13 @@
             this.metroTextBox_username = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBox_password = new MetroFramework.Controls.MetroTextBox();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.metroLabel_showpass = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(54, 63);
+            this.metroLabel1.Location = new System.Drawing.Point(60, 85);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(63, 19);
             this.metroLabel1.TabIndex = 0;
@@ -47,7 +48,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(54, 115);
+            this.metroLabel2.Location = new System.Drawing.Point(60, 137);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(63, 19);
             this.metroLabel2.TabIndex = 1;
@@ -68,7 +69,7 @@
             this.metroTextBox_username.CustomButton.UseSelectable = true;
             this.metroTextBox_username.CustomButton.Visible = false;
             this.metroTextBox_username.Lines = new string[0];
-            this.metroTextBox_username.Location = new System.Drawing.Point(144, 63);
+            this.metroTextBox_username.Location = new System.Drawing.Point(150, 85);
             this.metroTextBox_username.MaxLength = 32767;
             this.metroTextBox_username.Name = "metroTextBox_username";
             this.metroTextBox_username.PasswordChar = '\0';
@@ -98,7 +99,7 @@
             this.metroTextBox_password.CustomButton.UseSelectable = true;
             this.metroTextBox_password.CustomButton.Visible = false;
             this.metroTextBox_password.Lines = new string[0];
-            this.metroTextBox_password.Location = new System.Drawing.Point(144, 115);
+            this.metroTextBox_password.Location = new System.Drawing.Point(150, 137);
             this.metroTextBox_password.MaxLength = 32767;
             this.metroTextBox_password.Name = "metroTextBox_password";
             this.metroTextBox_password.PasswordChar = '\0';
@@ -115,7 +116,7 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(178, 207);
+            this.metroButton1.Location = new System.Drawing.Point(140, 210);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(75, 23);
             this.metroButton1.TabIndex = 4;
@@ -123,11 +124,26 @@
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
+            // metroLabel_showpass
+            // 
+            this.metroLabel_showpass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroLabel_showpass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroLabel_showpass.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel_showpass.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel_showpass.Location = new System.Drawing.Point(308, 137);
+            this.metroLabel_showpass.Name = "metroLabel_showpass";
+            this.metroLabel_showpass.Size = new System.Drawing.Size(38, 23);
+            this.metroLabel_showpass.TabIndex = 5;
+            this.metroLabel_showpass.Text = "Hiện";
+            this.metroLabel_showpass.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroLabel_showpass.Click += new System.EventHandler(this.metroLabel_showpass_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 298);
+            this.ClientSize = new System.Drawing.Size(431, 298);
+            this.Controls.Add(this.metroLabel_showpass);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.metroTextBox_password);
             this.Controls.Add(this.metroTextBox_username);
@@ -147,5 +163,6 @@
         private MetroFramework.Controls.MetroTextBox metroTextBox_username;
         private MetroFramework.Controls.MetroTextBox metroTextBox_password;
         private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroLabel metroLabel_showpass;
     }
 }

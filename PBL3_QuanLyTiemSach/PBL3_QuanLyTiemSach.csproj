@@ -82,6 +82,18 @@
     <Compile Include="DTO\CodeFirst\Sach.cs" />
     <Compile Include="DTO\CodeFirst\SachTheLoai.cs" />
     <Compile Include="DTO\CodeFirst\TaiKhoan.cs" />
+    <Compile Include="View\StaffManagerUI\StaffManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\StaffManagerUI\StaffManager.Designer.cs">
+      <DependentUpon>StaffManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\StaffInfoUI\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\StaffInfoUI\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\StaffInfoUI\StaffInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,12 +133,6 @@
     <Compile Include="View\Form5.Designer.cs">
       <DependentUpon>Form5.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\StaffManager\StaffManager.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\StaffManager\StaffManager.Designer.cs">
-      <DependentUpon>StaffManager.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,11 +151,14 @@
     <EmbeddedResource Include="View\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\StaffManagerUI\StaffManager.resx">
+      <DependentUpon>StaffManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\StaffInfoUI\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\StaffInfoUI\StaffInfo.resx">
       <DependentUpon>StaffInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\StaffManager\StaffManager.resx">
-      <DependentUpon>StaffManager.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />

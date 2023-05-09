@@ -73,6 +73,8 @@ namespace PBL3_QuanLyTiemSach.BLL
             {
                 db.NhanViens
                     .RemoveRange(db.NhanViens.Where(p => IDs.Contains(p.MaNV)));
+                db.TaiKhoans
+                    .RemoveRange(db.TaiKhoans.Where(p => IDs.Contains(p.MaNV)));
                 db.SaveChanges();
             }
         }
@@ -86,14 +88,33 @@ namespace PBL3_QuanLyTiemSach.BLL
             }
         }
 
-        public void AddNewStaff(TaiKhoan taiKhoan, NhanVien nhanVien)
+        public void AddNewStaff(TaiKhoan account, NhanVien staff)
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
                 db.TaiKhoans
-                    .Add(taiKhoan);
+                    .Add(account);
                 db.NhanViens
-                    .Add(nhanVien);
+                    .Add(staff);
+                db.SaveChanges();
+            }
+        }
+
+        public void UpdateStaff(NhanVien staff)
+        {
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                NhanVien UpdateStaff = db.NhanViens
+                    .Where(p => p.MaNV == staff.MaNV)
+                    .First();
+
+                UpdateStaff.TenNV = staff.TenNV;
+                UpdateStaff.GioiTinh = staff.GioiTinh;
+                UpdateStaff.NgaySinh = staff.NgaySinh;
+                UpdateStaff.DiaChi = staff.DiaChi;
+                UpdateStaff.Luong = staff.Luong;
+                UpdateStaff.SDT = staff.SDT;
+
                 db.SaveChanges();
             }
         }
