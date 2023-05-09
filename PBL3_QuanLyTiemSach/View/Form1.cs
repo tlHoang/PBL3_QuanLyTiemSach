@@ -37,9 +37,16 @@ namespace PBL3_QuanLyTiemSach
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            TaiKhoanBLL bll = new TaiKhoanBLL();
-            string[] fullName = bll.getNameFromMaNV(this.MaNV).Split(' ');
-            labelName.Text = fullName[fullName.Length - 2] + " " + fullName[fullName.Length - 1];
+            if (MaNV == 1)
+            {
+                labelName.Text = "ADMIN";
+            }
+            else
+            {
+                TaiKhoanBLL bll = new TaiKhoanBLL();
+                string[] fullName = bll.getNameFromMaNV(this.MaNV).Split(' ');
+                labelName.Text = fullName[fullName.Length - 2] + " " + fullName[fullName.Length - 1];
+            }
         }
         public void setRole(string role)
         {

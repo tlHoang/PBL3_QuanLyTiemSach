@@ -46,7 +46,7 @@ namespace PBL3_QuanLyTiemSach.View
                 // call form and pass MaNV
                 this.Hide();
                 Form1 f = new Form1();
-                f.MaNV = bll.getMaNVfromUsername(username);
+                f.MaNV = MaNV;
                 f.setRole(txt_username.Text);
                 f.ShowDialog();
                 this.Close();
@@ -71,7 +71,8 @@ namespace PBL3_QuanLyTiemSach.View
             if (button1.Image == show)
             {
                 button1.Image = hide;
-                txt_password.PasswordChar = '*';
+                //txt_password.PasswordChar = '*';
+                txt_password.UseSystemPasswordChar = true;
             }
             else
             {
