@@ -12,7 +12,8 @@ namespace PBL3_QuanLyTiemSach.DTO.CodeFirst
     {
         [Key]
         [Required]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
+		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int MaNV { get; set; }
         [Required]
         [StringLength(30)]

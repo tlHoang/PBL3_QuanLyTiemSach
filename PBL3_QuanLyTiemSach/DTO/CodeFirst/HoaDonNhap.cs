@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 
 namespace PBL3_QuanLyTiemSach.DTO
 {
-    [Table("HoaDonNhap")]
-    public class HoaDonNhap
-    {
-        [Key]
-        [Required]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int MaHDNhap { get; set; }
-        [Required]
-        public int MaNV { get; set; }
-        [Required]
-        public int MaDVCC { get; set; }
-        public double TongTien { get; set; }
+	[Table("HoaDonNhap")]
+	public class HoaDonNhap
+	{
+		[Key]
+		[Required]
+		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+		public int MaHDNhap { get; set; }
+		[Required]
+		public int MaNV { get; set; }
+		[Required]
+		public int MaDVCC { get; set; }
+		public double TongTien { get; set; }
 
         [ForeignKey("MaNV")]
         public virtual NhanVien NhanVien { get; set; }

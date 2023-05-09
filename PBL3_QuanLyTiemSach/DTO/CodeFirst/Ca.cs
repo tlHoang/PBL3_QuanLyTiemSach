@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace PBL3_QuanLyTiemSach.DTO
 {
-    [Table("Ca")]
-    public class Ca
-    {
-        [Key]
-        [Required]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int MaCa { get; set; }
-        public DateTime Ngay { get; set; }
-        public TimeSpan GioBatDau { get; set; }
-        public TimeSpan GioKetThuc { get; set; }
+	[Table("Ca")]
+	public class Ca
+	{
+		[Key]
+		[Required]
+		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+		public int MaCa { get; set; }
+		public DateTime Ngay { get; set; }
+		public TimeSpan GioBatDau { get; set; }
+		public TimeSpan GioKetThuc { get; set; }
 
         public virtual ICollection<CaNV> CaNVs { get; set; }
 

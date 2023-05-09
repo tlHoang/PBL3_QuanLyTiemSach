@@ -13,7 +13,7 @@ namespace PBL3_QuanLyTiemSach.DTO
     {
         [Key]
         [Required]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int MaKH { get; set; }
         [StringLength(50)]
         public string TenKH { get; set; }

@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace PBL3_QuanLyTiemSach.DTO
 {
-    [Table("NhanVien")]
-    public class NhanVien
-    {
-        [Key]
-        [ForeignKey("TaiKhoan")]
-        [Required]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int MaNV { get; set; }
+	[Table("NhanVien")]
+	public class NhanVien
+	{
+		[Key]
+		[ForeignKey("TaiKhoan")]
+		[Required]
+		[DatabaseGenerated(DatabaseGeneratedOption.None)]
+		public int MaNV { get; set; }
         [StringLength(50)]
         public string TenNV { get; set; }
         public bool GioiTinh { get; set; }
