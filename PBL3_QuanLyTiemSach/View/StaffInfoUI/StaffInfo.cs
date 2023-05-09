@@ -120,7 +120,7 @@ namespace PBL3_QuanLyTiemSach.View
 
         private void metroButton_xacnhan_Click(object sender, EventArgs e)
         {
-            if (!ValidateInfo()) return;
+            //if (!ValidateInfo()) return;
             StaffManagerBLL staffManagerBLL = new StaffManagerBLL();
             if (StaffID == -1)
             {
@@ -171,8 +171,8 @@ namespace PBL3_QuanLyTiemSach.View
             LoadDGV();
         }
 
-        private bool ValidateInfo()
-        {
+        //private bool ValidateInfo()
+        //{
             //// ten
             //if (Regex.IsMatch(metroTextBox_ten.Text, @"(^\s*$|\d)"))
             //    return false;
@@ -181,6 +181,6 @@ namespace PBL3_QuanLyTiemSach.View
             //if (Regex.IsMatch(metroTextBox_diachi.Text, @"^\s*$"))
             //    return false;
             //return true;
-        }
+        //}
     }
 }
