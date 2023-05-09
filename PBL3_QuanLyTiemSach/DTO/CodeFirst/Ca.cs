@@ -21,9 +21,9 @@ namespace PBL3_QuanLyTiemSach.DTO
 
         public virtual ICollection<CaNV> CaNVs { get; set; }
 
-		public Ca()
-		{
-			CaNVs = new HashSet<CaNV>();
-		}
-	}
+        public Ca()
+        {
+            CaNVs = new HashSet<CaNV>();
+        }
+    }
 }

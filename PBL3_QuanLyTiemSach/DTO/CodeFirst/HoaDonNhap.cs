@@ -22,15 +22,15 @@ namespace PBL3_QuanLyTiemSach.DTO
 		public double TongTien { get; set; }
 
         [ForeignKey("MaNV")]
-		public virtual NhanVien NhanVien { get; set; }
+        public virtual NhanVien NhanVien { get; set; }
         [ForeignKey("MaDVCC")]
-		public virtual DonViCungCap DonViCungCap { get; set; }
+        public virtual DonViCungCap DonViCungCap { get; set; }
 
-		public virtual ICollection<HoaDonNhapSach> HoaDonNhapSachs { get; set; }
+        public virtual ICollection<HoaDonNhapSach> HoaDonNhapSachs { get; set; }
 
-		public HoaDonNhap()
-		{
-			HoaDonNhapSachs = new HashSet<HoaDonNhapSach>();
-		}
-	}
+        public HoaDonNhap()
+        {
+            HoaDonNhapSachs = new HashSet<HoaDonNhapSach>();
+        }
+    }
 }

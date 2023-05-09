@@ -42,14 +42,14 @@ namespace PBL3_QuanLyTiemSach.BLL
                 TaiKhoan acc = db.TaiKhoans
                     .Where(p => p.Username == username)
                     .FirstOrDefault();
-                if (acc == null)
+                if (acc == default)
                     return -1;
-                if (acc.Password == HashPassword(password, acc.Salt))
+                else if (acc.Password == HashPassword(password, acc.Salt))
                     return acc.MaNV;
                 return -1;
             }
         }
-        
+
         public void UpdatePassword(string username, string password)
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
@@ -61,6 +61,20 @@ namespace PBL3_QuanLyTiemSach.BLL
                 taiKhoan.Salt = newSalt;
                 taiKhoan.Password = HashPassword(password, newSalt);
                 db.SaveChanges();
+
+        public int getMaNVfromUsername(string username)
+        {
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                return db.TaiKhoans.Where(p => p.Username == username).FirstOrDefault().MaNV;
+            }
+        }
+
+        public string getNameFromMaNV(int MaNV)
+        {
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                return db.NhanViens.Where(p => p.MaNV == MaNV).FirstOrDefault().TenNV;
             }
         }
     }

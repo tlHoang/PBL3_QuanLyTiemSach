@@ -25,7 +25,7 @@ namespace PBL3_QuanLyTiemSach.DTO
         [ForeignKey("MaKH")]
         public virtual KhachHang KhachHang { get; set; }
 
-        public  virtual ICollection<HoaDonBanSach> HoaDonBanSachs { get; set; }
+        public virtual ICollection<HoaDonBanSach> HoaDonBanSachs { get; set; }
 
         public HoaDonBan()
         {

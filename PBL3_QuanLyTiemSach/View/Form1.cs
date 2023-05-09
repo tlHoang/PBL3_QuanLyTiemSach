@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PBL3_QuanLyTiemSach.BLL;
 using PBL3_QuanLyTiemSach.View;
 
 namespace PBL3_QuanLyTiemSach
@@ -18,6 +19,7 @@ namespace PBL3_QuanLyTiemSach
             InitializeComponent();
             panel_Side.Hide();
         }
+        public int MaNV { get; set; }
         private System.Windows.Forms.Form currentForm; 
         private void OpenForm(System.Windows.Forms.Form f)
         {
@@ -27,13 +29,36 @@ namespace PBL3_QuanLyTiemSach
             }
             currentForm = f;
             f.TopLevel = false;
+            panel_Body.Controls.Add(f);
             f.FormBorderStyle = FormBorderStyle.None;
             f.Dock = DockStyle.Fill;
-            panel_Body.Controls.Add(f);
             f.BringToFront();
             f.Show();
         }
-
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            if (MaNV == 1)
+            {
+                labelName.Text = "ADMIN";
+            }
+            else
+            {
+                TaiKhoanBLL bll = new TaiKhoanBLL();
+                string[] fullName = bll.getNameFromMaNV(this.MaNV).Split(' ');
+                labelName.Text = fullName[fullName.Length - 2] + " " + fullName[fullName.Length - 1];
+            }
+        }
+        public void setRole(string role)
+        {
+            if (role != "admin")
+            {
+                labelRole.Text = "Nhân viên";
+            }
+            else
+            {
+                labelRole.Text = "Admin";
+            }
+        }
         private void button_Home_Click(object sender, EventArgs e)
         {
             panel_Side.Top = button_Home.Top;
@@ -47,7 +72,7 @@ namespace PBL3_QuanLyTiemSach
             panel_Side.Top = button_BanHang.Top;
             panel_Side.Height = button_BanHang.Height;
             panel_Side.Show();
-            // OpenForm(new Sell());
+            OpenForm(new Sell(this));
         }
 
         private void button_NhapHang_Click(object sender, EventArgs e)
@@ -55,7 +80,7 @@ namespace PBL3_QuanLyTiemSach
             panel_Side.Top = button_NhapHang.Top;
             panel_Side.Height = button_NhapHang.Height;
             panel_Side.Show();
-            OpenForm(new Form4());
+            OpenForm(new Import(this));
         }
 
         private void button_ThongKe_Click(object sender, EventArgs e)
