@@ -88,6 +88,7 @@
     <Compile Include="DTO\CodeFirst\Sach.cs" />
     <Compile Include="DTO\CodeFirst\SachTheLoai.cs" />
     <Compile Include="DTO\CodeFirst\TaiKhoan.cs" />
+    <Compile Include="DTO\BookInfo.cs" />
     <Compile Include="View\StaffManagerUI\StaffManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,7 +106,7 @@
     </Compile>
     <Compile Include="View\StaffInfoUI\StaffInfo.Designer.cs">
       <DependentUpon>StaffInfo.cs</DependentUpon>
-    <Compile Include="DTO\BookInfo.cs" />
+    </Compile>
     <Compile Include="Login_Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -210,6 +211,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\StaffInfoUI\StaffInfo.resx">
       <DependentUpon>StaffInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\SellUI\SearchBookInfo.resx">
       <DependentUpon>SearchBookInfo.cs</DependentUpon>
     </EmbeddedResource>
