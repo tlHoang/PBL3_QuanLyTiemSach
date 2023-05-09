@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using PBL3_QuanLyTiemSach.BLL;
+using System.Globalization;
 
 namespace PBL3_QuanLyTiemSach
 {
@@ -49,12 +50,16 @@ namespace PBL3_QuanLyTiemSach
                 txtSearch.ForeColor = Color.Black;
             }
         }
+        private void set_txtSearch()
+        {
+            txtSearch.Text = "Tìm kiếm";
+            txtSearch.ForeColor = Color.Silver;
+        }
         private void txtSearch_Leave(object sender, EventArgs e)
         {
             if(txtSearch.Text == "")
             {
-                txtSearch.Text = "Tìm kiếm";
-                txtSearch.ForeColor = Color.Silver;
+                set_txtSearch();
             }
         }
         private void btnSearch_Click(object sender, EventArgs e)
@@ -71,6 +76,7 @@ namespace PBL3_QuanLyTiemSach
             f.setBookInfo = SetBookInfo;
             f.Show();
             delInfo();
+            set_txtSearch();
         }
         private bool checkNullInfo()
         {
@@ -84,6 +90,10 @@ namespace PBL3_QuanLyTiemSach
         {
             txtTenSach.Text = txtDonGia.Text = txtSoLuong.Text = "";
             SL = 0;
+        }
+        private void setLabelTongTien()
+        {
+            labelTongTien.Text = dgvHoaDonBan.Rows.Cast<DataGridViewRow>().Sum(t => (Convert.ToInt32(t.Cells[1].Value) * Convert.ToInt32(t.Cells[2].Value))).ToString("N0", CultureInfo.GetCultureInfo("vi-VN")) + " đ";
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -107,8 +117,9 @@ namespace PBL3_QuanLyTiemSach
                         TenSach = txtTenSach.Text,
                     });
 
-                    labelTongTien.Text = dgvHoaDonBan.Rows.Cast<DataGridViewRow>().Sum(t => (Convert.ToInt32(t.Cells[1].Value) * Convert.ToInt32(t.Cells[2].Value))).ToString() + " đ";
+                    setLabelTongTien();
                     delInfo();
+                    set_txtSearch();
                 }
             }
         }
@@ -126,7 +137,7 @@ namespace PBL3_QuanLyTiemSach
                         TenSach.Remove(itemToRemove);
                         dgvHoaDonBan.Rows.RemoveAt(i.Index);
                     }
-                    labelTongTien.Text = dgvHoaDonBan.Rows.Cast<DataGridViewRow>().Sum(t => (Convert.ToInt32(t.Cells[1].Value) * Convert.ToInt32(t.Cells[2].Value))).ToString() + " đ";
+                    setLabelTongTien();
                 }
                 else
                 {
@@ -136,7 +147,11 @@ namespace PBL3_QuanLyTiemSach
         }
         public int getSLSachDGV()
         {
-            return Convert.ToInt32(dgvHoaDonBan.SelectedRows[0].Cells[2].Value.ToString());
+            if (dgvHoaDonBan.SelectedRows[0].Index < dgvHoaDonBan.Rows.Count - 1)
+            {
+                return Convert.ToInt32(dgvHoaDonBan.SelectedRows[0].Cells[2].Value.ToString());
+            }
+            else return -1;
         }
         private void btnCong_Click(object sender, EventArgs e)
         {
@@ -147,11 +162,16 @@ namespace PBL3_QuanLyTiemSach
             }
             else
             {
-                SL = sellBLL.getSLSachConLai(dgvHoaDonBan.SelectedRows[0].Cells[0].Value.ToString());
+                //SL = sellBLL.getSLSachConLai(dgvHoaDonBan.SelectedRows[0].Cells[0].Value.ToString());
                 int SLinDGV = getSLSachDGV();
-                if (SLinDGV < SL)
+                if (SLinDGV == -1)
+                {
+
+                }
+                else if (SLinDGV < sellBLL.getSLSachConLai(dgvHoaDonBan.SelectedRows[0].Cells[0].Value.ToString()))
                 {
                     dgvHoaDonBan.SelectedRows[0].Cells[2].Value = SLinDGV + 1;
+                    setLabelTongTien();
                 }
                 else
                 {
@@ -170,46 +190,71 @@ namespace PBL3_QuanLyTiemSach
             else
             {
                 int SLinDGV = getSLSachDGV();
-                if (SLinDGV == 1)
+                if (SLinDGV == -1)
+                {
+
+                }
+                else if (SLinDGV == 1)
                 {
                     MetroMessageBox.Show(f, "\nSố lượng đã đạt tối thiểu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning, 140);
                 }
                 else
                 {
                     dgvHoaDonBan.SelectedRows[0].Cells[2].Value = SLinDGV - 1;
+                    setLabelTongTien();
                 }
             }
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MetroMessageBox.Show(f, "\nBạn có muốn lưu hóa đơn?", "Lưu hóa đơn", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 140);
-            if (dr == DialogResult.Yes)
+            if (dgvHoaDonBan.RowCount > 1)
             {
-                for (int i = 0; i < dgvHoaDonBan.Rows.Count - 1; i++)
+                DialogResult dr = MetroMessageBox.Show(f, "\nBạn có muốn lưu hóa đơn?", "Lưu hóa đơn", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 140);
+                if (dr == DialogResult.Yes)
                 {
-                    Sach_HoaDon.Add(new Sach
+                    for (int i = 0; i < dgvHoaDonBan.Rows.Count - 1; i++)
                     {
-                        TenSach = dgvHoaDonBan.Rows[i].Cells[0].Value.ToString(),
-                        GiaBan = Convert.ToDouble(dgvHoaDonBan.Rows[i].Cells[1].Value.ToString()),
-                        SoLuongConLai = Convert.ToInt32(dgvHoaDonBan.Rows[i].Cells[2].Value.ToString()),
-                        //SoLuongConLai ở đây là số lượng sách có tên là TenSach mà khách mua được lưu trong hóa đơn
-                    });
+                        Sach_HoaDon.Add(new Sach
+                        {
+                            TenSach = dgvHoaDonBan.Rows[i].Cells[0].Value.ToString(),
+                            GiaBan = Convert.ToDouble(dgvHoaDonBan.Rows[i].Cells[1].Value.ToString()),
+                            SoLuongConLai = Convert.ToInt32(dgvHoaDonBan.Rows[i].Cells[2].Value.ToString()),
+                            // SoLuongConLai ở đây là số lượng sách có tên là TenSach mà khách mua được lưu trong hóa đơn
+                        });
+                    }
+
+                    SellBLL sellBLL = new SellBLL();
+                    sellBLL.updateSachinDatabase(Sach_HoaDon);
+                    sellBLL.addHoaDonBan(Sach_HoaDon, getKH(), f.MaNV);
+                    delInfo();
+                    dgvHoaDonBan.Rows.Clear();
+                    txtTenKH.Text = txtSDT.Text = "";
                 }
-                //foreach (DataGridViewRow i in dgvHoaDonBan.Rows)
-                //{
-                //    Sach_HoaDon.Add(new Sach
-                //    {
-                //        TenSach = i.Cells[0].Value.ToString(),
-                //        SoLuongConLai = Convert.ToInt32(i.Cells[2].Value.ToString()),
-                //    });
-                //}
-                SellBLL sellBLL = new SellBLL();
-                sellBLL.updateSachinDatabase(Sach_HoaDon);
-                delInfo();
-                dgvHoaDonBan.Rows.Clear();
             }
-            else return;
+            else
+            {
+                MetroFramework.MetroMessageBox.Show(f, "Kiểm tra lại thông tin hóa đơn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error, 140);
+            }
+        }
+        private KhachHang getKH()
+        {
+            if (txtTenKH.Text != "")
+            {
+                return new KhachHang
+                {
+                    TenKH = txtTenKH.Text,
+                    SDT = txtSDT.Text,
+                };
+            }
+            else
+            {
+                return new KhachHang
+                {
+                    TenKH = "Khách lẻ",
+                    SDT = txtSDT.Text,
+                };
+            }
         }
     }
 }

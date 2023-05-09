@@ -61,7 +61,7 @@
             this.panel_Left.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_Left.Location = new System.Drawing.Point(0, 0);
             this.panel_Left.Name = "panel_Left";
-            this.panel_Left.Size = new System.Drawing.Size(153, 450);
+            this.panel_Left.Size = new System.Drawing.Size(153, 470);
             this.panel_Left.TabIndex = 0;
             // 
             // labelRole
@@ -69,11 +69,11 @@
             this.labelRole.AutoSize = true;
             this.labelRole.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
             this.labelRole.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.labelRole.Location = new System.Drawing.Point(66, 51);
+            this.labelRole.Location = new System.Drawing.Point(65, 51);
             this.labelRole.Name = "labelRole";
-            this.labelRole.Size = new System.Drawing.Size(40, 13);
+            this.labelRole.Size = new System.Drawing.Size(30, 13);
             this.labelRole.TabIndex = 6;
-            this.labelRole.Text = "Admin";
+            this.labelRole.Text = "Role";
             // 
             // labelName
             // 
@@ -82,9 +82,9 @@
             this.labelName.ForeColor = System.Drawing.Color.SkyBlue;
             this.labelName.Location = new System.Drawing.Point(65, 25);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(78, 17);
+            this.labelName.Size = new System.Drawing.Size(45, 17);
             this.labelName.TabIndex = 5;
-            this.labelName.Text = "Huy Hoàng";
+            this.labelName.Text = "Name";
             // 
             // pictureBox
             // 
@@ -203,14 +203,14 @@
             this.panel_Body.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Body.Location = new System.Drawing.Point(153, 33);
             this.panel_Body.Name = "panel_Body";
-            this.panel_Body.Size = new System.Drawing.Size(647, 417);
+            this.panel_Body.Size = new System.Drawing.Size(647, 437);
             this.panel_Body.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 470);
             this.Controls.Add(this.panel_Body);
             this.Controls.Add(this.panel_Top);
             this.Controls.Add(this.panel_Left);
@@ -218,6 +218,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel_Left.ResumeLayout(false);
             this.panel_Left.PerformLayout();

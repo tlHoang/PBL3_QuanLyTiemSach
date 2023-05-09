@@ -117,33 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnSearch.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
-        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAADrwAAA68AZW8ckkAAAAHdElNRQfnBBcOCQ1aNqKCAAAB
-        aUlEQVRIS93VyytEYRjH8eO+IbknsZVLNlZuCwv+ASllaeFSFthISSQUyl42JLmUlJKQ+//l+61Rmsyc
-        90ynlF99mumdzvu+53mfcyb69ynOSC2VGMI8NrCGKfSgFAWnA3t4wAc+M95xiyXUI3E6cQInesIR1rGF
-        M7ziDTuoRXCqsA8nvsE4amC9LUULFvAIF5lGEYIyDC/UmAO/pAIrcPcXaEVQFmGND1HtQI50w9o/Y8SB
-        uHjb2/DgVpHvdq31MSzfpANxKcEmnNzWy9fXDTiFk084EJIZWBYvbHYgR/pxD89m0IGQ9OIOL/DhKUd2
-        GnEAd22bBvd7GZZhJ/gA+b0LtqOTuGMndnFbcQ6J0oRdfD8sdoWHZ6kshTv2N51jAIlSh1lcwnZzQllj
-        S+GOndixKyRewFZswyhsN7vCw3NhY4lcvOAF4pK9QHDnhObnAn76Rk01ffA9cw1fDamnHbZtqv9Yf5Eo
-        +gJwu0rnblGo9QAAAABJRU5ErkJggg==
-</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="hide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\hide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="show" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\show.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

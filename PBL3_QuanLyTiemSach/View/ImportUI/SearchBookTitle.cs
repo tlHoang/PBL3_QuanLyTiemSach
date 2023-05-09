@@ -19,16 +19,30 @@ namespace PBL3_QuanLyTiemSach.View.ImportUI
         public SearchBookTitle(Import f1)
         {
             InitializeComponent();
-            LoadBookTitleDGV();
             this.f = f1;
-            this.TopMost = true;
+            LoadBookTitleDGV();
         }
         private void LoadBookTitleDGV()
         {
-            GetBookInfoBLL getBookInfoBLL = new GetBookInfoBLL();
-            dgvTenSach.DataSource = getBookInfoBLL.getAllBookTitle()
-                .Select(p => new { TenSach = p }).ToList();
-            dgvTenSach.Columns[0].HeaderText = "Tên sách";
+            //var tmp = f.TenSach.Select(p => new
+            //{
+            //    TenSach = p.TenSach,
+            //    SLCL = 1
+            //}).ToList();
+
+            //GetBookInfoBLL getBookInfoBLL = new GetBookInfoBLL();
+            ////dgvTenSach.DataSource = getBookInfoBLL.getAllBookTitle()
+            ////    .Select(p => new { TenSach = p })
+            ////    .Where(p => tmp.All(p1 => p1.TenSach != p.TenSach) && p.TenSach.Contains(f.SearchText, StringComparison.Ordinal))
+            ////    .ToList();
+            //dgvTenSach.DataSource = getBookInfoBLL.getAllBookTitle()
+            //.Select(p => new { TenSach = p })
+            //.Where(p => tmp.All(p1 => p1.TenSach != p.TenSach) &&
+            //            p.TenSach.IndexOf(f.SearchText, StringComparison.OrdinalIgnoreCase) >= 0)
+            //.ToList();
+            //dgvTenSach.Columns[0].HeaderText = "Tên sách";
+            GetBookInfoBLL bll = new GetBookInfoBLL();
+            dgvTenSach.DataSource = bll.getAllBookTitle(f.TenSach, f.SearchText).Select(p => new { TenSach = p }).ToList();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -41,7 +55,6 @@ namespace PBL3_QuanLyTiemSach.View.ImportUI
             if (dgvTenSach.SelectedRows.Count > 1)
             {
                 MetroFramework.MetroMessageBox.Show(this, "\nChỉ được chọn 1 sách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning, 140);
-                this.TopMost = true;
             }
             else
             {

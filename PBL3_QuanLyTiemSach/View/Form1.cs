@@ -17,7 +17,6 @@ namespace PBL3_QuanLyTiemSach
         public Form1()
         {
             InitializeComponent();
-            this.TopMost = true;
             panel_Side.Hide();
         }
         public int MaNV { get; set; }
@@ -30,9 +29,9 @@ namespace PBL3_QuanLyTiemSach
             }
             currentForm = f;
             f.TopLevel = false;
+            panel_Body.Controls.Add(f);
             f.FormBorderStyle = FormBorderStyle.None;
             f.Dock = DockStyle.Fill;
-            panel_Body.Controls.Add(f);
             f.BringToFront();
             f.Show();
         }
@@ -41,6 +40,17 @@ namespace PBL3_QuanLyTiemSach
             TaiKhoanBLL bll = new TaiKhoanBLL();
             string[] fullName = bll.getNameFromMaNV(this.MaNV).Split(' ');
             labelName.Text = fullName[fullName.Length - 2] + " " + fullName[fullName.Length - 1];
+        }
+        public void setRole(string role)
+        {
+            if (role != "admin")
+            {
+                labelRole.Text = "Nhân viên";
+            }
+            else
+            {
+                labelRole.Text = "Admin";
+            }
         }
         private void button_Home_Click(object sender, EventArgs e)
         {

@@ -47,6 +47,7 @@ namespace PBL3_QuanLyTiemSach.View
                 this.Hide();
                 Form1 f = new Form1();
                 f.MaNV = bll.getMaNVfromUsername(username);
+                f.setRole(txt_username.Text);
                 f.ShowDialog();
                 this.Close();
             }
@@ -61,8 +62,8 @@ namespace PBL3_QuanLyTiemSach.View
             }
         }
 
-        Image show = Image.FromFile(@"C:\Users\Admin\Desktop\pbl_icon\show.png");
-        Image hide = Image.FromFile(@"C:\Users\Admin\Desktop\pbl_icon\hide.png");
+        Image show = Login_Resource.show;
+        Image hide = Login_Resource.hide;
 
         private void button1_Click(object sender, EventArgs e)
         {

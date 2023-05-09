@@ -1,4 +1,5 @@
 ﻿using MetroFramework;
+using PBL3_QuanLyTiemSach.BLL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,37 +22,13 @@ namespace PBL3_QuanLyTiemSach.View.SellUI
         {
             InitializeComponent();
             this.f = f1;
-            this.TopMost = true;
             TenSach = string.Empty;
         }
         private void SearchBook_Load(object sender, EventArgs e)
         {
-            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
-            {
-                var data = db.Sachs.GroupBy(p => p.TenSach)
-                    .Select(p1 => new
-                    {
-                        TenSach = p1.Key,
-                        SLCL = p1.Sum(p => p.SoLuongConLai)
-                    })
-                    .ToList();
-                var tmp = f.TenSach.Select(p => new
-                {
-                    TenSach = p.TenSach,
-                    SLCL = 1
-                }).ToList();
-                dgvSearchBook.DataSource = data.Where(p => tmp.All(p1 => p1.TenSach != p.TenSach)).ToList();
-
-                dgvSearchBook.Columns[0].HeaderText = "Tên sách";
-                //dgvSearchBook.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
-                //for (int i = 0; i <= dgvSearchBook.ColumnCount - 1; i++)
-                //{
-                //    int colw = dgvSearchBook.Columns[i].Width;
-                //    dgvSearchBook.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-                //    dgvSearchBook.Columns[i].Width = colw;
-                //}
-            }
+            SellBLL bll = new SellBLL();
+            dgvSearchBook.DataSource = bll.setDGVSBI(f.TenSach, f.SearchText);
+            dgvSearchBook.Columns[0].HeaderText = "Tên sách";
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -64,7 +41,6 @@ namespace PBL3_QuanLyTiemSach.View.SellUI
             if(dgvSearchBook.SelectedRows.Count > 1)
             {
                 MetroFramework.MetroMessageBox.Show(this, "\nChỉ được chọn 1 sách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning, 140);
-                this.TopMost = true;
             }
             else
             {
