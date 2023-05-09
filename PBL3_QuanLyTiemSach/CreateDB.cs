@@ -10,19 +10,21 @@ using System.Threading.Tasks;
 namespace PBL3_QuanLyTiemSach
 {
     public class CreateDB
-        //: CreateDatabaseIfNotExists<DBQuanLyTiemSach>
-        : DropCreateDatabaseAlways<DBQuanLyTiemSach>
+        : CreateDatabaseIfNotExists<DBQuanLyTiemSach>
+        //: DropCreateDatabaseAlways<DBQuanLyTiemSach>
     {
         protected override void Seed(DBQuanLyTiemSach context)
         {
             context.TaiKhoans.AddRange(new TaiKhoan[]
             {
                 new TaiKhoan { MaNV = -2, Username = "admin", Password = "3d18e7c3f354879667c3964c6fd1ed01348b02eed41a321391dcfb01f07150ab", Salt = "cV6kF5idUxGu" },
+                new TaiKhoan { MaNV = 1, Username = "nhanvien0", Password = "f4039dd867feb007a8a1f0ef934a720fbcbab0bbb30ced0e7290fba592fee9c0", Salt = "cAPfg5Qa0e6h" },
                 new TaiKhoan { MaNV = 2, Username = "nhanvien1", Password = "3d18e7c3f354879667c3964c6fd1ed01348b02eed41a321391dcfb01f07150ab", Salt = "cV6kF5idUxGu" },
                 new TaiKhoan { MaNV = 3, Username = "nhanvien2", Password = "87089c1da28a685648a603452fecaaa6bca8ef651861b9b5c512e81ff576a456", Salt = "WMAbPKk73KUh" },
             });
             context.NhanViens.AddRange(new NhanVien[]
             {
+                new NhanVien { MaNV = 1, TenNV = "Nguyễn Văn A", GioiTinh = true, NgaySinh = Convert.ToDateTime("2003-03-02"), DiaChi = "Đà Nẵng, Việt Nam", Luong = 100000.0, SDT = "0123456789"},
                 new NhanVien { MaNV = 2, TenNV = "Lê Ngọc Hạnh", GioiTinh = true, NgaySinh = new DateTime(2003,4,6), DiaChi = "Đà Nẵng", Luong = 20000000, SDT = "0123654789"},
                 new NhanVien { MaNV = 3, TenNV = "Trần Lê Huy Hoàng", GioiTinh = true, NgaySinh = new DateTime(2003,3,2), DiaChi = "Đà Nẵng", Luong = 30000000, SDT = "0147852369"}
             });

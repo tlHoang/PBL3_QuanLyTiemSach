@@ -67,12 +67,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\StaffInfoBLL.cs" />
+    <Compile Include="BLL\StaffManagerBLL.cs" />
     <Compile Include="BLL\GetBookInfoBLL.cs" />
     <Compile Include="BLL\ImportBLL.cs" />
     <Compile Include="BLL\SellBLL.cs" />
     <Compile Include="BLL\TaiKhoanBLL.cs" />
     <Compile Include="CreateDB.cs" />
     <Compile Include="DBQuanLyTiemSach.cs" />
+    <Compile Include="DTO\CBBItem.cs" />
     <Compile Include="DTO\CodeFirst\Ca.cs" />
     <Compile Include="DTO\CodeFirst\CaNV.cs" />
     <Compile Include="DTO\CodeFirst\DonViCungCap.cs" />
@@ -85,6 +88,23 @@
     <Compile Include="DTO\CodeFirst\Sach.cs" />
     <Compile Include="DTO\CodeFirst\SachTheLoai.cs" />
     <Compile Include="DTO\CodeFirst\TaiKhoan.cs" />
+    <Compile Include="View\StaffManagerUI\StaffManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\StaffManagerUI\StaffManager.Designer.cs">
+      <DependentUpon>StaffManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\StaffInfoUI\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\StaffInfoUI\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\StaffInfoUI\StaffInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\StaffInfoUI\StaffInfo.Designer.cs">
+      <DependentUpon>StaffInfo.cs</DependentUpon>
     <Compile Include="DTO\BookInfo.cs" />
     <Compile Include="Login_Resource.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -182,6 +202,14 @@
     <EmbeddedResource Include="View\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\StaffManagerUI\StaffManager.resx">
+      <DependentUpon>StaffManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\StaffInfoUI\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\StaffInfoUI\StaffInfo.resx">
+      <DependentUpon>StaffInfo.cs</DependentUpon>
     <EmbeddedResource Include="View\SellUI\SearchBookInfo.resx">
       <DependentUpon>SearchBookInfo.cs</DependentUpon>
     </EmbeddedResource>

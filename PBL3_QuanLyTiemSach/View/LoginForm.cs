@@ -1,4 +1,7 @@
-﻿using PBL3_QuanLyTiemSach.BLL;
+﻿using MetroFramework;
+using PBL3_QuanLyTiemSach.BLL;
+using PBL3_QuanLyTiemSach.View.StaffInfoUI;
+using PBL3_QuanLyTiemSach.View.StaffManager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,11 +20,18 @@ namespace PBL3_QuanLyTiemSach.View
         public LoginForm()
         {
             InitializeComponent();
+            SetUI();
+        }
+
+        private void SetUI()
+        {
+            metroTextBox_password.UseSystemPasswordChar = true;
         }
 
         public bool InvalidInput(string input)
         {
-            string pattern = @"(\s|^$)";
+            //string pattern = @"(\s|^$)";
+            string pattern = @"(^\s*$)";
             return Regex.IsMatch(input, pattern);
         }
 
@@ -31,14 +41,15 @@ namespace PBL3_QuanLyTiemSach.View
             string password = txt_password.Text;
             if (InvalidInput(username) || InvalidInput(password))
             {
-                MessageBox.Show("Tài khoản hoặc mật khẩu không hợp lệ");
+                MetroMessageBox.Show(this, "Tài khoản hoặc mật khẩu không hợp lệ");
                 return;
             }
             TaiKhoanBLL bll = new TaiKhoanBLL();
             int MaNV = bll.CheckPassword(username, password);
             if (MaNV == -1)
             {
-                MessageBox.Show("Sai tài khoản hoặc mật khẩu");
+                metroLabel_showpass.Text = "Ẩn";
+                metroTextBox_password.UseSystemPasswordChar = false;
             }
             else
             {

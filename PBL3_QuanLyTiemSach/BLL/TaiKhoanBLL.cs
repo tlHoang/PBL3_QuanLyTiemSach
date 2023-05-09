@@ -25,7 +25,7 @@ namespace PBL3_QuanLyTiemSach.BLL
 
         public string RandomString(int size)
         {
-            string givenChars = "ABCDEFGHIJ KLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            string givenChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             char[] result = new char[size];
             Random random = new Random();
             for (int i = 0; i < size; i++)
@@ -49,6 +49,19 @@ namespace PBL3_QuanLyTiemSach.BLL
                 return -1;
             }
         }
+
+        public void UpdatePassword(string username, string password)
+        {
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                string newSalt = RandomString(12);
+                TaiKhoan taiKhoan = db.TaiKhoans
+                    .Where(p => p.Username == username)
+                    .FirstOrDefault();
+                taiKhoan.Salt = newSalt;
+                taiKhoan.Password = HashPassword(password, newSalt);
+                db.SaveChanges();
+
         public int getMaNVfromUsername(string username)
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
@@ -56,6 +69,7 @@ namespace PBL3_QuanLyTiemSach.BLL
                 return db.TaiKhoans.Where(p => p.Username == username).FirstOrDefault().MaNV;
             }
         }
+
         public string getNameFromMaNV(int MaNV)
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
