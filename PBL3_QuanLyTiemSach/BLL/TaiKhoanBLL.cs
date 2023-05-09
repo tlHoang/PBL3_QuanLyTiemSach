@@ -35,18 +35,32 @@ namespace PBL3_QuanLyTiemSach.BLL
             return new string(result);
         }
 
-        public string CheckPassword(string username, string password)
+        public int CheckPassword(string username, string password)
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
                 TaiKhoan acc = db.TaiKhoans
                     .Where(p => p.Username == username)
                     .FirstOrDefault();
-                if (acc == null)
-                    return null;
-                if (acc.Password == HashPassword(password, acc.Salt))
+                if (acc == default)
+                    return -1;
+                else if (acc.Password == HashPassword(password, acc.Salt))
                     return acc.MaNV;
-                return null;
+                return -1;
+            }
+        }
+        public int getMaNVfromUsername(string username)
+        {
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                return db.TaiKhoans.Where(p => p.Username == username).FirstOrDefault().MaNV;
+            }
+        }
+        public string getNameFromMaNV(int MaNV)
+        {
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                return db.NhanViens.Where(p => p.MaNV == MaNV).FirstOrDefault().TenNV;
             }
         }
     }

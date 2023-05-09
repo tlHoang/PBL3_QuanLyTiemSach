@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
@@ -64,6 +67,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\GetBookInfoBLL.cs" />
+    <Compile Include="BLL\ImportBLL.cs" />
+    <Compile Include="BLL\SellBLL.cs" />
     <Compile Include="BLL\TaiKhoanBLL.cs" />
     <Compile Include="CreateDB.cs" />
     <Compile Include="DBQuanLyTiemSach.cs" />
@@ -79,23 +85,11 @@
     <Compile Include="DTO\CodeFirst\Sach.cs" />
     <Compile Include="DTO\CodeFirst\SachTheLoai.cs" />
     <Compile Include="DTO\CodeFirst\TaiKhoan.cs" />
-    <Compile Include="View\BookInfoUI\BookInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\BookInfoUI\BookInfo.Designer.cs">
-      <DependentUpon>BookInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\BookInfoUI\BookInfo_XemForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\BookInfoUI\BookInfo_XemForm.Designer.cs">
-      <DependentUpon>BookInfo_XemForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\ChiTietNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ChiTietNhanVien.Designer.cs">
-      <DependentUpon>ChiTietNhanVien.cs</DependentUpon>
+    <Compile Include="DTO\BookInfo.cs" />
+    <Compile Include="Login_Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Login_Resource.resx</DependentUpon>
     </Compile>
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
@@ -109,11 +103,17 @@
     <Compile Include="View\Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\N.cs">
+    <Compile Include="View\ImportUI\EditBookInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\N.Designer.cs">
-      <DependentUpon>N.cs</DependentUpon>
+    <Compile Include="View\ImportUI\EditBookInfo.Designer.cs">
+      <DependentUpon>EditBookInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImportUI\SearchBookTitle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ImportUI\SearchBookTitle.Designer.cs">
+      <DependentUpon>SearchBookTitle.cs</DependentUpon>
     </Compile>
     <Compile Include="View\SellUI\Sell.cs">
       <SubType>Form</SubType>
@@ -130,11 +130,11 @@
     <Compile Include="View\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form4.cs">
+    <Compile Include="View\ImportUI\Import.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form4.Designer.cs">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <Compile Include="View\ImportUI\Import.Designer.cs">
+      <DependentUpon>Import.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Form5.cs">
       <SubType>Form</SubType>
@@ -142,23 +142,15 @@
     <Compile Include="View\Form5.Designer.cs">
       <DependentUpon>Form5.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\SellUI\SearchBook.cs">
+    <Compile Include="View\SellUI\SearchBookInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\SellUI\SearchBook.Designer.cs">
-      <DependentUpon>SearchBook.cs</DependentUpon>
+    <Compile Include="View\SellUI\SearchBookInfo.Designer.cs">
+      <DependentUpon>SearchBookInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ShifManageUI\ShiftManage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ShifManageUI\ShiftManage.Designer.cs">
-      <DependentUpon>ShiftManage.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="View\BookInfoUI\BookInfo.resx">
-      <DependentUpon>BookInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\BookInfoUI\BookInfo_XemForm.resx">
-      <DependentUpon>BookInfo_XemForm.cs</DependentUpon>
+    <EmbeddedResource Include="Login_Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Login_Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -166,8 +158,14 @@
     <EmbeddedResource Include="View\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\N.resx">
-      <DependentUpon>N.cs</DependentUpon>
+    <EmbeddedResource Include="View\ImportUI\EditBookInfo.resx">
+      <DependentUpon>EditBookInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ImportUI\Import.resx">
+      <DependentUpon>Import.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ImportUI\SearchBookTitle.resx">
+      <DependentUpon>SearchBookTitle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SellUI\Sell.resx">
       <DependentUpon>Sell.cs</DependentUpon>
@@ -184,11 +182,8 @@
     <EmbeddedResource Include="View\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\SellUI\SearchBook.resx">
-      <DependentUpon>SearchBook.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ShifManageUI\ShiftManage.resx">
-      <DependentUpon>ShiftManage.cs</DependentUpon>
+    <EmbeddedResource Include="View\SellUI\SearchBookInfo.resx">
+      <DependentUpon>SearchBookInfo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
@@ -209,6 +204,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\hide.png" />
+    <None Include="Resources\show.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

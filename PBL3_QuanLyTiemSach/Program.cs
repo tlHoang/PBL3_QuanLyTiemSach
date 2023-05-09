@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PBL3_QuanLyTiemSach.View;
+using PBL3_QuanLyTiemSach.View.SellUI;
+using PBL3_QuanLyTiemSach.View.ImportUI;
 
 namespace PBL3_QuanLyTiemSach
 {
@@ -18,7 +20,7 @@ namespace PBL3_QuanLyTiemSach
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new LoginForm());
         }
     }
 }
