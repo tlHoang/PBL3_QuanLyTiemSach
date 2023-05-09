@@ -146,17 +146,17 @@
             // 
             // metroLabel_showpass
             // 
-            this.metroLabel_showpass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.metroLabel_showpass.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroLabel_showpass.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.metroLabel_showpass.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel_showpass.Location = new System.Drawing.Point(308, 137);
-            this.metroLabel_showpass.Name = "metroLabel_showpass";
-            this.metroLabel_showpass.Size = new System.Drawing.Size(38, 23);
-            this.metroLabel_showpass.TabIndex = 5;
-            this.metroLabel_showpass.Text = "Hiện";
-            this.metroLabel_showpass.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroLabel_showpass.Click += new System.EventHandler(this.metroLabel_showpass_Click);
+            //this.metroLabel_showpass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            //this.metroLabel_showpass.Cursor = System.Windows.Forms.Cursors.Hand;
+            //this.metroLabel_showpass.FontSize = MetroFramework.MetroLabelSize.Small;
+            //this.metroLabel_showpass.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            //this.metroLabel_showpass.Location = new System.Drawing.Point(308, 137);
+            //this.metroLabel_showpass.Name = "metroLabel_showpass";
+            //this.metroLabel_showpass.Size = new System.Drawing.Size(38, 23);
+            //this.metroLabel_showpass.TabIndex = 5;
+            //this.metroLabel_showpass.Text = "Hiện";
+            //this.metroLabel_showpass.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            //this.metroLabel_showpass.Click += new System.EventHandler(this.metroLabel_showpass_Click);
             // 
             // LoginForm
             // 

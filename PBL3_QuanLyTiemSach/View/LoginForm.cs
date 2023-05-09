@@ -25,13 +25,13 @@ namespace PBL3_QuanLyTiemSach.View
 
         private void SetUI()
         {
-            metroTextBox_password.UseSystemPasswordChar = true;
+            txt_password.UseSystemPasswordChar = true;
         }
 
         public bool InvalidInput(string input)
         {
             //string pattern = @"(\s|^$)";
-            string pattern = @"(^\s*$)";
+            string pattern = @"^\s*$";
             return Regex.IsMatch(input, pattern);
         }
 
@@ -48,8 +48,7 @@ namespace PBL3_QuanLyTiemSach.View
             int MaNV = bll.CheckPassword(username, password);
             if (MaNV == -1)
             {
-                metroLabel_showpass.Text = "Ẩn";
-                metroTextBox_password.UseSystemPasswordChar = false;
+                MessageBox.Show("Sai tài khoản hoặc mật khẩu");
             }
             else
             {

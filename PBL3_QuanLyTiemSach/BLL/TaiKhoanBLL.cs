@@ -61,6 +61,8 @@ namespace PBL3_QuanLyTiemSach.BLL
                 taiKhoan.Salt = newSalt;
                 taiKhoan.Password = HashPassword(password, newSalt);
                 db.SaveChanges();
+            }
+        }
 
         public int getMaNVfromUsername(string username)
         {
