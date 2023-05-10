@@ -97,6 +97,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvTenSach.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvTenSach.RowHeadersVisible = false;
             this.dgvTenSach.RowHeadersWidth = 62;
             this.dgvTenSach.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvTenSach.RowTemplate.Height = 28;

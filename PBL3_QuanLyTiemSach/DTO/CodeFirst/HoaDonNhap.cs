@@ -19,7 +19,8 @@ namespace PBL3_QuanLyTiemSach.DTO
 		public int MaNV { get; set; }
 		[Required]
 		public int MaDVCC { get; set; }
-		public double TongTien { get; set; }
+        public DateTime ThoiGianNhap { get; set; }
+        public double TongTien { get; set; }
 
         [ForeignKey("MaNV")]
         public virtual NhanVien NhanVien { get; set; }

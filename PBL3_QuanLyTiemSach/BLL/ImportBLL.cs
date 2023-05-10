@@ -68,6 +68,7 @@ namespace PBL3_QuanLyTiemSach.BLL
                 {
                     MaNV = MaNV,
                     MaDVCC = getMaDVCC(TenDVCC),
+                    ThoiGianNhap = DateTime.Now,
                 };
                 db.HoaDonNhaps.Add(hdn);
                 db.SaveChanges();

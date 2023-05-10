@@ -44,7 +44,7 @@ namespace PBL3_QuanLyTiemSach
         }
         private void txtSearch_Enter(object sender, EventArgs e)
         {
-            if(txtSearch.Text == "Tìm kiếm")
+            if (txtSearch.Text == "Tìm kiếm")
             {
                 txtSearch.Text = "";
                 txtSearch.ForeColor = Color.Black;
@@ -57,14 +57,14 @@ namespace PBL3_QuanLyTiemSach
         }
         private void txtSearch_Leave(object sender, EventArgs e)
         {
-            if(txtSearch.Text == "")
+            if (txtSearch.Text == "")
             {
                 set_txtSearch();
             }
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if(txtSearch.Text == "Tìm kiếm")
+            if (txtSearch.Text == "Tìm kiếm")
             {
                 SearchText = "";
             }

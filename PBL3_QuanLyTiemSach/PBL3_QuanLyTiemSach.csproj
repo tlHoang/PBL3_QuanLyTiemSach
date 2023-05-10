@@ -67,6 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BillBLL.cs" />
     <Compile Include="BLL\StaffInfoBLL.cs" />
     <Compile Include="BLL\StaffManagerBLL.cs" />
     <Compile Include="BLL\GetBookInfoBLL.cs" />
@@ -89,6 +90,13 @@
     <Compile Include="DTO\CodeFirst\SachTheLoai.cs" />
     <Compile Include="DTO\CodeFirst\TaiKhoan.cs" />
     <Compile Include="DTO\BookInfo.cs" />
+    <Compile Include="DTO\HoaDon.cs" />
+    <Compile Include="View\BillUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BillUI.Designer.cs">
+      <DependentUpon>BillUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\StaffManagerUI\StaffManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +180,9 @@
     <EmbeddedResource Include="Login_Resource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Login_Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BillUI.resx">
+      <DependentUpon>BillUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

@@ -88,6 +88,7 @@ namespace PBL3_QuanLyTiemSach.View
             {
                 button1.Image = show;
                 txt_password.PasswordChar = '\0';
+                txt_password.UseSystemPasswordChar = false;
             }
         }
     }
