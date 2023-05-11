@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +18,7 @@ namespace PBL3_QuanLyTiemSach.View
     // Nextversion : Xóa ngày đã làm: Cải tiến Button Xem
     public partial class ShiftManage : MetroFramework.Forms.MetroForm
     {
-        int IDStaff = 3;
+        int IDStaff = 2;
         string flagDGV = "";
         string flagButton = "";
         public delegate void updateForm();
@@ -118,6 +120,7 @@ namespace PBL3_QuanLyTiemSach.View
         {
             offGUIButton();
             setCBBMain();
+            flagDGV = "";
         }
 
         private void btnSMXem_Click(object sender, EventArgs e)

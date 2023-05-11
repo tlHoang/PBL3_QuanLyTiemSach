@@ -59,9 +59,18 @@ namespace PBL3_QuanLyTiemSach.BLL
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
-                int count = 2;
-                int CaDuration = db.Cas.Where(c => c.GioBatDau == CurrentCa.GioBatDau && c.GioKetThuc == CurrentCa.GioKetThuc).Count();
-                return (CaDuration >= count)? true: false;
+                int stoneCount = 2;
+                if(isHasExist(CurrentCa))
+                {
+                    Ca oldCa = getCa(CurrentCa);
+                    int CaDuration = db.CaNVs.Count(cnv => cnv.MaCa == oldCa.MaCa);
+                    return (CaDuration >= stoneCount)? true: false;
+                }
+                else
+                {
+                    return false;
+                }
+                
             }
         }
         public bool isHasExist(Ca currentCa)
@@ -223,20 +232,25 @@ namespace PBL3_QuanLyTiemSach.BLL
         public void DeleteCa(int maCa, int maNV)
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
-            {
+            {   
                 Ca delCa = new Ca();
                 CaNV delCaNV = new CaNV();
+                
+                DateTime datenow = DateTime.Now.Date;
+                DateTime delTime = Convert.ToDateTime(db.Cas.Where(c => c.MaCa == maCa).Select(c => DbFunctions.TruncateTime(c.Ngay)));
+                
+                if((datenow - delTime) >= 2)
+                {
+
+                }
                 delCa = db.Cas.Where(c => c.MaCa == maCa).FirstOrDefault();
                 delCaNV = db.CaNVs.Where(cnv => cnv.MaCa == maCa && cnv.MaNV == maNV).FirstOrDefault();
 
-                db.Cas.Remove(delCa);
+                //db.Cas.Remove(delCa);
                 db.CaNVs.Remove(delCaNV);
                 db.SaveChanges();
                 MessageBox.Show("Xóa Thành công");
             }
-
-
-
         }
     }
 }
