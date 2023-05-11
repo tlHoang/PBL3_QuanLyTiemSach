@@ -20,6 +20,7 @@ namespace PBL3_QuanLyTiemSach.DTO
         public int MaNV { get; set; }
         [Required]
         public int MaKH { get; set; }
+        public DateTime ThoiGianBan { get; set; }
         public double TongTien { get; set; }
 
         [ForeignKey("MaNV")]
@@ -27,7 +28,7 @@ namespace PBL3_QuanLyTiemSach.DTO
         [ForeignKey("MaKH")]
         public virtual KhachHang KhachHang { get; set; }
 
-        public  virtual ICollection<HoaDonBanSach> HoaDonBanSachs { get; set; }
+        public virtual ICollection<HoaDonBanSach> HoaDonBanSachs { get; set; }
 
         public HoaDonBan()
         {

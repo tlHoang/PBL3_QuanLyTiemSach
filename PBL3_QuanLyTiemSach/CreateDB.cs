@@ -18,10 +18,10 @@ namespace PBL3_QuanLyTiemSach
         {
             context.TaiKhoans.AddRange(new TaiKhoan[]
             {
-                new TaiKhoan { MaNV = 1, Username = "admin", Password = "3d18e7c3f354879667c3964c6fd1ed01348b02eed41a321391dcfb01f07150ab", Salt = "cV6kF5idUxGu" },
-                new TaiKhoan { MaNV = 2, Username = "nhanvien1", Password = "f4039dd867feb007a8a1f0ef934a720fbcbab0bbb30ced0e7290fba592fee9c0", Salt = "cAPfg5Qa0e6h" },
+                new TaiKhoan { MaNV = -2, Username = "admin", Password = "3d18e7c3f354879667c3964c6fd1ed01348b02eed41a321391dcfb01f07150ab", Salt = "cV6kF5idUxGu" },
+                new TaiKhoan { MaNV = 1, Username = "nhanvien0", Password = "f4039dd867feb007a8a1f0ef934a720fbcbab0bbb30ced0e7290fba592fee9c0", Salt = "cAPfg5Qa0e6h" },
+                new TaiKhoan { MaNV = 2, Username = "nhanvien1", Password = "3d18e7c3f354879667c3964c6fd1ed01348b02eed41a321391dcfb01f07150ab", Salt = "cV6kF5idUxGu" },
                 new TaiKhoan { MaNV = 3, Username = "nhanvien2", Password = "87089c1da28a685648a603452fecaaa6bca8ef651861b9b5c512e81ff576a456", Salt = "WMAbPKk73KUh" },
-                new TaiKhoan { MaNV = 4, Username = "nhanvien3", Password = "87089c1da28a685648a603452fecaaa6bca8ef651861b9b5c512e81ff576a457", Salt = "WMAbPKk73KYT" },
             });
             context.NhanViens.AddRange(new NhanVien[]
             {

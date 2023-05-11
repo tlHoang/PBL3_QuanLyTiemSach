@@ -35,6 +35,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
@@ -69,8 +72,15 @@
   <ItemGroup>
     <Compile Include="BLL\QLTS_BI_BLL.cs" />
     <Compile Include="BLL\QLTS_SM_BLL.cs" />
+    <Compile Include="BLL\StaffInfoBLL.cs" />
+    <Compile Include="BLL\StaffManagerBLL.cs" />
+    <Compile Include="BLL\GetBookInfoBLL.cs" />
+    <Compile Include="BLL\ImportBLL.cs" />
+    <Compile Include="BLL\SellBLL.cs" />
+    <Compile Include="BLL\TaiKhoanBLL.cs" />
     <Compile Include="CreateDB.cs" />
     <Compile Include="DBQuanLyTiemSach.cs" />
+    <Compile Include="DTO\CBBItem.cs" />
     <Compile Include="DTO\CodeFirst\Ca.cs" />
     <Compile Include="DTO\CodeFirst\CaNV.cs" />
     <Compile Include="DTO\CodeFirst\DonViCungCap.cs" />
@@ -84,23 +94,30 @@
     <Compile Include="DTO\CodeFirst\SachTheLoai.cs" />
     <Compile Include="DTO\CodeFirst\TaiKhoan.cs" />
     <Compile Include="DTO\SMCBBItems_Start_End_Time.cs" />
-    <Compile Include="View\BookInfoUI\BookInfo.cs">
+	  <Compile></Compile> Include="View\BookInfoUI\BookInfo.cs">
+    <Compile Include="DTO\BookInfo.cs" />
+    <Compile Include="View\StaffManagerUI\StaffManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\BookInfoUI\BookInfo.Designer.cs">
-      <DependentUpon>BookInfo.cs</DependentUpon>
+    <Compile Include="View\StaffManagerUI\StaffManager.Designer.cs">
+      <DependentUpon>StaffManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\BookInfoUI\BookInfo_XemForm.cs">
+    <Compile Include="View\StaffInfoUI\ChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\BookInfoUI\BookInfo_XemForm.Designer.cs">
-      <DependentUpon>BookInfo_XemForm.cs</DependentUpon>
+    <Compile Include="View\StaffInfoUI\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ChiTietNhanVien.cs">
+    <Compile Include="View\StaffInfoUI\StaffInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ChiTietNhanVien.Designer.cs">
-      <DependentUpon>ChiTietNhanVien.cs</DependentUpon>
+    <Compile Include="View\StaffInfoUI\StaffInfo.Designer.cs">
+      <DependentUpon>StaffInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login_Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Login_Resource.resx</DependentUpon>
     </Compile>
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
@@ -114,6 +131,24 @@
     <Compile Include="View\Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ImportUI\EditBookInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ImportUI\EditBookInfo.Designer.cs">
+      <DependentUpon>EditBookInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImportUI\SearchBookTitle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ImportUI\SearchBookTitle.Designer.cs">
+      <DependentUpon>SearchBookTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SellUI\Sell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SellUI\Sell.Designer.cs">
+      <DependentUpon>Sell.cs</DependentUpon>
+    </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -123,11 +158,11 @@
     <Compile Include="View\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form4.cs">
+    <Compile Include="View\ImportUI\Import.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form4.Designer.cs">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <Compile Include="View\ImportUI\Import.Designer.cs">
+      <DependentUpon>Import.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Form5.cs">
       <SubType>Form</SubType>
@@ -144,20 +179,30 @@
     <Compile Include="View\ShifManageUI\ShiftManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ShifManageUI\ShiftManage.Designer.cs">
-      <DependentUpon>ShiftManage.cs</DependentUpon>
+    <Compile Include="View\SellUI\SearchBookInfo.Designer.cs">
+      <DependentUpon>SearchBookInfo.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\BookInfoUI\BookInfo.resx">
-      <DependentUpon>BookInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\BookInfoUI\BookInfo_XemForm.resx">
-      <DependentUpon>BookInfo_XemForm.cs</DependentUpon>
+    <EmbeddedResource Include="Login_Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Login_Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ImportUI\EditBookInfo.resx">
+      <DependentUpon>EditBookInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ImportUI\Import.resx">
+      <DependentUpon>Import.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ImportUI\SearchBookTitle.resx">
+      <DependentUpon>SearchBookTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SellUI\Sell.resx">
+      <DependentUpon>Sell.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -171,11 +216,19 @@
     <EmbeddedResource Include="View\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\StaffManagerUI\StaffManager.resx">
+      <DependentUpon>StaffManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\StaffInfoUI\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+	  <EmbeddedResource></EmbeddedResource> Include="View\StaffInfoUI\StaffInfo.resx">
+      <DependentUpon>StaffInfo.cs</DependentUpon>
     <EmbeddedResource Include="View\ShifManageUI\FormSMDangKiCa.resx">
       <DependentUpon>FormSMDangKiCa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ShifManageUI\ShiftManage.resx">
-      <DependentUpon>ShiftManage.cs</DependentUpon>
+    <EmbeddedResource Include="View\SellUI\SearchBookInfo.resx">
+      <DependentUpon>SearchBookInfo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
@@ -195,9 +248,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\hide.png" />
+    <None Include="Resources\show.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="MetroFramework.txt" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
