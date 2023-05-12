@@ -104,7 +104,7 @@
             this.txt_password.Location = new System.Drawing.Point(173, 144);
             this.txt_password.MaxLength = 32767;
             this.txt_password.Name = "txt_password";
-            this.txt_password.PasswordChar = '*';
+            this.txt_password.PasswordChar = '\0';
             this.txt_password.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txt_password.SelectedText = "";
             this.txt_password.SelectionLength = 0;
@@ -143,20 +143,6 @@
             this.button1.TabIndex = 4;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // metroLabel_showpass
-            // 
-            //this.metroLabel_showpass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            //this.metroLabel_showpass.Cursor = System.Windows.Forms.Cursors.Hand;
-            //this.metroLabel_showpass.FontSize = MetroFramework.MetroLabelSize.Small;
-            //this.metroLabel_showpass.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            //this.metroLabel_showpass.Location = new System.Drawing.Point(308, 137);
-            //this.metroLabel_showpass.Name = "metroLabel_showpass";
-            //this.metroLabel_showpass.Size = new System.Drawing.Size(38, 23);
-            //this.metroLabel_showpass.TabIndex = 5;
-            //this.metroLabel_showpass.Text = "Hiện";
-            //this.metroLabel_showpass.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //this.metroLabel_showpass.Click += new System.EventHandler(this.metroLabel_showpass_Click);
             // 
             // LoginForm
             // 

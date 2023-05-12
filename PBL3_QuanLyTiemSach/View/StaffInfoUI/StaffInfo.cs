@@ -18,14 +18,17 @@ namespace PBL3_QuanLyTiemSach.View
 {
     public partial class StaffInfo : MetroFramework.Forms.MetroForm
     {
+        Form f;
         public int StaffID { get; set; }
         public bool IsAdmin { get; set; }
 
         public delegate void loadDGV();
         public loadDGV LoadDGV { get; set; }
 
-        public StaffInfo(int staffID, bool isAdmin = false)
+        public StaffInfo(int staffID,  bool isAdmin = false, Form1 f1 = default)
         {
+            this.f = f1;
+
             StaffID = staffID;
             IsAdmin = isAdmin;
             InitializeComponent();
@@ -43,6 +46,7 @@ namespace PBL3_QuanLyTiemSach.View
             {
                 LoadInfo();
             }
+
         }
 
         public void SetUIAlway()

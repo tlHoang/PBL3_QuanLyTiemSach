@@ -55,8 +55,7 @@ namespace PBL3_QuanLyTiemSach.View
                 //MessageBox.Show("thanh cong");
                 // call form and pass MaNV
                 this.Hide();
-                Form1 f = new Form1();
-                f.MaNV = MaNV;
+                Form1 f = new Form1(MaNV);
                 f.setRole(txt_username.Text);
                 f.ShowDialog();
                 this.Close();
@@ -87,7 +86,8 @@ namespace PBL3_QuanLyTiemSach.View
             else
             {
                 button1.Image = show;
-                txt_password.PasswordChar = '\0';
+                //txt_password.PasswordChar = '\0';
+                txt_password.UseSystemPasswordChar = false;
             }
         }
     }

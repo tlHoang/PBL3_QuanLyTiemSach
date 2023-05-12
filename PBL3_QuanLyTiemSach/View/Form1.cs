@@ -9,18 +9,27 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PBL3_QuanLyTiemSach.BLL;
 using PBL3_QuanLyTiemSach.View;
+using PBL3_QuanLyTiemSach.View.StaffManager;
 
 namespace PBL3_QuanLyTiemSach
 {
     public partial class Form1 : System.Windows.Forms.Form
     {
-        public Form1()
+        public int MaNV { get; set; }
+        public Form1(int MaNV)
         {
+            this.MaNV = MaNV;
             InitializeComponent();
             panel_Side.Hide();
         }
-        public int MaNV { get; set; }
         private System.Windows.Forms.Form currentForm; 
+        private void SetUI()
+        {
+            if (MaNV == 1)
+            {
+                button_Home.Text = "Nhân viên";
+            }
+        }
         private void OpenForm(System.Windows.Forms.Form f)
         {
             if (currentForm != null)
@@ -64,7 +73,14 @@ namespace PBL3_QuanLyTiemSach
             panel_Side.Top = button_Home.Top;
             panel_Side.Height = button_Home.Height;
             panel_Side.Show();
-            OpenForm(new Form2());
+            if (MaNV == 1)
+            {
+                OpenForm(new StaffManager());
+            }
+            else
+            {
+                OpenForm(new Form2());
+            }
         }
 
         private void button_BanHang_Click(object sender, EventArgs e)
@@ -89,6 +105,15 @@ namespace PBL3_QuanLyTiemSach
             panel_Side.Height = button_ThongKe.Height;
             panel_Side.Show();
             OpenForm(new Form5());
+        }
+
+        private void pictureBox_Click(object sender, EventArgs e)
+        {
+            if (MaNV != 1)
+            {
+                panel_Side.Hide();
+                OpenForm(new StaffInfo(MaNV, false, this));
+            }
         }
 
         private void button_Close_Click(object sender, EventArgs e)

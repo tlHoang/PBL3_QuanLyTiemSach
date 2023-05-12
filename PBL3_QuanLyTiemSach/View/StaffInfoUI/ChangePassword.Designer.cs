@@ -231,9 +231,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(442, 379);
+            this.ControlBox = false;
             this.Controls.Add(this.metroPanel_pass);
             this.Name = "ChangePassword";
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.Text = "Đổi mật khẩu";
+            this.TopMost = true;
             this.metroPanel_pass.ResumeLayout(false);
             this.metroPanel_pass.PerformLayout();
             this.ResumeLayout(false);

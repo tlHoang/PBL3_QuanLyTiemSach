@@ -132,5 +132,10 @@ namespace PBL3_QuanLyTiemSach.View.StaffManager
                 staffInfoForm.ShowDialog();
             }
         }
+
+        private void StaffManager_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
