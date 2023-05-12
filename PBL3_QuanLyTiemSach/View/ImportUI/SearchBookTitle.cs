@@ -21,6 +21,7 @@ namespace PBL3_QuanLyTiemSach.View.ImportUI
             InitializeComponent();
             this.f = f1;
             LoadBookTitleDGV();
+            dgvTenSach.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
         private void LoadBookTitleDGV()
         {
@@ -43,6 +44,7 @@ namespace PBL3_QuanLyTiemSach.View.ImportUI
             //dgvTenSach.Columns[0].HeaderText = "Tên sách";
             GetBookInfoBLL bll = new GetBookInfoBLL();
             dgvTenSach.DataSource = bll.getAllBookTitle(f.TenSach, f.SearchText).Select(p => new { TenSach = p }).ToList();
+            dgvTenSach.Columns[0].HeaderText = "Tên sách";
         }
 
         private void btnExit_Click(object sender, EventArgs e)

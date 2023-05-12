@@ -230,6 +230,7 @@ namespace PBL3_QuanLyTiemSach
                     delInfo();
                     dgvHoaDonBan.Rows.Clear();
                     txtTenKH.Text = txtSDT.Text = "";
+                    TenSach.Clear();
                 }
             }
             else

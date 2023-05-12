@@ -174,6 +174,9 @@ namespace PBL3_QuanLyTiemSach.View
                     }
                     ImportBLL ibll = new ImportBLL();
                     ibll.addHDN(Sach_HDB, f.MaNV, cbbDVCC.Text);
+                    TenSach.Clear();
+                    cbbDVCC.SelectedItem = null;
+                    dgvHoaDonNhap.DataSource = null;
                 }
             }
             else
