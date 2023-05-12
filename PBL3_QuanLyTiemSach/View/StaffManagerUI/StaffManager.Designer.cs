@@ -31,7 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.metroGrid_nhanvien = new MetroFramework.Controls.MetroGrid();
+            this.dgv_nhanvien = new MetroFramework.Controls.MetroGrid();
             this.metroButton_search = new MetroFramework.Controls.MetroButton();
             this.metroTextBox_search = new MetroFramework.Controls.MetroTextBox();
             this.metroButton_sort = new MetroFramework.Controls.MetroButton();
@@ -39,51 +39,54 @@
             this.metroButton_them = new MetroFramework.Controls.MetroButton();
             this.metroButton_xoa = new MetroFramework.Controls.MetroButton();
             this.metroButton_chinhsua = new MetroFramework.Controls.MetroButton();
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid_nhanvien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_nhanvien)).BeginInit();
             this.SuspendLayout();
             // 
-            // metroGrid_nhanvien
+            // dgv_nhanvien
             // 
-            this.metroGrid_nhanvien.AllowUserToResizeRows = false;
-            this.metroGrid_nhanvien.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid_nhanvien.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.metroGrid_nhanvien.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.metroGrid_nhanvien.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_nhanvien.AllowUserToResizeRows = false;
+            this.dgv_nhanvien.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgv_nhanvien.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_nhanvien.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgv_nhanvien.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid_nhanvien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.metroGrid_nhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_nhanvien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_nhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGrid_nhanvien.DefaultCellStyle = dataGridViewCellStyle2;
-            this.metroGrid_nhanvien.EnableHeadersVisualStyles = false;
-            this.metroGrid_nhanvien.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.metroGrid_nhanvien.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid_nhanvien.Location = new System.Drawing.Point(162, 92);
-            this.metroGrid_nhanvien.Name = "metroGrid_nhanvien";
-            this.metroGrid_nhanvien.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_nhanvien.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_nhanvien.EnableHeadersVisualStyles = false;
+            this.dgv_nhanvien.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dgv_nhanvien.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgv_nhanvien.Location = new System.Drawing.Point(95, 92);
+            this.dgv_nhanvien.Name = "dgv_nhanvien";
+            this.dgv_nhanvien.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid_nhanvien.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.metroGrid_nhanvien.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.metroGrid_nhanvien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid_nhanvien.Size = new System.Drawing.Size(594, 309);
-            this.metroGrid_nhanvien.TabIndex = 0;
+            this.dgv_nhanvien.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_nhanvien.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgv_nhanvien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_nhanvien.Size = new System.Drawing.Size(594, 309);
+            this.dgv_nhanvien.Style = MetroFramework.MetroColorStyle.Black;
+            this.dgv_nhanvien.TabIndex = 0;
+            this.dgv_nhanvien.UseCustomForeColor = true;
+            this.dgv_nhanvien.UseStyleColors = true;
             // 
             // metroButton_search
             // 
@@ -149,7 +152,7 @@
             // 
             // metroButton_them
             // 
-            this.metroButton_them.Location = new System.Drawing.Point(44, 104);
+            this.metroButton_them.Location = new System.Drawing.Point(14, 108);
             this.metroButton_them.Name = "metroButton_them";
             this.metroButton_them.Size = new System.Drawing.Size(75, 23);
             this.metroButton_them.TabIndex = 6;
@@ -159,7 +162,7 @@
             // 
             // metroButton_xoa
             // 
-            this.metroButton_xoa.Location = new System.Drawing.Point(44, 322);
+            this.metroButton_xoa.Location = new System.Drawing.Point(14, 326);
             this.metroButton_xoa.Name = "metroButton_xoa";
             this.metroButton_xoa.Size = new System.Drawing.Size(75, 23);
             this.metroButton_xoa.TabIndex = 7;
@@ -169,7 +172,7 @@
             // 
             // metroButton_chinhsua
             // 
-            this.metroButton_chinhsua.Location = new System.Drawing.Point(44, 133);
+            this.metroButton_chinhsua.Location = new System.Drawing.Point(14, 137);
             this.metroButton_chinhsua.Name = "metroButton_chinhsua";
             this.metroButton_chinhsua.Size = new System.Drawing.Size(75, 23);
             this.metroButton_chinhsua.TabIndex = 8;
@@ -189,17 +192,17 @@
             this.Controls.Add(this.metroButton_sort);
             this.Controls.Add(this.metroTextBox_search);
             this.Controls.Add(this.metroButton_search);
-            this.Controls.Add(this.metroGrid_nhanvien);
+            this.Controls.Add(this.dgv_nhanvien);
             this.Name = "StaffManager";
             this.Text = "Quản lý nhân viên";
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid_nhanvien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_nhanvien)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private MetroFramework.Controls.MetroGrid metroGrid_nhanvien;
+        private MetroFramework.Controls.MetroGrid dgv_nhanvien;
         private MetroFramework.Controls.MetroButton metroButton_search;
         private MetroFramework.Controls.MetroTextBox metroTextBox_search;
         private MetroFramework.Controls.MetroButton metroButton_sort;

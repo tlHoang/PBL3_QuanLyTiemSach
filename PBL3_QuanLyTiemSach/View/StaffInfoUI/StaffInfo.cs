@@ -120,7 +120,11 @@ namespace PBL3_QuanLyTiemSach.View
 
         private void metroButton_xacnhan_Click(object sender, EventArgs e)
         {
-            //if (!ValidateInfo()) return;
+            if (!ValidateInfo())
+            {
+                MetroMessageBox.Show(this, "Cảnh báo", "Dữ liệu không hợp lệ");
+                return;
+            }
             StaffManagerBLL staffManagerBLL = new StaffManagerBLL();
             if (StaffID == -1)
             {
@@ -171,16 +175,24 @@ namespace PBL3_QuanLyTiemSach.View
             LoadDGV();
         }
 
-        //private bool ValidateInfo()
-        //{
-            //// ten
-            //if (Regex.IsMatch(metroTextBox_ten.Text, @"(^\s*$|\d)"))
-            //    return false;
-            //if (metroRadioButton_nam.Checked == false && metroRadioButton_nu.Checked == false)
-            //    return false;
-            //if (Regex.IsMatch(metroTextBox_diachi.Text, @"^\s*$"))
-            //    return false;
-            //return true;
-        //}
+        private bool ValidateInfo()
+        {
+            // ten
+            if (Regex.IsMatch(metroTextBox_ten.Text, @"(^\s*$|\d)"))
+                return false;
+            //gioi tinh
+            if (metroRadioButton_nam.Checked == false && metroRadioButton_nu.Checked == false)
+                return false;
+            //dia chi
+            if (Regex.IsMatch(metroTextBox_diachi.Text, @"^\s*$"))
+                return false;
+            //luong
+            if (Regex.IsMatch(metroTextBox_luong.Text, @"^\s*$|\D"))
+                return false;
+            //sdt
+            if (!Regex.IsMatch(metroTextBox_sdt.Text, @"^\d{10}$"))
+                return false;
+            return true;
+        }
     }
 }
