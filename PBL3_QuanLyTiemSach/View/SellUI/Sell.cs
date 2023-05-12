@@ -162,7 +162,6 @@ namespace PBL3_QuanLyTiemSach
             }
             else
             {
-                //SL = sellBLL.getSLSachConLai(dgvHoaDonBan.SelectedRows[0].Cells[0].Value.ToString());
                 int SLinDGV = getSLSachDGV();
                 if (SLinDGV == -1)
                 {
