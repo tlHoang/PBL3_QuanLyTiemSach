@@ -91,11 +91,17 @@
     <Compile Include="DTO\CodeFirst\TaiKhoan.cs" />
     <Compile Include="DTO\BookInfo.cs" />
     <Compile Include="DTO\HoaDon.cs" />
-    <Compile Include="View\BillUI.cs">
+    <Compile Include="View\BillUI\Bill.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\BillUI.Designer.cs">
-      <DependentUpon>BillUI.cs</DependentUpon>
+    <Compile Include="View\BillUI\Bill.Designer.cs">
+      <DependentUpon>Bill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\BillUI\Bill_Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BillUI\Bill_Info.Designer.cs">
+      <DependentUpon>Bill_Info.cs</DependentUpon>
     </Compile>
     <Compile Include="View\StaffManagerUI\StaffManager.cs">
       <SubType>Form</SubType>
@@ -181,8 +187,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Login_Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\BillUI.resx">
-      <DependentUpon>BillUI.cs</DependentUpon>
+    <EmbeddedResource Include="View\BillUI\Bill.resx">
+      <DependentUpon>Bill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BillUI\Bill_Info.resx">
+      <DependentUpon>Bill_Info.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

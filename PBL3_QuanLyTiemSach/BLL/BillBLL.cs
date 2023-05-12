@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,25 +16,37 @@ namespace PBL3_QuanLyTiemSach.BLL
             {
                 if (LoaiHD == true)
                 {
-                    return db.HoaDonNhaps.Select(p => new HoaDon
+                    List<HoaDon> hd = new List<HoaDon>();
+                    var data = db.HoaDonNhaps.ToList();
+                    foreach(HoaDonNhap p in data)
                     {
-                        ID = p.MaHDNhap,
-                        Date = p.ThoiGianNhap,
-                        StaffName = getTenNV(p.MaNV),
-                        TenKH_DVCC = getTenDVCC(p.MaDVCC),
-                        Total = p.TongTien,
-                    }).ToList();
+                        hd.Add(new HoaDon
+                        {
+                            ID = p.MaHDNhap,
+                            Date = p.ThoiGianNhap,
+                            StaffName = getTenNV(p.MaNV),
+                            TenKH_DVCC = getTenDVCC(p.MaDVCC),
+                            Total = p.TongTien,
+                        });
+                    }
+                    return hd;
                 }
                 else
                 {
-                    return db.HoaDonBans.Select(p => new HoaDon
+                    List<HoaDon> hd = new List<HoaDon>();
+                    var data = db.HoaDonBans.ToList();
+                    foreach(HoaDonBan p in data)
                     {
-                        ID = p.MaHDBan,
-                        Date = p.ThoiGianBan,
-                        StaffName = getTenNV(p.MaNV),
-                        TenKH_DVCC = getTenKH(p.MaKH),
-                        Total = p.TongTien,
-                    }).ToList();
+                        hd.Add(new HoaDon
+                        {
+                            ID = p.MaHDBan,
+                            Date = p.ThoiGianBan,
+                            StaffName = getTenNV(p.MaNV),
+                            TenKH_DVCC = getTenKH(p.MaKH),
+                            Total = p.TongTien,
+                        });
+                    }
+                    return hd;
                 }
             }
         }
@@ -56,6 +69,57 @@ namespace PBL3_QuanLyTiemSach.BLL
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
                 return db.KhachHangs.Where(p => p.MaKH == MaKH).FirstOrDefault().TenKH;
+            }
+        }
+        public List<HoaDon> GetAllHoaDonSortBy(bool LoaiHD, int index)
+        {
+            List<HoaDon> hd = GetAllHoaDon(LoaiHD);
+            switch(index)
+            {
+                case 0:
+                    hd = hd.OrderBy(p => p.ID).ToList();
+                    break;
+                case 1:
+                    hd = hd.OrderBy(p => p.Date).ToList();
+                    break;
+                case 2:
+                    hd = hd.OrderBy(p => p.StaffName).ToList();
+                    break;
+                case 3:
+                    hd = hd.OrderBy(p => p.TenKH_DVCC).ToList();
+                    break;
+                case 4:
+                    hd = hd.OrderBy(p => p.Total).ToList();
+                    break;
+            }
+            return hd;
+        }
+        public string getSDTfromTenKH(string TenKH)
+        {
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                return db.KhachHangs.Where(p => p.TenKH == TenKH).FirstOrDefault().SDT;
+            }
+        }
+        public List<HoaDonBanSach> getHDBSfromMaHDB(int MaHDB)
+        {
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                return db.HoaDonBanSachs.Where(p => p.MaHDBan == MaHDB).ToList();
+            }
+        }
+        public List<HoaDonNhapSach> getHDNSfromMaHDN(int MaHDN)
+        {
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                return db.HoaDonNhapSachs.Where(p => p.MaHDNhap == MaHDN).ToList();
+            }
+        }
+        public string getTenSachfromMaSach(int MaSach)
+        {
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                return db.Sachs.Where(p => p.MaSach == MaSach).FirstOrDefault().TenSach;
             }
         }
     }
