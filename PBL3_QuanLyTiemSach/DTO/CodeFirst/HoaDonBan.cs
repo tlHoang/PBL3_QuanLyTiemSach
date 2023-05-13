@@ -12,9 +12,11 @@ namespace PBL3_QuanLyTiemSach.DTO
     {
         [Key]
         [Required]
+
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int MaHDBan { get; set; }
         [Required]
+
         public int MaNV { get; set; }
         [Required]
         public int MaKH { get; set; }

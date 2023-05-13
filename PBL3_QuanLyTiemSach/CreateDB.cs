@@ -10,8 +10,8 @@ using System.Threading.Tasks;
 namespace PBL3_QuanLyTiemSach
 {
     public class CreateDB
-        : CreateDatabaseIfNotExists<DBQuanLyTiemSach>
-        //: DropCreateDatabaseAlways<DBQuanLyTiemSach>
+        //: CreateDatabaseIfNotExists<DBQuanLyTiemSach>
+        : DropCreateDatabaseAlways<DBQuanLyTiemSach>
     {
         protected override void Seed(DBQuanLyTiemSach context)
         {
@@ -27,6 +27,18 @@ namespace PBL3_QuanLyTiemSach
                 new NhanVien { MaNV = 1, TenNV = "Nguyễn Văn A", GioiTinh = true, NgaySinh = Convert.ToDateTime("2003-03-02"), DiaChi = "Đà Nẵng, Việt Nam", Luong = 100000.0, SDT = "0123456789"},
                 new NhanVien { MaNV = 2, TenNV = "Lê Ngọc Hạnh", GioiTinh = true, NgaySinh = new DateTime(2003,4,6), DiaChi = "Đà Nẵng", Luong = 20000000, SDT = "0123654789"},
                 new NhanVien { MaNV = 3, TenNV = "Trần Lê Huy Hoàng", GioiTinh = true, NgaySinh = new DateTime(2003,3,2), DiaChi = "Đà Nẵng", Luong = 30000000, SDT = "0147852369"}
+            });
+            context.Cas.AddRange(new Ca[]
+            {
+                new Ca {MaCa = 1, Ngay = new DateTime(2023, 5, 5), GioBatDau = new TimeSpan (8,0,0), GioKetThuc = new TimeSpan(17,0,0) },
+                new Ca {MaCa = 2, Ngay = new DateTime(2023, 5, 6), GioBatDau = new TimeSpan(8,0,0), GioKetThuc = new TimeSpan(17,0,0) },
+                new Ca {MaCa = 3, Ngay = new DateTime(2023, 5, 7), GioBatDau = new TimeSpan(8,0,0), GioKetThuc = new TimeSpan(17,0,0) }
+               // new Ca {MaCa = "", Ngay = new DateTime(, , ), GioBatDau = new TimeSpan(,,), GioKetThuc = new TimeSpan(,,) },
+            });
+            context.CaNVs.AddRange(new CaNV[]
+            {
+                new CaNV {MaCaNV = 1, MaCa = 1, MaNV= 2},
+                new CaNV {MaCaNV = 2, MaCa = 2, MaNV= 3}
             });
             context.SachTheLoais.AddRange(new SachTheLoai[]
             {

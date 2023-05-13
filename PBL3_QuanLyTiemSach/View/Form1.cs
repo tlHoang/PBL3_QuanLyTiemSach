@@ -20,7 +20,7 @@ namespace PBL3_QuanLyTiemSach
             panel_Side.Hide();
         }
         public int MaNV { get; set; }
-        private System.Windows.Forms.Form currentForm; 
+        private System.Windows.Forms.Form currentForm;
         private void OpenForm(System.Windows.Forms.Form f)
         {
             if (currentForm != null)
