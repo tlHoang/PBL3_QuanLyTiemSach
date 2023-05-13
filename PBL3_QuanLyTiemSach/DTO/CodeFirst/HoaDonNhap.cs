@@ -16,6 +16,7 @@ namespace PBL3_QuanLyTiemSach.DTO
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int MaHDNhap { get; set; }
 		[Required]
+
 		public int MaNV { get; set; }
 		[Required]
 		public int MaDVCC { get; set; }
