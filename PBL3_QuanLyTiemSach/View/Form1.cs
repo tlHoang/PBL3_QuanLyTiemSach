@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using PBL3_QuanLyTiemSach.BLL;
 using PBL3_QuanLyTiemSach.View;
 using PBL3_QuanLyTiemSach.View.StaffManager;
+using PBL3_QuanLyTiemSach.View.StatisticUI;
 
 namespace PBL3_QuanLyTiemSach
 {
@@ -20,11 +21,13 @@ namespace PBL3_QuanLyTiemSach
         {
             this.MaNV = MaNV;
             InitializeComponent();
-            panel_Side.Hide();
+            SetUI();
         }
         private System.Windows.Forms.Form currentForm; 
         private void SetUI()
         {
+            panel_Side.Hide();
+            setRole();
             if (MaNV == 1)
             {
                 button_Home.Text = "Nhân viên";
@@ -57,9 +60,10 @@ namespace PBL3_QuanLyTiemSach
                 labelName.Text = fullName[fullName.Length - 2] + " " + fullName[fullName.Length - 1];
             }
         }
-        public void setRole(string role)
+        public void setRole()
         {
-            if (role != "admin")
+            //if (role != "admin")
+            if (MaNV != 1)
             {
                 labelRole.Text = "Nhân viên";
             }
@@ -101,10 +105,13 @@ namespace PBL3_QuanLyTiemSach
 
         private void button_ThongKe_Click(object sender, EventArgs e)
         {
-            panel_Side.Top = button_ThongKe.Top;
-            panel_Side.Height = button_ThongKe.Height;
-            panel_Side.Show();
-            OpenForm(new Form5());
+            if (MaNV == 1)
+            {
+                panel_Side.Top = button_ThongKe.Top;
+                panel_Side.Height = button_ThongKe.Height;
+                panel_Side.Show();
+                OpenForm(new Statistic());
+            }
         }
 
         private void pictureBox_Click(object sender, EventArgs e)

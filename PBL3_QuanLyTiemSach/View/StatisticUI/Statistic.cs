@@ -1,4 +1,5 @@
-﻿using PBL3_QuanLyTiemSach.DTO;
+﻿using PBL3_QuanLyTiemSach.BLL;
+using PBL3_QuanLyTiemSach.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,8 @@ namespace PBL3_QuanLyTiemSach.View.StatisticUI
             InitializeComponent();
             SetCBB();
         }
-        public void SetCBB()
+
+        private void SetCBB()
         {
             for (int i = 1; i <= 12; i++)
             {
@@ -37,6 +39,20 @@ namespace PBL3_QuanLyTiemSach.View.StatisticUI
                     Text = $"Năm {i}"
                 });
             }
+        }
+
+        private void LoadDGV()
+        {
+            StatisticBLL statisticBLL = new StatisticBLL();
+            int month = ((CBBItem)metroComboBox_month.SelectedItem).Value;
+            int year = ((CBBItem)metroComboBox_year.SelectedItem).Value;
+            dgv_doanhthu.DataSource = statisticBLL.GetSellInvoiceByMonth(month, year)
+                .Select(p => new { p.MaHDBan, p.ThoiGianBan.Date, p.TongTien });
+        }
+
+        private void metroButton_xem_Click(object sender, EventArgs e)
+        {
+            LoadDGV();
         }
     }
 }

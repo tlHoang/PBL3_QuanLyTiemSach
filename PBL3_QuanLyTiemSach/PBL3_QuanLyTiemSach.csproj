@@ -72,6 +72,7 @@
     <Compile Include="BLL\GetBookInfoBLL.cs" />
     <Compile Include="BLL\ImportBLL.cs" />
     <Compile Include="BLL\SellBLL.cs" />
+    <Compile Include="BLL\StatisticBLL.cs" />
     <Compile Include="BLL\TaiKhoanBLL.cs" />
     <Compile Include="CreateDB.cs" />
     <Compile Include="DBQuanLyTiemSach.cs" />

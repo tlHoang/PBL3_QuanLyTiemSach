@@ -26,7 +26,6 @@ namespace PBL3_QuanLyTiemSach.View.StaffManager
         {
             //this.ControlBox = false;
             this.Style = MetroFramework.MetroColorStyle.White;
-            this.dgv_nhanvien.ForeColor = Color.White;
         }
 
         private void SetUIForDGV()

@@ -35,12 +35,13 @@
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.dgv = new System.Windows.Forms.DataGridView();
+            this.dgv_doanhthu = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.metroButton_xem = new MetroFramework.Controls.MetroButton();
             this.tabControl_thongke.SuspendLayout();
             this.tabPage_doanhthu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_doanhthu)).BeginInit();
             this.SuspendLayout();
             // 
             // metroComboBox_month
@@ -81,7 +82,7 @@
             this.tabPage_doanhthu.Controls.Add(this.metroPanel1);
             this.tabPage_doanhthu.Controls.Add(this.metroButton2);
             this.tabPage_doanhthu.Controls.Add(this.metroButton1);
-            this.tabPage_doanhthu.Controls.Add(this.dgv);
+            this.tabPage_doanhthu.Controls.Add(this.dgv_doanhthu);
             this.tabPage_doanhthu.Location = new System.Drawing.Point(4, 22);
             this.tabPage_doanhthu.Name = "tabPage_doanhthu";
             this.tabPage_doanhthu.Padding = new System.Windows.Forms.Padding(3);
@@ -121,13 +122,13 @@
             this.metroButton1.Text = "metroButton1";
             this.metroButton1.UseSelectable = true;
             // 
-            // dgv
+            // dgv_doanhthu
             // 
-            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(6, 6);
-            this.dgv.Name = "dgv";
-            this.dgv.Size = new System.Drawing.Size(450, 246);
-            this.dgv.TabIndex = 0;
+            this.dgv_doanhthu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_doanhthu.Location = new System.Drawing.Point(6, 6);
+            this.dgv_doanhthu.Name = "dgv_doanhthu";
+            this.dgv_doanhthu.Size = new System.Drawing.Size(450, 246);
+            this.dgv_doanhthu.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -149,11 +150,22 @@
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // metroButton_xem
+            // 
+            this.metroButton_xem.Location = new System.Drawing.Point(290, 64);
+            this.metroButton_xem.Name = "metroButton_xem";
+            this.metroButton_xem.Size = new System.Drawing.Size(49, 28);
+            this.metroButton_xem.TabIndex = 3;
+            this.metroButton_xem.Text = "Xem";
+            this.metroButton_xem.UseSelectable = true;
+            this.metroButton_xem.Click += new System.EventHandler(this.metroButton_xem_Click);
+            // 
             // Statistic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(709, 450);
+            this.Controls.Add(this.metroButton_xem);
             this.Controls.Add(this.tabControl_thongke);
             this.Controls.Add(this.metroComboBox_year);
             this.Controls.Add(this.metroComboBox_month);
@@ -161,7 +173,7 @@
             this.Text = "Thống kê";
             this.tabControl_thongke.ResumeLayout(false);
             this.tabPage_doanhthu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_doanhthu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -175,8 +187,9 @@
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroButton metroButton1;
-        private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.DataGridView dgv_doanhthu;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
+        private MetroFramework.Controls.MetroButton metroButton_xem;
     }
 }

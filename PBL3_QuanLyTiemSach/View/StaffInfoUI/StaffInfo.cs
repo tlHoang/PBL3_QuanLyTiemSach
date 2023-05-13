@@ -181,19 +181,14 @@ namespace PBL3_QuanLyTiemSach.View
 
         private bool ValidateInfo()
         {
-            // ten
             if (Regex.IsMatch(metroTextBox_ten.Text, @"(^\s*$|\d)"))
                 return false;
-            //gioi tinh
             if (metroRadioButton_nam.Checked == false && metroRadioButton_nu.Checked == false)
                 return false;
-            //dia chi
             if (Regex.IsMatch(metroTextBox_diachi.Text, @"^\s*$"))
                 return false;
-            //luong
             if (Regex.IsMatch(metroTextBox_luong.Text, @"^\s*$|\D"))
                 return false;
-            //sdt
             if (!Regex.IsMatch(metroTextBox_sdt.Text, @"^\d{10}$"))
                 return false;
             return true;

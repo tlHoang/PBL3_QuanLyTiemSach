@@ -10,8 +10,8 @@ using System.Threading.Tasks;
 namespace PBL3_QuanLyTiemSach
 {
     public class CreateDB 
-        : CreateDatabaseIfNotExists<DBQuanLyTiemSach>
-        // : DropCreateDatabaseAlways<DBQuanLyTiemSach>
+          : CreateDatabaseIfNotExists<DBQuanLyTiemSach>
+         //: DropCreateDatabaseAlways<DBQuanLyTiemSach>
     {
         protected override void Seed(DBQuanLyTiemSach context)
         {
@@ -30,12 +30,19 @@ namespace PBL3_QuanLyTiemSach
             });
             context.SachTheLoais.AddRange(new SachTheLoai[]
             {
-                new SachTheLoai { TenTheLoai ="Trinh Thám" },
-                new SachTheLoai { TenTheLoai ="Tiểu Thuyết" },
-                new SachTheLoai { TenTheLoai ="Cấp 3 " },
-                new SachTheLoai { TenTheLoai ="Ngôn Tình" },
-                new SachTheLoai { TenTheLoai ="Ngụ Ngôn" },
+                new SachTheLoai { MaTheLoai = 1, TenTheLoai ="Trinh Thám" },
+                new SachTheLoai { MaTheLoai = 2, TenTheLoai ="Tiểu Thuyết" },
+                new SachTheLoai { MaTheLoai = 3, TenTheLoai ="Cấp 3 " },
+                new SachTheLoai { MaTheLoai = 4, TenTheLoai ="Ngôn Tình" },
+                new SachTheLoai { MaTheLoai = 5, TenTheLoai ="Ngụ Ngôn" },
                 //new SachTheLoai{ MaTheLoai = "", TenTheLoai ="" },
+            });
+            context.KhachHangs.AddRange(new KhachHang[]
+            {
+                new KhachHang { TenKH = "Khach Hang 1", SDT = "0123456789" },
+                new KhachHang { TenKH = "Khach Hang 2", SDT = "0223456789" },
+                new KhachHang { TenKH = "Khach Hang 3", SDT = "0323456789" },
+                new KhachHang { TenKH = "Khach Hang 4", SDT = "0423456789" },
             });
             context.DonViCungCaps.AddRange(new DonViCungCap[]
             {
@@ -43,6 +50,23 @@ namespace PBL3_QuanLyTiemSach
                 new DonViCungCap { TenDV = "Don Vi B" },
                 new DonViCungCap { TenDV = "Don Vi C" },
                 new DonViCungCap { TenDV = "Don Vi D" }
+            });
+            context.Sachs.AddRange(new Sach[]
+            {
+                new Sach { MaSach = 1, TenSach = "Sach A", TacGia = "Tac gia A", SoLuongConLai = 100, GiaBan = 22000, MaTheLoai = 1 },
+                new Sach { MaSach = 2, TenSach = "Sach B", TacGia = "Tac gia B", SoLuongConLai = 140, GiaBan = 26000, MaTheLoai = 2 },
+            });
+            context.HoaDonBans.AddRange(new HoaDonBan[]
+            {
+                new HoaDonBan { MaHDBan = 1, MaNV = 2, MaKH = 1, ThoiGianBan = Convert.ToDateTime("2023-05-12 00:00:00"), TongTien = 48000 },
+                new HoaDonBan { MaHDBan = 2, MaNV = 3, MaKH = 2, ThoiGianBan = Convert.ToDateTime("2023-05-12 12:12:12"), TongTien = 44000 },
+            });
+            context.HoaDonBanSachs.AddRange(new HoaDonBanSach[]
+            {
+                new HoaDonBanSach { MaHDBanSach = 1, MaHDBan = 1, MaSach = 1, DonGiaBan = 22000, SoLuongBan = 1 },
+                new HoaDonBanSach { MaHDBanSach = 2, MaHDBan = 1, MaSach = 2, DonGiaBan = 26000, SoLuongBan = 1 },
+                new HoaDonBanSach { MaHDBanSach = 3, MaHDBan = 2, MaSach = 1, DonGiaBan = 22000, SoLuongBan = 1 },
+                new HoaDonBanSach { MaHDBanSach = 4, MaHDBan = 2, MaSach = 1, DonGiaBan = 22000, SoLuongBan = 1 },
             });
             //context.Sachs.AddRange(new Sach[]
             //{
