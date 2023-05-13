@@ -126,7 +126,7 @@ namespace PBL3_QuanLyTiemSach.View
         {
             if (!ValidateInfo())
             {
-                MetroMessageBox.Show(this, "Cảnh báo", "Dữ liệu không hợp lệ");
+                MetroMessageBox.Show(this, "Dữ liệu không hợp lệ", "Cảnh báo");
                 return;
             }
             StaffManagerBLL staffManagerBLL = new StaffManagerBLL();

@@ -29,6 +29,8 @@ namespace PBL3_QuanLyTiemSach
             setRole();
             if (MaNV == 1)
             {
+                button_BanHang.Text = "Button A";
+                button_NhapHang.Text = "Button B";
                 button_Home.Text = "Nhân viên";
             }
         }
@@ -91,7 +93,14 @@ namespace PBL3_QuanLyTiemSach
             panel_Side.Top = button_BanHang.Top;
             panel_Side.Height = button_BanHang.Height;
             panel_Side.Show();
-            OpenForm(new Sell(this));
+            if (MaNV != 1)
+            {
+                OpenForm(new Sell(this));
+            }
+            else
+            {
+                OpenForm(new Form5());
+            }
         }
 
         private void button_NhapHang_Click(object sender, EventArgs e)
@@ -99,11 +108,19 @@ namespace PBL3_QuanLyTiemSach
             panel_Side.Top = button_NhapHang.Top;
             panel_Side.Height = button_NhapHang.Height;
             panel_Side.Show();
-            OpenForm(new Import(this));
+            if (MaNV != 1)
+            {
+                OpenForm(new Import(this));
+            }
+            else
+            {
+                OpenForm(new Form5());
+            }
         }
 
         private void button_ThongKe_Click(object sender, EventArgs e)
         {
+            OpenForm(new Form5());
             if (MaNV == 1)
             {
                 panel_Side.Top = button_ThongKe.Top;
