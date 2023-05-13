@@ -61,13 +61,13 @@
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
-            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroTile4 = new MetroFramework.Controls.MetroTile();
             this.metroTile5 = new MetroFramework.Controls.MetroTile();
@@ -85,7 +85,7 @@
             // dtChonNgayLamCa1
             // 
             this.dtChonNgayLamCa1.Location = new System.Drawing.Point(168, 114);
-            this.dtChonNgayLamCa1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtChonNgayLamCa1.Margin = new System.Windows.Forms.Padding(2);
             this.dtChonNgayLamCa1.Name = "dtChonNgayLamCa1";
             this.dtChonNgayLamCa1.Size = new System.Drawing.Size(145, 20);
             this.dtChonNgayLamCa1.TabIndex = 0;
@@ -94,7 +94,7 @@
             // 
             this.cbbGioBatDauCa1.FormattingEnabled = true;
             this.cbbGioBatDauCa1.Location = new System.Drawing.Point(350, 113);
-            this.cbbGioBatDauCa1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbGioBatDauCa1.Margin = new System.Windows.Forms.Padding(2);
             this.cbbGioBatDauCa1.Name = "cbbGioBatDauCa1";
             this.cbbGioBatDauCa1.Size = new System.Drawing.Size(145, 21);
             this.cbbGioBatDauCa1.TabIndex = 1;
@@ -104,7 +104,7 @@
             // 
             this.cbbGioKetThucCa1.FormattingEnabled = true;
             this.cbbGioKetThucCa1.Location = new System.Drawing.Point(543, 113);
-            this.cbbGioKetThucCa1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbGioKetThucCa1.Margin = new System.Windows.Forms.Padding(2);
             this.cbbGioKetThucCa1.Name = "cbbGioKetThucCa1";
             this.cbbGioKetThucCa1.Size = new System.Drawing.Size(145, 21);
             this.cbbGioKetThucCa1.TabIndex = 1;
@@ -145,7 +145,7 @@
             // btnThoat
             // 
             this.btnThoat.Location = new System.Drawing.Point(39, 412);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(107, 21);
             this.btnThoat.TabIndex = 3;
@@ -176,7 +176,7 @@
             // btnDangKiCa1
             // 
             this.btnDangKiCa1.Location = new System.Drawing.Point(733, 113);
-            this.btnDangKiCa1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDangKiCa1.Margin = new System.Windows.Forms.Padding(2);
             this.btnDangKiCa1.Name = "btnDangKiCa1";
             this.btnDangKiCa1.Size = new System.Drawing.Size(107, 21);
             this.btnDangKiCa1.TabIndex = 5;
@@ -415,60 +415,16 @@
             this.metroTile2.TabIndex = 8;
             this.metroTile2.UseSelectable = true;
             // 
-            // metroLabel9
+            // metroLabel15
             // 
-            this.metroLabel9.AutoSize = true;
-            this.metroLabel9.BackColor = System.Drawing.Color.Cyan;
-            this.metroLabel9.Location = new System.Drawing.Point(26, 20);
-            this.metroLabel9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(34, 19);
-            this.metroLabel9.TabIndex = 2;
-            this.metroLabel9.Text = "Ca 1";
-            // 
-            // metroLabel10
-            // 
-            this.metroLabel10.AutoSize = true;
-            this.metroLabel10.BackColor = System.Drawing.Color.Cyan;
-            this.metroLabel10.Location = new System.Drawing.Point(26, 56);
-            this.metroLabel10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(36, 19);
-            this.metroLabel10.TabIndex = 2;
-            this.metroLabel10.Text = "Ca 2";
-            // 
-            // metroLabel11
-            // 
-            this.metroLabel11.AutoSize = true;
-            this.metroLabel11.BackColor = System.Drawing.Color.Cyan;
-            this.metroLabel11.Location = new System.Drawing.Point(26, 95);
-            this.metroLabel11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel11.Name = "metroLabel11";
-            this.metroLabel11.Size = new System.Drawing.Size(36, 19);
-            this.metroLabel11.TabIndex = 2;
-            this.metroLabel11.Text = "Ca 3";
-            // 
-            // metroLabel12
-            // 
-            this.metroLabel12.AutoSize = true;
-            this.metroLabel12.BackColor = System.Drawing.Color.Cyan;
-            this.metroLabel12.Location = new System.Drawing.Point(26, 137);
-            this.metroLabel12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel12.Name = "metroLabel12";
-            this.metroLabel12.Size = new System.Drawing.Size(36, 19);
-            this.metroLabel12.TabIndex = 2;
-            this.metroLabel12.Text = "Ca 4";
-            // 
-            // metroLabel13
-            // 
-            this.metroLabel13.AutoSize = true;
-            this.metroLabel13.BackColor = System.Drawing.Color.Cyan;
-            this.metroLabel13.Location = new System.Drawing.Point(26, 176);
-            this.metroLabel13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel13.Name = "metroLabel13";
-            this.metroLabel13.Size = new System.Drawing.Size(36, 19);
-            this.metroLabel13.TabIndex = 2;
-            this.metroLabel13.Text = "Ca 5";
+            this.metroLabel15.AutoSize = true;
+            this.metroLabel15.BackColor = System.Drawing.Color.Cyan;
+            this.metroLabel15.Location = new System.Drawing.Point(26, 259);
+            this.metroLabel15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel15.Name = "metroLabel15";
+            this.metroLabel15.Size = new System.Drawing.Size(36, 19);
+            this.metroLabel15.TabIndex = 2;
+            this.metroLabel15.Text = "Ca 7";
             // 
             // metroLabel14
             // 
@@ -481,16 +437,60 @@
             this.metroLabel14.TabIndex = 2;
             this.metroLabel14.Text = "Ca 6";
             // 
-            // metroLabel15
+            // metroLabel13
             // 
-            this.metroLabel15.AutoSize = true;
-            this.metroLabel15.BackColor = System.Drawing.Color.Cyan;
-            this.metroLabel15.Location = new System.Drawing.Point(26, 259);
-            this.metroLabel15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel15.Name = "metroLabel15";
-            this.metroLabel15.Size = new System.Drawing.Size(36, 19);
-            this.metroLabel15.TabIndex = 2;
-            this.metroLabel15.Text = "Ca 7";
+            this.metroLabel13.AutoSize = true;
+            this.metroLabel13.BackColor = System.Drawing.Color.Cyan;
+            this.metroLabel13.Location = new System.Drawing.Point(26, 176);
+            this.metroLabel13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel13.Name = "metroLabel13";
+            this.metroLabel13.Size = new System.Drawing.Size(36, 19);
+            this.metroLabel13.TabIndex = 2;
+            this.metroLabel13.Text = "Ca 5";
+            // 
+            // metroLabel12
+            // 
+            this.metroLabel12.AutoSize = true;
+            this.metroLabel12.BackColor = System.Drawing.Color.Cyan;
+            this.metroLabel12.Location = new System.Drawing.Point(26, 137);
+            this.metroLabel12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel12.Name = "metroLabel12";
+            this.metroLabel12.Size = new System.Drawing.Size(36, 19);
+            this.metroLabel12.TabIndex = 2;
+            this.metroLabel12.Text = "Ca 4";
+            // 
+            // metroLabel11
+            // 
+            this.metroLabel11.AutoSize = true;
+            this.metroLabel11.BackColor = System.Drawing.Color.Cyan;
+            this.metroLabel11.Location = new System.Drawing.Point(26, 95);
+            this.metroLabel11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel11.Name = "metroLabel11";
+            this.metroLabel11.Size = new System.Drawing.Size(36, 19);
+            this.metroLabel11.TabIndex = 2;
+            this.metroLabel11.Text = "Ca 3";
+            // 
+            // metroLabel10
+            // 
+            this.metroLabel10.AutoSize = true;
+            this.metroLabel10.BackColor = System.Drawing.Color.Cyan;
+            this.metroLabel10.Location = new System.Drawing.Point(26, 56);
+            this.metroLabel10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel10.Name = "metroLabel10";
+            this.metroLabel10.Size = new System.Drawing.Size(36, 19);
+            this.metroLabel10.TabIndex = 2;
+            this.metroLabel10.Text = "Ca 2";
+            // 
+            // metroLabel9
+            // 
+            this.metroLabel9.AutoSize = true;
+            this.metroLabel9.BackColor = System.Drawing.Color.Cyan;
+            this.metroLabel9.Location = new System.Drawing.Point(26, 20);
+            this.metroLabel9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel9.Name = "metroLabel9";
+            this.metroLabel9.Size = new System.Drawing.Size(34, 19);
+            this.metroLabel9.TabIndex = 2;
+            this.metroLabel9.Text = "Ca 1";
             // 
             // metroTile3
             // 
@@ -641,9 +641,9 @@
             this.Controls.Add(this.metroTile4);
             this.Controls.Add(this.metroTile5);
             this.Controls.Add(this.metroTile6);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormSMDangKiCa";
-            this.Padding = new System.Windows.Forms.Padding(13, 39, 13, 13);
+            this.Padding = new System.Windows.Forms.Padding(13, 60, 13, 13);
             this.Text = "Đăng Kí Ca Trong Tuần";
             this.metroTile1.ResumeLayout(false);
             this.metroTile1.PerformLayout();

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -84,7 +85,24 @@ namespace PBL3_QuanLyTiemSach.BLL
                 );
             }
         }
-
+        public bool isValidDay(DateTime dayValid)
+        {
+            int stone = 2;
+            DateTime dateNow = DateTime.Now.Date;
+            int daysDiff = (int)(dayValid - dateNow).TotalDays;
+            return (daysDiff >=stone) ? true : false;
+        }
+        public bool isValidDay(int maCa)
+        {
+            int stone = 2;
+            using(DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                DateTime dateNow = DateTime.Now.Date;
+                DateTime? dayValid = db.Cas.Where(c=> c.MaCa== maCa).FirstOrDefault().Ngay;
+                int daysDiff = (int)(dayValid.Value - dateNow).TotalDays;
+                return(daysDiff >= stone)? true: false;
+            }
+        }
         public Ca getCa(Ca currentCa)
         {
             using(DBQuanLyTiemSach db = new DBQuanLyTiemSach())
@@ -125,7 +143,7 @@ namespace PBL3_QuanLyTiemSach.BLL
             
             
         }
-        public DataTable getCaLamTrongNgay(DateTime ngayLam)
+        public DataTable getDataCaLamTrongNgay(DateTime ngayLam)
         {
             DataTable dt = new DataTable();
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
@@ -182,7 +200,7 @@ namespace PBL3_QuanLyTiemSach.BLL
             });
             return db;
         }
-        public DataTable getCaNhanVien(int maNV)
+        public DataTable getDataCaNhanVien(int maNV)
         {
             DataTable dt = new DataTable();
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
@@ -234,22 +252,58 @@ namespace PBL3_QuanLyTiemSach.BLL
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {   
                 Ca delCa = new Ca();
-                CaNV delCaNV = new CaNV();
-                
-                DateTime datenow = DateTime.Now.Date;
-                DateTime delTime = Convert.ToDateTime(db.Cas.Where(c => c.MaCa == maCa).Select(c => DbFunctions.TruncateTime(c.Ngay)));
-                
-                if((datenow - delTime) >= 2)
+                CaNV delCaNV = new CaNV();  
+                if(maCa != null)
                 {
+                    if(isValidDay(maCa))
+                    {
+                        delCa = db.Cas.Where(c => c.MaCa == maCa).FirstOrDefault();
+                        delCaNV = db.CaNVs.Where(cnv => cnv.MaCa == maCa && cnv.MaNV == maNV).FirstOrDefault();
 
+                        db.CaNVs.Remove(delCaNV);
+                        db.SaveChanges();
+                        MessageBox.Show("Xóa Thành công");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thể Xóa Ca Làm Này khi 2 ngày nữa là đến Ca làm");
+                    }
                 }
-                delCa = db.Cas.Where(c => c.MaCa == maCa).FirstOrDefault();
-                delCaNV = db.CaNVs.Where(cnv => cnv.MaCa == maCa && cnv.MaNV == maNV).FirstOrDefault();
-
-                //db.Cas.Remove(delCa);
-                db.CaNVs.Remove(delCaNV);
-                db.SaveChanges();
-                MessageBox.Show("Xóa Thành công");
+                else
+                {
+                    MessageBox.Show("Không tìm thấy Ca làm có mã" + maCa);
+                }    
+            }
+        }
+        public void UpdateCa(Ca newCa, int maNV)
+        {
+            using(DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                CaNV newCaNV = new CaNV();
+                CaNV oldCaNV = db.CaNVs.FirstOrDefault(cnv => cnv.MaCa == newCa.MaCa && cnv.MaNV == maNV);
+                db.CaNVs.Remove(oldCaNV);
+                if (isHasExist(newCa))
+                {
+                    
+                    newCaNV.MaCa = getCa(newCa).MaCa;
+                    newCaNV.MaNV = maNV;
+                    db.CaNVs.AddOrUpdate(newCaNV);
+                }
+                else
+                {
+                    newCaNV.MaCa = newCa.MaCa;
+                    newCaNV.MaNV = maNV;
+                    db.CaNVs.AddOrUpdate(newCaNV);
+                    db.Cas.AddOrUpdate(newCa);
+                }
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
             }
         }
     }

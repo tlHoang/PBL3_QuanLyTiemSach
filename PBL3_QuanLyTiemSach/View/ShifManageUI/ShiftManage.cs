@@ -15,16 +15,18 @@ using System.Windows.Forms;
 
 namespace PBL3_QuanLyTiemSach.View
 {
-    // Nextversion : Xóa ngày đã làm: Cải tiến Button Xem
+
     public partial class ShiftManage : MetroFramework.Forms.MetroForm
     {
-        int IDStaff = 2;
-        string flagDGV = "";
-        string flagButton = "";
+        int IDStaff;
+        //Form1 f;
         public delegate void updateForm();
-        public ShiftManage()
+         public ShiftManage()
+       // public ShiftManage(Form1 f1,int MaNV)
         {
             InitializeComponent();
+            //this.f = f1;
+            //this.IDStaff = MaNV;
             setCBBMain();
             offGUIButton();
             setTenNhanVien(IDStaff);
@@ -37,21 +39,23 @@ namespace PBL3_QuanLyTiemSach.View
             txtbxTenNhanVien.Enabled = false;
         }
         private void offGUIButton()
-        {        
-            btnSMDangKiCa.Enabled= false;
-            btnXoaCa.Enabled= false;
-            flagButton = "off";
+        {
+            btnSMDangKiCa.Hide();
+            btnXoaCa.Hide();
+            btnChinhSua.Hide();
+            
         }
         private void onGUIButton()
         {
-            btnSMDangKiCa.Enabled= true;
-            btnXoaCa.Enabled= true;
-            flagButton = "on";
+            btnSMDangKiCa.Show();
+            btnXoaCa.Show();
+            btnChinhSua.Show();
+            
         }
         private void setCBBLichLam()
         {
             QLTS_SM_BLL bll = new QLTS_SM_BLL();
-            dgvShift.DataSource = bll.getCaNhanVien(IDStaff);
+            dgvShift.DataSource = bll.getDataCaNhanVien(IDStaff);
             dgvShift.Columns["Tên"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             dgvShift.Columns["Tên"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
@@ -59,7 +63,7 @@ namespace PBL3_QuanLyTiemSach.View
         {
             DateTime txtTime = DateTime.Now.Date;
             QLTS_SM_BLL bll = new QLTS_SM_BLL();
-            dgvShift.DataSource = bll.getCaLamTrongNgay(txtTime);    
+            dgvShift.DataSource = bll.getDataCaLamTrongNgay(txtTime);    
             dgvShift.Columns["MaNV"].HeaderText = "Mã Nhân Viên";
             dgvShift.Columns["TenNhanVien"].HeaderText = "Tên Nhân Viên";
             dgvShift.Columns["TenNhanVien"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;           
@@ -88,7 +92,8 @@ namespace PBL3_QuanLyTiemSach.View
         {
             QLTS_SM_BLL bll = new QLTS_SM_BLL();
             setCBBLichLam();
-            flagDGV = "LichLam";
+            btnSMXem.Hide();
+            dtSMChonNgay.Hide();
             if (bll.IsAdmin(IDStaff))
             {                
                 offGUIButton();
@@ -119,22 +124,16 @@ namespace PBL3_QuanLyTiemSach.View
         private void btnSMQuayLai_Click(object sender, EventArgs e)
         {
             offGUIButton();
+            btnSMXem.Show();
+            dtSMChonNgay.Show();
             setCBBMain();
-            flagDGV = "";
         }
 
         private void btnSMXem_Click(object sender, EventArgs e)
         {
-            DateTime pickTime = dtSMChonNgay.Value;
-            if(flagDGV == "LichLam")
-            {
-                MessageBox.Show("Tính năng đang phát triển");
-            }
-            else
-            {
-                
+                DateTime pickTime = dtSMChonNgay.Value;                
                 QLTS_SM_BLL bll = new QLTS_SM_BLL();
-                dgvShift.DataSource = bll.getCaLamTrongNgay(pickTime);
+                dgvShift.DataSource = bll.getDataCaLamTrongNgay(pickTime);
                 dgvShift.Columns["MaNV"].HeaderText = "Mã Nhân Viên";
                 dgvShift.Columns["TenNhanVien"].HeaderText = "Tên Nhân Viên";
                 dgvShift.Columns["TenNhanVien"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
@@ -142,7 +141,33 @@ namespace PBL3_QuanLyTiemSach.View
 
                 dgvShift.Columns["GioBatDau"].HeaderText = " Giờ bắt đầu";
                 dgvShift.Columns["GioKetThuc"].HeaderText = "Giờ kết thúc";
+        }
+
+        private void btnChinhSua_Click(object sender, EventArgs e)
+        {
+            if(dgvShift.SelectedRows.Count == 1)
+            {
+                using(DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+                {
+                    QLTS_SM_BLL bll = new QLTS_SM_BLL();
+                    DataGridViewRow currentRow = dgvShift.CurrentRow;
+                    int maCa = Convert.ToInt32(currentRow.Cells["Mã Ca"].Value.ToString());
+                    if (bll.isValidDay(maCa))
+                    {
+                        UpdateSMForm UF = new UpdateSMForm(maCa, IDStaff);
+                        if(UF == null || UF.IsDisposed)
+                        {
+                            UF = new UpdateSMForm(maCa, IDStaff);
+                        }
+                        UF.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Chỉ được Chỉnh sửa Ca làm khi cách ngày hiện tại 2 ngày !!");
+                    }
+                }
             }
+            
         }
     }
 }

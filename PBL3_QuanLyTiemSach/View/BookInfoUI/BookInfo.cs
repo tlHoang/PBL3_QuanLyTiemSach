@@ -14,16 +14,18 @@ namespace PBL3_QuanLyTiemSach.View
 {
     public partial class BookInfo : MetroFramework.Forms.MetroForm
     {
-
+        Form1 f;
         public BookInfo()
+        //public BookInfo(Form1 f1)
         {
             InitializeComponent();
+        //    this.f = Form1;
             setBookInfoDgv();
         }
         private void setBookInfoDgv()
         {
             QLTS_BI_BLL bll = new QLTS_BI_BLL();
-            dgvBookInfo.DataSource = bll.getBaseListBookData();
+            dgvBookInfo.DataSource = bll.getDataBaseListBook();
             dgvBookInfo.Columns["TenSach"].HeaderText = "Tên Sách";
             dgvBookInfo.Columns["TenSach"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             dgvBookInfo.Columns["TenSach"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -36,9 +38,9 @@ namespace PBL3_QuanLyTiemSach.View
             string txtTenSach = txtBookInfoTenSach.Text;
             string txtTacGia = txtBookInfoTacGia.Text;
             string txtTheLoai = txtBookInfoTheLoai.Text;
-            // DAL
             QLTS_BI_BLL bll = new QLTS_BI_BLL();
-            dgvBookInfo.DataSource = bll.findListBookData(txtTenSach,txtTacGia,txtTheLoai);
+            dgvBookInfo.DataSource = bll.getDataFindListBook(txtTenSach,txtTacGia,txtTheLoai);
+
             dgvBookInfo.Columns["TenSach"].HeaderText = "Tên Sách";
             dgvBookInfo.Columns["TenSach"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             dgvBookInfo.Columns["TenSach"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;

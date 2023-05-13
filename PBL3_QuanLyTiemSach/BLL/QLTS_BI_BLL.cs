@@ -10,7 +10,7 @@ namespace PBL3_QuanLyTiemSach.BLL
 {
     internal class QLTS_BI_BLL
     {
-        public DataTable getBaseListBookData()
+        public DataTable getDataBaseListBook()
         {
             DataTable dt = new DataTable();
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
@@ -31,7 +31,7 @@ namespace PBL3_QuanLyTiemSach.BLL
             }
             return dt;
         }
-        public DataTable findListBookData(string tenSach, string tacGia, string type)
+        public DataTable getDataFindListBook(string tenSach, string tacGia, string type)
         {
             DataTable dt = new DataTable();
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
@@ -39,10 +39,11 @@ namespace PBL3_QuanLyTiemSach.BLL
                 List<Sach> SachFilter = db.Sachs.ToList();
                 List<SachTheLoai> theLoai = db.SachTheLoais.ToList();
                 var dataSach = SachFilter.GroupBy(sf => sf.TenSach)
-                                            .Where(g => (string.IsNullOrEmpty(tenSach) || g.FirstOrDefault().TenSach.ToLower().Contains(tenSach.ToLower())
-                                            && (string.IsNullOrEmpty(tacGia) || g.FirstOrDefault().TacGia.ToLower().Contains(tacGia.ToLower())
-                                            && (string.IsNullOrEmpty(type) ||
-                                            theLoai.Any(tl => tl.MaTheLoai == g.FirstOrDefault().MaTheLoai && tl.TenTheLoai.ToLower().Contains(type.ToLower()))))))
+                                            .Where(g =>
+                                            (string.IsNullOrEmpty(tenSach) || g.FirstOrDefault().TenSach.ToLower().Contains(tenSach.ToLower()))
+                                            && (string.IsNullOrEmpty(tacGia) || g.FirstOrDefault().TacGia.ToLower().Contains(tacGia.ToLower()))
+                                            && (string.IsNullOrEmpty(type) || theLoai.Any(tl => tl.MaTheLoai == g.FirstOrDefault().MaTheLoai 
+                                            && tl.TenTheLoai.ToLower().Contains(type.ToLower()))))
                                             .Select(g => new
                                             {
                                                 TenSach = g.Key,
@@ -61,6 +62,34 @@ namespace PBL3_QuanLyTiemSach.BLL
             }
                 return dt;
         }
-
+        public DataTable getInfoBook(string tenSach)
+        {
+            DataTable dt = new DataTable();
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                List<Sach> SachFilter = db.Sachs.ToList();
+                List<SachTheLoai> theLoai = db.SachTheLoais.ToList();
+                var dataSach = SachFilter.GroupBy(sf => sf.TenSach)
+                                            .Where(g => (string.IsNullOrEmpty(tenSach) || g.FirstOrDefault().TenSach.Contains(tenSach)))
+                                            .Select(g => new
+                                            {
+                                                TenSach = g.Key,
+                                                TacGia = g.FirstOrDefault().TacGia,
+                                                GiaBan = g.FirstOrDefault().GiaBan,
+                                                TheLoai = theLoai.Where(tl => tl.MaTheLoai == g.FirstOrDefault().MaTheLoai).Select(tl => tl.TenTheLoai),
+                                                SL = g.Sum(sf => sf.SoLuongConLai)
+                                            }).ToList();
+                dt.Columns.Add("TenSach");
+                dt.Columns.Add("TacGia");
+                dt.Columns.Add("GiaBan");
+                dt.Columns.Add("TheLoai");
+                dt.Columns.Add("SL");
+                foreach (var item in dataSach)
+                {
+                    dt.Rows.Add(item.TenSach, item.TacGia, item.GiaBan, string.Join(",", item.TheLoai), item.SL);
+                }
+            }
+            return dt;
+        }
     }
 }

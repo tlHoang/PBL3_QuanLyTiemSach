@@ -26,7 +26,7 @@ namespace PBL3_QuanLyTiemSach.View.ShifManageUI
         }
         private void setDateTimePicker()
         {
-            DateTime currentDate = DateTime.Today;
+            DateTime currentDate = DateTime.Today.AddDays(2);
             for (int i = 1; i <= 7; i++)
             {
                 DateTimePicker dtp = (DateTimePicker)this.Controls.Find("dtChonNgayLamCa" + i.ToString(), true)[0];
@@ -56,9 +56,11 @@ namespace PBL3_QuanLyTiemSach.View.ShifManageUI
 
                 comboBoxes[i, 0].ValueMember = "Value";
                 comboBoxes[i, 0].DisplayMember = "Text";
+                comboBoxes[i, 0].SelectedIndex = 0;
 
                 comboBoxes[i, 1].ValueMember = "Value";
                 comboBoxes[i, 1].DisplayMember = "Text";
+                comboBoxes[i, 1].SelectedIndex = 0;
 
                 comboBoxes[i, 0].SelectedIndexChanged += cbbGioBatDau_SelectedIndexChanged;
                 comboBoxes[i, 1].SelectedIndexChanged += cbbGioKetThuc_SelectedIndexChanged;
@@ -93,23 +95,6 @@ namespace PBL3_QuanLyTiemSach.View.ShifManageUI
             otherCbo.SelectedIndex = otherCbo.Items.IndexOf
                 (otherCbo.Items.Cast<SMCBBItems_Start_End_Time>().LastOrDefault(item => item.Text < gioKetThuc));
         }
-
-
-        /*      private void cbbGioBatDau_SelectedIndexChanged(object sender, EventArgs e)
-              {
-                  TimeSpan gioBatDau = ((SMCBBItems_Start_End_Time)cbbGioBatDauCa1.SelectedItem).Text;
-
-                  cbbGioKetThucCa1.SelectedIndex = cbbGioKetThucCa1.Items.IndexOf
-                      (cbbGioKetThucCa1.Items.Cast<SMCBBItems_Start_End_Time>().FirstOrDefault(item => item.Text > gioBatDau));
-              }
-
-              private void cbbGioKetThuc_SelectedIndexChanged(object sender, EventArgs e)
-              {
-                  TimeSpan gioKetThuc = ((SMCBBItems_Start_End_Time)cbbGioKetThucCa1.SelectedItem).Text;
-                  cbbGioBatDauCa1.SelectedIndex = cbbGioBatDauCa1.Items.IndexOf
-                      (cbbGioBatDauCa1.Items.Cast<SMCBBItems_Start_End_Time>().LastOrDefault(item => item.Text < gioKetThuc));
-              }
-      */
         private void dangKiCa(DateTimePicker dtpk, ComboBox cbbgbd, ComboBox cbbgkt)
         {
             try
@@ -129,22 +114,30 @@ namespace PBL3_QuanLyTiemSach.View.ShifManageUI
                 newCa.GioKetThuc = newGioKetThuc;
 
                 QLTS_SM_BLL bll = new QLTS_SM_BLL();
-                if (bll.IsDuplicateCa(newCa, MaNV) == true)
+                if (bll.isValidDay(newDT))
                 {
-                    MessageBox.Show("Bạn đã đăng kí ca này rồi !");
-                }
-                else
-                {
-                    if (bll.isFull(newCa))
+                    if (bll.IsDuplicateCa(newCa, MaNV) == true)
                     {
-                        MessageBox.Show("Ca này đã đủ người làm !");
+                        MessageBox.Show("Bạn đã đăng kí ca này rồi !");
                     }
                     else
                     {
-                        bll.AddCa(newCa, MaNV);
-                        MessageBox.Show("Đăng Kí thành công");                        
+                        if (bll.isFull(newCa))
+                        {
+                            MessageBox.Show("Ca này đã đủ người làm !");
+                        }
+                        else
+                        {
+                            bll.AddCa(newCa, MaNV);
+                            MessageBox.Show("Đăng Kí thành công");                        
+                        }
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Ngày Chọn không hợp lệ, Vui Lòng Chọn Ngày trước 2 ngày");
+                }
+                
             }
             catch(Exception ex) 
             {

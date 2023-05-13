@@ -1,4 +1,5 @@
-﻿using PBL3_QuanLyTiemSach.DTO;
+﻿using PBL3_QuanLyTiemSach.BLL;
+using PBL3_QuanLyTiemSach.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,26 +35,14 @@ namespace PBL3_QuanLyTiemSach.View
 
             try
             {
-                using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
-                {               
-                        List<Sach> SachFilter = db.Sachs.ToList();
-                        List<SachTheLoai> theLoai = db.SachTheLoais.ToList();
-                        var dataSach = SachFilter.GroupBy(sf => sf.TenSach)
-                                                    .Where(g => (string.IsNullOrEmpty(tenSach) || g.FirstOrDefault().TenSach.Contains(tenSach)))                                              
-                                                    .Select(g => new
-                                                    {
-                                                        TenSach = g.Key,
-                                                        TacGia = g.FirstOrDefault().TacGia,
-                                                        GiaBan = g.FirstOrDefault().GiaBan,
-                                                        TheLoai = theLoai.Where(tl => tl.MaTheLoai == g.FirstOrDefault().MaTheLoai).Select(tl => tl.TenTheLoai),
-                                                        SL = g.Sum(sf => sf.SoLuongConLai)
-                                                    }).ToList();
-                    txtTenSach.Text = dataSach[0].TenSach.ToString();
-                    txtTacGia.Text = dataSach[0].TacGia.ToString();
-                    txtGiaBan.Text = dataSach[0].GiaBan.ToString();
-                    txtTheLoai.Text = string.Join(", ", dataSach[0].TheLoai); //Note Join
-                    txtSoLuong.Text = dataSach[0].SL.ToString();
-                }
+                QLTS_BI_BLL bll = new QLTS_BI_BLL();
+                DataTable dataSach = bll.getInfoBook(tenSach);
+                txtTenSach.Text = dataSach.Rows[0]["TenSach"].ToString();
+                txtTacGia.Text = dataSach.Rows[0]["TacGia"].ToString();
+                txtGiaBan.Text = dataSach.Rows[0]["GiaBan"].ToString();
+                txtTheLoai.Text = string.Join(", ", dataSach.Rows[0]["TheLoai"]);
+                txtSoLuong.Text = dataSach.Rows[0]["SL"].ToString();
+                
             }
             catch
             {
