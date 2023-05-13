@@ -19,29 +19,29 @@ namespace PBL3_QuanLyTiemSach.View.StaffManager
             InitializeComponent();
             LoadInitDGV();
             SetCBBSort();
-            //SetUI();
+            SetUI();
         }
 
         private void SetUI()
         {
-            this.ControlBox = false;
+            //this.ControlBox = false;
             this.Style = MetroFramework.MetroColorStyle.White;
         }
 
         private void SetUIForDGV()
         {
-            metroGrid_nhanvien.Columns[0].HeaderText = "Mã nhân viên";
-            metroGrid_nhanvien.Columns[1].HeaderText = "Tài khoản";
-            metroGrid_nhanvien.Columns[2].HeaderText = "Tên nhân viên";
-            metroGrid_nhanvien.Columns[3].HeaderText = "Lương";
-            metroGrid_nhanvien.Columns[4].HeaderText = "SĐT";
-            metroGrid_nhanvien.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgv_nhanvien.Columns[0].HeaderText = "Mã nhân viên";
+            dgv_nhanvien.Columns[1].HeaderText = "Tài khoản";
+            dgv_nhanvien.Columns[2].HeaderText = "Tên nhân viên";
+            dgv_nhanvien.Columns[3].HeaderText = "Lương";
+            dgv_nhanvien.Columns[4].HeaderText = "SĐT";
+            dgv_nhanvien.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void LoadInitDGV()
         {
             StaffManagerBLL staffManagerBLL = new StaffManagerBLL();
-            metroGrid_nhanvien.DataSource = staffManagerBLL.GetAllStaffList()
+            dgv_nhanvien.DataSource = staffManagerBLL.GetAllStaffList()
                 .Select(p => new { p.MaNV, p.TaiKhoan.Username, p.TenNV, p.Luong, p.SDT })
                 .ToList();
             SetUIForDGV();
@@ -52,7 +52,7 @@ namespace PBL3_QuanLyTiemSach.View.StaffManager
             // chua quay lai duoc y nhu cu neu da sort tu truoc
             string searchTxt = metroTextBox_search.Text;
             StaffManagerBLL staffManagerBLL = new StaffManagerBLL();
-            metroGrid_nhanvien.DataSource = staffManagerBLL.GetSearchStaffList(searchTxt)
+            dgv_nhanvien.DataSource = staffManagerBLL.GetSearchStaffList(searchTxt)
                 .Select(p => new { p.MaNV, p.TaiKhoan.Username, p.TenNV, p.Luong, p.SDT })
                 .ToList();
             SetUIForDGV();
@@ -65,16 +65,23 @@ namespace PBL3_QuanLyTiemSach.View.StaffManager
 
         private void SetCBBSort()
         {
-            List<CBBItem> cbbSort = new List<CBBItem>();
-            for (int i = 0; i < metroGrid_nhanvien.ColumnCount - 1; i++)
+            //List<CBBItem> cbbSort = new List<CBBItem>();
+            //for (int i = 0; i < metroGrid_nhanvien.ColumnCount - 1; i++)
+            //{
+            //    cbbSort.Add(new CBBItem
+            //    {
+            //        Value = i,
+            //        Text = metroGrid_nhanvien.Columns[i].Name
+            //    });
+            //}
+            //metroComboBox_sort.Items.AddRange(cbbSort.ToArray());
+            metroComboBox_sort.Items.AddRange(new CBBItem[]
             {
-                cbbSort.Add(new CBBItem
-                {
-                    Value = i,
-                    Text = metroGrid_nhanvien.Columns[i].Name
-                });
-            }
-            metroComboBox_sort.Items.AddRange(cbbSort.ToArray());
+                new CBBItem { Value = 0, Text = "Mã nhân viên" },
+                new CBBItem { Value = 1, Text = "Tài khoản" },
+                new CBBItem { Value = 2, Text = "Tên nhân viên" },
+                new CBBItem { Value = 3, Text = "Lương" }
+            });
         }
 
         private void metroButton_sort_Click(object sender, EventArgs e)
@@ -83,11 +90,11 @@ namespace PBL3_QuanLyTiemSach.View.StaffManager
             {
                 StaffManagerBLL staffManagerBLL = new StaffManagerBLL();
                 List<int> staffIDs = new List<int>();
-                foreach (DataGridViewRow dr in metroGrid_nhanvien.Rows)
+                foreach (DataGridViewRow dr in dgv_nhanvien.Rows)
                 {
                     staffIDs.Add(Convert.ToInt32(dr.Cells[0].Value.ToString()));
                 }
-                metroGrid_nhanvien.DataSource = staffManagerBLL.SortStaff(staffIDs, ((CBBItem)metroComboBox_sort.SelectedItem).Value)
+                dgv_nhanvien.DataSource = staffManagerBLL.SortStaff(staffIDs, ((CBBItem)metroComboBox_sort.SelectedItem).Value)
                     .Select(p => new { p.MaNV, p.TaiKhoan.Username, p.TenNV, p.Luong, p.SDT })
                     .ToList();
             }
@@ -95,11 +102,11 @@ namespace PBL3_QuanLyTiemSach.View.StaffManager
 
         private void metroButton_xoa_Click(object sender, EventArgs e)
         {
-            if (metroGrid_nhanvien.SelectedRows.Count > 0)
+            if (dgv_nhanvien.SelectedRows.Count > 0)
             {
                 StaffManagerBLL staffManagerBLL = new StaffManagerBLL();
                 List<int> deleteIDs = new List<int>();
-                foreach (DataGridViewRow dr in metroGrid_nhanvien.SelectedRows)
+                foreach (DataGridViewRow dr in dgv_nhanvien.SelectedRows)
                 {
                     deleteIDs.Add(Convert.ToInt32(dr.Cells[0].Value.ToString()));
                 }
@@ -117,12 +124,17 @@ namespace PBL3_QuanLyTiemSach.View.StaffManager
 
         private void metroButton_chinhsua_Click(object sender, EventArgs e)
         {
-            if (metroGrid_nhanvien.SelectedRows.Count == 1)
+            if (dgv_nhanvien.SelectedRows.Count == 1)
             {
-                StaffInfo staffInfoForm = new StaffInfo(Convert.ToInt32(metroGrid_nhanvien.SelectedRows[0].Cells[0].Value.ToString()), true);
+                StaffInfo staffInfoForm = new StaffInfo(Convert.ToInt32(dgv_nhanvien.SelectedRows[0].Cells[0].Value.ToString()), true);
                 staffInfoForm.LoadDGV += new StaffInfo.loadDGV(this.LoadDGV);
                 staffInfoForm.ShowDialog();
             }
+        }
+
+        private void StaffManager_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

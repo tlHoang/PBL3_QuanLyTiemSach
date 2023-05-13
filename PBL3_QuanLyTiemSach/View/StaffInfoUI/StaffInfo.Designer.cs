@@ -43,17 +43,17 @@
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.tabControl_nhanvien = new System.Windows.Forms.TabControl();
             this.tabPage_thongtin = new System.Windows.Forms.TabPage();
-            this.metroButton_xacnhan = new MetroFramework.Controls.MetroButton();
             this.metroPanel_thongtin = new MetroFramework.Controls.MetroPanel();
             this.metroRadioButton_nu = new MetroFramework.Controls.MetroRadioButton();
             this.metroRadioButton_nam = new MetroFramework.Controls.MetroRadioButton();
             this.tabPage_taikhoan = new System.Windows.Forms.TabPage();
             this.metroPanel_taikhoan = new MetroFramework.Controls.MetroPanel();
+            this.metroButton_resetpass = new MetroFramework.Controls.MetroButton();
             this.metroButton_doimk = new MetroFramework.Controls.MetroButton();
             this.metroLabel_taikhoan = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox_taikhoan = new MetroFramework.Controls.MetroTextBox();
+            this.metroButton_xacnhan = new MetroFramework.Controls.MetroButton();
             this.metroButton_thoat = new MetroFramework.Controls.MetroButton();
-            this.metroButton_resetpass = new MetroFramework.Controls.MetroButton();
             this.tabControl_nhanvien.SuspendLayout();
             this.tabPage_thongtin.SuspendLayout();
             this.metroPanel_thongtin.SuspendLayout();
@@ -295,16 +295,6 @@
             this.tabPage_thongtin.Text = "Cá nhân";
             this.tabPage_thongtin.UseVisualStyleBackColor = true;
             // 
-            // metroButton_xacnhan
-            // 
-            this.metroButton_xacnhan.Location = new System.Drawing.Point(267, 465);
-            this.metroButton_xacnhan.Name = "metroButton_xacnhan";
-            this.metroButton_xacnhan.Size = new System.Drawing.Size(75, 23);
-            this.metroButton_xacnhan.TabIndex = 1;
-            this.metroButton_xacnhan.Text = "Xác nhận";
-            this.metroButton_xacnhan.UseSelectable = true;
-            this.metroButton_xacnhan.Click += new System.EventHandler(this.metroButton_xacnhan_Click);
-            // 
             // metroPanel_thongtin
             // 
             this.metroPanel_thongtin.Controls.Add(this.metroRadioButton_nu);
@@ -381,6 +371,16 @@
             this.metroPanel_taikhoan.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel_taikhoan.VerticalScrollbarSize = 10;
             // 
+            // metroButton_resetpass
+            // 
+            this.metroButton_resetpass.Location = new System.Drawing.Point(190, 189);
+            this.metroButton_resetpass.Name = "metroButton_resetpass";
+            this.metroButton_resetpass.Size = new System.Drawing.Size(96, 23);
+            this.metroButton_resetpass.TabIndex = 4;
+            this.metroButton_resetpass.Text = "Reset mật khẩu";
+            this.metroButton_resetpass.UseSelectable = true;
+            this.metroButton_resetpass.Click += new System.EventHandler(this.metroButton_resetpass_Click);
+            // 
             // metroButton_doimk
             // 
             this.metroButton_doimk.Location = new System.Drawing.Point(190, 160);
@@ -431,6 +431,16 @@
             this.metroTextBox_taikhoan.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox_taikhoan.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // metroButton_xacnhan
+            // 
+            this.metroButton_xacnhan.Location = new System.Drawing.Point(267, 465);
+            this.metroButton_xacnhan.Name = "metroButton_xacnhan";
+            this.metroButton_xacnhan.Size = new System.Drawing.Size(75, 23);
+            this.metroButton_xacnhan.TabIndex = 1;
+            this.metroButton_xacnhan.Text = "Xác nhận";
+            this.metroButton_xacnhan.UseSelectable = true;
+            this.metroButton_xacnhan.Click += new System.EventHandler(this.metroButton_xacnhan_Click);
+            // 
             // metroButton_thoat
             // 
             this.metroButton_thoat.Location = new System.Drawing.Point(111, 465);
@@ -441,26 +451,19 @@
             this.metroButton_thoat.UseSelectable = true;
             this.metroButton_thoat.Click += new System.EventHandler(this.metroButton_thoat_Click);
             // 
-            // metroButton_resetpass
-            // 
-            this.metroButton_resetpass.Location = new System.Drawing.Point(190, 189);
-            this.metroButton_resetpass.Name = "metroButton_resetpass";
-            this.metroButton_resetpass.Size = new System.Drawing.Size(96, 23);
-            this.metroButton_resetpass.TabIndex = 4;
-            this.metroButton_resetpass.Text = "Reset mật khẩu";
-            this.metroButton_resetpass.UseSelectable = true;
-            this.metroButton_resetpass.Click += new System.EventHandler(this.metroButton_resetpass_Click);
-            // 
             // StaffInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(462, 530);
+            this.ControlBox = false;
             this.Controls.Add(this.metroButton_xacnhan);
             this.Controls.Add(this.metroButton_thoat);
             this.Controls.Add(this.tabControl_nhanvien);
             this.Name = "StaffInfo";
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.Text = "Thông tin chi tiết";
+            this.TopMost = true;
             this.tabControl_nhanvien.ResumeLayout(false);
             this.tabPage_thongtin.ResumeLayout(false);
             this.metroPanel_thongtin.ResumeLayout(false);

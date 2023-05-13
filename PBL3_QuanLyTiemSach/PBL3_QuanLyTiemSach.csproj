@@ -212,6 +212,9 @@
     <EmbeddedResource Include="View\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Form5.resx">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ImportUI\EditBookInfo.resx">
       <DependentUpon>EditBookInfo.cs</DependentUpon>
     </EmbeddedResource>

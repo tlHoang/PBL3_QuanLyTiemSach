@@ -18,14 +18,17 @@ namespace PBL3_QuanLyTiemSach.View
 {
     public partial class StaffInfo : MetroFramework.Forms.MetroForm
     {
+        Form f;
         public int StaffID { get; set; }
         public bool IsAdmin { get; set; }
 
         public delegate void loadDGV();
         public loadDGV LoadDGV { get; set; }
 
-        public StaffInfo(int staffID, bool isAdmin = false)
+        public StaffInfo(int staffID,  bool isAdmin = false, Form1 f1 = default)
         {
+            this.f = f1;
+
             StaffID = staffID;
             IsAdmin = isAdmin;
             InitializeComponent();
@@ -43,6 +46,7 @@ namespace PBL3_QuanLyTiemSach.View
             {
                 LoadInfo();
             }
+
         }
 
         public void SetUIAlway()
@@ -120,7 +124,11 @@ namespace PBL3_QuanLyTiemSach.View
 
         private void metroButton_xacnhan_Click(object sender, EventArgs e)
         {
-            //if (!ValidateInfo()) return;
+            if (!ValidateInfo())
+            {
+                MetroMessageBox.Show(this, "Cảnh báo", "Dữ liệu không hợp lệ");
+                return;
+            }
             StaffManagerBLL staffManagerBLL = new StaffManagerBLL();
             if (StaffID == -1)
             {
@@ -171,16 +179,19 @@ namespace PBL3_QuanLyTiemSach.View
             LoadDGV();
         }
 
-        //private bool ValidateInfo()
-        //{
-            //// ten
-            //if (Regex.IsMatch(metroTextBox_ten.Text, @"(^\s*$|\d)"))
-            //    return false;
-            //if (metroRadioButton_nam.Checked == false && metroRadioButton_nu.Checked == false)
-            //    return false;
-            //if (Regex.IsMatch(metroTextBox_diachi.Text, @"^\s*$"))
-            //    return false;
-            //return true;
-        //}
+        private bool ValidateInfo()
+        {
+            if (Regex.IsMatch(metroTextBox_ten.Text, @"(^\s*$|\d)"))
+                return false;
+            if (metroRadioButton_nam.Checked == false && metroRadioButton_nu.Checked == false)
+                return false;
+            if (Regex.IsMatch(metroTextBox_diachi.Text, @"^\s*$"))
+                return false;
+            if (Regex.IsMatch(metroTextBox_luong.Text, @"^\s*$|\D"))
+                return false;
+            if (!Regex.IsMatch(metroTextBox_sdt.Text, @"^\d{10}$"))
+                return false;
+            return true;
+        }
     }
 }
