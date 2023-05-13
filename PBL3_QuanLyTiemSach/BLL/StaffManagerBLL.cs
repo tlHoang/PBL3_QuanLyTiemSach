@@ -39,7 +39,6 @@ namespace PBL3_QuanLyTiemSach.BLL
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
-                var sw = new Stopwatch();
                 List<NhanVien> nhanViens = db.NhanViens
                     .Join(IDs, nv => nv.MaNV, li => li, (nv, li) => nv)
                     .Include(p => p.TaiKhoan)

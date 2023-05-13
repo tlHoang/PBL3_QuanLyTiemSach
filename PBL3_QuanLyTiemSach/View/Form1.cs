@@ -9,18 +9,29 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PBL3_QuanLyTiemSach.BLL;
 using PBL3_QuanLyTiemSach.View;
+using PBL3_QuanLyTiemSach.View.StaffManager;
 
 namespace PBL3_QuanLyTiemSach
 {
     public partial class Form1 : System.Windows.Forms.Form
     {
-        public Form1()
-        {
-            InitializeComponent();
-            panel_Side.Hide();
-        }
         public int MaNV { get; set; }
+        public Form1(int MaNV)
+        {
+            this.MaNV = MaNV;
+            InitializeComponent();
+            SetUI();
+        }
         private System.Windows.Forms.Form currentForm; 
+        private void SetUI()
+        {
+            panel_Side.Hide();
+            setRole();
+            if (MaNV == 1)
+            {
+                button_Home.Text = "Nhân viên";
+            }
+        }
         private void OpenForm(System.Windows.Forms.Form f)
         {
             if (currentForm != null)
@@ -48,9 +59,10 @@ namespace PBL3_QuanLyTiemSach
                 labelName.Text = fullName[fullName.Length - 2] + " " + fullName[fullName.Length - 1];
             }
         }
-        public void setRole(string role)
+        public void setRole()
         {
-            if (role != "admin")
+            //if (role != "admin")
+            if (MaNV != 1)
             {
                 labelRole.Text = "Nhân viên";
             }
@@ -64,7 +76,14 @@ namespace PBL3_QuanLyTiemSach
             panel_Side.Top = button_Home.Top;
             panel_Side.Height = button_Home.Height;
             panel_Side.Show();
-            OpenForm(new Form2());
+            if (MaNV == 1)
+            {
+                OpenForm(new StaffManager());
+            }
+            else
+            {
+                OpenForm(new Form2());
+            }
         }
 
         private void button_BanHang_Click(object sender, EventArgs e)
@@ -85,10 +104,22 @@ namespace PBL3_QuanLyTiemSach
 
         private void button_ThongKe_Click(object sender, EventArgs e)
         {
-            panel_Side.Top = button_ThongKe.Top;
-            panel_Side.Height = button_ThongKe.Height;
-            panel_Side.Show();
-            OpenForm(new Form5());
+            if (MaNV == 1)
+            {
+                panel_Side.Top = button_ThongKe.Top;
+                panel_Side.Height = button_ThongKe.Height;
+                panel_Side.Show();
+                //OpenForm(new Statistic());
+            }
+        }
+
+        private void pictureBox_Click(object sender, EventArgs e)
+        {
+            if (MaNV != 1)
+            {
+                panel_Side.Hide();
+                OpenForm(new StaffInfo(MaNV, false, this));
+            }
         }
 
         private void button_Close_Click(object sender, EventArgs e)

@@ -22,6 +22,7 @@ namespace PBL3_QuanLyTiemSach.View
             InitializeComponent();
             SetUI();
         }
+        public int MaNV { get; set; }
 
         private void SetUI()
         {
@@ -45,21 +46,19 @@ namespace PBL3_QuanLyTiemSach.View
                 return;
             }
             TaiKhoanBLL bll = new TaiKhoanBLL();
-            int MaNV = bll.CheckPassword(username, password);
+            MaNV = bll.CheckPassword(username, password);
             if (MaNV == -1)
             {
                 MessageBox.Show("Sai tài khoản hoặc mật khẩu");
             }
             else
             {
-                //MessageBox.Show("thanh cong");
-                // call form and pass MaNV
-                this.Hide();
-                Form1 f = new Form1();
-                f.MaNV = MaNV;
-                f.setRole(txt_username.Text);
-                f.ShowDialog();
+                //this.Hide();
+                //Form1 f = new Form1(MaNV);
+                //f.setRole(txt_username.Text);
+                //f.ShowDialog();
                 this.Close();
+                DialogResult = DialogResult.OK;
             }
         }
 
