@@ -144,5 +144,13 @@ namespace PBL3_QuanLyTiemSach
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void button_HoaDon_Click(object sender, EventArgs e)
+        {
+            panel_Side.Top = button_HoaDon.Top;
+            panel_Side.Height = button_HoaDon.Height;
+            panel_Side.Show();
+            OpenForm(new Bill(this));
+        }
     }
 }
