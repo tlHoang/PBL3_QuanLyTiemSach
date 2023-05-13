@@ -144,5 +144,38 @@ namespace PBL3_QuanLyTiemSach
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void button_HoaDon_Click(object sender, EventArgs e)
+        {
+            panel_Side.Top = button_HoaDon.Top;
+            panel_Side.Height = button_HoaDon.Height;
+            panel_Side.Show();
+            //OpenForm(new Bill(this));
+        }
+        private Point _mouseLocation;
+
+        private bool _isDragging = false;
+        private Point _lastLocation;
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            _isDragging = true;
+            _lastLocation = e.Location;
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (_isDragging)
+            {
+                int dx = e.Location.X - _lastLocation.X;
+                int dy = e.Location.Y - _lastLocation.Y;
+                Location = new Point(Location.X + dx, Location.Y + dy);
+            }
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            _isDragging = false;
+        }
     }
 }

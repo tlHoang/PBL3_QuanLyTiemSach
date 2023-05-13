@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel_Left = new System.Windows.Forms.Panel();
+            this.button_HoaDon = new System.Windows.Forms.Button();
             this.labelRole = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
@@ -50,6 +51,7 @@
             // panel_Left
             // 
             this.panel_Left.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.panel_Left.Controls.Add(this.button_HoaDon);
             this.panel_Left.Controls.Add(this.labelRole);
             this.panel_Left.Controls.Add(this.labelName);
             this.panel_Left.Controls.Add(this.pictureBox);
@@ -63,6 +65,23 @@
             this.panel_Left.Name = "panel_Left";
             this.panel_Left.Size = new System.Drawing.Size(153, 470);
             this.panel_Left.TabIndex = 0;
+            this.panel_Left.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel_Left.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.panel_Left.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            // 
+            // button_HoaDon
+            // 
+            this.button_HoaDon.FlatAppearance.BorderSize = 0;
+            this.button_HoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_HoaDon.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_HoaDon.ForeColor = System.Drawing.Color.White;
+            this.button_HoaDon.Location = new System.Drawing.Point(0, 297);
+            this.button_HoaDon.Name = "button_HoaDon";
+            this.button_HoaDon.Size = new System.Drawing.Size(153, 54);
+            this.button_HoaDon.TabIndex = 7;
+            this.button_HoaDon.Text = "Xem hoá đơn";
+            this.button_HoaDon.UseVisualStyleBackColor = true;
+            this.button_HoaDon.Click += new System.EventHandler(this.button_HoaDon_Click);
             // 
             // labelRole
             // 
@@ -172,6 +191,9 @@
             this.panel_Top.Name = "panel_Top";
             this.panel_Top.Size = new System.Drawing.Size(647, 33);
             this.panel_Top.TabIndex = 1;
+            this.panel_Top.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel_Top.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.panel_Top.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
             // button5
             // 
@@ -244,6 +266,7 @@
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Label labelRole;
         private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.Button button_HoaDon;
     }
 }
 

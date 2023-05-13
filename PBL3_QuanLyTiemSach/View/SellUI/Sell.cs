@@ -181,7 +181,6 @@ namespace PBL3_QuanLyTiemSach
 
         private void btnTru_Click(object sender, EventArgs e)
         {
-            SellBLL sellBLL = new SellBLL();
             if (dgvHoaDonBan.SelectedRows.Count != 1)
             {
                 MetroMessageBox.Show(f, "\nVui lòng chọn 1 mục!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning, 140);
