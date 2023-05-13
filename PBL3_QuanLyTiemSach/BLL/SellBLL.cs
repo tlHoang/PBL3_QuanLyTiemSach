@@ -134,7 +134,8 @@ namespace PBL3_QuanLyTiemSach.BLL
                 HoaDonBan hdb = new HoaDonBan
                 {
                     MaNV = MaNV,
-                    MaKH = getMaKH(kh.TenKH)
+                    MaKH = getMaKH(kh.TenKH),
+                    ThoiGianBan = DateTime.Now,
                 };
                 db.HoaDonBans.Add(hdb);
                 db.SaveChanges();

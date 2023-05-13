@@ -70,6 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BillBLL.cs" />
     <Compile Include="BLL\StaffInfoBLL.cs" />
     <Compile Include="BLL\StaffManagerBLL.cs" />
     <Compile Include="BLL\GetBookInfoBLL.cs" />
@@ -205,6 +206,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\BookInfoUI\BookInfo_XemForm.resx">
       <DependentUpon>BookInfo_XemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BillUI\Bill.resx">
+      <DependentUpon>Bill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BillUI\Bill_Info.resx">
+      <DependentUpon>Bill_Info.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

@@ -21,28 +21,13 @@ namespace PBL3_QuanLyTiemSach.View.ImportUI
             InitializeComponent();
             this.f = f1;
             LoadBookTitleDGV();
+            dgvTenSach.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
         private void LoadBookTitleDGV()
         {
-            //var tmp = f.TenSach.Select(p => new
-            //{
-            //    TenSach = p.TenSach,
-            //    SLCL = 1
-            //}).ToList();
-
-            //GetBookInfoBLL getBookInfoBLL = new GetBookInfoBLL();
-            ////dgvTenSach.DataSource = getBookInfoBLL.getAllBookTitle()
-            ////    .Select(p => new { TenSach = p })
-            ////    .Where(p => tmp.All(p1 => p1.TenSach != p.TenSach) && p.TenSach.Contains(f.SearchText, StringComparison.Ordinal))
-            ////    .ToList();
-            //dgvTenSach.DataSource = getBookInfoBLL.getAllBookTitle()
-            //.Select(p => new { TenSach = p })
-            //.Where(p => tmp.All(p1 => p1.TenSach != p.TenSach) &&
-            //            p.TenSach.IndexOf(f.SearchText, StringComparison.OrdinalIgnoreCase) >= 0)
-            //.ToList();
-            //dgvTenSach.Columns[0].HeaderText = "Tên sách";
             GetBookInfoBLL bll = new GetBookInfoBLL();
             dgvTenSach.DataSource = bll.getAllBookTitle(f.TenSach, f.SearchText).Select(p => new { TenSach = p }).ToList();
+            dgvTenSach.Columns[0].HeaderText = "Tên sách";
         }
 
         private void btnExit_Click(object sender, EventArgs e)

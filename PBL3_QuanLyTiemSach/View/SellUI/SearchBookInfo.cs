@@ -29,6 +29,7 @@ namespace PBL3_QuanLyTiemSach.View.SellUI
             SellBLL bll = new SellBLL();
             dgvSearchBook.DataSource = bll.setDGVSBI(f.TenSach, f.SearchText);
             dgvSearchBook.Columns[0].HeaderText = "Tên sách";
+            dgvSearchBook.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
