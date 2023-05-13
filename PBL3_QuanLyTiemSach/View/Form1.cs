@@ -120,14 +120,10 @@ namespace PBL3_QuanLyTiemSach
 
         private void button_ThongKe_Click(object sender, EventArgs e)
         {
+            panel_Side.Top = button_ThongKe.Top;
+            panel_Side.Height = button_ThongKe.Height;
+            panel_Side.Show();
             OpenForm(new Form5());
-            if (MaNV == 1)
-            {
-                panel_Side.Top = button_ThongKe.Top;
-                panel_Side.Height = button_ThongKe.Height;
-                panel_Side.Show();
-                //OpenForm(new Statistic());
-            }
         }
 
         private void pictureBox_Click(object sender, EventArgs e)

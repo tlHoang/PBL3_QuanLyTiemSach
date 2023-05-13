@@ -95,6 +95,7 @@
     <Compile Include="DTO\CodeFirst\SachTheLoai.cs" />
     <Compile Include="DTO\CodeFirst\TaiKhoan.cs" />
     <Compile Include="DTO\BookInfo.cs" />
+    <Compile Include="DTO\HoaDon.cs" />
     <Compile Include="View\BookInfoUI\BookInfo.cs">
       <SubType>Form</SubType>
     </Compile>
