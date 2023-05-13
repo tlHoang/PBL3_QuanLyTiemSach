@@ -8,7 +8,6 @@ using System.Windows.Forms;
 using PBL3_QuanLyTiemSach.View;
 using PBL3_QuanLyTiemSach.View.SellUI;
 using PBL3_QuanLyTiemSach.View.ImportUI;
-using PBL3_QuanLyTiemSach.View.StatisticUI;
 
 namespace PBL3_QuanLyTiemSach
 {

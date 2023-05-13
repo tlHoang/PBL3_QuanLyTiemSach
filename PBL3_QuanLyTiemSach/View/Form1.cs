@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using PBL3_QuanLyTiemSach.BLL;
 using PBL3_QuanLyTiemSach.View;
 using PBL3_QuanLyTiemSach.View.StaffManager;
-using PBL3_QuanLyTiemSach.View.StatisticUI;
 
 namespace PBL3_QuanLyTiemSach
 {
@@ -110,7 +109,7 @@ namespace PBL3_QuanLyTiemSach
                 panel_Side.Top = button_ThongKe.Top;
                 panel_Side.Height = button_ThongKe.Height;
                 panel_Side.Show();
-                OpenForm(new Statistic());
+                //OpenForm(new Statistic());
             }
         }
 
