@@ -75,6 +75,7 @@
     <Compile Include="BLL\GetBookInfoBLL.cs" />
     <Compile Include="BLL\ImportBLL.cs" />
     <Compile Include="BLL\SellBLL.cs" />
+    <Compile Include="BLL\StatisticBLL.cs" />
     <Compile Include="BLL\TaiKhoanBLL.cs" />
     <Compile Include="CreateDB.cs" />
     <Compile Include="DBQuanLyTiemSach.cs" />
@@ -210,6 +211,12 @@
     <Compile Include="View\SellUI\SearchBookInfo.Designer.cs">
       <DependentUpon>SearchBookInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\StatisticUI\Statistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\StatisticUI\Statistic.Designer.cs">
+      <DependentUpon>Statistic.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Login_Resource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Login_Resource.Designer.cs</LastGenOutput>
@@ -273,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\SellUI\SearchBookInfo.resx">
       <DependentUpon>SearchBookInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\StatisticUI\Statistic.resx">
+      <DependentUpon>Statistic.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
