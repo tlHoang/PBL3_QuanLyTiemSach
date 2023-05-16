@@ -28,17 +28,9 @@ namespace PBL3_QuanLyTiemSach.View.ShifManageUI
         private void setCBB()
         {
             QLTS_SM_BLL bll = new QLTS_SM_BLL();
-            cbbgbd.Items.AddRange(bll.setSMDangKiCaCBB_GioBatDau().ToArray());
-            cbbgkt.Items.AddRange(bll.setSMDangKiCaCBB_GioKetThuc().ToArray());
-
-            cbbgbd.ValueMember = "Value";
-            cbbgbd.DisplayMember= "Text";
-
-            cbbgkt.ValueMember= "Value";   
-            cbbgkt.DisplayMember= "Text";
-
-            cbbgbd.SelectedIndexChanged += cbbgbd_SelectedIndexChanged;
-            cbbgkt.SelectedIndexChanged += cbbgkt_SelectedIndexChanged;
+            cbbCaLam.Items.AddRange(bll.getValueCBBCa().ToArray());
+            cbbCaLam.ValueMember = "Value";
+  
         }
         private void GUI()
         {
@@ -46,26 +38,10 @@ namespace PBL3_QuanLyTiemSach.View.ShifManageUI
             using(DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
                 dtChonNgayLam.Value = db.Cas.FirstOrDefault(c => c.MaCa == maCa).Ngay;
-                cbbgbd.Text = db.Cas.FirstOrDefault(c => c.MaCa == maCa).GioBatDau.ToString();
-                cbbgkt.Text = db.Cas.FirstOrDefault(c => c.MaCa ==maCa).GioKetThuc.ToString();
+                cbbCaLam.Text = db.Cas.FirstOrDefault(c => c.MaCa == maCa).GioBatDau.ToString();
             }
         }
-        private void cbbgbd_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            TimeSpan gioBatDau = ((SMCBBItems_Start_End_Time)cbbgbd.SelectedItem).Text;
 
-            cbbgkt.SelectedIndex = cbbgkt.Items.IndexOf
-                (cbbgkt.Items.Cast<SMCBBItems_Start_End_Time>().FirstOrDefault(item => item.Text > gioBatDau));
-
-        }
-
-        private void cbbgkt_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            TimeSpan gioKetThuc = ((SMCBBItems_Start_End_Time)cbbgkt.SelectedItem).Text;
-            cbbgbd.SelectedIndex = cbbgbd.Items.IndexOf
-                (cbbgbd.Items.Cast<SMCBBItems_Start_End_Time>().LastOrDefault(item => item.Text < gioKetThuc));
-
-        }
         private void UpdateCaLam(DateTime newDay, TimeSpan newGbd, TimeSpan newGkt)
         {
             try
@@ -116,11 +92,9 @@ namespace PBL3_QuanLyTiemSach.View.ShifManageUI
         private void btnLuu_Click(object sender, EventArgs e)
         {
             DateTime newDT = (DateTime)dtChonNgayLam.Value;
-            SMCBBItems_Start_End_Time selectedGioBatDau = (SMCBBItems_Start_End_Time)cbbgbd.SelectedItem;
-            SMCBBItems_Start_End_Time selectedGioKetThuc = (SMCBBItems_Start_End_Time)cbbgkt.SelectedItem;
-
-            TimeSpan newGioBatDau = selectedGioBatDau.Text;
-            TimeSpan newGioKetThuc = selectedGioKetThuc.Text;
+            SMCBBItems_Start_End_Time selectedGioBatDau = (SMCBBItems_Start_End_Time)cbbCaLam.SelectedItem;
+            TimeSpan newGioBatDau = selectedGioBatDau.GioBatDau;
+            TimeSpan newGioKetThuc = selectedGioBatDau.GioKetThuc;
             UpdateCaLam(newDT,newGioBatDau,newGioKetThuc);
         }
 

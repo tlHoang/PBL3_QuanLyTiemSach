@@ -21,8 +21,8 @@ namespace PBL3_QuanLyTiemSach
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            LoginForm loginForm = new LoginForm();
+            Application.Run(new ShiftManage());
+/*            LoginForm loginForm = new LoginForm();
             if (loginForm.ShowDialog() == DialogResult.OK && loginForm.MaNV != -1)
             {
                 Application.Run(new Form1(loginForm.MaNV));
@@ -30,7 +30,7 @@ namespace PBL3_QuanLyTiemSach
             else
             {
                 Application.Exit();
-            }
+            }*/
         }
-    }
+        }
 }

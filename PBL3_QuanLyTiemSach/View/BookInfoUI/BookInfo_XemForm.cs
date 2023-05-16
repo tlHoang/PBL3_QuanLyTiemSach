@@ -21,6 +21,7 @@ namespace PBL3_QuanLyTiemSach.View
             this.BookName = name;
             setTextBox();
             setGUI(name);
+            this.BackColor = MetroFramework.MetroColors.Lime;
         }
         private void setTextBox()
         {

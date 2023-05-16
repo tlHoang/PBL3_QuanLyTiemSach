@@ -30,12 +30,13 @@
         {
             this.dtChonNgayLam = new System.Windows.Forms.DateTimePicker();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
-            this.cbbgbd = new System.Windows.Forms.ComboBox();
+            this.cbbCaLam = new System.Windows.Forms.ComboBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.cbbgkt = new System.Windows.Forms.ComboBox();
             this.btnThoat = new MetroFramework.Controls.MetroButton();
             this.btnLuu = new MetroFramework.Controls.MetroButton();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
             // dtChonNgayLam
@@ -57,15 +58,14 @@
             this.metroLabel9.TabIndex = 3;
             this.metroLabel9.Text = "Ngày Làm";
             // 
-            // cbbgbd
+            // cbbCaLam
             // 
-            this.cbbgbd.FormattingEnabled = true;
-            this.cbbgbd.Location = new System.Drawing.Point(205, 170);
-            this.cbbgbd.Margin = new System.Windows.Forms.Padding(2);
-            this.cbbgbd.Name = "cbbgbd";
-            this.cbbgbd.Size = new System.Drawing.Size(145, 21);
-            this.cbbgbd.TabIndex = 4;
-            this.cbbgbd.SelectedIndexChanged += new System.EventHandler(this.cbbgbd_SelectedIndexChanged);
+            this.cbbCaLam.FormattingEnabled = true;
+            this.cbbCaLam.Location = new System.Drawing.Point(205, 170);
+            this.cbbCaLam.Margin = new System.Windows.Forms.Padding(2);
+            this.cbbCaLam.Name = "cbbCaLam";
+            this.cbbCaLam.Size = new System.Drawing.Size(145, 21);
+            this.cbbCaLam.TabIndex = 4;
             // 
             // metroLabel1
             // 
@@ -74,30 +74,9 @@
             this.metroLabel1.Location = new System.Drawing.Point(74, 170);
             this.metroLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(79, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(54, 19);
             this.metroLabel1.TabIndex = 3;
-            this.metroLabel1.Text = "Giờ Bắt Đầu";
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.BackColor = System.Drawing.Color.Cyan;
-            this.metroLabel2.Location = new System.Drawing.Point(74, 227);
-            this.metroLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(82, 19);
-            this.metroLabel2.TabIndex = 3;
-            this.metroLabel2.Text = "Giờ Kết Thúc";
-            // 
-            // cbbgkt
-            // 
-            this.cbbgkt.FormattingEnabled = true;
-            this.cbbgkt.Location = new System.Drawing.Point(205, 227);
-            this.cbbgkt.Margin = new System.Windows.Forms.Padding(2);
-            this.cbbgkt.Name = "cbbgkt";
-            this.cbbgkt.Size = new System.Drawing.Size(145, 21);
-            this.cbbgkt.TabIndex = 4;
-            this.cbbgkt.SelectedIndexChanged += new System.EventHandler(this.cbbgkt_SelectedIndexChanged);
+            this.metroLabel1.Text = "Ca Làm";
             // 
             // btnThoat
             // 
@@ -121,21 +100,53 @@
             this.btnLuu.UseSelectable = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(218, 210);
+            this.metroLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(103, 19);
+            this.metroLabel5.TabIndex = 7;
+            this.metroLabel5.Text = "* Ca 2: 14h -22h";
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(74, 243);
+            this.metroLabel6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(152, 19);
+            this.metroLabel6.TabIndex = 8;
+            this.metroLabel6.Text = "* 1 Ca chỉ có 2 nhân viên";
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(74, 210);
+            this.metroLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(94, 19);
+            this.metroLabel4.TabIndex = 9;
+            this.metroLabel4.Text = "* Ca 1: 6h -14h";
+            // 
             // UpdateSMForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(457, 348);
+            this.Controls.Add(this.metroLabel5);
+            this.Controls.Add(this.metroLabel6);
+            this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnThoat);
-            this.Controls.Add(this.cbbgkt);
-            this.Controls.Add(this.cbbgbd);
-            this.Controls.Add(this.metroLabel2);
+            this.Controls.Add(this.cbbCaLam);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.metroLabel9);
             this.Controls.Add(this.dtChonNgayLam);
             this.Name = "UpdateSMForm";
             this.Text = "Chỉnh Sửa";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,11 +156,12 @@
 
         private System.Windows.Forms.DateTimePicker dtChonNgayLam;
         private MetroFramework.Controls.MetroLabel metroLabel9;
-        private System.Windows.Forms.ComboBox cbbgbd;
+        private System.Windows.Forms.ComboBox cbbCaLam;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private System.Windows.Forms.ComboBox cbbgkt;
         private MetroFramework.Controls.MetroButton btnThoat;
         private MetroFramework.Controls.MetroButton btnLuu;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
     }
 }

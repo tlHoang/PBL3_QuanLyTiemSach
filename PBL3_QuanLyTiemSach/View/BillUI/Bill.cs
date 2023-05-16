@@ -18,7 +18,7 @@ namespace PBL3_QuanLyTiemSach.View
         public Bill()
         {
             InitializeComponent();
-
+            this.Style = MetroFramework.MetroColorStyle.White;
             cbbHoaDon.DropDownStyle = ComboBoxStyle.DropDownList;
             cbbSort.DropDownStyle = ComboBoxStyle.DropDownList;
             cbbSort.Enabled = false;

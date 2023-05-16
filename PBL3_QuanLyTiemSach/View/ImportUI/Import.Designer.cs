@@ -258,7 +258,7 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(217, 35);
+            this.metroLabel4.Location = new System.Drawing.Point(241, 58);
             this.metroLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(103, 19);
@@ -269,14 +269,14 @@
             // 
             this.cbbDVCC.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbDVCC.FormattingEnabled = true;
-            this.cbbDVCC.Location = new System.Drawing.Point(217, 57);
+            this.cbbDVCC.Location = new System.Drawing.Point(241, 80);
             this.cbbDVCC.Name = "cbbDVCC";
             this.cbbDVCC.Size = new System.Drawing.Size(210, 23);
             this.cbbDVCC.TabIndex = 0;
             // 
             // labelTongTien
             // 
-            this.labelTongTien.Location = new System.Drawing.Point(513, 377);
+            this.labelTongTien.Location = new System.Drawing.Point(601, 453);
             this.labelTongTien.Name = "labelTongTien";
             this.labelTongTien.Size = new System.Drawing.Size(124, 19);
             this.labelTongTien.TabIndex = 29;
@@ -287,7 +287,7 @@
             // 
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel5.Location = new System.Drawing.Point(431, 377);
+            this.metroLabel5.Location = new System.Drawing.Point(519, 453);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(76, 19);
             this.metroLabel5.TabIndex = 28;
@@ -296,7 +296,7 @@
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(529, 37);
+            this.btnConfirm.Location = new System.Drawing.Point(553, 60);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(75, 36);
             this.btnConfirm.TabIndex = 11;
@@ -306,7 +306,7 @@
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(329, 377);
+            this.btnDel.Location = new System.Drawing.Point(354, 453);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(55, 23);
             this.btnDel.TabIndex = 10;
@@ -376,7 +376,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(233, 377);
+            this.btnEdit.Location = new System.Drawing.Point(269, 453);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 9;
@@ -418,7 +418,7 @@
             this.dgvHoaDonNhap.EnableHeadersVisualStyles = false;
             this.dgvHoaDonNhap.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgvHoaDonNhap.GridColor = System.Drawing.Color.White;
-            this.dgvHoaDonNhap.Location = new System.Drawing.Point(217, 97);
+            this.dgvHoaDonNhap.Location = new System.Drawing.Point(241, 120);
             this.dgvHoaDonNhap.Name = "dgvHoaDonNhap";
             this.dgvHoaDonNhap.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -433,7 +433,7 @@
             this.dgvHoaDonNhap.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvHoaDonNhap.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvHoaDonNhap.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHoaDonNhap.Size = new System.Drawing.Size(421, 256);
+            this.dgvHoaDonNhap.Size = new System.Drawing.Size(620, 311);
             this.dgvHoaDonNhap.TabIndex = 36;
             // 
             // Column1
@@ -467,7 +467,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(647, 437);
+            this.ClientSize = new System.Drawing.Size(871, 543);
             this.ControlBox = false;
             this.Controls.Add(this.dgvHoaDonNhap);
             this.Controls.Add(this.btnEdit);
