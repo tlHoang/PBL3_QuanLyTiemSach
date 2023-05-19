@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,7 +16,18 @@ namespace PBL3_QuanLyTiemSach.BLL
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
                 return db.HoaDonBans
-                    .Where(p => p.ThoiGianBan.Month == month && p.ThoiGianBan.Year == year)
+                    .Where(p => p.ThoiGianBan.Year == year && p.ThoiGianBan.Month == month)
+                    .ToList();
+            }
+        }
+
+        public List<HoaDonBan> GetSellInvoiceByDate(int day, int month, int year)
+        {
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                return db.HoaDonBans
+                    .Where(p => p.ThoiGianBan.Year == year && p.ThoiGianBan.Month == month && p.ThoiGianBan.Day == day)
+                    .Include(p => p.NhanVien)
                     .ToList();
             }
         }

@@ -18,6 +18,20 @@ namespace PBL3_QuanLyTiemSach.View.StatisticUI
         {
             InitializeComponent();
             SetCBB();
+            SetUI();
+            LoadDGV(metroComboBox_month.SelectedIndex + 1, ((CBBItem)metroComboBox_year.SelectedItem).Value);
+        }
+
+        private void SetUI()
+        {
+            metroComboBox_month.SelectedIndex = Convert.ToInt32(DateTime.Now.Month) - 1;
+            metroComboBox_year.SelectedIndex = 5;
+        }
+
+        private void SetUIForDGV()
+        {
+            dgv_doanhthu.Columns[0].HeaderText = "Ngày bán";
+            dgv_doanhthu.Columns[1].HeaderText = "Tổng tiền";
         }
 
         private void SetCBB()
@@ -41,18 +55,49 @@ namespace PBL3_QuanLyTiemSach.View.StatisticUI
             }
         }
 
-        private void LoadDGV()
+        private void SetInfoUI()
+        {
+            double doanhThu = 0;
+            foreach (DataGridViewRow dr in dgv_doanhthu.Rows)
+            {
+                doanhThu += Convert.ToInt32(dr.Cells["TongTien"].Value.ToString());
+            }
+            metroLabel_doanhthuvalue.Text = doanhThu.ToString();
+        }
+
+        private void LoadDGV(int month, int year)
         {
             StatisticBLL statisticBLL = new StatisticBLL();
-            int month = ((CBBItem)metroComboBox_month.SelectedItem).Value;
-            int year = ((CBBItem)metroComboBox_year.SelectedItem).Value;
             dgv_doanhthu.DataSource = statisticBLL.GetSellInvoiceByMonth(month, year)
-                .Select(p => new { p.MaHDBan, p.ThoiGianBan.Date, p.TongTien });
+                .GroupBy(p => p.ThoiGianBan.Date)
+                .Select(gr => new
+                {
+                    ThoiGianBan = gr.Key,
+                    TongTien = gr.Sum(p => p.TongTien)
+                })
+                .ToList();
+            SetUIForDGV();
+            SetInfoUI();
         }
 
         private void metroButton_xem_Click(object sender, EventArgs e)
         {
-            LoadDGV();
+            LoadDGV(((CBBItem)metroComboBox_month.SelectedItem).Value, ((CBBItem)metroComboBox_year.SelectedItem).Value);
+        }
+
+        private void metroButton_chitiet_Click(object sender, EventArgs e)
+        {
+            if (dgv_doanhthu.SelectedRows.Count == 1)
+            {
+                StatisticDetail detailForm = new StatisticDetail();
+                //MessageBox.Show(Convert.ToDateTime(dgv_doanhthu.SelectedRows[0].Cells[0].Value).ToString());
+                StatisticBLL statisticBLL = new StatisticBLL();
+                DateTime date = Convert.ToDateTime(dgv_doanhthu.SelectedRows[0].Cells[0].Value);
+                //statisticBLL.GetSellInvoiceByDate(date.Day, date.Month, date.Year);
+                detailForm.Display(statisticBLL.GetSellInvoiceByDate(date.Day, date.Month, date.Year));
+                //Convert.ToDateTime(dgv_doanhthu.SelectedRows[0].Cells[0].Value).ToString();
+                detailForm.ShowDialog();
+            }
         }
     }
 }

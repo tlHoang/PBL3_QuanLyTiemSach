@@ -23,15 +23,18 @@ namespace PBL3_QuanLyTiemSach
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            LoginForm loginForm = new LoginForm();
-            if (loginForm.ShowDialog() == DialogResult.OK && loginForm.MaNV != -1)
-            {
-                Application.Run(new Form1(loginForm.MaNV));
-            }
-            else
-            {
-                Application.Exit();
-            }
+            //LoginForm loginForm = new LoginForm();
+            //if (loginForm.ShowDialog() == DialogResult.OK && loginForm.MaNV != -1)
+            //{
+            //    //Application.Run(new Form1(loginForm.MaNV));
+            //    Application.Run(new Statistic());
+            //}
+            //else
+            //{
+            //    Application.Exit();
+            //}
+
+            Application.Run(new Statistic());
         }
     }
 }

@@ -33,14 +33,18 @@
             this.tabControl_thongke = new System.Windows.Forms.TabControl();
             this.tabPage_doanhthu = new System.Windows.Forms.TabPage();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel_doanhthuvalue = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel_doanhthu = new MetroFramework.Controls.MetroLabel();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.btn_chitiet = new MetroFramework.Controls.MetroButton();
             this.dgv_doanhthu = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.metroButton_xem = new MetroFramework.Controls.MetroButton();
+            this.btn_xem = new MetroFramework.Controls.MetroButton();
+            this.btn_pdf = new MetroFramework.Controls.MetroButton();
             this.tabControl_thongke.SuspendLayout();
             this.tabPage_doanhthu.SuspendLayout();
+            this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_doanhthu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,7 +85,7 @@
             // 
             this.tabPage_doanhthu.Controls.Add(this.metroPanel1);
             this.tabPage_doanhthu.Controls.Add(this.metroButton2);
-            this.tabPage_doanhthu.Controls.Add(this.metroButton1);
+            this.tabPage_doanhthu.Controls.Add(this.btn_chitiet);
             this.tabPage_doanhthu.Controls.Add(this.dgv_doanhthu);
             this.tabPage_doanhthu.Location = new System.Drawing.Point(4, 22);
             this.tabPage_doanhthu.Name = "tabPage_doanhthu";
@@ -93,6 +97,8 @@
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.metroLabel_doanhthuvalue);
+            this.metroPanel1.Controls.Add(this.metroLabel_doanhthu);
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
@@ -104,6 +110,24 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // metroLabel_doanhthuvalue
+            // 
+            this.metroLabel_doanhthuvalue.AutoSize = true;
+            this.metroLabel_doanhthuvalue.Location = new System.Drawing.Point(81, 12);
+            this.metroLabel_doanhthuvalue.Name = "metroLabel_doanhthuvalue";
+            this.metroLabel_doanhthuvalue.Size = new System.Drawing.Size(68, 19);
+            this.metroLabel_doanhthuvalue.TabIndex = 3;
+            this.metroLabel_doanhthuvalue.Text = "doanh thu";
+            // 
+            // metroLabel_doanhthu
+            // 
+            this.metroLabel_doanhthu.AutoSize = true;
+            this.metroLabel_doanhthu.Location = new System.Drawing.Point(3, 12);
+            this.metroLabel_doanhthu.Name = "metroLabel_doanhthu";
+            this.metroLabel_doanhthu.Size = new System.Drawing.Size(72, 19);
+            this.metroLabel_doanhthu.TabIndex = 2;
+            this.metroLabel_doanhthu.Text = "Doanh thu:";
+            // 
             // metroButton2
             // 
             this.metroButton2.Location = new System.Drawing.Point(305, 269);
@@ -113,14 +137,15 @@
             this.metroButton2.Text = "metroButton2";
             this.metroButton2.UseSelectable = true;
             // 
-            // metroButton1
+            // btn_chitiet
             // 
-            this.metroButton1.Location = new System.Drawing.Point(68, 269);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(75, 23);
-            this.metroButton1.TabIndex = 1;
-            this.metroButton1.Text = "metroButton1";
-            this.metroButton1.UseSelectable = true;
+            this.btn_chitiet.Location = new System.Drawing.Point(68, 269);
+            this.btn_chitiet.Name = "btn_chitiet";
+            this.btn_chitiet.Size = new System.Drawing.Size(75, 23);
+            this.btn_chitiet.TabIndex = 1;
+            this.btn_chitiet.Text = "Chi tiết";
+            this.btn_chitiet.UseSelectable = true;
+            this.btn_chitiet.Click += new System.EventHandler(this.metroButton_chitiet_Click);
             // 
             // dgv_doanhthu
             // 
@@ -150,22 +175,32 @@
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // metroButton_xem
+            // btn_xem
             // 
-            this.metroButton_xem.Location = new System.Drawing.Point(290, 64);
-            this.metroButton_xem.Name = "metroButton_xem";
-            this.metroButton_xem.Size = new System.Drawing.Size(49, 28);
-            this.metroButton_xem.TabIndex = 3;
-            this.metroButton_xem.Text = "Xem";
-            this.metroButton_xem.UseSelectable = true;
-            this.metroButton_xem.Click += new System.EventHandler(this.metroButton_xem_Click);
+            this.btn_xem.Location = new System.Drawing.Point(290, 64);
+            this.btn_xem.Name = "btn_xem";
+            this.btn_xem.Size = new System.Drawing.Size(49, 28);
+            this.btn_xem.TabIndex = 3;
+            this.btn_xem.Text = "Xem";
+            this.btn_xem.UseSelectable = true;
+            this.btn_xem.Click += new System.EventHandler(this.metroButton_xem_Click);
+            // 
+            // btn_pdf
+            // 
+            this.btn_pdf.Location = new System.Drawing.Point(545, 64);
+            this.btn_pdf.Name = "btn_pdf";
+            this.btn_pdf.Size = new System.Drawing.Size(75, 28);
+            this.btn_pdf.TabIndex = 4;
+            this.btn_pdf.Text = "To PDF";
+            this.btn_pdf.UseSelectable = true;
             // 
             // Statistic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(709, 450);
-            this.Controls.Add(this.metroButton_xem);
+            this.Controls.Add(this.btn_pdf);
+            this.Controls.Add(this.btn_xem);
             this.Controls.Add(this.tabControl_thongke);
             this.Controls.Add(this.metroComboBox_year);
             this.Controls.Add(this.metroComboBox_month);
@@ -173,6 +208,8 @@
             this.Text = "Thống kê";
             this.tabControl_thongke.ResumeLayout(false);
             this.tabPage_doanhthu.ResumeLayout(false);
+            this.metroPanel1.ResumeLayout(false);
+            this.metroPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_doanhthu)).EndInit();
             this.ResumeLayout(false);
 
@@ -186,10 +223,13 @@
         private System.Windows.Forms.TabPage tabPage_doanhthu;
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroButton metroButton2;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton btn_chitiet;
         private System.Windows.Forms.DataGridView dgv_doanhthu;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private MetroFramework.Controls.MetroButton metroButton_xem;
+        private MetroFramework.Controls.MetroButton btn_xem;
+        private MetroFramework.Controls.MetroLabel metroLabel_doanhthu;
+        private MetroFramework.Controls.MetroLabel metroLabel_doanhthuvalue;
+        private MetroFramework.Controls.MetroButton btn_pdf;
     }
 }
