@@ -1,4 +1,5 @@
-﻿using PBL3_QuanLyTiemSach.BLL;
+﻿using MetroFramework.Components;
+using PBL3_QuanLyTiemSach.BLL;
 using PBL3_QuanLyTiemSach.DTO;
 using PBL3_QuanLyTiemSach.View.BillUI;
 using System;
@@ -18,6 +19,7 @@ namespace PBL3_QuanLyTiemSach.View
         public Bill()
         {
             InitializeComponent();
+            this.Style = MetroFramework.MetroColorStyle.White;
 
             cbbHoaDon.DropDownStyle = ComboBoxStyle.DropDownList;
             cbbSort.DropDownStyle = ComboBoxStyle.DropDownList;

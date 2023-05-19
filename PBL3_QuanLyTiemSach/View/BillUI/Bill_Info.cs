@@ -17,6 +17,7 @@ namespace PBL3_QuanLyTiemSach.View.BillUI
         public Bill_Info(List<string> li)
         {
             InitializeComponent();
+
             checkLoaiHD(li[0], li[4]);
             label_MaHD.Text = li[1];
             label_Date.Text = li[2];

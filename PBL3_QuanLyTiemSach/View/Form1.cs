@@ -22,7 +22,7 @@ namespace PBL3_QuanLyTiemSach
             InitializeComponent();
             SetUI();
         }
-        private System.Windows.Forms.Form currentForm; 
+        private System.Windows.Forms.Form currentForm;
         private void SetUI()
         {
             panel_Side.Hide();
