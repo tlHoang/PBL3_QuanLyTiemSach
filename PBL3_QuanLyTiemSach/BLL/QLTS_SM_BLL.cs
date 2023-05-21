@@ -1,4 +1,5 @@
-﻿using PBL3_QuanLyTiemSach.DTO;
+﻿using ComponentFactory.Krypton.Toolkit;
+using PBL3_QuanLyTiemSach.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -155,7 +156,7 @@ namespace PBL3_QuanLyTiemSach.BLL
             int stone = 2;
             DateTime dateNow = DateTime.Now.Date;
             int daysDiff = (int)(dayValid - dateNow).TotalDays;
-            return (daysDiff >= stone || daysDiff < 0) ? true : false;
+            return ( daysDiff >= stone) ? true : false;
         }
         public bool isValidDay(int maCa)
         {
@@ -165,7 +166,7 @@ namespace PBL3_QuanLyTiemSach.BLL
                 DateTime dateNow = DateTime.Now.Date;
                 DateTime? dayValid = db.Cas.Where(c => c.MaCa == maCa).FirstOrDefault().Ngay;
                 int daysDiff = (int)(dayValid.Value - dateNow).TotalDays;
-                return (daysDiff >= stone || daysDiff < 0) ? true : false;
+                return (daysDiff >= stone) ? true : false;
             }
         }
         public Ca getCa(Ca currentCa)
@@ -191,7 +192,13 @@ namespace PBL3_QuanLyTiemSach.BLL
                 {
                     return null;
                 }
-                
+            }
+        }
+        public bool checkDayExist(DateTime? day)
+        {
+            using(DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                return db.Cas.FirstOrDefault(c => DbFunctions.TruncateTime(c.Ngay) == day) != null;
             }
         }
         public void AddCa(Ca newCa, int maNV)
@@ -271,6 +278,20 @@ namespace PBL3_QuanLyTiemSach.BLL
                 new SMCBBItems_Start_End_Time { TenCa = "Ca 2", GioBatDau = new TimeSpan(14,0,0), GioKetThuc = new TimeSpan(22,0,0),}
             });
             return list;
+        }
+        public SMCBBItems_Start_End_Time getCaByGioBatDau(TimeSpan time)
+        {
+            List<SMCBBItems_Start_End_Time> list = getValueCBBCa();
+            SMCBBItems_Start_End_Time res = new SMCBBItems_Start_End_Time();
+            foreach(var item in list)
+            {
+                if(item.GioBatDau == time)
+                {
+                    res = item;
+                    break;
+                }
+            }
+            return res;
         }
         public DataTable getDataCaLamNhanVien(int maNV, string mode)
         {
@@ -395,33 +416,89 @@ namespace PBL3_QuanLyTiemSach.BLL
             }
             return dt;
         }
-        public void DeleteCa(int maCa, int maNV)
+        public void setCheckBox(KryptonCheckBox cB, DateTime day, KryptonComboBox cbb,int MaNV)
         {
-            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            SMCBBItems_Start_End_Time selecteCa = (SMCBBItems_Start_End_Time)cbb.SelectedItem;
+            TimeSpan gbd = selecteCa.GioBatDau;
+            bool Oke = bll.IsDuplicateCa(day, gbd, MaNV);
+            if (Oke)
             {
-                Ca delCa = new Ca();
-                CaNV delCaNV = new CaNV();
-                if (maCa != null)
-                {
-                    if (isValidDay(maCa))
-                    {
-                        delCa = db.Cas.Where(c => c.MaCa == maCa).FirstOrDefault();
-                        delCaNV = db.CaNVs.Where(cnv => cnv.MaCa == maCa && cnv.MaNV == maNV).FirstOrDefault();
+                cB.Checked = true;
+            }
+            else
+            {
+                cB.Checked = false;
+            }
+        }
+        public void setLabelSLNV(KryptonLabel lb, DateTime day, KryptonComboBox cbb)
+        {
+            try
+            {
+                QLTS_SM_BLL bll = new QLTS_SM_BLL();
+                SMCBBItems_Start_End_Time selectedCa = (SMCBBItems_Start_End_Time)cbb.SelectedItem;
+                TimeSpan gbd = selectedCa.GioBatDau;
+                TimeSpan gkt = selectedCa.GioKetThuc;
 
-                        db.CaNVs.Remove(delCaNV);
-                        db.SaveChanges();
-                        MessageBox.Show("Xóa Thành công");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không thể Xóa Ca Làm Này khi 2 ngày nữa là đến Ca làm \n" +
-                                        "hoặc Ca đã làm");
-                    }
+                Ca ca = bll.getCa(day, gbd, gkt);
+                if (ca != null)
+                {
+                    int maCa = ca.MaCa;
+                    int SL = bll.getSoLuongNhanVienTrongCa(maCa);
+                    lb.Text = $"{SL}/2";
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy Ca làm có mã" + maCa);
+                    lb.Text = "0/2";
                 }
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show(ex.Message);
+            }
+        }
+        public void DeleteCa(int maCa,int adminID , int maNV)
+        {
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                if (IsAdmin(adminID))
+                {
+                    Ca delCa = new Ca();
+                    CaNV delCaNV = new CaNV();
+                    delCa = db.Cas.Where(c => c.MaCa == maCa).FirstOrDefault();
+                    delCaNV = db.CaNVs.Where(cnv => cnv.MaCa == maCa && cnv.MaNV == maNV).FirstOrDefault();
+
+                    db.CaNVs.Remove(delCaNV);
+                    db.SaveChanges();
+                    KryptonMessageBox.Show("Xóa Thành công");
+                }
+                else
+                {
+                    Ca delCa = new Ca();
+                    CaNV delCaNV = new CaNV();
+                    if (maCa != 0)
+                    {
+                        if (isValidDay(maCa))
+                        {
+                            delCa = db.Cas.Where(c => c.MaCa == maCa).FirstOrDefault();
+                            delCaNV = db.CaNVs.Where(cnv => cnv.MaCa == maCa && cnv.MaNV == maNV).FirstOrDefault();
+
+                            db.CaNVs.Remove(delCaNV);
+                            db.SaveChanges();
+                            KryptonMessageBox.Show("Xóa Thành công");
+                        }
+                        else
+                        {
+                            KryptonMessageBox.Show("Không thể Xóa Ca Làm Này khi 2 ngày nữa là đến Ca làm \n" +
+                                            "hoặc Ca đã làm");
+                        }
+                    }
+                    else
+                    {
+                        KryptonMessageBox.Show("Không tìm thấy Ca làm có mã" + maCa);
+                    }
+                }
+                
             }
         }
         public void UpdateCa(Ca newCa, int maNV)
@@ -451,9 +528,10 @@ namespace PBL3_QuanLyTiemSach.BLL
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    KryptonMessageBox.Show(ex.ToString());
                 }
             }
         }
+        
     }
 }

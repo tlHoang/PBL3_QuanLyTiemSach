@@ -34,20 +34,20 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookInfo));
-            this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.dgvBookInfo = new MetroFramework.Controls.MetroGrid();
-            this.txtBookInfoTenSach = new MetroFramework.Controls.MetroTextBox();
-            this.txtBookInfoTacGia = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.btnBookInfoTimKiem = new MetroFramework.Controls.MetroButton();
-            this.btnBookInfoXem = new MetroFramework.Controls.MetroButton();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.btnBIThoat = new MetroFramework.Controls.MetroButton();
-            this.cbbTheLoai = new MetroFramework.Controls.MetroComboBox();
+            this.metroGrid1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.dgvBookInfo = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.txtBookInfoTenSach = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtBookInfoTacGia = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.cbbTheLoai = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.btnXem = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnTimKiem = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnQuayLai = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbTheLoai)).BeginInit();
             this.SuspendLayout();
             // 
             // metroGrid1
@@ -123,7 +123,7 @@
             this.dgvBookInfo.EnableHeadersVisualStyles = false;
             this.dgvBookInfo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgvBookInfo.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.dgvBookInfo.Location = new System.Drawing.Point(277, 41);
+            this.dgvBookInfo.Location = new System.Drawing.Point(15, 39);
             this.dgvBookInfo.Margin = new System.Windows.Forms.Padding(2);
             this.dgvBookInfo.Name = "dgvBookInfo";
             this.dgvBookInfo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -144,163 +144,92 @@
             // 
             // txtBookInfoTenSach
             // 
-            // 
-            // 
-            // 
-            this.txtBookInfoTenSach.CustomButton.Image = null;
-            this.txtBookInfoTenSach.CustomButton.Location = new System.Drawing.Point(119, 1);
-            this.txtBookInfoTenSach.CustomButton.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBookInfoTenSach.CustomButton.Name = "";
-            this.txtBookInfoTenSach.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtBookInfoTenSach.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtBookInfoTenSach.CustomButton.TabIndex = 1;
-            this.txtBookInfoTenSach.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtBookInfoTenSach.CustomButton.UseSelectable = true;
-            this.txtBookInfoTenSach.CustomButton.Visible = false;
-            this.txtBookInfoTenSach.Lines = new string[0];
-            this.txtBookInfoTenSach.Location = new System.Drawing.Point(84, 80);
-            this.txtBookInfoTenSach.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBookInfoTenSach.MaxLength = 32767;
+            this.txtBookInfoTenSach.Location = new System.Drawing.Point(724, 39);
             this.txtBookInfoTenSach.Name = "txtBookInfoTenSach";
-            this.txtBookInfoTenSach.PasswordChar = '\0';
-            this.txtBookInfoTenSach.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtBookInfoTenSach.SelectedText = "";
-            this.txtBookInfoTenSach.SelectionLength = 0;
-            this.txtBookInfoTenSach.SelectionStart = 0;
-            this.txtBookInfoTenSach.ShortcutsEnabled = true;
-            this.txtBookInfoTenSach.Size = new System.Drawing.Size(141, 23);
-            this.txtBookInfoTenSach.TabIndex = 2;
-            this.txtBookInfoTenSach.UseSelectable = true;
-            this.txtBookInfoTenSach.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtBookInfoTenSach.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtBookInfoTenSach.Size = new System.Drawing.Size(123, 23);
+            this.txtBookInfoTenSach.TabIndex = 7;
             // 
             // txtBookInfoTacGia
             // 
-            // 
-            // 
-            // 
-            this.txtBookInfoTacGia.CustomButton.Image = null;
-            this.txtBookInfoTacGia.CustomButton.Location = new System.Drawing.Point(119, 1);
-            this.txtBookInfoTacGia.CustomButton.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBookInfoTacGia.CustomButton.Name = "";
-            this.txtBookInfoTacGia.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtBookInfoTacGia.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtBookInfoTacGia.CustomButton.TabIndex = 1;
-            this.txtBookInfoTacGia.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtBookInfoTacGia.CustomButton.UseSelectable = true;
-            this.txtBookInfoTacGia.CustomButton.Visible = false;
-            this.txtBookInfoTacGia.Lines = new string[0];
-            this.txtBookInfoTacGia.Location = new System.Drawing.Point(84, 118);
-            this.txtBookInfoTacGia.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBookInfoTacGia.MaxLength = 32767;
+            this.txtBookInfoTacGia.Location = new System.Drawing.Point(724, 79);
             this.txtBookInfoTacGia.Name = "txtBookInfoTacGia";
-            this.txtBookInfoTacGia.PasswordChar = '\0';
-            this.txtBookInfoTacGia.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtBookInfoTacGia.SelectedText = "";
-            this.txtBookInfoTacGia.SelectionLength = 0;
-            this.txtBookInfoTacGia.SelectionStart = 0;
-            this.txtBookInfoTacGia.ShortcutsEnabled = true;
-            this.txtBookInfoTacGia.Size = new System.Drawing.Size(141, 23);
-            this.txtBookInfoTacGia.TabIndex = 2;
-            this.txtBookInfoTacGia.UseSelectable = true;
-            this.txtBookInfoTacGia.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtBookInfoTacGia.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(15, 78);
-            this.metroLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(59, 19);
-            this.metroLabel1.TabIndex = 3;
-            this.metroLabel1.Text = "Tên Sách";
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(15, 118);
-            this.metroLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(50, 19);
-            this.metroLabel2.TabIndex = 3;
-            this.metroLabel2.Text = "Tác Giả";
-            // 
-            // btnBookInfoTimKiem
-            // 
-            this.btnBookInfoTimKiem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBookInfoTimKiem.BackgroundImage")));
-            this.btnBookInfoTimKiem.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnBookInfoTimKiem.Location = new System.Drawing.Point(15, 215);
-            this.btnBookInfoTimKiem.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBookInfoTimKiem.Name = "btnBookInfoTimKiem";
-            this.btnBookInfoTimKiem.Size = new System.Drawing.Size(91, 34);
-            this.btnBookInfoTimKiem.Style = MetroFramework.MetroColorStyle.Lime;
-            this.btnBookInfoTimKiem.TabIndex = 4;
-            this.btnBookInfoTimKiem.Text = "Tìm Kiếm";
-            this.btnBookInfoTimKiem.UseSelectable = true;
-            this.btnBookInfoTimKiem.Click += new System.EventHandler(this.btnBookInfoTimKiem_Click);
-            // 
-            // btnBookInfoXem
-            // 
-            this.btnBookInfoXem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBookInfoXem.BackgroundImage")));
-            this.btnBookInfoXem.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnBookInfoXem.Location = new System.Drawing.Point(134, 215);
-            this.btnBookInfoXem.Name = "btnBookInfoXem";
-            this.btnBookInfoXem.Size = new System.Drawing.Size(91, 34);
-            this.btnBookInfoXem.Style = MetroFramework.MetroColorStyle.Lime;
-            this.btnBookInfoXem.TabIndex = 5;
-            this.btnBookInfoXem.Text = "Xem";
-            this.btnBookInfoXem.UseSelectable = true;
-            this.btnBookInfoXem.Click += new System.EventHandler(this.btnBookInfoXem_Click);
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(15, 157);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(58, 19);
-            this.metroLabel3.TabIndex = 6;
-            this.metroLabel3.Text = "Thể Loại";
-            // 
-            // btnBIThoat
-            // 
-            this.btnBIThoat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBIThoat.BackgroundImage")));
-            this.btnBIThoat.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnBIThoat.Location = new System.Drawing.Point(72, 410);
-            this.btnBIThoat.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBIThoat.Name = "btnBIThoat";
-            this.btnBIThoat.Size = new System.Drawing.Size(85, 31);
-            this.btnBIThoat.Style = MetroFramework.MetroColorStyle.Lime;
-            this.btnBIThoat.TabIndex = 8;
-            this.btnBIThoat.Text = "Thoát";
-            this.btnBIThoat.UseSelectable = true;
-            this.btnBIThoat.Click += new System.EventHandler(this.btnBIThoat_Click);
+            this.txtBookInfoTacGia.Size = new System.Drawing.Size(123, 23);
+            this.txtBookInfoTacGia.TabIndex = 7;
             // 
             // cbbTheLoai
             // 
-            this.cbbTheLoai.FormattingEnabled = true;
-            this.cbbTheLoai.ItemHeight = 23;
-            this.cbbTheLoai.Location = new System.Drawing.Point(84, 157);
+            this.cbbTheLoai.DropDownWidth = 123;
+            this.cbbTheLoai.Location = new System.Drawing.Point(724, 122);
             this.cbbTheLoai.Name = "cbbTheLoai";
-            this.cbbTheLoai.Size = new System.Drawing.Size(141, 29);
-            this.cbbTheLoai.Style = MetroFramework.MetroColorStyle.Lime;
-            this.cbbTheLoai.TabIndex = 9;
-            this.cbbTheLoai.UseSelectable = true;
+            this.cbbTheLoai.Size = new System.Drawing.Size(123, 21);
+            this.cbbTheLoai.TabIndex = 8;
+            // 
+            // kryptonLabel1
+            // 
+            this.kryptonLabel1.Location = new System.Drawing.Point(630, 39);
+            this.kryptonLabel1.Name = "kryptonLabel1";
+            this.kryptonLabel1.Size = new System.Drawing.Size(59, 20);
+            this.kryptonLabel1.TabIndex = 9;
+            this.kryptonLabel1.Values.Text = "Tên Sách";
+            // 
+            // kryptonLabel2
+            // 
+            this.kryptonLabel2.Location = new System.Drawing.Point(630, 77);
+            this.kryptonLabel2.Name = "kryptonLabel2";
+            this.kryptonLabel2.Size = new System.Drawing.Size(50, 20);
+            this.kryptonLabel2.TabIndex = 9;
+            this.kryptonLabel2.Values.Text = "Tác Giả";
+            // 
+            // kryptonLabel3
+            // 
+            this.kryptonLabel3.Location = new System.Drawing.Point(630, 122);
+            this.kryptonLabel3.Name = "kryptonLabel3";
+            this.kryptonLabel3.Size = new System.Drawing.Size(56, 20);
+            this.kryptonLabel3.TabIndex = 9;
+            this.kryptonLabel3.Values.Text = "Thể Loại";
+            // 
+            // btnXem
+            // 
+            this.btnXem.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Gallery;
+            this.btnXem.Location = new System.Drawing.Point(632, 188);
+            this.btnXem.Name = "btnXem";
+            this.btnXem.Size = new System.Drawing.Size(90, 25);
+            this.btnXem.TabIndex = 10;
+            this.btnXem.Values.Text = "Xem";
+            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Gallery;
+            this.btnTimKiem.Location = new System.Drawing.Point(754, 188);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(90, 25);
+            this.btnTimKiem.TabIndex = 11;
+            this.btnTimKiem.Values.Text = "Tìm Kiếm";
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
+            // btnQuayLai
+            // 
+            this.btnQuayLai.Location = new System.Drawing.Point(698, 414);
+            this.btnQuayLai.Name = "btnQuayLai";
+            this.btnQuayLai.Size = new System.Drawing.Size(90, 25);
+            this.btnQuayLai.TabIndex = 12;
+            this.btnQuayLai.Values.Text = "Quay Lại";
+            this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
             // 
             // BookInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackImage = ((System.Drawing.Image)(resources.GetObject("$this.BackImage")));
-            this.ClientSize = new System.Drawing.Size(897, 468);
+            this.ClientSize = new System.Drawing.Size(906, 468);
             this.ControlBox = false;
+            this.Controls.Add(this.btnQuayLai);
+            this.Controls.Add(this.btnTimKiem);
+            this.Controls.Add(this.btnXem);
+            this.Controls.Add(this.kryptonLabel3);
+            this.Controls.Add(this.kryptonLabel2);
+            this.Controls.Add(this.kryptonLabel1);
             this.Controls.Add(this.cbbTheLoai);
-            this.Controls.Add(this.btnBIThoat);
-            this.Controls.Add(this.metroLabel3);
-            this.Controls.Add(this.btnBookInfoXem);
-            this.Controls.Add(this.btnBookInfoTimKiem);
-            this.Controls.Add(this.metroLabel2);
-            this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.txtBookInfoTacGia);
             this.Controls.Add(this.txtBookInfoTenSach);
             this.Controls.Add(this.dgvBookInfo);
@@ -308,12 +237,11 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BookInfo";
             this.Padding = new System.Windows.Forms.Padding(13, 60, 13, 13);
-            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
-            this.Style = MetroFramework.MetroColorStyle.White;
             this.Text = "Book Information";
             this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbTheLoai)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,16 +249,16 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroGrid metroGrid1;
-        private MetroFramework.Controls.MetroGrid dgvBookInfo;
-        private MetroFramework.Controls.MetroTextBox txtBookInfoTenSach;
-        private MetroFramework.Controls.MetroTextBox txtBookInfoTacGia;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroButton btnBookInfoTimKiem;
-        private MetroFramework.Controls.MetroButton btnBookInfoXem;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroButton btnBIThoat;
-        private MetroFramework.Controls.MetroComboBox cbbTheLoai;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView metroGrid1;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvBookInfo;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtBookInfoTenSach;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtBookInfoTacGia;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbbTheLoai;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel3;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnXem;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnTimKiem;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnQuayLai;
     }
 }

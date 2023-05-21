@@ -1,4 +1,5 @@
-﻿using PBL3_QuanLyTiemSach.BLL;
+﻿using ComponentFactory.Krypton.Toolkit;
+using PBL3_QuanLyTiemSach.BLL;
 using PBL3_QuanLyTiemSach.DTO;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace PBL3_QuanLyTiemSach.View
 {
-    public partial class BookInfo : MetroFramework.Forms.MetroForm
+    public partial class BookInfo : KryptonForm
     {
         Form1 f;
         public BookInfo()
@@ -38,24 +39,7 @@ namespace PBL3_QuanLyTiemSach.View
             QLTS_BI_BLL bll = new QLTS_BI_BLL();
             cbbTheLoai.Items.AddRange(bll.getAllTheLoai().ToArray());
         }
-        private void btnBookInfoTimKiem_Click(object sender, EventArgs e)
-        {
-            // Get Data
-            string txtTenSach = txtBookInfoTenSach.Text;
-            string txtTacGia = txtBookInfoTacGia.Text;
-            string txtTheLoai = cbbTheLoai.Text;
-            QLTS_BI_BLL bll = new QLTS_BI_BLL();
-            dgvBookInfo.DataSource = bll.getDataFindListBook(txtTenSach,txtTacGia,txtTheLoai);
-
-            dgvBookInfo.Columns["TenSach"].HeaderText = "Tên Sách";
-            dgvBookInfo.Columns["TenSach"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            dgvBookInfo.Columns["TenSach"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvBookInfo.Columns["TacGia"].HeaderText = "Tác Giả";
-            dgvBookInfo.Columns["TheLoai"].HeaderText = "Thể Loại";
-            dgvBookInfo.Columns["SL"].HeaderText = "Số Lượng";
-        }
-
-        private void btnBookInfoXem_Click(object sender, EventArgs e)
+        private void btnXem_Click(object sender, EventArgs e)
         {
             if (dgvBookInfo.SelectedRows.Count == 1)
             {
@@ -74,16 +58,32 @@ namespace PBL3_QuanLyTiemSach.View
                 }
                 else
                 {
-                    MessageBox.Show("Danh Sách rỗng !!! ", MessageBoxIcon.Information.ToString());
+                    KryptonMessageBox.Show("Danh Sách rỗng !!! ", MessageBoxIcon.Information.ToString());
                 }
             }
             else
             {
-                MessageBox.Show("Chọn một hàng !!! ", MessageBoxIcon.Information.ToString());
+                KryptonMessageBox.Show("Chọn một hàng !!! ", MessageBoxIcon.Information.ToString());
             }
         }
 
-        private void btnBIThoat_Click(object sender, EventArgs e)
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string txtTenSach = txtBookInfoTenSach.Text;
+            string txtTacGia = txtBookInfoTacGia.Text;
+            string txtTheLoai = cbbTheLoai.Text;
+            QLTS_BI_BLL bll = new QLTS_BI_BLL();
+            dgvBookInfo.DataSource = bll.getDataFindListBook(txtTenSach, txtTacGia, txtTheLoai);
+
+            dgvBookInfo.Columns["TenSach"].HeaderText = "Tên Sách";
+            dgvBookInfo.Columns["TenSach"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            dgvBookInfo.Columns["TenSach"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvBookInfo.Columns["TacGia"].HeaderText = "Tác Giả";
+            dgvBookInfo.Columns["TheLoai"].HeaderText = "Thể Loại";
+            dgvBookInfo.Columns["SL"].HeaderText = "Số Lượng";
+        }
+
+        private void btnQuayLai_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }

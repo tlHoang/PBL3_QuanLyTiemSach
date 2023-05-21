@@ -36,11 +36,224 @@
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AdvancedPageDragAndDrop">
+      <HintPath>..\..\Krypton-master\Bin\AdvancedPageDragAndDrop.exe</HintPath>
+    </Reference>
+    <Reference Include="ApplicationMenu">
+      <HintPath>..\..\Krypton-master\Bin\ApplicationMenu.exe</HintPath>
+    </Reference>
+    <Reference Include="AutoShrinkingGroups">
+      <HintPath>..\..\Krypton-master\Bin\AutoShrinkingGroups.exe</HintPath>
+    </Reference>
+    <Reference Include="BasicEvents">
+      <HintPath>..\..\Krypton-master\Bin\BasicEvents.exe</HintPath>
+    </Reference>
+    <Reference Include="BasicPageDragAndDrop">
+      <HintPath>..\..\Krypton-master\Bin\BasicPageDragAndDrop.exe</HintPath>
+    </Reference>
+    <Reference Include="ButtonSpecPlayground">
+      <HintPath>..\..\Krypton-master\Bin\ButtonSpecPlayground.exe</HintPath>
+    </Reference>
+    <Reference Include="CellMaximizeAndRestore">
+      <HintPath>..\..\Krypton-master\Bin\CellMaximizeAndRestore.exe</HintPath>
+    </Reference>
+    <Reference Include="ChildControlStack">
+      <HintPath>..\..\Krypton-master\Bin\ChildControlStack.exe</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Design">
+      <HintPath>..\..\Krypton-master\Bin\ComponentFactory.Krypton.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Docking">
+      <HintPath>..\..\Krypton-master\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Navigator">
+      <HintPath>..\..\Krypton-master\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Ribbon">
+      <HintPath>..\..\Krypton-master\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Toolkit">
+      <HintPath>..\..\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Workspace">
+      <HintPath>..\..\Krypton-master\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
+    </Reference>
+    <Reference Include="ContextualTabs">
+      <HintPath>..\..\Krypton-master\Bin\ContextualTabs.exe</HintPath>
+    </Reference>
+    <Reference Include="CustomControlUsingPalettes">
+      <HintPath>..\..\Krypton-master\Bin\CustomControlUsingPalettes.exe</HintPath>
+    </Reference>
+    <Reference Include="CustomControlUsingRenderers">
+      <HintPath>..\..\Krypton-master\Bin\CustomControlUsingRenderers.exe</HintPath>
+    </Reference>
+    <Reference Include="DockingCustomized">
+      <HintPath>..\..\Krypton-master\Bin\DockingCustomized.exe</HintPath>
+    </Reference>
+    <Reference Include="DockingFlags">
+      <HintPath>..\..\Krypton-master\Bin\DockingFlags.exe</HintPath>
+    </Reference>
+    <Reference Include="DockingPersistence">
+      <HintPath>..\..\Krypton-master\Bin\DockingPersistence.exe</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ExpandingHeaderGroupsDockStyle">
+      <HintPath>..\..\Krypton-master\Bin\ExpandingHeaderGroupsDockStyle.exe</HintPath>
+    </Reference>
+    <Reference Include="ExpandingHeaderGroupsSplitters">
+      <HintPath>..\..\Krypton-master\Bin\ExpandingHeaderGroupsSplitters.exe</HintPath>
+    </Reference>
+    <Reference Include="ExpandingHeaderGroupsStack">
+      <HintPath>..\..\Krypton-master\Bin\ExpandingHeaderGroupsStack.exe</HintPath>
+    </Reference>
+    <Reference Include="ExpandingPages">
+      <HintPath>..\..\Krypton-master\Bin\ExpandingPages.exe</HintPath>
+    </Reference>
+    <Reference Include="ExternalDragToDocking">
+      <HintPath>..\..\Krypton-master\Bin\ExternalDragToDocking.exe</HintPath>
+    </Reference>
+    <Reference Include="InputForm">
+      <HintPath>..\..\Krypton-master\Bin\InputForm.exe</HintPath>
+    </Reference>
+    <Reference Include="KeyTipsAndKeyboardAccess">
+      <HintPath>..\..\Krypton-master\Bin\KeyTipsAndKeyboardAccess.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonBorderEdgeExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonBorderEdgeExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonBreadCrumbExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonBreadCrumbExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonButtonExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonButtonExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonCheckBoxExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonCheckBoxExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonCheckButtonExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonCheckButtonExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonCheckedListBoxExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonCheckedListBoxExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonCheckSetExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonCheckSetExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonColorButtonExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonColorButtonExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonComboBoxExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonComboBoxExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonCommandExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonCommandExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonContextMenuExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonContextMenuExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonDataGridViewExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonDataGridViewExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonDateTimePickerExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonDateTimePickerExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonDomainUpDownExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonDomainUpDownExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonDropButtonExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonDropButtonExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonExplorer">
+      <HintPath>..\..\Krypton-master\Bin\KryptonExplorer.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonFormExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonFormExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonGalleryExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonGalleryExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonGroupBoxExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonGroupBoxExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonGroupExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonGroupExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonHeaderExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonHeaderExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonHeaderGroupExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonHeaderGroupExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonInputBoxExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonInputBoxExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonLabelExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonLabelExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonLinkLabelExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonLinkLabelExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonListBoxExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonListBoxExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonMaskedTextBoxExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonMaskedTextBoxExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonMessageBoxExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonMessageBoxExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonMonthCalendarExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonMonthCalendarExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonNumericUpDownExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonNumericUpDownExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonPaletteExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonPaletteExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonPanelExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonPanelExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonRadioButtonExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonRadioButtonExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonRichTextBoxExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonRichTextBoxExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonSeparatorExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonSeparatorExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonSplitContainerExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonSplitContainerExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonTaskDialogExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonTaskDialogExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonTextBoxExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonTextBoxExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonTrackBarExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonTrackBarExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonTreeViewExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonTreeViewExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="KryptonWrapLabelExamples">
+      <HintPath>..\..\Krypton-master\Bin\KryptonWrapLabelExamples.exe</HintPath>
+    </Reference>
+    <Reference Include="MDIApplication">
+      <HintPath>..\..\Krypton-master\Bin\MDIApplication.exe</HintPath>
+    </Reference>
+    <Reference Include="MDIRibbon">
+      <HintPath>..\..\Krypton-master\Bin\MDIRibbon.exe</HintPath>
+    </Reference>
+    <Reference Include="MemoEditor">
+      <HintPath>..\..\Krypton-master\Bin\MemoEditor.exe</HintPath>
     </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
@@ -50,6 +263,69 @@
     </Reference>
     <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="MultiControlDocking">
+      <HintPath>..\..\Krypton-master\Bin\MultiControlDocking.exe</HintPath>
+    </Reference>
+    <Reference Include="NavigatorAndFloatingWindows">
+      <HintPath>..\..\Krypton-master\Bin\NavigatorAndFloatingWindows.exe</HintPath>
+    </Reference>
+    <Reference Include="NavigatorContextMenus">
+      <HintPath>..\..\Krypton-master\Bin\NavigatorContextMenus.exe</HintPath>
+    </Reference>
+    <Reference Include="NavigatorModes">
+      <HintPath>..\..\Krypton-master\Bin\NavigatorModes.exe</HintPath>
+    </Reference>
+    <Reference Include="NavigatorPalettes">
+      <HintPath>..\..\Krypton-master\Bin\NavigatorPalettes.exe</HintPath>
+    </Reference>
+    <Reference Include="NavigatorPlayground">
+      <HintPath>..\..\Krypton-master\Bin\NavigatorPlayground.exe</HintPath>
+    </Reference>
+    <Reference Include="NavigatorToolTips">
+      <HintPath>..\..\Krypton-master\Bin\NavigatorToolTips.exe</HintPath>
+    </Reference>
+    <Reference Include="OneNoteTabs">
+      <HintPath>..\..\Krypton-master\Bin\OneNoteTabs.exe</HintPath>
+    </Reference>
+    <Reference Include="OrientationPlusAlignment">
+      <HintPath>..\..\Krypton-master\Bin\OrientationPlusAlignment.exe</HintPath>
+    </Reference>
+    <Reference Include="OutlookMailClone">
+      <HintPath>..\..\Krypton-master\Bin\OutlookMailClone.exe</HintPath>
+    </Reference>
+    <Reference Include="OutlookMockup">
+      <HintPath>..\..\Krypton-master\Bin\OutlookMockup.exe</HintPath>
+    </Reference>
+    <Reference Include="PaletteDesigner">
+      <HintPath>..\..\Krypton-master\Bin\PaletteDesigner.exe</HintPath>
+    </Reference>
+    <Reference Include="PerTabButtons">
+      <HintPath>..\..\Krypton-master\Bin\PerTabButtons.exe</HintPath>
+    </Reference>
+    <Reference Include="PopupPages">
+      <HintPath>..\..\Krypton-master\Bin\PopupPages.exe</HintPath>
+    </Reference>
+    <Reference Include="QuickAccessToolbar">
+      <HintPath>..\..\Krypton-master\Bin\QuickAccessToolbar.exe</HintPath>
+    </Reference>
+    <Reference Include="RibbonAndNavigatorAndWorkspace">
+      <HintPath>..\..\Krypton-master\Bin\RibbonAndNavigatorAndWorkspace.exe</HintPath>
+    </Reference>
+    <Reference Include="RibbonControls">
+      <HintPath>..\..\Krypton-master\Bin\RibbonControls.exe</HintPath>
+    </Reference>
+    <Reference Include="RibbonGallery">
+      <HintPath>..\..\Krypton-master\Bin\RibbonGallery.exe</HintPath>
+    </Reference>
+    <Reference Include="RibbonToolTips">
+      <HintPath>..\..\Krypton-master\Bin\RibbonToolTips.exe</HintPath>
+    </Reference>
+    <Reference Include="SinglelinePlusMultiline">
+      <HintPath>..\..\Krypton-master\Bin\SinglelinePlusMultiline.exe</HintPath>
+    </Reference>
+    <Reference Include="StandardDocking">
+      <HintPath>..\..\Krypton-master\Bin\StandardDocking.exe</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -65,6 +341,27 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="TabBorderStyles">
+      <HintPath>..\..\Krypton-master\Bin\TabBorderStyles.exe</HintPath>
+    </Reference>
+    <Reference Include="ThreePaneApplicationBasic">
+      <HintPath>..\..\Krypton-master\Bin\ThreePaneApplicationBasic.exe</HintPath>
+    </Reference>
+    <Reference Include="ThreePaneApplicationExtended">
+      <HintPath>..\..\Krypton-master\Bin\ThreePaneApplicationExtended.exe</HintPath>
+    </Reference>
+    <Reference Include="UserPageCreation">
+      <HintPath>..\..\Krypton-master\Bin\UserPageCreation.exe</HintPath>
+    </Reference>
+    <Reference Include="WorkspaceCellLayout">
+      <HintPath>..\..\Krypton-master\Bin\WorkspaceCellLayout.exe</HintPath>
+    </Reference>
+    <Reference Include="WorkspaceCellModes">
+      <HintPath>..\..\Krypton-master\Bin\WorkspaceCellModes.exe</HintPath>
+    </Reference>
+    <Reference Include="WorkspacePersistence">
+      <HintPath>..\..\Krypton-master\Bin\WorkspacePersistence.exe</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\BillBLL.cs" />
@@ -356,6 +653,8 @@
     <Content Include="obj\Debug\PBL3_QuanLyTiemSach.pdb" />
     <Content Include="obj\Debug\TempPE\Login_Resource.Designer.cs.dll" />
     <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <None Include="Resources\a8b0fcaf3c70960a9e76a32a49ea75b7.jpg" />
+    <None Include="Resources\494bc269c50505bf626d2b79d4f6b4ef.jpg" />
     <None Include="Resources\Oke.png" />
     <None Include="Resources\NotOKe.png" />
     <None Include="Resources\Free Aesthetic iPhone Backgrounds &amp; Widgets _ Guitar &amp; Lace.png" />

@@ -1,4 +1,5 @@
-﻿using MetroFramework.Components;
+﻿using ComponentFactory.Krypton.Toolkit;
+using MetroFramework.Components;
 using PBL3_QuanLyTiemSach.BLL;
 using PBL3_QuanLyTiemSach.DTO;
 using PBL3_QuanLyTiemSach.View.ShifManageUI;
@@ -17,7 +18,7 @@ using System.Windows.Forms;
 namespace PBL3_QuanLyTiemSach.View
 {
 
-    public partial class ShiftManage : MetroFramework.Forms.MetroForm
+    public partial class ShiftManage : KryptonForm
     {
         int IDStaff = 2;
         Form1 f;
@@ -37,7 +38,6 @@ namespace PBL3_QuanLyTiemSach.View
             setCBBMain();
             offGUIButton();
             setTenNhanVien(IDStaff);
-            setToolTip();
             setCBBTimeShowCa();
             cbbTimeShowCa.Hide();
             flagButton = "Main";
@@ -49,20 +49,6 @@ namespace PBL3_QuanLyTiemSach.View
             cbbTimeShowCa.Items.Add("Chưa Làm");
             cbbTimeShowCa.Items.Add("Đã Làm");
             cbbTimeShowCa.SelectedIndex = 1;
-        }
-        private void setToolTip()
-        {
-            QLTS_SM_BLL bll = new QLTS_SM_BLL();
-            if (bll.IsAdmin(IDStaff))
-            {
-                this.ToolTip.SetToolTip(this.btnSMLichLam, "Xem Lịch làm của nhân viên");
-            }
-            else
-            {
-                 this.ToolTip.SetToolTip(this.btnSMLichLam, "Đăng kí, Xóa, Chỉnh Sửa Ca làm");
-            }
-            //this.ToolTip.SetToolTip(ShiftMa, "Xem, chọn lịch làm tại đây !");           
-            this.ToolTip.SetToolTip(this.btnSMXem, "Xem ca làm trong ngày");
         }
         private void setTenNhanVien(int maNV)
         {
@@ -116,23 +102,7 @@ namespace PBL3_QuanLyTiemSach.View
 
             dgvShift.Columns["GioBatDau"].HeaderText = " Giờ bắt đầu";
             dgvShift.Columns["GioKetThuc"].HeaderText = "Giờ kết thúc";
-        }
-        private void btnSMThoat_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
-        private void btnSMDangKiCa_Click(object sender, EventArgs e)
-        {
-            FormSMDangKiCa DKC = new FormSMDangKiCa(IDStaff);
-            if( DKC == null || DKC.IsDisposed)
-            {
-                DKC = new FormSMDangKiCa(IDStaff);
-            }
-            DKC.Show();
-            DKC.updateLichLam += setCBBLichLamNV;
-        }
-
+        } 
         private void GUI_LichLam()
         {
             QLTS_SM_BLL bll = new QLTS_SM_BLL();
@@ -154,34 +124,76 @@ namespace PBL3_QuanLyTiemSach.View
                 setCBBLichLamNV();
             }
         }
+        private void btnSMThoat_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnSMDangKiCa_Click(object sender, EventArgs e)
+        {
+            FormSMDangKiCa DKC = new FormSMDangKiCa(IDStaff);
+            if( DKC == null || DKC.IsDisposed)
+            {
+                DKC = new FormSMDangKiCa(IDStaff);
+            }
+            DKC.Show();
+            DKC.updateLichLam += setCBBLichLamNV;
+        }
+
+
         private void btnSMLichLam_Click(object sender, EventArgs e)
         {
             GUI_LichLam();
-            flagButton = "LL";           
+            flagButton = "LL";
+            ADMaCa = -1;
         }
 
         private void btnXoaCa_Click(object sender, EventArgs e)
         {
-            if(dgvShift.SelectedRows.Count == 1) 
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            if (bll.IsAdmin(IDStaff))
             {
-                DataGridViewRow selectedRow = dgvShift.CurrentRow;
-                if(selectedRow != null)
-                { 
-                    int maCa = Convert.ToInt32(selectedRow.Cells["MaCa"].Value.ToString());
-                    QLTS_SM_BLL bll = new QLTS_SM_BLL();
-                    bll.DeleteCa(maCa,IDStaff);
-                    setCBBLichLamNV();                
+                if (dgvShift.SelectedRows.Count == 1)
+                {
+                    DataGridViewRow selectedRow = dgvShift.CurrentRow;
+                    if (selectedRow != null)
+                    {
+                        int maNV = Convert.ToInt32(selectedRow.Cells["Mã Nhân Viên"].Value.ToString());
+                        bll.DeleteCa(ADMaCa, IDStaff,maNV);
+                        dgvShift.DataSource = bll.getDataStaffByIDShift(ADMaCa);                        
+                    }
+                    else
+                    {
+                        KryptonMessageBox.Show("Dữ Liệu Rỗng");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Dữ Liệu Rỗng");
+                    KryptonMessageBox.Show("Chọn 1 hàng !!");
                 }
-             }
+            }
             else
             {
-                MessageBox.Show("Chọn ca cần xóa");
-            }
-            
+                if (dgvShift.SelectedRows.Count == 1)
+                {
+                    DataGridViewRow selectedRow = dgvShift.CurrentRow;
+                    if (selectedRow != null)
+                    {
+                        int maCa = Convert.ToInt32(selectedRow.Cells["MaCa"].Value.ToString());
+
+                        bll.DeleteCa(maCa, IDStaff,IDStaff);
+                        setCBBLichLamNV();
+                    }
+                    else
+                    {
+                        KryptonMessageBox.Show("Dữ Liệu Rỗng");
+                    }
+                }
+                else
+                {
+                    KryptonMessageBox.Show("Chọn ca cần xóa");
+                }
+            }              
         }
 
         private void btnSMQuayLai_Click(object sender, EventArgs e)
@@ -277,22 +289,30 @@ namespace PBL3_QuanLyTiemSach.View
                     }
                     else
                     {
-                        MetroFramework.MetroMessageBox.Show(this, "Chỉ được Chỉnh sửa Ca làm khi cách ngày hiện tại 2 ngày !!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information, 140);
+                        KryptonMessageBox.Show(this, "Chỉ được Chỉnh sửa Ca làm khi cách ngày hiện tại 2 ngày !!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
-            
+            else
+            {
+                KryptonMessageBox.Show("Chọn 1 hàng !!");
+            }
         }
-
-        private void dgvShift_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        public int ADMaCa = -1;
+        private void dgvShift_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             QLTS_SM_BLL bll = new QLTS_SM_BLL();
-            btnSMQuayLai.Hide();
+            
             if (bll.IsAdmin(IDStaff) && turnOnDoubleCLick == true)
             {
+                btnSMQuayLai.Hide();
+                btnXoaCa.Location = btnSMDangKiCa.Location;
+                btnXoaCa.Show();
                 DataGridViewRow currentRow = dgvShift.CurrentRow;
-                int maCa = Convert.ToInt32(currentRow.Cells["MaCa"].Value.ToString());
-                dgvShift.DataSource = bll.getDataStaffByIDShift(maCa);      
+                ADMaCa = Convert.ToInt32(currentRow.Cells["MaCa"].Value.ToString());
+                dgvShift.DataSource = bll.getDataStaffByIDShift(ADMaCa);
+                dgvShift.Columns["Tên Nhân Viên"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                dgvShift.Columns["Tên Nhân Viên"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 turnOnDoubleCLick = false;
             }
         }

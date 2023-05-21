@@ -59,5 +59,25 @@ namespace PBL3_QuanLyTiemSach.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _494bc269c50505bf626d2b79d4f6b4ef {
+            get {
+                object obj = ResourceManager.GetObject("494bc269c50505bf626d2b79d4f6b4ef", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap a8b0fcaf3c70960a9e76a32a49ea75b7 {
+            get {
+                object obj = ResourceManager.GetObject("a8b0fcaf3c70960a9e76a32a49ea75b7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
