@@ -1,4 +1,5 @@
-﻿using PBL3_QuanLyTiemSach.BLL;
+﻿using ComponentFactory.Krypton.Toolkit;
+using PBL3_QuanLyTiemSach.BLL;
 using PBL3_QuanLyTiemSach.DTO;
 using System;
 using System.Collections.Generic;
@@ -12,23 +13,15 @@ using System.Windows.Forms;
 
 namespace PBL3_QuanLyTiemSach.View
 {
-    public partial class BookInfo_XemForm : MetroFramework.Forms.MetroForm
+    public partial class BookInfo_XemForm : KryptonForm
     {
         private string BookName ; 
         public BookInfo_XemForm(string name)
         {
             InitializeComponent();
             this.BookName = name;
-            setTextBox();
             setGUI(name);
-        }
-        private void setTextBox()
-        {
-            txtTenSach.Enabled = false;
-            txtTacGia.Enabled = false;
-            txtTheLoai.Enabled = false;
-            txtSoLuong.Enabled = false;
-            txtGiaBan.Enabled = false;
+            this.BackColor = MetroFramework.MetroColors.Lime;
         }
         private void setGUI(string tenSach)
         {
@@ -46,11 +39,11 @@ namespace PBL3_QuanLyTiemSach.View
             }
             catch
             {
-                MessageBox.Show("Error!!!", MessageBoxIcon.Error.ToString());
+                KryptonMessageBox.Show("Error!!!", MessageBoxIcon.Error.ToString());
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnQuayLai_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }

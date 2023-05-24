@@ -28,128 +28,170 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dtChonNgayLam = new System.Windows.Forms.DateTimePicker();
-            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
-            this.cbbgbd = new System.Windows.Forms.ComboBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.cbbgkt = new System.Windows.Forms.ComboBox();
-            this.btnThoat = new MetroFramework.Controls.MetroButton();
-            this.btnLuu = new MetroFramework.Controls.MetroButton();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.btnLuu = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnThoat = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.dtChonNgayLam = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
+            this.lbSL = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.cbbCL = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.cB1 = new ComponentFactory.Krypton.Toolkit.KryptonCheckBox();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbCL)).BeginInit();
             this.SuspendLayout();
             // 
-            // dtChonNgayLam
+            // metroLabel5
             // 
-            this.dtChonNgayLam.Location = new System.Drawing.Point(205, 112);
-            this.dtChonNgayLam.Margin = new System.Windows.Forms.Padding(2);
-            this.dtChonNgayLam.Name = "dtChonNgayLam";
-            this.dtChonNgayLam.Size = new System.Drawing.Size(145, 20);
-            this.dtChonNgayLam.TabIndex = 1;
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.metroLabel5.Location = new System.Drawing.Point(140, 19);
+            this.metroLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(103, 19);
+            this.metroLabel5.TabIndex = 7;
+            this.metroLabel5.Text = "* Ca 2: 14h -22h";
             // 
-            // metroLabel9
+            // metroLabel6
             // 
-            this.metroLabel9.AutoSize = true;
-            this.metroLabel9.BackColor = System.Drawing.Color.Cyan;
-            this.metroLabel9.Location = new System.Drawing.Point(74, 112);
-            this.metroLabel9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(69, 19);
-            this.metroLabel9.TabIndex = 3;
-            this.metroLabel9.Text = "Ngày Làm";
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.metroLabel6.Location = new System.Drawing.Point(27, 56);
+            this.metroLabel6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(152, 19);
+            this.metroLabel6.TabIndex = 8;
+            this.metroLabel6.Text = "* 1 Ca chỉ có 2 nhân viên";
             // 
-            // cbbgbd
+            // metroLabel4
             // 
-            this.cbbgbd.FormattingEnabled = true;
-            this.cbbgbd.Location = new System.Drawing.Point(205, 170);
-            this.cbbgbd.Margin = new System.Windows.Forms.Padding(2);
-            this.cbbgbd.Name = "cbbgbd";
-            this.cbbgbd.Size = new System.Drawing.Size(145, 21);
-            this.cbbgbd.TabIndex = 4;
-            this.cbbgbd.SelectedIndexChanged += new System.EventHandler(this.cbbgbd_SelectedIndexChanged);
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.BackColor = System.Drawing.Color.Cyan;
-            this.metroLabel1.Location = new System.Drawing.Point(74, 170);
-            this.metroLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(79, 19);
-            this.metroLabel1.TabIndex = 3;
-            this.metroLabel1.Text = "Giờ Bắt Đầu";
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.BackColor = System.Drawing.Color.Cyan;
-            this.metroLabel2.Location = new System.Drawing.Point(74, 227);
-            this.metroLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(82, 19);
-            this.metroLabel2.TabIndex = 3;
-            this.metroLabel2.Text = "Giờ Kết Thúc";
-            // 
-            // cbbgkt
-            // 
-            this.cbbgkt.FormattingEnabled = true;
-            this.cbbgkt.Location = new System.Drawing.Point(205, 227);
-            this.cbbgkt.Margin = new System.Windows.Forms.Padding(2);
-            this.cbbgkt.Name = "cbbgkt";
-            this.cbbgkt.Size = new System.Drawing.Size(145, 21);
-            this.cbbgkt.TabIndex = 4;
-            this.cbbgkt.SelectedIndexChanged += new System.EventHandler(this.cbbgkt_SelectedIndexChanged);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Location = new System.Drawing.Point(224, 290);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(107, 21);
-            this.btnThoat.TabIndex = 6;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseSelectable = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.metroLabel4.Location = new System.Drawing.Point(27, 19);
+            this.metroLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(94, 19);
+            this.metroLabel4.TabIndex = 9;
+            this.metroLabel4.Text = "* Ca 1: 6h -14h";
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(74, 290);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLuu.Location = new System.Drawing.Point(31, 268);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(107, 21);
-            this.btnLuu.TabIndex = 6;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.UseSelectable = true;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            this.btnLuu.Size = new System.Drawing.Size(90, 25);
+            this.btnLuu.TabIndex = 10;
+            this.btnLuu.Values.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click_1);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Location = new System.Drawing.Point(171, 268);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(90, 25);
+            this.btnThoat.TabIndex = 11;
+            this.btnThoat.Values.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click_1);
+            // 
+            // kryptonLabel1
+            // 
+            this.kryptonLabel1.Location = new System.Drawing.Point(27, 95);
+            this.kryptonLabel1.Name = "kryptonLabel1";
+            this.kryptonLabel1.Size = new System.Drawing.Size(65, 20);
+            this.kryptonLabel1.TabIndex = 12;
+            this.kryptonLabel1.Values.Text = "Ngày Làm";
+            // 
+            // kryptonLabel2
+            // 
+            this.kryptonLabel2.Location = new System.Drawing.Point(27, 136);
+            this.kryptonLabel2.Name = "kryptonLabel2";
+            this.kryptonLabel2.Size = new System.Drawing.Size(51, 20);
+            this.kryptonLabel2.TabIndex = 12;
+            this.kryptonLabel2.Values.Text = "Ca Làm";
+            // 
+            // dtChonNgayLam
+            // 
+            this.dtChonNgayLam.Location = new System.Drawing.Point(171, 95);
+            this.dtChonNgayLam.Name = "dtChonNgayLam";
+            this.dtChonNgayLam.Size = new System.Drawing.Size(145, 21);
+            this.dtChonNgayLam.TabIndex = 13;
+            this.dtChonNgayLam.ValueChanged += new System.EventHandler(this.dtChonNgayLam_ValueChanged);
+            // 
+            // lbSL
+            // 
+            this.lbSL.Enabled = false;
+            this.lbSL.Location = new System.Drawing.Point(171, 182);
+            this.lbSL.Name = "lbSL";
+            this.lbSL.Size = new System.Drawing.Size(29, 20);
+            this.lbSL.TabIndex = 16;
+            this.lbSL.Values.Text = "0/2";
+            // 
+            // kryptonLabel3
+            // 
+            this.kryptonLabel3.Location = new System.Drawing.Point(27, 182);
+            this.kryptonLabel3.Name = "kryptonLabel3";
+            this.kryptonLabel3.Size = new System.Drawing.Size(123, 20);
+            this.kryptonLabel3.TabIndex = 17;
+            this.kryptonLabel3.Values.Text = "Số Lượng Nhân Viên";
+            // 
+            // cbbCL
+            // 
+            this.cbbCL.DropDownWidth = 145;
+            this.cbbCL.Location = new System.Drawing.Point(171, 136);
+            this.cbbCL.Name = "cbbCL";
+            this.cbbCL.Size = new System.Drawing.Size(145, 21);
+            this.cbbCL.TabIndex = 18;
+            this.cbbCL.SelectedIndexChanged += new System.EventHandler(this.cbbCL_SelectedIndexChanged);
+            // 
+            // cB1
+            // 
+            this.cB1.Enabled = false;
+            this.cB1.Location = new System.Drawing.Point(298, 182);
+            this.cB1.Name = "cB1";
+            this.cB1.Size = new System.Drawing.Size(85, 20);
+            this.cB1.TabIndex = 19;
+            this.cB1.Values.Text = "Đã Đăng Kí";
             // 
             // UpdateSMForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 348);
-            this.Controls.Add(this.btnLuu);
-            this.Controls.Add(this.btnThoat);
-            this.Controls.Add(this.cbbgkt);
-            this.Controls.Add(this.cbbgbd);
-            this.Controls.Add(this.metroLabel2);
-            this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.metroLabel9);
+            this.BackgroundImage = global::PBL3_QuanLyTiemSach.Properties.Resources.a8b0fcaf3c70960a9e76a32a49ea75b7;
+            this.ClientSize = new System.Drawing.Size(498, 305);
+            this.Controls.Add(this.cB1);
+            this.Controls.Add(this.cbbCL);
+            this.Controls.Add(this.kryptonLabel3);
+            this.Controls.Add(this.lbSL);
             this.Controls.Add(this.dtChonNgayLam);
+            this.Controls.Add(this.kryptonLabel2);
+            this.Controls.Add(this.kryptonLabel1);
+            this.Controls.Add(this.btnThoat);
+            this.Controls.Add(this.btnLuu);
+            this.Controls.Add(this.metroLabel5);
+            this.Controls.Add(this.metroLabel6);
+            this.Controls.Add(this.metroLabel4);
             this.Name = "UpdateSMForm";
             this.Text = "Chỉnh Sửa";
+            this.TopMost = true;
+            ((System.ComponentModel.ISupportInitialize)(this.cbbCL)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DateTimePicker dtChonNgayLam;
-        private MetroFramework.Controls.MetroLabel metroLabel9;
-        private System.Windows.Forms.ComboBox cbbgbd;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private System.Windows.Forms.ComboBox cbbgkt;
-        private MetroFramework.Controls.MetroButton btnThoat;
-        private MetroFramework.Controls.MetroButton btnLuu;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnLuu;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnThoat;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
+        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtChonNgayLam;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lbSL;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel3;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbbCL;
+        private ComponentFactory.Krypton.Toolkit.KryptonCheckBox cB1;
     }
 }

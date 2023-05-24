@@ -10,6 +10,13 @@ namespace PBL3_QuanLyTiemSach.BLL
 {
     internal class QLTS_BI_BLL
     {
+        public List<string> getAllTheLoai()
+        {
+            using(DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                return db.SachTheLoais.Select(stl =>stl.TenTheLoai).ToList();
+            }
+        }
         public DataTable getDataBaseListBook()
         {
             DataTable dt = new DataTable();

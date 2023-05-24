@@ -29,7 +29,7 @@ namespace PBL3_QuanLyTiemSach
             setRole();
             if (MaNV == 1)
             {
-                button_BanHang.Text = "Button A";
+                button_BanHang.Text = "Xem Đơn Hàng";
                 button_NhapHang.Text = "Button B";
                 button_Home.Text = "Nhân viên";
             }
@@ -99,7 +99,7 @@ namespace PBL3_QuanLyTiemSach
             }
             else
             {
-                
+                //OpenForm(new Form5());
             }
         }
 
@@ -143,6 +143,23 @@ namespace PBL3_QuanLyTiemSach
         private void button_Hide_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnThongTinSach_Click(object sender, EventArgs e)
+        {
+            panel_Side.Top = btnThongTinSach.Top;
+            panel_Side.Height = btnThongTinSach.Height;
+            panel_Side.Show();
+            //OpenForm(new BookInfo(this));
+
+        }
+
+        private void btnCaLam_Click(object sender, EventArgs e)
+        {
+            panel_Side.Top = btnCaLam.Top;
+            panel_Side.Height = btnCaLam.Height;
+            panel_Side.Show();
+            //OpenForm(new ShiftManage(this,MaNV));
         }
 
         private void button_HoaDon_Click(object sender, EventArgs e)
