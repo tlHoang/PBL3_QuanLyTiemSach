@@ -35,10 +35,10 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.btnLuu = new MetroFramework.Controls.MetroButton();
             this.cbbTheLoai = new System.Windows.Forms.ComboBox();
             this.txtSoLuong = new MetroFramework.Controls.MetroTextBox();
             this.txtGiaNhap = new MetroFramework.Controls.MetroTextBox();
+            this.kryptonButton2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -56,7 +56,7 @@
             // 
             // 
             this.txtTenSach.CustomButton.Image = null;
-            this.txtTenSach.CustomButton.Location = new System.Drawing.Point(193, 1);
+            this.txtTenSach.CustomButton.Location = new System.Drawing.Point(176, 1);
             this.txtTenSach.CustomButton.Name = "";
             this.txtTenSach.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtTenSach.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -86,7 +86,7 @@
             // 
             // 
             this.txtTacGia.CustomButton.Image = null;
-            this.txtTacGia.CustomButton.Location = new System.Drawing.Point(193, 1);
+            this.txtTacGia.CustomButton.Location = new System.Drawing.Point(176, 1);
             this.txtTacGia.CustomButton.Name = "";
             this.txtTacGia.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtTacGia.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -145,16 +145,6 @@
             this.metroLabel5.Size = new System.Drawing.Size(62, 19);
             this.metroLabel5.TabIndex = 6;
             this.metroLabel5.Text = "Số lượng";
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Location = new System.Drawing.Point(298, 211);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(75, 23);
-            this.btnLuu.TabIndex = 5;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.UseSelectable = true;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // cbbTheLoai
             // 
@@ -224,15 +214,39 @@
             this.txtGiaNhap.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtGiaNhap.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // kryptonButton2
+            // 
+            this.kryptonButton2.Location = new System.Drawing.Point(293, 208);
+            this.kryptonButton2.Name = "kryptonButton2";
+            this.kryptonButton2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.kryptonButton2.Size = new System.Drawing.Size(81, 26);
+            this.kryptonButton2.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.kryptonButton2.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.kryptonButton2.StateCommon.Border.Color1 = System.Drawing.Color.LightSteelBlue;
+            this.kryptonButton2.StateCommon.Border.Color2 = System.Drawing.Color.LightSteelBlue;
+            this.kryptonButton2.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonButton2.StateCommon.Border.Rounding = 4;
+            this.kryptonButton2.StateCommon.Border.Width = 1;
+            this.kryptonButton2.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 8.5F);
+            this.kryptonButton2.StateTracking.Back.Color1 = System.Drawing.Color.Gray;
+            this.kryptonButton2.StateTracking.Back.Color2 = System.Drawing.Color.Gray;
+            this.kryptonButton2.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonButton2.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kryptonButton2.TabIndex = 45;
+            this.kryptonButton2.Values.Text = "Lưu";
+            this.kryptonButton2.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
             // EditBookInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(435, 263);
+            this.Controls.Add(this.kryptonButton2);
             this.Controls.Add(this.txtGiaNhap);
             this.Controls.Add(this.txtSoLuong);
             this.Controls.Add(this.cbbTheLoai);
-            this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.metroLabel3);
@@ -258,9 +272,9 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel5;
-        private MetroFramework.Controls.MetroButton btnLuu;
         private System.Windows.Forms.ComboBox cbbTheLoai;
         private MetroFramework.Controls.MetroTextBox txtSoLuong;
         private MetroFramework.Controls.MetroTextBox txtGiaNhap;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton2;
     }
 }

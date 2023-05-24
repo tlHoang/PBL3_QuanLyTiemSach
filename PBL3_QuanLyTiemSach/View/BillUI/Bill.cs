@@ -11,15 +11,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ComponentFactory.Krypton.Toolkit;
 
 namespace PBL3_QuanLyTiemSach.View
 {
-    public partial class Bill : MetroFramework.Forms.MetroForm
+    public partial class Bill : KryptonForm
     {
         public Bill()
         {
             InitializeComponent();
-            this.Style = MetroFramework.MetroColorStyle.White;
 
             cbbHoaDon.DropDownStyle = ComboBoxStyle.DropDownList;
             cbbSort.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -30,7 +30,7 @@ namespace PBL3_QuanLyTiemSach.View
             dgvListHoaDon.Columns.Add(des);
             des.HeaderText = "Chi tiết";
             des.Name = "Column6";
-            des.Text = "Show";
+            des.Text = "Hiển thị";
             des.UseColumnTextForLinkValue = true;
 
             dgvListHoaDon.Columns[0].Visible = false;
@@ -43,16 +43,16 @@ namespace PBL3_QuanLyTiemSach.View
         {
             if (LoaiHD == true)
             {
-                dgvListHoaDon.Columns["TenKH_DVCC"].HeaderText = "Tên DVCC";
+                dgvListHoaDon.Columns["TenKH_DVCC"].HeaderText = "  Tên DVCC";
             }
             else
             {
-                dgvListHoaDon.Columns["TenKH_DVCC"].HeaderText = "Tên KH";
+                dgvListHoaDon.Columns["TenKH_DVCC"].HeaderText = "   Tên KH";
             }
-            dgvListHoaDon.Columns["ID"].HeaderText = "Mã HĐ";
-            dgvListHoaDon.Columns["Date"].HeaderText = "Ngày lập";
+            dgvListHoaDon.Columns["ID"].HeaderText = "  Mã HĐ";
+            dgvListHoaDon.Columns["Date"].HeaderText = "   Ngày lập";
             dgvListHoaDon.Columns["StaffName"].HeaderText = "Nhân viên lập";
-            dgvListHoaDon.Columns["Total"].HeaderText = "Tổng tiền";
+            dgvListHoaDon.Columns["Total"].HeaderText = "  Tổng tiền";
         }
         private void loadDGV(bool LoaiHD, string SearchText, int index)
         {
@@ -68,6 +68,8 @@ namespace PBL3_QuanLyTiemSach.View
             setNameColumnDGV();
             dgvListHoaDon.Columns[0].Visible = true;
             dgvListHoaDon.Columns[0].DisplayIndex = dgvListHoaDon.Columns.Count - 1;
+
+            dgvListHoaDon.DefaultCellStyle.Font = new Font("Segoe UI", 15);
         }
         private void metroButton1_Click(object sender, EventArgs e)
         {

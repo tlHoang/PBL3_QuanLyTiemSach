@@ -8,19 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using PBL3_QuanLyTiemSach.BLL;
 
 namespace PBL3_QuanLyTiemSach.View
 {
     public partial class Form5 : KryptonForm
     {
-        public Form5()
+        public Form5(int MaNV)
         {
             InitializeComponent();
+            this.MaNV = MaNV;
+            setName(this.MaNV);
+            //setAvatar(this.MaNV);
         }
+        public int MaNV { get; set; }
 
-        private MetroFramework.Forms.MetroForm currentForm;
-
-        private void OpenForm(MetroFramework.Forms.MetroForm f)
+        private Form currentForm;
+        private void OpenForm(Form f)
         {
             if (currentForm != null)
             {
@@ -33,6 +37,26 @@ namespace PBL3_QuanLyTiemSach.View
             f.Dock = DockStyle.Fill;
             f.BringToFront();
             f.Show();
+        }
+        public void setAvatar(bool GioiTinh)
+        {
+            if (GioiTinh == false)
+            {
+                avatarImg.Image = MainForm_Resource.female;
+            }
+        }
+        public void setName(int MaNV)
+        {
+            if (MaNV != 0)
+            {
+                TaiKhoanBLL bll = new TaiKhoanBLL();
+                string[] fullName = bll.getNameFromMaNV(this.MaNV).Split(' ');
+                labelName.Text = fullName[fullName.Length - 2] + " " + fullName[fullName.Length - 1];
+            }
+            else
+            {
+                labelName.Text = " ADMIN";
+            }
         }
 
         private void ThongTinSach_Click(object sender, EventArgs e)
@@ -57,6 +81,8 @@ namespace PBL3_QuanLyTiemSach.View
             label_BanHang.ForeColor = Color.FromArgb(255, 70, 80);
             banhangImg.Image = MainForm_Resource.sell_click;
 
+            OpenForm(new Sell(this));
+
             ThongTinSach_Leave();
             NhapHang_Leave();
             HoaDon_Leave();
@@ -73,6 +99,8 @@ namespace PBL3_QuanLyTiemSach.View
         {
             label_NhapHang.ForeColor = Color.FromArgb(255, 70, 80);
             nhaphangImg.Image = MainForm_Resource.import_click;
+
+            OpenForm(new Import(this));
 
             ThongTinSach_Leave();
             BanHang_Leave();
@@ -136,6 +164,14 @@ namespace PBL3_QuanLyTiemSach.View
         {
             label_ThongKe.ForeColor = Color.Black;
             thongkeImg.Image = MainForm_Resource.thongke;
+        }
+
+        private void DangXuat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm f = new LoginForm();
+            f.ShowDialog();
+            this.Close();
         }
     }
 }

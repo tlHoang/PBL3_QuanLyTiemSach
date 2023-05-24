@@ -57,7 +57,7 @@ namespace PBL3_QuanLyTiemSach.BLL
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
-                return db.Sachs.Where(p => p.TenSach == TenSach).FirstOrDefault().MaSach;
+                return db.Sachs.Where(p => p.TenSach == TenSach).OrderByDescending(p => p.MaSach).FirstOrDefault().MaSach;
             }
         }
         public void addHDN(List<Sach> ls, int MaNV, string TenDVCC)
@@ -75,14 +75,17 @@ namespace PBL3_QuanLyTiemSach.BLL
 
                 foreach (Sach i in ls)
                 {
+                    int MaSach = getMaSach(i.TenSach);
                     HoaDonNhapSach hdns = new HoaDonNhapSach()
                     {
                         MaHDNhap = hdn.MaHDNhap,
-                        MaSach = getMaSach(i.TenSach),
+                        MaSach = MaSach,
                         DonGiaNhap = i.GiaBan,
                         SoLuongNhap = i.SoLuongConLai,
                     };
                     db.HoaDonNhapSachs.Add(hdns);
+                    Sach tmp = db.Sachs.FirstOrDefault(p => p.MaSach == MaSach);
+                    tmp.GiaBan *= 1.2;
                     db.SaveChanges();
                 }
 
