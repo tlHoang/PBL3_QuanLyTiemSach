@@ -33,58 +33,57 @@
             this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.Panel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.Panel4 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.BookImg = new System.Windows.Forms.PictureBox();
             this.label_ThongTinSach = new System.Windows.Forms.Label();
             this.Panel3 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.labelRole = new System.Windows.Forms.Label();
+            this.avatarImg = new System.Windows.Forms.PictureBox();
             this.labelName = new System.Windows.Forms.Label();
             this.Panel10 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.dangxuatImg = new System.Windows.Forms.PictureBox();
             this.label_DangXuat = new System.Windows.Forms.Label();
             this.Panel9 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.thongkeImg = new System.Windows.Forms.PictureBox();
             this.label_ThongKe = new System.Windows.Forms.Label();
             this.Panel8 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.calamImg = new System.Windows.Forms.PictureBox();
             this.label_CaLam = new System.Windows.Forms.Label();
             this.Panel7 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.hoadonImg = new System.Windows.Forms.PictureBox();
             this.label_HoaDon = new System.Windows.Forms.Label();
             this.Panel6 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.nhaphangImg = new System.Windows.Forms.PictureBox();
             this.label_NhapHang = new System.Windows.Forms.Label();
             this.Panel5 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.banhangImg = new System.Windows.Forms.PictureBox();
             this.label_BanHang = new System.Windows.Forms.Label();
             this.Panel2 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.BookImg = new System.Windows.Forms.PictureBox();
-            this.avatarImg = new System.Windows.Forms.PictureBox();
-            this.dangxuatImg = new System.Windows.Forms.PictureBox();
-            this.thongkeImg = new System.Windows.Forms.PictureBox();
-            this.calamImg = new System.Windows.Forms.PictureBox();
-            this.hoadonImg = new System.Windows.Forms.PictureBox();
-            this.nhaphangImg = new System.Windows.Forms.PictureBox();
-            this.banhangImg = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Panel1)).BeginInit();
             this.Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Panel4)).BeginInit();
             this.Panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BookImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Panel3)).BeginInit();
             this.Panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatarImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Panel10)).BeginInit();
             this.Panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dangxuatImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Panel9)).BeginInit();
             this.Panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.thongkeImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Panel8)).BeginInit();
             this.Panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.calamImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Panel7)).BeginInit();
             this.Panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hoadonImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Panel6)).BeginInit();
             this.Panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nhaphangImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Panel5)).BeginInit();
             this.Panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Panel2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BookImg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.avatarImg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dangxuatImg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.thongkeImg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.calamImg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hoadonImg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhaphangImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.banhangImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Panel2)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette1
@@ -153,13 +152,25 @@
             // 
             this.Panel4.Controls.Add(this.BookImg);
             this.Panel4.Controls.Add(this.label_ThongTinSach);
-            this.Panel4.Location = new System.Drawing.Point(0, 100);
+            this.Panel4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Panel4.Location = new System.Drawing.Point(0, 95);
             this.Panel4.Name = "Panel4";
             this.Panel4.Size = new System.Drawing.Size(146, 50);
             this.Panel4.StateNormal.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.Panel4.StateNormal.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.Panel4.TabIndex = 2;
             this.Panel4.Click += new System.EventHandler(this.ThongTinSach_Click);
+            // 
+            // BookImg
+            // 
+            this.BookImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.BookImg.Image = ((System.Drawing.Image)(resources.GetObject("BookImg.Image")));
+            this.BookImg.Location = new System.Drawing.Point(4, 10);
+            this.BookImg.Name = "BookImg";
+            this.BookImg.Size = new System.Drawing.Size(35, 35);
+            this.BookImg.TabIndex = 1;
+            this.BookImg.TabStop = false;
+            this.BookImg.Click += new System.EventHandler(this.ThongTinSach_Click);
             // 
             // label_ThongTinSach
             // 
@@ -175,7 +186,6 @@
             // 
             // Panel3
             // 
-            this.Panel3.Controls.Add(this.labelRole);
             this.Panel3.Controls.Add(this.avatarImg);
             this.Panel3.Controls.Add(this.labelName);
             this.Panel3.Location = new System.Drawing.Point(0, 0);
@@ -185,23 +195,22 @@
             this.Panel3.StateNormal.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.Panel3.TabIndex = 1;
             // 
-            // labelRole
+            // avatarImg
             // 
-            this.labelRole.AutoSize = true;
-            this.labelRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.labelRole.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRole.Location = new System.Drawing.Point(60, 40);
-            this.labelRole.Name = "labelRole";
-            this.labelRole.Size = new System.Drawing.Size(30, 15);
-            this.labelRole.TabIndex = 2;
-            this.labelRole.Text = "Role";
+            this.avatarImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.avatarImg.Image = ((System.Drawing.Image)(resources.GetObject("avatarImg.Image")));
+            this.avatarImg.Location = new System.Drawing.Point(8, 15);
+            this.avatarImg.Name = "avatarImg";
+            this.avatarImg.Size = new System.Drawing.Size(45, 45);
+            this.avatarImg.TabIndex = 1;
+            this.avatarImg.TabStop = false;
             // 
             // labelName
             // 
             this.labelName.AutoSize = true;
             this.labelName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.labelName.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(60, 18);
+            this.labelName.Location = new System.Drawing.Point(55, 26);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(50, 20);
             this.labelName.TabIndex = 0;
@@ -211,35 +220,61 @@
             // 
             this.Panel10.Controls.Add(this.dangxuatImg);
             this.Panel10.Controls.Add(this.label_DangXuat);
-            this.Panel10.Location = new System.Drawing.Point(0, 417);
+            this.Panel10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Panel10.Location = new System.Drawing.Point(0, 428);
             this.Panel10.Name = "Panel10";
-            this.Panel10.Size = new System.Drawing.Size(146, 48);
+            this.Panel10.Size = new System.Drawing.Size(146, 37);
             this.Panel10.StateNormal.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.Panel10.StateNormal.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.Panel10.TabIndex = 2;
+            this.Panel10.Click += new System.EventHandler(this.DangXuat_Click);
+            // 
+            // dangxuatImg
+            // 
+            this.dangxuatImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.dangxuatImg.Image = ((System.Drawing.Image)(resources.GetObject("dangxuatImg.Image")));
+            this.dangxuatImg.Location = new System.Drawing.Point(95, 6);
+            this.dangxuatImg.Name = "dangxuatImg";
+            this.dangxuatImg.Size = new System.Drawing.Size(31, 25);
+            this.dangxuatImg.TabIndex = 1;
+            this.dangxuatImg.TabStop = false;
+            this.dangxuatImg.Click += new System.EventHandler(this.DangXuat_Click);
             // 
             // label_DangXuat
             // 
             this.label_DangXuat.AutoSize = true;
             this.label_DangXuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.label_DangXuat.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.label_DangXuat.Location = new System.Drawing.Point(19, 15);
+            this.label_DangXuat.Location = new System.Drawing.Point(19, 9);
             this.label_DangXuat.Name = "label_DangXuat";
             this.label_DangXuat.Size = new System.Drawing.Size(73, 19);
             this.label_DangXuat.TabIndex = 0;
             this.label_DangXuat.Text = "Đăng xuất";
+            this.label_DangXuat.Click += new System.EventHandler(this.DangXuat_Click);
             // 
             // Panel9
             // 
             this.Panel9.Controls.Add(this.thongkeImg);
             this.Panel9.Controls.Add(this.label_ThongKe);
-            this.Panel9.Location = new System.Drawing.Point(0, 350);
+            this.Panel9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Panel9.Location = new System.Drawing.Point(0, 345);
             this.Panel9.Name = "Panel9";
             this.Panel9.Size = new System.Drawing.Size(146, 50);
             this.Panel9.StateNormal.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.Panel9.StateNormal.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.Panel9.TabIndex = 2;
             this.Panel9.Click += new System.EventHandler(this.ThongKe_Click);
+            // 
+            // thongkeImg
+            // 
+            this.thongkeImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.thongkeImg.Image = ((System.Drawing.Image)(resources.GetObject("thongkeImg.Image")));
+            this.thongkeImg.Location = new System.Drawing.Point(4, 10);
+            this.thongkeImg.Name = "thongkeImg";
+            this.thongkeImg.Size = new System.Drawing.Size(35, 35);
+            this.thongkeImg.TabIndex = 1;
+            this.thongkeImg.TabStop = false;
+            this.thongkeImg.Click += new System.EventHandler(this.ThongKe_Click);
             // 
             // label_ThongKe
             // 
@@ -257,13 +292,25 @@
             // 
             this.Panel8.Controls.Add(this.calamImg);
             this.Panel8.Controls.Add(this.label_CaLam);
-            this.Panel8.Location = new System.Drawing.Point(0, 300);
+            this.Panel8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Panel8.Location = new System.Drawing.Point(0, 295);
             this.Panel8.Name = "Panel8";
             this.Panel8.Size = new System.Drawing.Size(146, 50);
             this.Panel8.StateNormal.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.Panel8.StateNormal.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.Panel8.TabIndex = 2;
             this.Panel8.Click += new System.EventHandler(this.CaLam_Click);
+            // 
+            // calamImg
+            // 
+            this.calamImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.calamImg.Image = ((System.Drawing.Image)(resources.GetObject("calamImg.Image")));
+            this.calamImg.Location = new System.Drawing.Point(4, 10);
+            this.calamImg.Name = "calamImg";
+            this.calamImg.Size = new System.Drawing.Size(35, 35);
+            this.calamImg.TabIndex = 1;
+            this.calamImg.TabStop = false;
+            this.calamImg.Click += new System.EventHandler(this.CaLam_Click);
             // 
             // label_CaLam
             // 
@@ -281,13 +328,25 @@
             // 
             this.Panel7.Controls.Add(this.hoadonImg);
             this.Panel7.Controls.Add(this.label_HoaDon);
-            this.Panel7.Location = new System.Drawing.Point(0, 250);
+            this.Panel7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Panel7.Location = new System.Drawing.Point(0, 245);
             this.Panel7.Name = "Panel7";
             this.Panel7.Size = new System.Drawing.Size(146, 50);
             this.Panel7.StateNormal.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.Panel7.StateNormal.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.Panel7.TabIndex = 2;
             this.Panel7.Click += new System.EventHandler(this.HoaDon_Click);
+            // 
+            // hoadonImg
+            // 
+            this.hoadonImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.hoadonImg.Image = ((System.Drawing.Image)(resources.GetObject("hoadonImg.Image")));
+            this.hoadonImg.Location = new System.Drawing.Point(4, 10);
+            this.hoadonImg.Name = "hoadonImg";
+            this.hoadonImg.Size = new System.Drawing.Size(35, 35);
+            this.hoadonImg.TabIndex = 1;
+            this.hoadonImg.TabStop = false;
+            this.hoadonImg.Click += new System.EventHandler(this.HoaDon_Click);
             // 
             // label_HoaDon
             // 
@@ -305,13 +364,25 @@
             // 
             this.Panel6.Controls.Add(this.nhaphangImg);
             this.Panel6.Controls.Add(this.label_NhapHang);
-            this.Panel6.Location = new System.Drawing.Point(0, 200);
+            this.Panel6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Panel6.Location = new System.Drawing.Point(0, 195);
             this.Panel6.Name = "Panel6";
             this.Panel6.Size = new System.Drawing.Size(146, 50);
             this.Panel6.StateNormal.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.Panel6.StateNormal.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.Panel6.TabIndex = 2;
             this.Panel6.Click += new System.EventHandler(this.NhapHang_Click);
+            // 
+            // nhaphangImg
+            // 
+            this.nhaphangImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.nhaphangImg.Image = ((System.Drawing.Image)(resources.GetObject("nhaphangImg.Image")));
+            this.nhaphangImg.Location = new System.Drawing.Point(4, 10);
+            this.nhaphangImg.Name = "nhaphangImg";
+            this.nhaphangImg.Size = new System.Drawing.Size(35, 35);
+            this.nhaphangImg.TabIndex = 1;
+            this.nhaphangImg.TabStop = false;
+            this.nhaphangImg.Click += new System.EventHandler(this.NhapHang_Click);
             // 
             // label_NhapHang
             // 
@@ -329,13 +400,25 @@
             // 
             this.Panel5.Controls.Add(this.banhangImg);
             this.Panel5.Controls.Add(this.label_BanHang);
-            this.Panel5.Location = new System.Drawing.Point(0, 150);
+            this.Panel5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Panel5.Location = new System.Drawing.Point(0, 145);
             this.Panel5.Name = "Panel5";
             this.Panel5.Size = new System.Drawing.Size(146, 50);
             this.Panel5.StateNormal.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.Panel5.StateNormal.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.Panel5.TabIndex = 0;
             this.Panel5.Click += new System.EventHandler(this.BanHang_Click);
+            // 
+            // banhangImg
+            // 
+            this.banhangImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.banhangImg.Image = ((System.Drawing.Image)(resources.GetObject("banhangImg.Image")));
+            this.banhangImg.Location = new System.Drawing.Point(4, 10);
+            this.banhangImg.Name = "banhangImg";
+            this.banhangImg.Size = new System.Drawing.Size(35, 35);
+            this.banhangImg.TabIndex = 1;
+            this.banhangImg.TabStop = false;
+            this.banhangImg.Click += new System.EventHandler(this.BanHang_Click);
             // 
             // label_BanHang
             // 
@@ -357,92 +440,6 @@
             this.Panel2.Size = new System.Drawing.Size(734, 465);
             this.Panel2.TabIndex = 1;
             // 
-            // BookImg
-            // 
-            this.BookImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.BookImg.Image = ((System.Drawing.Image)(resources.GetObject("BookImg.Image")));
-            this.BookImg.Location = new System.Drawing.Point(4, 10);
-            this.BookImg.Name = "BookImg";
-            this.BookImg.Size = new System.Drawing.Size(35, 35);
-            this.BookImg.TabIndex = 1;
-            this.BookImg.TabStop = false;
-            this.BookImg.Click += new System.EventHandler(this.ThongTinSach_Click);
-            // 
-            // avatarImg
-            // 
-            this.avatarImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.avatarImg.Image = ((System.Drawing.Image)(resources.GetObject("avatarImg.Image")));
-            this.avatarImg.Location = new System.Drawing.Point(12, 15);
-            this.avatarImg.Name = "avatarImg";
-            this.avatarImg.Size = new System.Drawing.Size(45, 45);
-            this.avatarImg.TabIndex = 1;
-            this.avatarImg.TabStop = false;
-            // 
-            // dangxuatImg
-            // 
-            this.dangxuatImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.dangxuatImg.Image = ((System.Drawing.Image)(resources.GetObject("dangxuatImg.Image")));
-            this.dangxuatImg.Location = new System.Drawing.Point(95, 12);
-            this.dangxuatImg.Name = "dangxuatImg";
-            this.dangxuatImg.Size = new System.Drawing.Size(31, 25);
-            this.dangxuatImg.TabIndex = 1;
-            this.dangxuatImg.TabStop = false;
-            // 
-            // thongkeImg
-            // 
-            this.thongkeImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.thongkeImg.Image = ((System.Drawing.Image)(resources.GetObject("thongkeImg.Image")));
-            this.thongkeImg.Location = new System.Drawing.Point(4, 10);
-            this.thongkeImg.Name = "thongkeImg";
-            this.thongkeImg.Size = new System.Drawing.Size(35, 35);
-            this.thongkeImg.TabIndex = 1;
-            this.thongkeImg.TabStop = false;
-            this.thongkeImg.Click += new System.EventHandler(this.ThongKe_Click);
-            // 
-            // calamImg
-            // 
-            this.calamImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.calamImg.Image = ((System.Drawing.Image)(resources.GetObject("calamImg.Image")));
-            this.calamImg.Location = new System.Drawing.Point(4, 10);
-            this.calamImg.Name = "calamImg";
-            this.calamImg.Size = new System.Drawing.Size(35, 35);
-            this.calamImg.TabIndex = 1;
-            this.calamImg.TabStop = false;
-            this.calamImg.Click += new System.EventHandler(this.CaLam_Click);
-            // 
-            // hoadonImg
-            // 
-            this.hoadonImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.hoadonImg.Image = ((System.Drawing.Image)(resources.GetObject("hoadonImg.Image")));
-            this.hoadonImg.Location = new System.Drawing.Point(4, 10);
-            this.hoadonImg.Name = "hoadonImg";
-            this.hoadonImg.Size = new System.Drawing.Size(35, 35);
-            this.hoadonImg.TabIndex = 1;
-            this.hoadonImg.TabStop = false;
-            this.hoadonImg.Click += new System.EventHandler(this.HoaDon_Click);
-            // 
-            // nhaphangImg
-            // 
-            this.nhaphangImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.nhaphangImg.Image = ((System.Drawing.Image)(resources.GetObject("nhaphangImg.Image")));
-            this.nhaphangImg.Location = new System.Drawing.Point(4, 10);
-            this.nhaphangImg.Name = "nhaphangImg";
-            this.nhaphangImg.Size = new System.Drawing.Size(35, 35);
-            this.nhaphangImg.TabIndex = 1;
-            this.nhaphangImg.TabStop = false;
-            this.nhaphangImg.Click += new System.EventHandler(this.NhapHang_Click);
-            // 
-            // banhangImg
-            // 
-            this.banhangImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.banhangImg.Image = ((System.Drawing.Image)(resources.GetObject("banhangImg.Image")));
-            this.banhangImg.Location = new System.Drawing.Point(4, 10);
-            this.banhangImg.Name = "banhangImg";
-            this.banhangImg.Size = new System.Drawing.Size(35, 35);
-            this.banhangImg.TabIndex = 1;
-            this.banhangImg.TabStop = false;
-            this.banhangImg.Click += new System.EventHandler(this.BanHang_Click);
-            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -456,41 +453,42 @@
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.Panel1)).EndInit();
             this.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Panel4)).EndInit();
             this.Panel4.ResumeLayout(false);
             this.Panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BookImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Panel3)).EndInit();
             this.Panel3.ResumeLayout(false);
             this.Panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatarImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Panel10)).EndInit();
             this.Panel10.ResumeLayout(false);
             this.Panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dangxuatImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Panel9)).EndInit();
             this.Panel9.ResumeLayout(false);
             this.Panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.thongkeImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Panel8)).EndInit();
             this.Panel8.ResumeLayout(false);
             this.Panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.calamImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Panel7)).EndInit();
             this.Panel7.ResumeLayout(false);
             this.Panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hoadonImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Panel6)).EndInit();
             this.Panel6.ResumeLayout(false);
             this.Panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nhaphangImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Panel5)).EndInit();
             this.Panel5.ResumeLayout(false);
             this.Panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Panel2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BookImg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.avatarImg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dangxuatImg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.thongkeImg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.calamImg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hoadonImg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhaphangImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.banhangImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Panel2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -521,7 +519,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonPanel Panel3;
         private System.Windows.Forms.PictureBox avatarImg;
         private System.Windows.Forms.Label labelName;
-        private System.Windows.Forms.Label labelRole;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel Panel4;
         private System.Windows.Forms.PictureBox BookImg;
         private System.Windows.Forms.Label label_ThongTinSach;

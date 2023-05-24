@@ -21,7 +21,7 @@ namespace PBL3_QuanLyTiemSach
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form5());
+            Application.Run(new LoginForm());
             //LoginForm loginForm = new LoginForm();
             //if (loginForm.ShowDialog() == DialogResult.OK && loginForm.MaNV != -1)
             //{

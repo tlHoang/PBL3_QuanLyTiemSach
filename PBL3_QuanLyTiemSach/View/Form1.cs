@@ -95,11 +95,11 @@ namespace PBL3_QuanLyTiemSach
             panel_Side.Show();
             if (MaNV != 1)
             {
-                OpenForm(new Sell(this));
+                //OpenForm(new Sell(this));
             }
             else
             {
-                OpenForm(new Form5());
+                
             }
         }
 
@@ -110,11 +110,11 @@ namespace PBL3_QuanLyTiemSach
             panel_Side.Show();
             if (MaNV != 1)
             {
-                OpenForm(new Import(this));
+                //OpenForm(new Import(this));
             }
             else
             {
-                OpenForm(new Form5());
+                
             }
         }
 
@@ -123,7 +123,7 @@ namespace PBL3_QuanLyTiemSach
             panel_Side.Top = button_ThongKe.Top;
             panel_Side.Height = button_ThongKe.Height;
             panel_Side.Show();
-            OpenForm(new Form5());
+            
         }
 
         private void pictureBox_Click(object sender, EventArgs e)
