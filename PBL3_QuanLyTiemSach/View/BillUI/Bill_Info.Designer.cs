@@ -52,7 +52,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(65, 75);
+            this.metroLabel1.Location = new System.Drawing.Point(26, 73);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(84, 19);
             this.metroLabel1.TabIndex = 0;
@@ -61,7 +61,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(65, 110);
+            this.metroLabel2.Location = new System.Drawing.Point(26, 108);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(65, 19);
             this.metroLabel2.TabIndex = 1;
@@ -70,7 +70,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(65, 148);
+            this.metroLabel3.Location = new System.Drawing.Point(26, 146);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(92, 19);
             this.metroLabel3.TabIndex = 2;
@@ -79,7 +79,7 @@
             // label_KH_DVCC
             // 
             this.label_KH_DVCC.AutoSize = true;
-            this.label_KH_DVCC.Location = new System.Drawing.Point(337, 110);
+            this.label_KH_DVCC.Location = new System.Drawing.Point(276, 108);
             this.label_KH_DVCC.Name = "label_KH_DVCC";
             this.label_KH_DVCC.Size = new System.Drawing.Size(87, 19);
             this.label_KH_DVCC.TabIndex = 3;
@@ -88,7 +88,7 @@
             // label_SDT
             // 
             this.label_SDT.AutoSize = true;
-            this.label_SDT.Location = new System.Drawing.Point(337, 148);
+            this.label_SDT.Location = new System.Drawing.Point(276, 146);
             this.label_SDT.Name = "label_SDT";
             this.label_SDT.Size = new System.Drawing.Size(89, 19);
             this.label_SDT.TabIndex = 4;
@@ -97,7 +97,7 @@
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(337, 75);
+            this.metroLabel6.Location = new System.Drawing.Point(276, 73);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(89, 19);
             this.metroLabel6.TabIndex = 27;
@@ -107,7 +107,7 @@
             // 
             this.metroLabel7.AutoSize = true;
             this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel7.Location = new System.Drawing.Point(321, 398);
+            this.metroLabel7.Location = new System.Drawing.Point(300, 381);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(76, 19);
             this.metroLabel7.TabIndex = 28;
@@ -116,7 +116,7 @@
             // label_MaHD
             // 
             this.label_MaHD.AutoSize = true;
-            this.label_MaHD.Location = new System.Drawing.Point(159, 75);
+            this.label_MaHD.Location = new System.Drawing.Point(117, 73);
             this.label_MaHD.Name = "label_MaHD";
             this.label_MaHD.Size = new System.Drawing.Size(83, 19);
             this.label_MaHD.TabIndex = 29;
@@ -125,7 +125,7 @@
             // label_Date
             // 
             this.label_Date.AutoSize = true;
-            this.label_Date.Location = new System.Drawing.Point(159, 110);
+            this.label_Date.Location = new System.Drawing.Point(117, 108);
             this.label_Date.Name = "label_Date";
             this.label_Date.Size = new System.Drawing.Size(83, 19);
             this.label_Date.TabIndex = 30;
@@ -134,7 +134,7 @@
             // label_NV
             // 
             this.label_NV.AutoSize = true;
-            this.label_NV.Location = new System.Drawing.Point(159, 147);
+            this.label_NV.Location = new System.Drawing.Point(117, 145);
             this.label_NV.Name = "label_NV";
             this.label_NV.Size = new System.Drawing.Size(88, 19);
             this.label_NV.TabIndex = 31;
@@ -143,7 +143,7 @@
             // label_Type
             // 
             this.label_Type.AutoSize = true;
-            this.label_Type.Location = new System.Drawing.Point(432, 75);
+            this.label_Type.Location = new System.Drawing.Point(368, 73);
             this.label_Type.Name = "label_Type";
             this.label_Type.Size = new System.Drawing.Size(86, 19);
             this.label_Type.TabIndex = 32;
@@ -152,7 +152,7 @@
             // label_KH_DVCC_Detail
             // 
             this.label_KH_DVCC_Detail.AutoSize = true;
-            this.label_KH_DVCC_Detail.Location = new System.Drawing.Point(432, 110);
+            this.label_KH_DVCC_Detail.Location = new System.Drawing.Point(368, 108);
             this.label_KH_DVCC_Detail.Name = "label_KH_DVCC_Detail";
             this.label_KH_DVCC_Detail.Size = new System.Drawing.Size(88, 19);
             this.label_KH_DVCC_Detail.TabIndex = 33;
@@ -161,7 +161,7 @@
             // label_SDT_Detail
             // 
             this.label_SDT_Detail.AutoSize = true;
-            this.label_SDT_Detail.Location = new System.Drawing.Point(432, 148);
+            this.label_SDT_Detail.Location = new System.Drawing.Point(368, 146);
             this.label_SDT_Detail.Name = "label_SDT_Detail";
             this.label_SDT_Detail.Size = new System.Drawing.Size(88, 19);
             this.label_SDT_Detail.TabIndex = 34;
@@ -188,14 +188,14 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvSach.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSach.EnableHeadersVisualStyles = false;
             this.dgvSach.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgvSach.GridColor = System.Drawing.Color.White;
-            this.dgvSach.Location = new System.Drawing.Point(65, 187);
+            this.dgvSach.Location = new System.Drawing.Point(26, 187);
             this.dgvSach.Name = "dgvSach";
             this.dgvSach.ReadOnly = true;
             this.dgvSach.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -211,13 +211,13 @@
             this.dgvSach.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvSach.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSach.Size = new System.Drawing.Size(455, 198);
+            this.dgvSach.Size = new System.Drawing.Size(466, 184);
             this.dgvSach.TabIndex = 35;
             // 
             // label_Total
             // 
             this.label_Total.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.label_Total.Location = new System.Drawing.Point(394, 398);
+            this.label_Total.Location = new System.Drawing.Point(368, 381);
             this.label_Total.Name = "label_Total";
             this.label_Total.Size = new System.Drawing.Size(124, 19);
             this.label_Total.TabIndex = 36;
@@ -228,7 +228,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(591, 427);
+            this.ClientSize = new System.Drawing.Size(508, 409);
             this.Controls.Add(this.label_Total);
             this.Controls.Add(this.dgvSach);
             this.Controls.Add(this.label_SDT_Detail);

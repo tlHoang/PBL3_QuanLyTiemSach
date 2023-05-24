@@ -12,13 +12,14 @@ using MetroFramework;
 using PBL3_QuanLyTiemSach.BLL;
 using PBL3_QuanLyTiemSach.DTO;
 using PBL3_QuanLyTiemSach.View.ImportUI;
+using ComponentFactory.Krypton.Toolkit;
 
 namespace PBL3_QuanLyTiemSach.View
 {
-    public partial class Import : MetroFramework.Forms.MetroForm
+    public partial class Import : KryptonForm
     {
-        Form1 f;
-        public Import(Form1 f1)
+        Form5 f;
+        public Import(Form5 f1)
         {
             InitializeComponent();
             this.f = f1;
@@ -177,6 +178,7 @@ namespace PBL3_QuanLyTiemSach.View
                     TenSach.Clear();
                     cbbDVCC.SelectedItem = null;
                     dgvHoaDonNhap.DataSource = null;
+                    dgvHoaDonNhap.Rows.Clear();
                 }
             }
             else

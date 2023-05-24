@@ -22,7 +22,7 @@ namespace PBL3_QuanLyTiemSach
             InitializeComponent();
             SetUI();
         }
-        private System.Windows.Forms.Form currentForm; 
+        private System.Windows.Forms.Form currentForm;
         private void SetUI()
         {
             panel_Side.Hide();
@@ -95,11 +95,11 @@ namespace PBL3_QuanLyTiemSach
             panel_Side.Show();
             if (MaNV != 1)
             {
-                OpenForm(new Sell(this));
+                //OpenForm(new Sell(this));
             }
             else
             {
-                OpenForm(new Bill());
+                //OpenForm(new Form5());
             }
         }
 
@@ -110,11 +110,11 @@ namespace PBL3_QuanLyTiemSach
             panel_Side.Show();
             if (MaNV != 1)
             {
-                OpenForm(new Import(this));
+                //OpenForm(new Import(this));
             }
             else
             {
-                OpenForm(new Form5());
+                
             }
         }
 
@@ -123,7 +123,7 @@ namespace PBL3_QuanLyTiemSach
             panel_Side.Top = button_ThongKe.Top;
             panel_Side.Height = button_ThongKe.Height;
             panel_Side.Show();
-            OpenForm(new Form5());
+            
         }
 
         private void pictureBox_Click(object sender, EventArgs e)
@@ -160,6 +160,39 @@ namespace PBL3_QuanLyTiemSach
             panel_Side.Height = btnCaLam.Height;
             panel_Side.Show();
             //OpenForm(new ShiftManage(this,MaNV));
+        }
+
+        private void button_HoaDon_Click(object sender, EventArgs e)
+        {
+            panel_Side.Top = button_HoaDon.Top;
+            panel_Side.Height = button_HoaDon.Height;
+            panel_Side.Show();
+            //OpenForm(new Bill(this));
+        }
+        private Point _mouseLocation;
+
+        private bool _isDragging = false;
+        private Point _lastLocation;
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            _isDragging = true;
+            _lastLocation = e.Location;
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (_isDragging)
+            {
+                int dx = e.Location.X - _lastLocation.X;
+                int dy = e.Location.Y - _lastLocation.Y;
+                Location = new Point(Location.X + dx, Location.Y + dy);
+            }
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            _isDragging = false;
         }
     }
 }

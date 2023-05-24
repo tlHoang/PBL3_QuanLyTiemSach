@@ -64,14 +64,6 @@ namespace PBL3_QuanLyTiemSach.BLL
             }
         }
 
-        public int getMaNVfromUsername(string username)
-        {
-            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
-            {
-                return db.TaiKhoans.Where(p => p.Username == username).FirstOrDefault().MaNV;
-            }
-        }
-
         public string getNameFromMaNV(int MaNV)
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())

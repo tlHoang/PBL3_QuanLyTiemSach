@@ -14,13 +14,15 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using PBL3_QuanLyTiemSach.BLL;
 using System.Globalization;
+using PBL3_QuanLyTiemSach.View;
+using ComponentFactory.Krypton.Toolkit;
 
 namespace PBL3_QuanLyTiemSach
 {
-    public partial class Sell : MetroFramework.Forms.MetroForm
+    public partial class Sell : KryptonForm
     {
-        Form1 f;
-        public Sell(Form1 f1)
+        Form5 f;
+        public Sell(Form5 f1)
         {
             InitializeComponent();
             this.f = f1;
@@ -133,9 +135,12 @@ namespace PBL3_QuanLyTiemSach
                 {
                     foreach (DataGridViewRow i in dgvHoaDonBan.SelectedRows)
                     {
-                        var itemToRemove = TenSach.Single(p => p.TenSach == dgvHoaDonBan.Rows[i.Index].Cells[0].Value.ToString());
-                        TenSach.Remove(itemToRemove);
-                        dgvHoaDonBan.Rows.RemoveAt(i.Index);
+                        if (i.Index != dgvHoaDonBan.RowCount - 1)
+                        {
+                            var itemToRemove = TenSach.Single(p => p.TenSach == dgvHoaDonBan.Rows[i.Index].Cells[0].Value.ToString());
+                            TenSach.Remove(itemToRemove);
+                            dgvHoaDonBan.Rows.RemoveAt(i.Index);
+                        }
                     }
                     setLabelTongTien();
                 }
@@ -181,7 +186,6 @@ namespace PBL3_QuanLyTiemSach
 
         private void btnTru_Click(object sender, EventArgs e)
         {
-            SellBLL sellBLL = new SellBLL();
             if (dgvHoaDonBan.SelectedRows.Count != 1)
             {
                 MetroMessageBox.Show(f, "\nVui lòng chọn 1 mục!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning, 140);

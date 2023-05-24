@@ -36,65 +36,20 @@
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AdvancedPageDragAndDrop">
-      <HintPath>..\..\Krypton-master\Bin\AdvancedPageDragAndDrop.exe</HintPath>
-    </Reference>
-    <Reference Include="ApplicationMenu">
-      <HintPath>..\..\Krypton-master\Bin\ApplicationMenu.exe</HintPath>
-    </Reference>
-    <Reference Include="AutoShrinkingGroups">
-      <HintPath>..\..\Krypton-master\Bin\AutoShrinkingGroups.exe</HintPath>
-    </Reference>
-    <Reference Include="BasicEvents">
-      <HintPath>..\..\Krypton-master\Bin\BasicEvents.exe</HintPath>
-    </Reference>
-    <Reference Include="BasicPageDragAndDrop">
-      <HintPath>..\..\Krypton-master\Bin\BasicPageDragAndDrop.exe</HintPath>
-    </Reference>
-    <Reference Include="ButtonSpecPlayground">
-      <HintPath>..\..\Krypton-master\Bin\ButtonSpecPlayground.exe</HintPath>
-    </Reference>
-    <Reference Include="CellMaximizeAndRestore">
-      <HintPath>..\..\Krypton-master\Bin\CellMaximizeAndRestore.exe</HintPath>
-    </Reference>
-    <Reference Include="ChildControlStack">
-      <HintPath>..\..\Krypton-master\Bin\ChildControlStack.exe</HintPath>
-    </Reference>
-    <Reference Include="ComponentFactory.Krypton.Design">
-      <HintPath>..\..\Krypton-master\Bin\ComponentFactory.Krypton.Design.dll</HintPath>
-    </Reference>
     <Reference Include="ComponentFactory.Krypton.Docking">
-      <HintPath>..\..\Krypton-master\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Navigator">
-      <HintPath>..\..\Krypton-master\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Ribbon">
-      <HintPath>..\..\Krypton-master\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Toolkit">
-      <HintPath>..\..\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Workspace">
-      <HintPath>..\..\Krypton-master\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
-    </Reference>
-    <Reference Include="ContextualTabs">
-      <HintPath>..\..\Krypton-master\Bin\ContextualTabs.exe</HintPath>
-    </Reference>
-    <Reference Include="CustomControlUsingPalettes">
-      <HintPath>..\..\Krypton-master\Bin\CustomControlUsingPalettes.exe</HintPath>
-    </Reference>
-    <Reference Include="CustomControlUsingRenderers">
-      <HintPath>..\..\Krypton-master\Bin\CustomControlUsingRenderers.exe</HintPath>
-    </Reference>
-    <Reference Include="DockingCustomized">
-      <HintPath>..\..\Krypton-master\Bin\DockingCustomized.exe</HintPath>
-    </Reference>
-    <Reference Include="DockingFlags">
-      <HintPath>..\..\Krypton-master\Bin\DockingFlags.exe</HintPath>
-    </Reference>
-    <Reference Include="DockingPersistence">
-      <HintPath>..\..\Krypton-master\Bin\DockingPersistence.exe</HintPath>
+      <HintPath>..\..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
@@ -391,10 +346,10 @@
     <Compile Include="DTO\BookInfo.cs" />
     <Compile Include="DTO\HoaDon.cs" />
     <Compile Include="DTO\SMCBBItems_Start_End_Time.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
+    <Compile Include="MainForm_Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
+      <DependentUpon>MainForm_Resource.resx</DependentUpon>
     </Compile>
     <Compile Include="View\BillUI\Bill.cs">
       <SubType>Form</SubType>
@@ -425,12 +380,6 @@
     </Compile>
     <Compile Include="View\ShifManageUI\FormSMDangKiCa.Designer.cs">
       <DependentUpon>FormSMDangKiCa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\ShifManageUI\ShiftManage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ShifManageUI\ShiftManage.Designer.cs">
-      <DependentUpon>ShiftManage.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ShifManageUI\UpdateSMForm.cs">
       <SubType>Form</SubType>
@@ -522,29 +471,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Login_Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="obj\Debug\PBL3_QuanLyTiemSach.Form1 - Copy.resources" />
-    <EmbeddedResource Include="obj\Debug\PBL3_QuanLyTiemSach.Form1.resources" />
-    <EmbeddedResource Include="obj\Debug\PBL3_QuanLyTiemSach.Form2 - Copy.resources" />
-    <EmbeddedResource Include="obj\Debug\PBL3_QuanLyTiemSach.Form2.resources" />
-    <EmbeddedResource Include="obj\Debug\PBL3_QuanLyTiemSach.Login_Resource.resources" />
-    <EmbeddedResource Include="obj\Debug\PBL3_QuanLyTiemSach.Properties.Resources.resources" />
-    <EmbeddedResource Include="obj\Debug\PBL3_QuanLyTiemSach.Sell.resources" />
-    <EmbeddedResource Include="obj\Debug\PBL3_QuanLyTiemSach.View.Bill.resources" />
-    <EmbeddedResource Include="obj\Debug\PBL3_QuanLyTiemSach.View.BillUI.Bill_Info.resources" />
-    <EmbeddedResource Include="obj\Debug\PBL3_QuanLyTiemSach.View.BookInfo.resources" />
-    <EmbeddedResource Include="obj\Debug\PBL3_QuanLyTiemSach.View.BookInfo_XemForm.resources" />
-    <EmbeddedResource Include="obj\Debug\PBL3_QuanLyTiemSach.View.Form5.resources" />
-    <EmbeddedResource Include="obj\Debug\PBL3_QuanLyTiemSach.View.Import.resources" />
-    <EmbeddedResource Include="obj\Debug\PBL3_QuanLyTiemSach.View.ImportUI.EditBookInfo.resources" />
-    <EmbeddedResource Include="obj\Debug\PBL3_QuanLyTiemSach.View.ImportUI.SearchBookTitle.resources" />
-    <EmbeddedResource Include="obj\Debug\PBL3_QuanLyTiemSach.View.LoginForm.resources" />
-    <EmbeddedResource Include="obj\Debug\PBL3_QuanLyTiemSach.View.SellUI.SearchBookInfo.resources" />
-    <EmbeddedResource Include="obj\Debug\PBL3_QuanLyTiemSach.View.ShifManageUI.FormSMDangKiCa.resources" />
-    <EmbeddedResource Include="obj\Debug\PBL3_QuanLyTiemSach.View.ShifManageUI.UpdateSMForm.resources" />
-    <EmbeddedResource Include="obj\Debug\PBL3_QuanLyTiemSach.View.ShiftManage.resources" />
-    <EmbeddedResource Include="obj\Debug\PBL3_QuanLyTiemSach.View.StaffInfo.resources" />
-    <EmbeddedResource Include="obj\Debug\PBL3_QuanLyTiemSach.View.StaffInfoUI.ChangePassword.resources" />
-    <EmbeddedResource Include="obj\Debug\PBL3_QuanLyTiemSach.View.StaffManager.StaffManager.resources" />
+    <EmbeddedResource Include="MainForm_Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MainForm_Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\BillUI\Bill.resx">
       <DependentUpon>Bill.cs</DependentUpon>
     </EmbeddedResource>
@@ -585,9 +515,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ShifManageUI\FormSMDangKiCa.resx">
       <DependentUpon>FormSMDangKiCa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ShifManageUI\ShiftManage.resx">
-      <DependentUpon>ShiftManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ShifManageUI\UpdateSMForm.resx">
       <DependentUpon>UpdateSMForm.cs</DependentUpon>
@@ -645,22 +572,22 @@
     <Content Include="bin\Debug\PBL3_QuanLyTiemSach.exe" />
     <Content Include="bin\Debug\PBL3_QuanLyTiemSach.pdb" />
     <Content Include="MetroFramework.txt" />
-    <Content Include="obj\Debug\MetroFramework.Design.dll" />
-    <Content Include="obj\Debug\PBL3_QuanLyTiemSach - Copy.exe" />
-    <Content Include="obj\Debug\PBL3_QuanLyTiemSach.csproj.FileListAbsolute - Copy.txt" />
-    <Content Include="obj\Debug\PBL3_QuanLyTiemSach.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\PBL3_QuanLyTiemSach.exe" />
-    <Content Include="obj\Debug\PBL3_QuanLyTiemSach.pdb" />
-    <Content Include="obj\Debug\TempPE\Login_Resource.Designer.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
-    <None Include="Resources\a8b0fcaf3c70960a9e76a32a49ea75b7.jpg" />
-    <None Include="Resources\494bc269c50505bf626d2b79d4f6b4ef.jpg" />
-    <None Include="Resources\Oke.png" />
-    <None Include="Resources\NotOKe.png" />
-    <None Include="Resources\Free Aesthetic iPhone Backgrounds &amp; Widgets _ Guitar &amp; Lace.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="bin\Release\" />
+    <None Include="Resources\male_user_45px.png" />
+    <None Include="Resources\female_profile_45px.png" />
+    <None Include="Resources\clock.png" />
+    <None Include="Resources\thongke.png" />
+    <None Include="Resources\graph_28px.png" />
+    <None Include="Resources\clock_28px.png" />
+    <None Include="Resources\clock_click.png" />
+    <None Include="Resources\bill_28px.png" />
+    <None Include="Resources\bill_click.png" />
+    <None Include="Resources\packing_28px.png" />
+    <None Include="Resources\import_click.png" />
+    <None Include="Resources\checkout_28px.png" />
+    <None Include="Resources\28px.png" />
+    <None Include="Resources\sell_click.png" />
+    <None Include="Resources\book_28px_1.png" />
+    <None Include="Resources\book_click.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

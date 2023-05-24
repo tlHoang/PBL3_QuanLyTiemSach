@@ -69,13 +69,6 @@ namespace PBL3_QuanLyTiemSach.BLL
                 return db.SachTheLoais.Where(p => p.TenTheLoai == TenTheLoai).FirstOrDefault().MaTheLoai;
             }
         }
-        public bool checkBook(string TenSach)
-        {
-            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
-            {
-                return db.Sachs.Any(p => p.TenSach == TenSach);
-            }
-        }
         public void addBook(Sach s)
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
