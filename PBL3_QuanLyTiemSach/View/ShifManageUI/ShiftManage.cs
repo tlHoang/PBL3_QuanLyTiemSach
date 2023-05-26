@@ -20,17 +20,17 @@ namespace PBL3_QuanLyTiemSach.View
 
     public partial class ShiftManage : KryptonForm
     {
-        int IDStaff = 2;
-        Form1 f;
+        int IDStaff;
+        Form5 f;
         string flagButton = "";
         bool turnOnDoubleCLick = false;
         public delegate void updateForm();
-         public ShiftManage()
-        //public ShiftManage(Form1 f1,int MaNV)
+        //public ShiftManage()
+        public ShiftManage(Form5 f1,int MaNV)
         {
             InitializeComponent();
-            //this.f = f1;
-            //this.IDStaff = MaNV;
+            this.f = f1;
+            this.IDStaff = MaNV;
             GUI();
         }        
         private void GUI()

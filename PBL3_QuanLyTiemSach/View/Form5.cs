@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using PBL3_QuanLyTiemSach.BLL;
+using PBL3_QuanLyTiemSach.View.StatisticUI;
 
 namespace PBL3_QuanLyTiemSach.View
 {
@@ -47,7 +48,7 @@ namespace PBL3_QuanLyTiemSach.View
         }
         public void setName(int MaNV)
         {
-            if (MaNV != 0)
+            if (MaNV != 1)
             {
                 TaiKhoanBLL bll = new TaiKhoanBLL();
                 string[] fullName = bll.getNameFromMaNV(this.MaNV).Split(' ');
@@ -63,6 +64,8 @@ namespace PBL3_QuanLyTiemSach.View
         {
             label_ThongTinSach.ForeColor = Color.FromArgb(255, 70, 80);
             BookImg.Image = MainForm_Resource.book_click;
+
+            OpenForm(new BookInfo());
 
             BanHang_Leave();
             NhapHang_Leave();
@@ -118,6 +121,7 @@ namespace PBL3_QuanLyTiemSach.View
         {
             label_HoaDon.ForeColor = Color.FromArgb(255, 70, 80);
             hoadonImg.Image = MainForm_Resource.bill_click;
+
             OpenForm(new Bill());
 
             ThongTinSach_Leave();
@@ -137,6 +141,8 @@ namespace PBL3_QuanLyTiemSach.View
             label_CaLam.ForeColor = Color.FromArgb(255, 70, 80);
             calamImg.Image = MainForm_Resource.calam_click;
 
+            OpenForm(new ShiftManage(this, MaNV));
+
             ThongTinSach_Leave();
             BanHang_Leave();
             NhapHang_Leave();
@@ -154,6 +160,8 @@ namespace PBL3_QuanLyTiemSach.View
             label_ThongKe.ForeColor = Color.FromArgb(255, 70, 80);
             thongkeImg.Image = MainForm_Resource.thongke_click;
 
+            OpenForm(new Statistic());
+
             ThongTinSach_Leave();
             BanHang_Leave();
             NhapHang_Leave();
@@ -166,12 +174,24 @@ namespace PBL3_QuanLyTiemSach.View
             thongkeImg.Image = MainForm_Resource.thongke;
         }
 
+        private void avatarImg_Click(object sender, EventArgs e)
+        {
+            label_NhapHang.ForeColor = Color.FromArgb(255, 70, 80);
+            nhaphangImg.Image = MainForm_Resource.import_click;
+
+            OpenForm(new StaffInfo(MaNV));
+
+            ThongTinSach_Leave();
+            BanHang_Leave();
+            NhapHang_Leave();
+            HoaDon_Leave();
+            CaLam_Leave();
+            ThongKe_Leave();
+        }
+
         private void DangXuat_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            LoginForm f = new LoginForm();
-            f.ShowDialog();
-            this.Close();
+            this.Dispose();
         }
     }
 }

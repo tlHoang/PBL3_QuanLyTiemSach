@@ -51,19 +51,19 @@ namespace PBL3_QuanLyTiemSach.View
             {
                 MessageBox.Show("Sai tài khoản hoặc mật khẩu");
             }
-            else if (username == "admin")
+            else if (MaNV == 1)
             {
-                this.Hide();
-                Form5 f = new Form5(0);
-                f.ShowDialog();
+                //this.Hide();
+                //Form5 f = new Form5(1);
+                //f.ShowDialog();
                 this.Close();
                 DialogResult = DialogResult.OK;
             }
             else
             {
-                this.Hide();
-                Form5 f = new Form5(this.MaNV);
-                f.ShowDialog();
+                //this.Hide();
+                //Form5 f = new Form5(this.MaNV);
+                //f.ShowDialog();
                 this.Close();
                 DialogResult = DialogResult.OK;
             }
