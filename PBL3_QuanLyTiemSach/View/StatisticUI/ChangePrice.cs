@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComponentFactory.Krypton.Toolkit;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,13 +11,15 @@ using System.Windows.Forms;
 
 namespace PBL3_QuanLyTiemSach.View.StatisticUI
 {
-    public partial class ChangePrice : Form
+    public partial class ChangePrice : KryptonForm
     {
-        public double newPrice { get; set; }
+        Statistic F;
+        public double NewPrice { get; set; }
 
-        public ChangePrice()
+        public ChangePrice(Statistic f)
         {
             InitializeComponent();
+            this.F = f;
         }
 
         private void btn_huy_Click(object sender, EventArgs e)
@@ -26,7 +29,7 @@ namespace PBL3_QuanLyTiemSach.View.StatisticUI
 
         private void btn_xacnhan_Click(object sender, EventArgs e)
         {
-            this.newPrice = Convert.ToDouble(textBox1.Text);
+            this.NewPrice = Convert.ToDouble(textBox1.Text);
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

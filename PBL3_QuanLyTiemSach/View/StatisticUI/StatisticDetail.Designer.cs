@@ -67,12 +67,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(547, 450);
             this.Controls.Add(this.btn_changeprice);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.dgv_detail);
             this.Name = "StatisticDetail";
             this.Text = "StatisticDetail";
+            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.dgv_detail)).EndInit();
             this.ResumeLayout(false);
 

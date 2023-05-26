@@ -39,17 +39,17 @@
             this.metroLabel_doanhthuvalue = new MetroFramework.Controls.MetroLabel();
             this.metroLabel_doanhthu = new MetroFramework.Controls.MetroLabel();
             this.btn_chitiet = new MetroFramework.Controls.MetroButton();
-            this.dgv_doanhthu = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btn_changeprice = new System.Windows.Forms.Button();
             this.btn_xem = new MetroFramework.Controls.MetroButton();
             this.btn_pdf = new MetroFramework.Controls.MetroButton();
-            this.dgv_sach = new System.Windows.Forms.DataGridView();
+            this.dgv_doanhthu = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.dgv_sach = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.tabControl_thongke.SuspendLayout();
             this.tabPage_doanhthu.SuspendLayout();
             this.metroPanel_thongtin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_doanhthu)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_doanhthu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sach)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,9 +87,9 @@
             // 
             // tabPage_doanhthu
             // 
+            this.tabPage_doanhthu.Controls.Add(this.dgv_doanhthu);
             this.tabPage_doanhthu.Controls.Add(this.metroPanel_thongtin);
             this.tabPage_doanhthu.Controls.Add(this.btn_chitiet);
-            this.tabPage_doanhthu.Controls.Add(this.dgv_doanhthu);
             this.tabPage_doanhthu.Location = new System.Drawing.Point(4, 22);
             this.tabPage_doanhthu.Name = "tabPage_doanhthu";
             this.tabPage_doanhthu.Padding = new System.Windows.Forms.Padding(3);
@@ -172,14 +172,6 @@
             this.btn_chitiet.UseSelectable = true;
             this.btn_chitiet.Click += new System.EventHandler(this.metroButton_chitiet_Click);
             // 
-            // dgv_doanhthu
-            // 
-            this.dgv_doanhthu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_doanhthu.Location = new System.Drawing.Point(6, 6);
-            this.dgv_doanhthu.Name = "dgv_doanhthu";
-            this.dgv_doanhthu.Size = new System.Drawing.Size(374, 246);
-            this.dgv_doanhthu.TabIndex = 0;
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.dgv_sach);
@@ -221,13 +213,21 @@
             this.btn_pdf.Text = "To PDF";
             this.btn_pdf.UseSelectable = true;
             // 
+            // dgv_doanhthu
+            // 
+            this.dgv_doanhthu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_doanhthu.Location = new System.Drawing.Point(6, 6);
+            this.dgv_doanhthu.Name = "dgv_doanhthu";
+            this.dgv_doanhthu.Size = new System.Drawing.Size(374, 246);
+            this.dgv_doanhthu.TabIndex = 4;
+            // 
             // dgv_sach
             // 
             this.dgv_sach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_sach.Location = new System.Drawing.Point(3, 3);
+            this.dgv_sach.Location = new System.Drawing.Point(6, 6);
             this.dgv_sach.Name = "dgv_sach";
-            this.dgv_sach.Size = new System.Drawing.Size(637, 262);
-            this.dgv_sach.TabIndex = 6;
+            this.dgv_sach.Size = new System.Drawing.Size(631, 246);
+            this.dgv_sach.TabIndex = 2;
             this.dgv_sach.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_sach_CellDoubleClick);
             // 
             // Statistic
@@ -246,8 +246,8 @@
             this.tabPage_doanhthu.ResumeLayout(false);
             this.metroPanel_thongtin.ResumeLayout(false);
             this.metroPanel_thongtin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_doanhthu)).EndInit();
             this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_doanhthu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sach)).EndInit();
             this.ResumeLayout(false);
 
@@ -261,7 +261,6 @@
         private System.Windows.Forms.TabPage tabPage_doanhthu;
         private MetroFramework.Controls.MetroPanel metroPanel_thongtin;
         private MetroFramework.Controls.MetroButton btn_chitiet;
-        private System.Windows.Forms.DataGridView dgv_doanhthu;
         private System.Windows.Forms.TabPage tabPage3;
         private MetroFramework.Controls.MetroButton btn_xem;
         private MetroFramework.Controls.MetroLabel metroLabel_doanhthu;
@@ -271,6 +270,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel_soluongdonhangvalue;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.Button btn_changeprice;
-        private System.Windows.Forms.DataGridView dgv_sach;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgv_doanhthu;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgv_sach;
     }
 }

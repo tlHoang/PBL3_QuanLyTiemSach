@@ -81,6 +81,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "ChangePrice";
             this.Text = "ChangePrice";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 

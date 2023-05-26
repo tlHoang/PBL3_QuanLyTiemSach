@@ -1,4 +1,5 @@
-﻿using PBL3_QuanLyTiemSach.BLL;
+﻿using ComponentFactory.Krypton.Toolkit;
+using PBL3_QuanLyTiemSach.BLL;
 using PBL3_QuanLyTiemSach.DTO;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PBL3_QuanLyTiemSach.View.StatisticUI
 {
-    public partial class Statistic : MetroFramework.Forms.MetroForm
+    public partial class Statistic : KryptonForm
     {
         public Statistic()
         {
@@ -122,7 +123,7 @@ namespace PBL3_QuanLyTiemSach.View.StatisticUI
         {
             if (dgv_doanhthu.SelectedRows.Count == 1)
             {
-                StatisticDetail detailForm = new StatisticDetail();
+                StatisticDetail detailForm = new StatisticDetail(this);
                 //MessageBox.Show(Convert.ToDateTime(dgv_doanhthu.SelectedRows[0].Cells[0].Value).ToString());
                 StatisticBLL statisticBLL = new StatisticBLL();
                 DateTime date = Convert.ToDateTime(dgv_doanhthu.SelectedRows[0].Cells["ThoiGianBan"].Value);
@@ -141,7 +142,7 @@ namespace PBL3_QuanLyTiemSach.View.StatisticUI
             int TheLoai = Convert.ToInt32(dgv_sach.Rows[rowIndex].Cells["MaTheLoai"].Value.ToString());
 
             //StatisticBLL statisticBLL = new StatisticBLL();
-            StatisticDetail detailForm = new StatisticDetail();
+            StatisticDetail detailForm = new StatisticDetail(this);
             //detailForm.DisplayForBook(statisticBLL.GetBooksForDetail(TenSach, TacGia, TheLoai));
             detailForm.Month = ((CBBItem)metroComboBox_month.SelectedItem).Value;
             detailForm.Year = ((CBBItem)metroComboBox_year.SelectedItem).Value;
@@ -153,11 +154,11 @@ namespace PBL3_QuanLyTiemSach.View.StatisticUI
         {
             if (dgv_sach.SelectedRows.Count == 1)
             {
-                ChangePrice changePriceForm = new ChangePrice();
+                ChangePrice changePriceForm = new ChangePrice(this);
                 if (changePriceForm.ShowDialog() == DialogResult.OK)
                 {
                     StatisticBLL statisticBLL = new StatisticBLL();
-                    double NewPrice = changePriceForm.newPrice;
+                    double NewPrice = changePriceForm.NewPrice;
                     string TenSach = dgv_sach.SelectedRows[0].Cells["TenSach"].Value.ToString();
                     string TacGia = dgv_sach.SelectedRows[0].Cells["TacGia"].Value.ToString();
                     int TheLoai = Convert.ToInt32(dgv_sach.SelectedRows[0].Cells["MaTheLoai"].Value.ToString());
