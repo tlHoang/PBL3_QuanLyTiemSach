@@ -63,23 +63,23 @@ namespace PBL3_QuanLyTiemSach
                 new DonViCungCap { TenDV = "Don Vi C" },
                 new DonViCungCap { TenDV = "Don Vi D" }
             });
-            context.Sachs.AddRange(new Sach[]
-            {
-                new Sach { MaSach = 1, TenSach = "Sach A", TacGia = "Tac gia A", SoLuongConLai = 100, GiaBan = 22000, MaTheLoai = 1 },
-                new Sach { MaSach = 2, TenSach = "Sach B", TacGia = "Tac gia B", SoLuongConLai = 140, GiaBan = 26000, MaTheLoai = 2 },
-            });
-            context.HoaDonBans.AddRange(new HoaDonBan[]
-            {
-                new HoaDonBan { MaHDBan = 1, MaNV = 2, MaKH = 1, ThoiGianBan = Convert.ToDateTime("2023-05-12 00:00:00"), TongTien = 48000 },
-                new HoaDonBan { MaHDBan = 2, MaNV = 3, MaKH = 2, ThoiGianBan = Convert.ToDateTime("2023-05-12 12:12:12"), TongTien = 44000 },
-            });
-            context.HoaDonBanSachs.AddRange(new HoaDonBanSach[]
-            {
-                new HoaDonBanSach { MaHDBanSach = 1, MaHDBan = 1, MaSach = 1, DonGiaBan = 22000, SoLuongBan = 1 },
-                new HoaDonBanSach { MaHDBanSach = 2, MaHDBan = 1, MaSach = 2, DonGiaBan = 26000, SoLuongBan = 1 },
-                new HoaDonBanSach { MaHDBanSach = 3, MaHDBan = 2, MaSach = 1, DonGiaBan = 22000, SoLuongBan = 1 },
-                new HoaDonBanSach { MaHDBanSach = 4, MaHDBan = 2, MaSach = 1, DonGiaBan = 22000, SoLuongBan = 1 },
-            });
+            //context.Sachs.AddRange(new Sach[]
+            //{
+            //    new Sach { MaSach = 1, TenSach = "Sach A", TacGia = "Tac gia A", SoLuongConLai = 100, GiaBan = 22000, MaTheLoai = 1 },
+            //    new Sach { MaSach = 2, TenSach = "Sach B", TacGia = "Tac gia B", SoLuongConLai = 140, GiaBan = 26000, MaTheLoai = 2 },
+            //});
+            //context.HoaDonBans.AddRange(new HoaDonBan[]
+            //{
+            //    new HoaDonBan { MaHDBan = 1, MaNV = 2, MaKH = 1, ThoiGianBan = Convert.ToDateTime("2023-05-12 00:00:00"), TongTien = 48000 },
+            //    new HoaDonBan { MaHDBan = 2, MaNV = 3, MaKH = 2, ThoiGianBan = Convert.ToDateTime("2023-05-12 12:12:12"), TongTien = 44000 },
+            //});
+            //context.HoaDonBanSachs.AddRange(new HoaDonBanSach[]
+            //{
+            //    new HoaDonBanSach { MaHDBanSach = 1, MaHDBan = 1, MaSach = 1, DonGiaBan = 22000, SoLuongBan = 1 },
+            //    new HoaDonBanSach { MaHDBanSach = 2, MaHDBan = 1, MaSach = 2, DonGiaBan = 26000, SoLuongBan = 1 },
+            //    new HoaDonBanSach { MaHDBanSach = 3, MaHDBan = 2, MaSach = 1, DonGiaBan = 22000, SoLuongBan = 1 },
+            //    new HoaDonBanSach { MaHDBanSach = 4, MaHDBan = 2, MaSach = 1, DonGiaBan = 22000, SoLuongBan = 1 },
+            //});
             //context.Sachs.AddRange(new Sach[]
             //{
             //    new Sach { TenSach = "Duy Tân", TacGia = "Huy Cận", MaTheLoai = 1, GiaBan =50000},

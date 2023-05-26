@@ -32,20 +32,25 @@
             this.metroComboBox_year = new MetroFramework.Controls.MetroComboBox();
             this.tabControl_thongke = new System.Windows.Forms.TabControl();
             this.tabPage_doanhthu = new System.Windows.Forms.TabPage();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel_thongtin = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel_soluongdonhangvalue = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel_soluonghoadon = new MetroFramework.Controls.MetroLabel();
             this.metroLabel_doanhthuvalue = new MetroFramework.Controls.MetroLabel();
             this.metroLabel_doanhthu = new MetroFramework.Controls.MetroLabel();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.btn_chitiet = new MetroFramework.Controls.MetroButton();
             this.dgv_doanhthu = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btn_changeprice = new System.Windows.Forms.Button();
             this.btn_xem = new MetroFramework.Controls.MetroButton();
             this.btn_pdf = new MetroFramework.Controls.MetroButton();
+            this.dgv_sach = new System.Windows.Forms.DataGridView();
             this.tabControl_thongke.SuspendLayout();
             this.tabPage_doanhthu.SuspendLayout();
-            this.metroPanel1.SuspendLayout();
+            this.metroPanel_thongtin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_doanhthu)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_sach)).BeginInit();
             this.SuspendLayout();
             // 
             // metroComboBox_month
@@ -73,7 +78,6 @@
             // tabControl_thongke
             // 
             this.tabControl_thongke.Controls.Add(this.tabPage_doanhthu);
-            this.tabControl_thongke.Controls.Add(this.tabPage2);
             this.tabControl_thongke.Controls.Add(this.tabPage3);
             this.tabControl_thongke.Location = new System.Drawing.Point(23, 98);
             this.tabControl_thongke.Name = "tabControl_thongke";
@@ -83,8 +87,7 @@
             // 
             // tabPage_doanhthu
             // 
-            this.tabPage_doanhthu.Controls.Add(this.metroPanel1);
-            this.tabPage_doanhthu.Controls.Add(this.metroButton2);
+            this.tabPage_doanhthu.Controls.Add(this.metroPanel_thongtin);
             this.tabPage_doanhthu.Controls.Add(this.btn_chitiet);
             this.tabPage_doanhthu.Controls.Add(this.dgv_doanhthu);
             this.tabPage_doanhthu.Location = new System.Drawing.Point(4, 22);
@@ -95,25 +98,56 @@
             this.tabPage_doanhthu.Text = "Doanh thu";
             this.tabPage_doanhthu.UseVisualStyleBackColor = true;
             // 
-            // metroPanel1
+            // metroPanel_thongtin
             // 
-            this.metroPanel1.Controls.Add(this.metroLabel_doanhthuvalue);
-            this.metroPanel1.Controls.Add(this.metroLabel_doanhthu);
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(462, 6);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(178, 246);
-            this.metroPanel1.TabIndex = 3;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
+            this.metroPanel_thongtin.Controls.Add(this.metroLabel1);
+            this.metroPanel_thongtin.Controls.Add(this.metroLabel_soluongdonhangvalue);
+            this.metroPanel_thongtin.Controls.Add(this.metroLabel_soluonghoadon);
+            this.metroPanel_thongtin.Controls.Add(this.metroLabel_doanhthuvalue);
+            this.metroPanel_thongtin.Controls.Add(this.metroLabel_doanhthu);
+            this.metroPanel_thongtin.HorizontalScrollbarBarColor = true;
+            this.metroPanel_thongtin.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel_thongtin.HorizontalScrollbarSize = 10;
+            this.metroPanel_thongtin.Location = new System.Drawing.Point(386, 6);
+            this.metroPanel_thongtin.Name = "metroPanel_thongtin";
+            this.metroPanel_thongtin.Size = new System.Drawing.Size(254, 246);
+            this.metroPanel_thongtin.TabIndex = 3;
+            this.metroPanel_thongtin.VerticalScrollbarBarColor = true;
+            this.metroPanel_thongtin.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel_thongtin.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel1.Location = new System.Drawing.Point(59, 9);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(127, 19);
+            this.metroLabel1.TabIndex = 6;
+            this.metroLabel1.Text = "Số liệu của tháng:";
+            // 
+            // metroLabel_soluongdonhangvalue
+            // 
+            this.metroLabel_soluongdonhangvalue.AutoSize = true;
+            this.metroLabel_soluongdonhangvalue.Location = new System.Drawing.Point(132, 57);
+            this.metroLabel_soluongdonhangvalue.Name = "metroLabel_soluongdonhangvalue";
+            this.metroLabel_soluongdonhangvalue.Size = new System.Drawing.Size(78, 19);
+            this.metroLabel_soluongdonhangvalue.TabIndex = 5;
+            this.metroLabel_soluongdonhangvalue.Text = "soluongdon";
+            // 
+            // metroLabel_soluonghoadon
+            // 
+            this.metroLabel_soluonghoadon.AutoSize = true;
+            this.metroLabel_soluonghoadon.Location = new System.Drawing.Point(1, 57);
+            this.metroLabel_soluonghoadon.Name = "metroLabel_soluonghoadon";
+            this.metroLabel_soluonghoadon.Size = new System.Drawing.Size(125, 19);
+            this.metroLabel_soluonghoadon.TabIndex = 4;
+            this.metroLabel_soluonghoadon.Text = "Số lượng đơn hàng:";
             // 
             // metroLabel_doanhthuvalue
             // 
             this.metroLabel_doanhthuvalue.AutoSize = true;
-            this.metroLabel_doanhthuvalue.Location = new System.Drawing.Point(81, 12);
+            this.metroLabel_doanhthuvalue.Location = new System.Drawing.Point(132, 38);
             this.metroLabel_doanhthuvalue.Name = "metroLabel_doanhthuvalue";
             this.metroLabel_doanhthuvalue.Size = new System.Drawing.Size(68, 19);
             this.metroLabel_doanhthuvalue.TabIndex = 3;
@@ -122,20 +156,11 @@
             // metroLabel_doanhthu
             // 
             this.metroLabel_doanhthu.AutoSize = true;
-            this.metroLabel_doanhthu.Location = new System.Drawing.Point(3, 12);
+            this.metroLabel_doanhthu.Location = new System.Drawing.Point(1, 38);
             this.metroLabel_doanhthu.Name = "metroLabel_doanhthu";
             this.metroLabel_doanhthu.Size = new System.Drawing.Size(72, 19);
             this.metroLabel_doanhthu.TabIndex = 2;
             this.metroLabel_doanhthu.Text = "Doanh thu:";
-            // 
-            // metroButton2
-            // 
-            this.metroButton2.Location = new System.Drawing.Point(305, 269);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(75, 23);
-            this.metroButton2.TabIndex = 2;
-            this.metroButton2.Text = "metroButton2";
-            this.metroButton2.UseSelectable = true;
             // 
             // btn_chitiet
             // 
@@ -152,28 +177,30 @@
             this.dgv_doanhthu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_doanhthu.Location = new System.Drawing.Point(6, 6);
             this.dgv_doanhthu.Name = "dgv_doanhthu";
-            this.dgv_doanhthu.Size = new System.Drawing.Size(450, 246);
+            this.dgv_doanhthu.Size = new System.Drawing.Size(374, 246);
             this.dgv_doanhthu.TabIndex = 0;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(646, 313);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.dgv_sach);
+            this.tabPage3.Controls.Add(this.btn_changeprice);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(646, 313);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.Text = "Sách";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btn_changeprice
+            // 
+            this.btn_changeprice.Location = new System.Drawing.Point(55, 271);
+            this.btn_changeprice.Name = "btn_changeprice";
+            this.btn_changeprice.Size = new System.Drawing.Size(75, 23);
+            this.btn_changeprice.TabIndex = 1;
+            this.btn_changeprice.Text = "Chỉnh giá";
+            this.btn_changeprice.UseVisualStyleBackColor = true;
+            this.btn_changeprice.Click += new System.EventHandler(this.button_changeprice_Click);
             // 
             // btn_xem
             // 
@@ -194,6 +221,15 @@
             this.btn_pdf.Text = "To PDF";
             this.btn_pdf.UseSelectable = true;
             // 
+            // dgv_sach
+            // 
+            this.dgv_sach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_sach.Location = new System.Drawing.Point(3, 3);
+            this.dgv_sach.Name = "dgv_sach";
+            this.dgv_sach.Size = new System.Drawing.Size(637, 262);
+            this.dgv_sach.TabIndex = 6;
+            this.dgv_sach.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_sach_CellDoubleClick);
+            // 
             // Statistic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,9 +244,11 @@
             this.Text = "Thống kê";
             this.tabControl_thongke.ResumeLayout(false);
             this.tabPage_doanhthu.ResumeLayout(false);
-            this.metroPanel1.ResumeLayout(false);
-            this.metroPanel1.PerformLayout();
+            this.metroPanel_thongtin.ResumeLayout(false);
+            this.metroPanel_thongtin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_doanhthu)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_sach)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -221,15 +259,18 @@
         private MetroFramework.Controls.MetroComboBox metroComboBox_year;
         private System.Windows.Forms.TabControl tabControl_thongke;
         private System.Windows.Forms.TabPage tabPage_doanhthu;
-        private MetroFramework.Controls.MetroPanel metroPanel1;
-        private MetroFramework.Controls.MetroButton metroButton2;
+        private MetroFramework.Controls.MetroPanel metroPanel_thongtin;
         private MetroFramework.Controls.MetroButton btn_chitiet;
         private System.Windows.Forms.DataGridView dgv_doanhthu;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private MetroFramework.Controls.MetroButton btn_xem;
         private MetroFramework.Controls.MetroLabel metroLabel_doanhthu;
         private MetroFramework.Controls.MetroLabel metroLabel_doanhthuvalue;
         private MetroFramework.Controls.MetroButton btn_pdf;
+        private MetroFramework.Controls.MetroLabel metroLabel_soluonghoadon;
+        private MetroFramework.Controls.MetroLabel metroLabel_soluongdonhangvalue;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private System.Windows.Forms.Button btn_changeprice;
+        private System.Windows.Forms.DataGridView dgv_sach;
     }
 }

@@ -31,5 +31,87 @@ namespace PBL3_QuanLyTiemSach.BLL
                     .ToList();
             }
         }
+
+        public List<Sach> GetAllBooks()
+        {
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                return db.Sachs
+                    .Select(p => p)
+                    .Include(p => p.SachTheLoai)
+                    .ToList();
+            }
+        }
+
+        public List<Sach> GetBooksForDetail(string BookName, string Author, int Category)
+        {
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                return db.Sachs
+                    .Where(p => p.TenSach.ToLower() == BookName.ToLower() && p.TacGia.ToLower() == Author.ToLower() && p.MaTheLoai == Category)
+                    .Include(p => p.HoaDonNhapSachs)
+                    .Include(p => p.HoaDonBanSachs)
+                    .ToList();
+            }
+        }
+
+        public void UpdateBooksPrice(string BookName, string Author, int Category, double NewPrice)
+        {
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                List<Sach> Books = db.Sachs
+                    .Where(p => p.TenSach.ToLower() == BookName.ToLower() && p.TacGia.ToLower() == Author.ToLower() && p.MaTheLoai == Category)
+                    .ToList();
+                foreach (Sach Book in Books)
+                {
+                    Book.GiaBan = NewPrice;
+                }
+                db.SaveChanges();
+            }
+        }
+        public void UpdateBookPriceInDetailForm(List<int> IdBooks, double NewPrice)
+        {
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                List<Sach> Books = db.Sachs
+                    .Join(IdBooks, s => s.MaSach, li => li, (s, li) => s)
+                    .ToList();
+                foreach (Sach Book in Books)
+                {
+                    Book.GiaBan = NewPrice;
+                }
+                db.SaveChanges();
+            }
+        }
+
+        public double AAA(string BookName, string Author, int Category, double Price)
+        {
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                //List<int> IdBooks = db.Sachs
+                List<int> Ids = db.Sachs
+                    .Where(p => p.TenSach.ToLower() == BookName.ToLower() && p.TacGia.ToLower() == Author.ToLower() && p.MaTheLoai == Category && p.GiaBan == Price)
+                    .Select(p => p.MaSach)
+                    .ToList();
+                var hdbs = db.HoaDonBanSachs
+                    .Where(p => Ids.Contains(p.MaSach))
+                    .Select(p => new { p.DonGiaBan, p.SoLuongBan })
+                    .ToList();
+                var hdns = db.HoaDonNhapSachs
+                    .Where(p => Ids.Contains(p.MaSach))
+                    .Select(p => new { p.DonGiaNhap })
+                    .ToList();
+                double result = 0;
+                foreach (var hdb in hdbs)
+                {
+                    result += hdb.DonGiaBan * hdb.SoLuongBan;
+                }
+                foreach (var hdn in hdns)
+                {
+                    result -= hdn.DonGiaNhap;
+                }
+                return result;
+            }
+        }
     }
 }
