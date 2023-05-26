@@ -37,19 +37,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ComponentFactory.Krypton.Docking">
-      <HintPath>..\..\..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
+      <HintPath>..\..\..\..\Krypton-master\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Navigator">
-      <HintPath>..\..\..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Ribbon">
-      <HintPath>..\..\..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Toolkit">
-      <HintPath>..\..\..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Workspace">
-      <HintPath>..\..\..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
@@ -69,6 +69,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -114,6 +115,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MainForm_Resource.resx</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="View\BillUI\Bill.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +145,12 @@
     </Compile>
     <Compile Include="View\ShifManageUI\FormSMDangKiCa.Designer.cs">
       <DependentUpon>FormSMDangKiCa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ShifManageUI\ShiftManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ShifManageUI\ShiftManage.Designer.cs">
+      <DependentUpon>ShiftManage.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ShifManageUI\UpdateSMForm.cs">
       <SubType>Form</SubType>
@@ -203,7 +211,6 @@
     <Compile Include="View\SellUI\Sell.Designer.cs">
       <DependentUpon>Sell.cs</DependentUpon>
     </Compile>
-    <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\LoginForm.cs">
@@ -286,6 +293,9 @@
     <EmbeddedResource Include="View\ShifManageUI\FormSMDangKiCa.resx">
       <DependentUpon>FormSMDangKiCa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ShifManageUI\ShiftManage.resx">
+      <DependentUpon>ShiftManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ShifManageUI\UpdateSMForm.resx">
       <DependentUpon>UpdateSMForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -301,7 +311,6 @@
     <EmbeddedResource Include="View\SellUI\SearchBookInfo.resx">
       <DependentUpon>SearchBookInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="obj\Debug\PBL3_QuanLyTiemSach.csproj.AssemblyReference.cache" />
     <None Include="packages.config" />
@@ -324,6 +333,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <Content Include="Resources\494bc269c50505bf626d2b79d4f6b4ef.jpg" />
+    <Content Include="Resources\a8b0fcaf3c70960a9e76a32a49ea75b7.jpg" />
     <None Include="Resources\male_user_45px.png" />
     <None Include="Resources\female_profile_45px.png" />
     <None Include="Resources\clock.png" />
@@ -340,6 +351,9 @@
     <None Include="Resources\sell_click.png" />
     <None Include="Resources\book_28px_1.png" />
     <None Include="Resources\book_click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

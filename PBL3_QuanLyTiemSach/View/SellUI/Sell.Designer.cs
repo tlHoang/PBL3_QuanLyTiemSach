@@ -354,6 +354,7 @@
             // dgvHoaDonBan
             // 
             this.dgvHoaDonBan.AllowUserToResizeRows = false;
+            this.dgvHoaDonBan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHoaDonBan.BackgroundColor = System.Drawing.Color.White;
             this.dgvHoaDonBan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvHoaDonBan.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
