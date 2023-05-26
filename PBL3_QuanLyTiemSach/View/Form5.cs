@@ -19,9 +19,24 @@ namespace PBL3_QuanLyTiemSach.View
             InitializeComponent();
             this.MaNV = MaNV;
             setName(this.MaNV);
-            //setAvatar(this.MaNV);
+            setUI(this.MaNV);
         }
         public int MaNV { get; set; }
+        private void setUI(int MaNV)
+        {
+            if (MaNV != 0)
+            {
+                Panel9.Hide();
+            }
+            else
+            {
+                Panel5.Hide();
+                Panel6.Hide();
+                Panel7.Location = new Point(Panel7.Location.X, Panel7.Location.Y - 100);
+                Panel8.Location = new Point(Panel8.Location.X, Panel8.Location.Y - 100);
+                Panel9.Location = new Point(Panel9.Location.X, Panel9.Location.Y - 100);
+            }
+        }
 
         private Form currentForm;
         private void OpenForm(Form f)
@@ -171,7 +186,7 @@ namespace PBL3_QuanLyTiemSach.View
             this.Hide();
             LoginForm f = new LoginForm();
             f.ShowDialog();
-            this.Close();
+            this.Dispose();
         }
     }
 }
