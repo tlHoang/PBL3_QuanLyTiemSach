@@ -23,14 +23,14 @@ namespace PBL3_QuanLyTiemSach
             InitializeComponent();
             SetUI();
         }
-        private System.Windows.Forms.Form currentForm; 
+        private System.Windows.Forms.Form currentForm;
         private void SetUI()
         {
             panel_Side.Hide();
             setRole();
             if (MaNV == 1)
             {
-                button_BanHang.Text = "Button A";
+                button_BanHang.Text = "Xem Đơn Hàng";
                 button_NhapHang.Text = "Button B";
                 button_Home.Text = "Nhân viên";
             }
@@ -96,11 +96,11 @@ namespace PBL3_QuanLyTiemSach
             panel_Side.Show();
             if (MaNV != 1)
             {
-                OpenForm(new Sell(this));
+                //OpenForm(new Sell(this));
             }
             else
             {
-                OpenForm(new Form5());
+                //OpenForm(new Form5());
             }
         }
 
@@ -111,23 +111,20 @@ namespace PBL3_QuanLyTiemSach
             panel_Side.Show();
             if (MaNV != 1)
             {
-                OpenForm(new Import(this));
+                //OpenForm(new Import(this));
             }
             else
             {
-                OpenForm(new Form5());
+                
             }
         }
 
         private void button_ThongKe_Click(object sender, EventArgs e)
         {
-            if (MaNV == 1)
-            {
-                panel_Side.Top = button_ThongKe.Top;
-                panel_Side.Height = button_ThongKe.Height;
-                panel_Side.Show();
-                //OpenForm(new Statistic());
-            }
+            panel_Side.Top = button_ThongKe.Top;
+            panel_Side.Height = button_ThongKe.Height;
+            panel_Side.Show();
+            
         }
 
         private void pictureBox_Click(object sender, EventArgs e)
@@ -147,6 +144,23 @@ namespace PBL3_QuanLyTiemSach
         private void button_Hide_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnThongTinSach_Click(object sender, EventArgs e)
+        {
+            panel_Side.Top = btnThongTinSach.Top;
+            panel_Side.Height = btnThongTinSach.Height;
+            panel_Side.Show();
+            //OpenForm(new BookInfo(this));
+
+        }
+
+        private void btnCaLam_Click(object sender, EventArgs e)
+        {
+            panel_Side.Top = btnCaLam.Top;
+            panel_Side.Height = btnCaLam.Height;
+            panel_Side.Show();
+            //OpenForm(new ShiftManage(this,MaNV));
         }
 
         private void button_HoaDon_Click(object sender, EventArgs e)

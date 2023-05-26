@@ -1,4 +1,6 @@
-﻿using PBL3_QuanLyTiemSach.BLL;
+﻿using ComponentFactory.Krypton.Toolkit;
+using MetroFramework.Controls;
+using PBL3_QuanLyTiemSach.BLL;
 using PBL3_QuanLyTiemSach.DTO;
 using System;
 using System.Collections.Generic;
@@ -12,7 +14,7 @@ using System.Windows.Forms;
 
 namespace PBL3_QuanLyTiemSach.View.ShifManageUI
 {
-    public partial class FormSMDangKiCa : MetroFramework.Forms.MetroForm
+    public partial class FormSMDangKiCa : KryptonForm
     {
         int MaNV = 0;
         public delegate void updateForm();
@@ -20,91 +22,83 @@ namespace PBL3_QuanLyTiemSach.View.ShifManageUI
         public FormSMDangKiCa(int maNV)
         {
             InitializeComponent();
+            MaNV = maNV;
+            GUI();         
+        }
+        private void GUI()
+        {
             setCBB_ChonGio();
             setDateTimePicker();
-            MaNV = maNV;
+            setAllLabelSLNV();
+            setAllCheckBox();
         }
+        private void setAllLabelSLNV()
+        {
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            bll.setLabelSLNV(lbCas1, dtChonNgayLamCa1.Value, cbbCaLam1);
+            bll.setLabelSLNV(lbCas2, dtChonNgayLamCa2.Value, cbbCaLam2);
+            bll.setLabelSLNV(lbCas3, dtChonNgayLamCa3.Value, cbbCaLam3);
+            bll.setLabelSLNV(lbCas4, dtChonNgayLamCa4.Value, cbbCaLam4);
+            bll.setLabelSLNV(lbCas5, dtChonNgayLamCa5.Value, cbbCaLam5);
+            bll.setLabelSLNV(lbCas6, dtChonNgayLamCa6.Value, cbbCaLam6);
+            bll.setLabelSLNV(lbCas7, dtChonNgayLamCa7.Value, cbbCaLam7);
+        }
+        private void setAllCheckBox()
+        {
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            bll.setCheckBox(checkboxCa1, dtChonNgayLamCa1.Value, cbbCaLam1,MaNV);
+            bll.setCheckBox(checkboxCa2, dtChonNgayLamCa2.Value, cbbCaLam2, MaNV);
+            bll.setCheckBox(checkboxCa3, dtChonNgayLamCa3.Value, cbbCaLam3, MaNV);
+            bll.setCheckBox(checkboxCa4, dtChonNgayLamCa4.Value, cbbCaLam4, MaNV);
+            bll.setCheckBox(checkboxCa5, dtChonNgayLamCa5.Value, cbbCaLam5, MaNV);
+            bll.setCheckBox(checkboxCa6, dtChonNgayLamCa6.Value, cbbCaLam6, MaNV);
+            bll.setCheckBox(checkboxCa7, dtChonNgayLamCa7.Value, cbbCaLam7, MaNV);
+        }
+
         private void setDateTimePicker()
         {
             DateTime currentDate = DateTime.Today.AddDays(2);
             for (int i = 1; i <= 7; i++)
             {
-                DateTimePicker dtp = (DateTimePicker)this.Controls.Find("dtChonNgayLamCa" + i.ToString(), true)[0];
+                KryptonDateTimePicker dtp = (KryptonDateTimePicker)this.Controls.Find("dtChonNgayLamCa" + i.ToString(), true)[0];
                 dtp.Value = currentDate;
                 currentDate = currentDate.AddDays(1);
             }
-
         }
         private void setCBB_ChonGio()
         {
             QLTS_SM_BLL bll = new QLTS_SM_BLL();
-            ComboBox[,] comboBoxes = new ComboBox[7, 2]
+            KryptonComboBox[] comboBoxes = new KryptonComboBox[7]
             {
-                { cbbGioBatDauCa1, cbbGioKetThucCa1 },
-                { cbbGioBatDauCa2, cbbGioKetThucCa2 },
-                { cbbGioBatDauCa3, cbbGioKetThucCa3 },
-                { cbbGioBatDauCa4, cbbGioKetThucCa4 },
-                { cbbGioBatDauCa5, cbbGioKetThucCa5 },
-                { cbbGioBatDauCa6, cbbGioKetThucCa6 },
-                { cbbGioBatDauCa7, cbbGioKetThucCa7 }
+                cbbCaLam1,
+                cbbCaLam2,
+                cbbCaLam3,
+                cbbCaLam4,
+                cbbCaLam5,
+                cbbCaLam6,
+                cbbCaLam7,
             };
 
             for (int i = 0; i < 7; i++)
             {
-                comboBoxes[i, 0].Items.AddRange(bll.setSMDangKiCaCBB_GioBatDau().ToArray());
-                comboBoxes[i, 1].Items.AddRange(bll.setSMDangKiCaCBB_GioKetThuc().ToArray());
+                comboBoxes[i].Items.AddRange(bll.getValueCBBCa().ToArray());
 
-                comboBoxes[i, 0].ValueMember = "Value";
-                comboBoxes[i, 0].DisplayMember = "Text";
-                comboBoxes[i, 0].SelectedIndex = 0;
-
-                comboBoxes[i, 1].ValueMember = "Value";
-                comboBoxes[i, 1].DisplayMember = "Text";
-                comboBoxes[i, 1].SelectedIndex = 0;
-
-                comboBoxes[i, 0].SelectedIndexChanged += cbbGioBatDau_SelectedIndexChanged;
-                comboBoxes[i, 1].SelectedIndexChanged += cbbGioKetThuc_SelectedIndexChanged;
+                comboBoxes[i].ValueMember = "TenCa";
+                comboBoxes[i].SelectedIndex = 0;
             }
         }
-            private void btnThoat_Click(object sender, EventArgs e)
+        private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
-        private void cbbGioBatDau_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ComboBox cbo = (ComboBox)sender;
-            TimeSpan gioBatDau = ((SMCBBItems_Start_End_Time)cbo.SelectedItem).Text;
-
-            string name = cbo.Name;
-            string number = name.Substring(name.Length - 1, 1);
-            ComboBox otherCbo = (ComboBox)this.Controls.Find("cbbGioKetThucCa" + number, true)[0];
-
-            otherCbo.SelectedIndex = otherCbo.Items.IndexOf
-                (otherCbo.Items.Cast<SMCBBItems_Start_End_Time>().FirstOrDefault(item => item.Text > gioBatDau));
-        }
-
-        private void cbbGioKetThuc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ComboBox cbo = (ComboBox)sender;
-            TimeSpan gioKetThuc = ((SMCBBItems_Start_End_Time)cbo.SelectedItem).Text;
-
-            string name = cbo.Name;
-            string number = name.Substring(name.Length - 1, 1);
-            ComboBox otherCbo = (ComboBox)this.Controls.Find("cbbGioBatDauCa" + number, true)[0];
-
-            otherCbo.SelectedIndex = otherCbo.Items.IndexOf
-                (otherCbo.Items.Cast<SMCBBItems_Start_End_Time>().LastOrDefault(item => item.Text < gioKetThuc));
-        }
-        private void dangKiCa(DateTimePicker dtpk, ComboBox cbbgbd, ComboBox cbbgkt)
+        private void dangKiCa(KryptonDateTimePicker dtpk, KryptonComboBox cbb)
         {
             try
             {
                 DateTime newDT = (DateTime)dtpk.Value;
-                SMCBBItems_Start_End_Time selectedGioBatDau = (SMCBBItems_Start_End_Time)cbbgbd.SelectedItem;
-                SMCBBItems_Start_End_Time selectedGioKetThuc = (SMCBBItems_Start_End_Time)cbbgkt.SelectedItem;
-
-                TimeSpan newGioBatDau = selectedGioBatDau.Text;
-                TimeSpan newGioKetThuc = selectedGioKetThuc.Text;
+                SMCBBItems_Start_End_Time selecteCa = (SMCBBItems_Start_End_Time)cbb.SelectedItem;
+                TimeSpan newGioBatDau = selecteCa.GioBatDau;
+                TimeSpan newGioKetThuc = selecteCa.GioKetThuc;
                 DBQuanLyTiemSach db = new DBQuanLyTiemSach();
 
                 Ca newCa = new Ca();
@@ -118,70 +112,293 @@ namespace PBL3_QuanLyTiemSach.View.ShifManageUI
                 {
                     if (bll.IsDuplicateCa(newCa, MaNV) == true)
                     {
-                        MessageBox.Show("Bạn đã đăng kí ca này rồi !");
+                        KryptonMessageBox.Show("Bạn đã đăng kí ca này rồi !");
                     }
                     else
                     {
                         if (bll.isFull(newCa))
                         {
-                            MessageBox.Show("Ca này đã đủ người làm !");
+                            KryptonMessageBox.Show("Ca này đã đủ người làm !");
                         }
                         else
                         {
                             bll.AddCa(newCa, MaNV);
-                            MessageBox.Show("Đăng Kí thành công");                        
+                            KryptonMessageBox.Show("Đăng Kí thành công");                        
                         }
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Ngày Chọn không hợp lệ, Vui Lòng Chọn Ngày trước 2 ngày");
+                    KryptonMessageBox.Show("Ngày Chọn không hợp lệ, Vui Lòng Chọn Ngày trước 2 ngày");
                 }
                 
             }
             catch(Exception ex) 
             {
-                MessageBox.Show(ex.ToString());
+                KryptonMessageBox.Show(ex.ToString());
             }
             finally
             {
                 updateLichLam?.Invoke();
             }
         }
+        private void XoaCa(DateTime day, KryptonComboBox cbb, KryptonCheckBox cb)
+        {
+            try
+            {
+                if (cb.Checked == true )
+                {
+                    QLTS_SM_BLL bll = new QLTS_SM_BLL();
+                    SMCBBItems_Start_End_Time selecteCa = (SMCBBItems_Start_End_Time)cbb.SelectedItem;
+                    TimeSpan gbd = selecteCa.GioBatDau;
+                    TimeSpan gkt = selecteCa.GioKetThuc;
+                    if (bll.isHasExist(day, gbd, gkt))
+                    {
+                        int maCa = bll.getCa(day, gbd, gkt).MaCa;
+                        bll.DeleteCa(maCa, MaNV,MaNV);
+                    }
+                    else
+                    {
+                        KryptonMessageBox.Show("Chưa đăng kí ca này ");
+                    }
+                }
+                else
+                {
+                    KryptonMessageBox.Show("Bạn Chưa Đăng Kí Ca này");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        //
+        //Event Dang ki Click
+        //
         private void btnDangKi_Click(object sender, EventArgs e)
-        {  
-           dangKiCa(dtChonNgayLamCa1,cbbGioBatDauCa1,cbbGioKetThucCa1);
-            
+        {
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            dangKiCa(dtChonNgayLamCa1,cbbCaLam1);
+            bll.setLabelSLNV(lbCas1, dtChonNgayLamCa1.Value, cbbCaLam1);
+            bll.setCheckBox(checkboxCa1, dtChonNgayLamCa1.Value, cbbCaLam1, MaNV);
         }
 
         private void btnDangKiCa2_Click(object sender, EventArgs e)
         {
-            dangKiCa(dtChonNgayLamCa2, cbbGioBatDauCa2, cbbGioKetThucCa2);
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            dangKiCa(dtChonNgayLamCa2,cbbCaLam2);
+            bll.setLabelSLNV(lbCas2, dtChonNgayLamCa2.Value, cbbCaLam2);
+            bll.setCheckBox(checkboxCa2, dtChonNgayLamCa2.Value, cbbCaLam2, MaNV);
         }
 
         private void btnDangKiCa3_Click(object sender, EventArgs e)
         {
-            dangKiCa(dtChonNgayLamCa3, cbbGioBatDauCa3, cbbGioKetThucCa3);
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            dangKiCa(dtChonNgayLamCa3,cbbCaLam3);
+            bll.setLabelSLNV(lbCas3, dtChonNgayLamCa3.Value, cbbCaLam3);
+            bll.setCheckBox(checkboxCa3, dtChonNgayLamCa3.Value, cbbCaLam3, MaNV);
         }
 
         private void btnDangKiCa4_Click(object sender, EventArgs e)
         {
-            dangKiCa(dtChonNgayLamCa4, cbbGioBatDauCa4, cbbGioKetThucCa4);
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            dangKiCa(dtChonNgayLamCa4,cbbCaLam4);
+            bll.setLabelSLNV(lbCas4, dtChonNgayLamCa4.Value, cbbCaLam4);
+            bll.setCheckBox(checkboxCa4, dtChonNgayLamCa4.Value, cbbCaLam4, MaNV);
         }
 
         private void btnDangKiCa5_Click(object sender, EventArgs e)
         {
-            dangKiCa(dtChonNgayLamCa5, cbbGioBatDauCa5, cbbGioKetThucCa5);
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            dangKiCa(dtChonNgayLamCa5, cbbCaLam5);
+            bll.setLabelSLNV(lbCas5, dtChonNgayLamCa5.Value, cbbCaLam5);
+            bll.setCheckBox(checkboxCa5, dtChonNgayLamCa5.Value, cbbCaLam5, MaNV);
         }
 
         private void btnDangKiCa6_Click(object sender, EventArgs e)
         {
-            dangKiCa(dtChonNgayLamCa6, cbbGioBatDauCa6, cbbGioKetThucCa6);
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            dangKiCa(dtChonNgayLamCa6, cbbCaLam6);
+            bll.setLabelSLNV(lbCas6, dtChonNgayLamCa6.Value, cbbCaLam6);
+            bll.setCheckBox(checkboxCa6, dtChonNgayLamCa6.Value, cbbCaLam6, MaNV);
+
         }
 
         private void btnDangKiCa7_Click(object sender, EventArgs e)
         {
-            dangKiCa(dtChonNgayLamCa7, cbbGioBatDauCa7, cbbGioKetThucCa7);
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            dangKiCa(dtChonNgayLamCa7, cbbCaLam7);
+            bll.setLabelSLNV(lbCas7, dtChonNgayLamCa7.Value, cbbCaLam7);
+            bll.setCheckBox(checkboxCa7, dtChonNgayLamCa7.Value, cbbCaLam7, MaNV);
+        } 
+        //
+        // Event CBB selected index changed
+        //
+        private void cbbCaLam1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            bll.setCheckBox(checkboxCa1, dtChonNgayLamCa1.Value, cbbCaLam1, MaNV);
+            bll.setLabelSLNV(lbCas1, dtChonNgayLamCa1.Value, cbbCaLam1);            
+        }
+        private void cbbCaLam2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            bll.setCheckBox(checkboxCa2, dtChonNgayLamCa2.Value, cbbCaLam2, MaNV);
+            bll.setLabelSLNV(lbCas2, dtChonNgayLamCa2.Value, cbbCaLam2);
+        }
+
+        private void cbbCaLam3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            bll.setCheckBox(checkboxCa3, dtChonNgayLamCa3.Value, cbbCaLam3, MaNV);
+            bll.setLabelSLNV(lbCas3, dtChonNgayLamCa3.Value, cbbCaLam3);         
+        }
+
+        private void cbbCaLam4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            bll.setCheckBox(checkboxCa4, dtChonNgayLamCa4.Value, cbbCaLam4, MaNV);
+            bll.setLabelSLNV(lbCas4, dtChonNgayLamCa4.Value, cbbCaLam4);
+        }
+
+        private void cbbCaLam5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            bll.setCheckBox(checkboxCa5, dtChonNgayLamCa5.Value, cbbCaLam5, MaNV);
+            bll.setLabelSLNV(lbCas5, dtChonNgayLamCa5.Value, cbbCaLam5);
+
+        }
+
+        private void cbbCaLam6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            bll.setCheckBox(checkboxCa6, dtChonNgayLamCa6.Value, cbbCaLam6, MaNV);
+            bll.setLabelSLNV(lbCas6, dtChonNgayLamCa6.Value, cbbCaLam6);
+
+        }
+
+        private void cbbCaLam7_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            bll.setCheckBox(checkboxCa7, dtChonNgayLamCa7.Value, cbbCaLam7, MaNV);
+            bll.setLabelSLNV(lbCas7, dtChonNgayLamCa7.Value, cbbCaLam7);
+
+        }
+        //
+        //Event Xoa Click
+        //
+        private void btnXoaCa1_Click(object sender, EventArgs e)
+        {
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            XoaCa(dtChonNgayLamCa1.Value, cbbCaLam1, checkboxCa1);
+            bll.setLabelSLNV(lbCas1, dtChonNgayLamCa1.Value, cbbCaLam1);
+            bll.setCheckBox(checkboxCa1, dtChonNgayLamCa1.Value, cbbCaLam1, MaNV);
+        }
+
+        private void btnXoaCa2_Click(object sender, EventArgs e)
+        {
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            XoaCa(dtChonNgayLamCa2.Value, cbbCaLam2, checkboxCa2);
+            bll.setLabelSLNV(lbCas2, dtChonNgayLamCa2.Value, cbbCaLam2);
+            bll.setCheckBox(checkboxCa2, dtChonNgayLamCa2.Value, cbbCaLam2, MaNV);
+        }
+
+        private void btnXoaCa3_Click(object sender, EventArgs e)
+        {
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            XoaCa(dtChonNgayLamCa3.Value, cbbCaLam3, checkboxCa3);
+            bll.setLabelSLNV(lbCas3, dtChonNgayLamCa3.Value, cbbCaLam3);
+            bll.setCheckBox(checkboxCa3, dtChonNgayLamCa3.Value, cbbCaLam3, MaNV);
+        }
+
+        private void btnXoaCa4_Click(object sender, EventArgs e)
+        {
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            XoaCa(dtChonNgayLamCa4.Value, cbbCaLam4, checkboxCa4);
+            bll.setLabelSLNV(lbCas4, dtChonNgayLamCa4.Value, cbbCaLam4);
+            bll.setCheckBox(checkboxCa4, dtChonNgayLamCa4.Value, cbbCaLam4, MaNV);
+        }
+
+        private void btnXoaCa5_Click(object sender, EventArgs e)
+        {
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            XoaCa(dtChonNgayLamCa5.Value, cbbCaLam5, checkboxCa5);
+            bll.setLabelSLNV(lbCas5, dtChonNgayLamCa5.Value, cbbCaLam5);
+            bll.setCheckBox(checkboxCa5, dtChonNgayLamCa5.Value, cbbCaLam5, MaNV);
+        }
+
+        private void btnXoaCa6_Click(object sender, EventArgs e)
+        {
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            XoaCa(dtChonNgayLamCa6.Value, cbbCaLam6, checkboxCa6);
+            bll.setLabelSLNV(lbCas6, dtChonNgayLamCa6.Value, cbbCaLam6);
+            bll.setCheckBox(checkboxCa6, dtChonNgayLamCa6.Value, cbbCaLam6, MaNV);
+        }
+
+        private void btnXoaCa7_Click(object sender, EventArgs e)
+        {
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            XoaCa(dtChonNgayLamCa7.Value, cbbCaLam7, checkboxCa7);
+            bll.setLabelSLNV(lbCas7, dtChonNgayLamCa7.Value, cbbCaLam7);
+            bll.setCheckBox(checkboxCa7, dtChonNgayLamCa7.Value, cbbCaLam7, MaNV);
+        }
+        //
+        // event DateTimepicker value changed
+        //
+        private void dtChonNgayLamCa1_ValueChanged(object sender, EventArgs e)
+        {
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            cbbCaLam1.SelectedIndex = 0;
+            bll.setCheckBox(checkboxCa1, dtChonNgayLamCa1.Value, cbbCaLam1, MaNV);
+            bll.setLabelSLNV(lbCas1, dtChonNgayLamCa1.Value, cbbCaLam1);            
+        }
+
+        private void dtChonNgayLamCa2_ValueChanged(object sender, EventArgs e)
+        {
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            cbbCaLam2.SelectedIndex = 0;
+            bll.setCheckBox(checkboxCa2, dtChonNgayLamCa2.Value, cbbCaLam2, MaNV);
+            bll.setLabelSLNV(lbCas2, dtChonNgayLamCa2.Value, cbbCaLam2);
+        }
+
+        private void dtChonNgayLamCa3_ValueChanged(object sender, EventArgs e)
+        {
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            cbbCaLam3.SelectedIndex = 0;
+            bll.setCheckBox(checkboxCa3, dtChonNgayLamCa3.Value, cbbCaLam3, MaNV);
+            bll.setLabelSLNV(lbCas3, dtChonNgayLamCa3.Value, cbbCaLam3);
+        }
+
+        private void dtChonNgayLamCa4_ValueChanged(object sender, EventArgs e)
+        {
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            cbbCaLam4.SelectedIndex = 0;
+            bll.setCheckBox(checkboxCa4, dtChonNgayLamCa4.Value, cbbCaLam4, MaNV);
+            bll.setLabelSLNV(lbCas4, dtChonNgayLamCa4.Value, cbbCaLam4);
+        }
+
+        private void dtChonNgayLamCa5_ValueChanged(object sender, EventArgs e)
+        {
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            cbbCaLam5.SelectedIndex = 0;
+            bll.setCheckBox(checkboxCa5, dtChonNgayLamCa5.Value, cbbCaLam5, MaNV);
+            bll.setLabelSLNV(lbCas5, dtChonNgayLamCa5.Value, cbbCaLam5);
+        }
+
+        private void dtChonNgayLamCa6_ValueChanged(object sender, EventArgs e)
+        {
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            cbbCaLam6.SelectedIndex = 0;
+            bll.setCheckBox(checkboxCa6, dtChonNgayLamCa6.Value, cbbCaLam6, MaNV);
+            bll.setLabelSLNV(lbCas6, dtChonNgayLamCa6.Value, cbbCaLam6);
+        }
+
+        private void dtChonNgayLamCa7_ValueChanged(object sender, EventArgs e)
+        {
+            QLTS_SM_BLL bll = new QLTS_SM_BLL();
+            cbbCaLam7.SelectedIndex = 0;
+            bll.setCheckBox(checkboxCa7, dtChonNgayLamCa7.Value, cbbCaLam7, MaNV);
+            bll.setLabelSLNV(lbCas7, dtChonNgayLamCa7.Value, cbbCaLam7);
         }
     }
 }

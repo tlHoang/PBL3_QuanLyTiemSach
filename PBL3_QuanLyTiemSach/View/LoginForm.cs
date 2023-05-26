@@ -51,12 +51,19 @@ namespace PBL3_QuanLyTiemSach.View
             {
                 MessageBox.Show("Sai tài khoản hoặc mật khẩu");
             }
+            else if (username == "admin")
+            {
+                this.Hide();
+                Form5 f = new Form5(0);
+                f.ShowDialog();
+                this.Close();
+                DialogResult = DialogResult.OK;
+            }
             else
             {
-                //this.Hide();
-                //Form1 f = new Form1(MaNV);
-                //f.setRole(txt_username.Text);
-                //f.ShowDialog();
+                this.Hide();
+                Form5 f = new Form5(this.MaNV);
+                f.ShowDialog();
                 this.Close();
                 DialogResult = DialogResult.OK;
             }
@@ -70,22 +77,17 @@ namespace PBL3_QuanLyTiemSach.View
                 btnDangNhap.PerformClick();
             }
         }
-
-        Image show = Login_Resource.show;
-        Image hide = Login_Resource.hide;
-
         private void button1_Click(object sender, EventArgs e)
         {
             txt_password.Select();
-            if (button1.Image == show)
+            if (button1.Image == Login_Resource.show)
             {
-                button1.Image = hide;
-                //txt_password.PasswordChar = '*';
+                button1.Image = Login_Resource.hide;
                 txt_password.UseSystemPasswordChar = true;
             }
             else
             {
-                button1.Image = show;
+                button1.Image = Login_Resource.show;
                 txt_password.PasswordChar = '\0';
                 txt_password.UseSystemPasswordChar = false;
             }

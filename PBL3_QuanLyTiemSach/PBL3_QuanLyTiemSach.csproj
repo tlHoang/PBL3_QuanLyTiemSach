@@ -99,6 +99,12 @@
     <Compile Include="DTO\BookInfo.cs" />
     <Compile Include="DTO\HoaDon.cs" />
     <Compile Include="DTO\SMCBBItems_Start_End_Time.cs" />
+    <Compile Include="MainForm_Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainForm_Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="View\BillUI\Bill.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,12 @@
     </Compile>
     <Compile Include="View\ShifManageUI\FormSMDangKiCa.Designer.cs">
       <DependentUpon>FormSMDangKiCa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ShifManageUI\ShiftManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ShifManageUI\ShiftManage.Designer.cs">
+      <DependentUpon>ShiftManage.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ShifManageUI\UpdateSMForm.cs">
       <SubType>Form</SubType>
@@ -188,7 +200,6 @@
     <Compile Include="View\SellUI\Sell.Designer.cs">
       <DependentUpon>Sell.cs</DependentUpon>
     </Compile>
-    <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\LoginForm.cs">
@@ -237,6 +248,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Login_Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainForm_Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MainForm_Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\BillUI\Bill.resx">
       <DependentUpon>Bill.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form5.resx">
+      <DependentUpon>Form5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ImportUI\EditBookInfo.resx">
       <DependentUpon>EditBookInfo.cs</DependentUpon>
@@ -282,6 +300,9 @@
     <EmbeddedResource Include="View\ShifManageUI\FormSMDangKiCa.resx">
       <DependentUpon>FormSMDangKiCa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ShifManageUI\ShiftManage.resx">
+      <DependentUpon>ShiftManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ShifManageUI\UpdateSMForm.resx">
       <DependentUpon>UpdateSMForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -297,16 +318,6 @@
     <EmbeddedResource Include="View\SellUI\SearchBookInfo.resx">
       <DependentUpon>SearchBookInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\StatisticUI\ChangePrice.resx">
-      <DependentUpon>ChangePrice.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\StatisticUI\Statistic.resx">
-      <DependentUpon>Statistic.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\StatisticUI\StatisticDetail.resx">
-      <DependentUpon>StatisticDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="obj\Debug\PBL3_QuanLyTiemSach.csproj.AssemblyReference.cache" />
     <None Include="packages.config" />
@@ -329,6 +340,27 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <Content Include="Resources\494bc269c50505bf626d2b79d4f6b4ef.jpg" />
+    <Content Include="Resources\a8b0fcaf3c70960a9e76a32a49ea75b7.jpg" />
+    <None Include="Resources\male_user_45px.png" />
+    <None Include="Resources\female_profile_45px.png" />
+    <None Include="Resources\clock.png" />
+    <None Include="Resources\thongke.png" />
+    <None Include="Resources\graph_28px.png" />
+    <None Include="Resources\clock_28px.png" />
+    <None Include="Resources\clock_click.png" />
+    <None Include="Resources\bill_28px.png" />
+    <None Include="Resources\bill_click.png" />
+    <None Include="Resources\packing_28px.png" />
+    <None Include="Resources\import_click.png" />
+    <None Include="Resources\checkout_28px.png" />
+    <None Include="Resources\28px.png" />
+    <None Include="Resources\sell_click.png" />
+    <None Include="Resources\book_28px_1.png" />
+    <None Include="Resources\book_click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

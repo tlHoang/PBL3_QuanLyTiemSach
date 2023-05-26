@@ -131,5 +131,10 @@ namespace PBL3_QuanLyTiemSach.View.StaffManager
                 staffInfoForm.ShowDialog();
             }
         }
+
+        private void metroComboBox_sort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

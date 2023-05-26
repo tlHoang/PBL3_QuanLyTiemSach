@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel_Left = new System.Windows.Forms.Panel();
             this.button_HoaDon = new System.Windows.Forms.Button();
+            this.btnCaLam = new System.Windows.Forms.Button();
+            this.btnThongTinSach = new System.Windows.Forms.Button();
             this.labelRole = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
@@ -52,6 +54,8 @@
             // 
             this.panel_Left.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
             this.panel_Left.Controls.Add(this.button_HoaDon);
+            this.panel_Left.Controls.Add(this.btnCaLam);
+            this.panel_Left.Controls.Add(this.btnThongTinSach);
             this.panel_Left.Controls.Add(this.labelRole);
             this.panel_Left.Controls.Add(this.labelName);
             this.panel_Left.Controls.Add(this.pictureBox);
@@ -63,7 +67,7 @@
             this.panel_Left.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_Left.Location = new System.Drawing.Point(0, 0);
             this.panel_Left.Name = "panel_Left";
-            this.panel_Left.Size = new System.Drawing.Size(153, 470);
+            this.panel_Left.Size = new System.Drawing.Size(153, 548);
             this.panel_Left.TabIndex = 0;
             this.panel_Left.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel_Left.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -82,6 +86,34 @@
             this.button_HoaDon.Text = "Xem hoá đơn";
             this.button_HoaDon.UseVisualStyleBackColor = true;
             this.button_HoaDon.Click += new System.EventHandler(this.button_HoaDon_Click);
+            // 
+            // btnCaLam
+            // 
+            this.btnCaLam.FlatAppearance.BorderSize = 0;
+            this.btnCaLam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCaLam.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCaLam.ForeColor = System.Drawing.Color.White;
+            this.btnCaLam.Location = new System.Drawing.Point(0, 363);
+            this.btnCaLam.Name = "btnCaLam";
+            this.btnCaLam.Size = new System.Drawing.Size(153, 54);
+            this.btnCaLam.TabIndex = 7;
+            this.btnCaLam.Text = "Ca Làm";
+            this.btnCaLam.UseVisualStyleBackColor = true;
+            this.btnCaLam.Click += new System.EventHandler(this.btnCaLam_Click);
+            // 
+            // btnThongTinSach
+            // 
+            this.btnThongTinSach.FlatAppearance.BorderSize = 0;
+            this.btnThongTinSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThongTinSach.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThongTinSach.ForeColor = System.Drawing.Color.White;
+            this.btnThongTinSach.Location = new System.Drawing.Point(3, 303);
+            this.btnThongTinSach.Name = "btnThongTinSach";
+            this.btnThongTinSach.Size = new System.Drawing.Size(153, 54);
+            this.btnThongTinSach.TabIndex = 8;
+            this.btnThongTinSach.Text = "Thông Tin Sách";
+            this.btnThongTinSach.UseVisualStyleBackColor = true;
+            this.btnThongTinSach.Click += new System.EventHandler(this.btnThongTinSach_Click);
             // 
             // labelRole
             // 
@@ -189,7 +221,7 @@
             this.panel_Top.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel_Top.Location = new System.Drawing.Point(153, 0);
             this.panel_Top.Name = "panel_Top";
-            this.panel_Top.Size = new System.Drawing.Size(647, 33);
+            this.panel_Top.Size = new System.Drawing.Size(928, 33);
             this.panel_Top.TabIndex = 1;
             this.panel_Top.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel_Top.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -201,7 +233,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(585, 1);
+            this.button5.Location = new System.Drawing.Point(859, 3);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(30, 30);
             this.button5.TabIndex = 1;
@@ -214,7 +246,7 @@
             this.button_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Close.ForeColor = System.Drawing.Color.White;
             this.button_Close.Image = ((System.Drawing.Image)(resources.GetObject("button_Close.Image")));
-            this.button_Close.Location = new System.Drawing.Point(615, 1);
+            this.button_Close.Location = new System.Drawing.Point(895, 3);
             this.button_Close.Name = "button_Close";
             this.button_Close.Size = new System.Drawing.Size(30, 30);
             this.button_Close.TabIndex = 0;
@@ -223,17 +255,16 @@
             // 
             // panel_Body
             // 
-            this.panel_Body.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Body.Location = new System.Drawing.Point(153, 33);
             this.panel_Body.Name = "panel_Body";
-            this.panel_Body.Size = new System.Drawing.Size(647, 437);
+            this.panel_Body.Size = new System.Drawing.Size(925, 515);
             this.panel_Body.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 470);
+            this.ClientSize = new System.Drawing.Size(1081, 548);
             this.Controls.Add(this.panel_Body);
             this.Controls.Add(this.panel_Top);
             this.Controls.Add(this.panel_Left);
@@ -267,6 +298,8 @@
         private System.Windows.Forms.Label labelRole;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Button button_HoaDon;
+        private System.Windows.Forms.Button btnCaLam;
+        private System.Windows.Forms.Button btnThongTinSach;
     }
 }
 
