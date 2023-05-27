@@ -27,6 +27,7 @@ namespace PBL3_QuanLyTiemSach.View
             if (MaNV != 0)
             {
                 Panel9.Hide();
+                Panel11.Hide();
             }
             else
             {
@@ -35,6 +36,7 @@ namespace PBL3_QuanLyTiemSach.View
                 Panel7.Location = new Point(Panel7.Location.X, Panel7.Location.Y - 100);
                 Panel8.Location = new Point(Panel8.Location.X, Panel8.Location.Y - 100);
                 Panel9.Location = new Point(Panel9.Location.X, Panel9.Location.Y - 100);
+                Panel11.Location = new Point(Panel11.Location.X, Panel11.Location.Y - 100);
             }
         }
 
@@ -84,6 +86,7 @@ namespace PBL3_QuanLyTiemSach.View
             HoaDon_Leave();
             CaLam_Leave();
             ThongKe_Leave();
+            NhanVien_Leave();
         }
         private void ThongTinSach_Leave()
         {
@@ -103,6 +106,7 @@ namespace PBL3_QuanLyTiemSach.View
             HoaDon_Leave();
             CaLam_Leave();
             ThongKe_Leave();
+            NhanVien_Leave();
         }
         private void BanHang_Leave()
         {
@@ -122,6 +126,7 @@ namespace PBL3_QuanLyTiemSach.View
             HoaDon_Leave();
             CaLam_Leave();
             ThongKe_Leave();
+            NhanVien_Leave();
         }
         private void NhapHang_Leave()
         {
@@ -140,6 +145,7 @@ namespace PBL3_QuanLyTiemSach.View
             NhapHang_Leave();
             CaLam_Leave();
             ThongKe_Leave();
+            NhanVien_Leave();
         }
         private void HoaDon_Leave()
         {
@@ -157,6 +163,7 @@ namespace PBL3_QuanLyTiemSach.View
             NhapHang_Leave();
             HoaDon_Leave();
             ThongKe_Leave();
+            NhanVien_Leave();
         }
         private void CaLam_Leave()
         {
@@ -174,11 +181,30 @@ namespace PBL3_QuanLyTiemSach.View
             NhapHang_Leave();
             HoaDon_Leave();
             CaLam_Leave();
+            NhanVien_Leave();
         }
         private void ThongKe_Leave()
         {
             label_ThongKe.ForeColor = Color.Black;
             thongkeImg.Image = MainForm_Resource.thongke;
+        }
+
+        private void NhanVien_Click(object sender, EventArgs e)
+        {
+            label_NV.ForeColor = Color.FromArgb(255, 70, 80);
+            nhanvienImg.Image = MainForm_Resource.nhanvien_click;
+
+            ThongTinSach_Leave();
+            BanHang_Leave();
+            NhapHang_Leave();
+            HoaDon_Leave();
+            CaLam_Leave();
+            ThongKe_Leave();
+        }
+        private void NhanVien_Leave()
+        {
+            label_NV.ForeColor = Color.Black;
+            nhanvienImg.Image = MainForm_Resource.nhanvien;
         }
 
         private void DangXuat_Click(object sender, EventArgs e)
