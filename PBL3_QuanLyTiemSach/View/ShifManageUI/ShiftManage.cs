@@ -159,8 +159,15 @@ namespace PBL3_QuanLyTiemSach.View
                     if (selectedRow != null)
                     {
                         int maNV = Convert.ToInt32(selectedRow.Cells["Mã Nhân Viên"].Value.ToString());
-                        bll.DeleteCa(ADMaCa, IDStaff,maNV);
-                        dgvShift.DataSource = bll.getDataStaffByIDShift(ADMaCa);                        
+                        if (maNV == null)
+                        {
+                            KryptonMessageBox.Show("Hãy chọn Nhân Viên cần xóa");
+                        }
+                        else
+                        {
+                            bll.DeleteCa(ADMaCa, IDStaff, maNV);
+                            dgvShift.DataSource = bll.getDataStaffByIDShift(ADMaCa);
+                        }
                     }
                     else
                     {
@@ -235,6 +242,7 @@ namespace PBL3_QuanLyTiemSach.View
                 //admin
                 if (bll.IsAdmin(IDStaff))
                 {
+                    btnXoaCa.Hide();
                     turnOnDoubleCLick = true;
                     if (selected == "Tất Cả")
                     {

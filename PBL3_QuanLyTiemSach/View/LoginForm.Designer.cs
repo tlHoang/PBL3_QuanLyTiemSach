@@ -157,7 +157,6 @@
             this.Controls.Add(this.metroLabel1);
             this.Name = "LoginForm";
             this.Text = "Đăng nhập";
-            this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.TopMost = true;
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoginForm_KeyDown);
             this.ResumeLayout(false);
