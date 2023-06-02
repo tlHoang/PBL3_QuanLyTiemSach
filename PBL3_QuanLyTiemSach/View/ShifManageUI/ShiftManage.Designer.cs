@@ -49,7 +49,7 @@
             // 
             this.btnSMLichLam.BackColor = System.Drawing.Color.Black;
             this.btnSMLichLam.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSMLichLam.BackgroundImage")));
-            this.btnSMLichLam.Location = new System.Drawing.Point(842, 72);
+            this.btnSMLichLam.Location = new System.Drawing.Point(610, 73);
             this.btnSMLichLam.Margin = new System.Windows.Forms.Padding(2);
             this.btnSMLichLam.Name = "btnSMLichLam";
             this.btnSMLichLam.Size = new System.Drawing.Size(119, 32);
@@ -61,7 +61,7 @@
             // 
             this.btnSMDangKiCa.BackColor = System.Drawing.Color.Black;
             this.btnSMDangKiCa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSMDangKiCa.BackgroundImage")));
-            this.btnSMDangKiCa.Location = new System.Drawing.Point(842, 124);
+            this.btnSMDangKiCa.Location = new System.Drawing.Point(610, 125);
             this.btnSMDangKiCa.Margin = new System.Windows.Forms.Padding(2);
             this.btnSMDangKiCa.Name = "btnSMDangKiCa";
             this.btnSMDangKiCa.Size = new System.Drawing.Size(119, 32);
@@ -73,7 +73,7 @@
             // 
             this.btnXoaCa.BackColor = System.Drawing.Color.Black;
             this.btnXoaCa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnXoaCa.BackgroundImage")));
-            this.btnXoaCa.Location = new System.Drawing.Point(842, 170);
+            this.btnXoaCa.Location = new System.Drawing.Point(610, 171);
             this.btnXoaCa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoaCa.Name = "btnXoaCa";
             this.btnXoaCa.Size = new System.Drawing.Size(119, 32);
@@ -85,7 +85,7 @@
             // 
             this.btnSMThoat.BackColor = System.Drawing.Color.Black;
             this.btnSMThoat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSMThoat.BackgroundImage")));
-            this.btnSMThoat.Location = new System.Drawing.Point(842, 467);
+            this.btnSMThoat.Location = new System.Drawing.Point(610, 468);
             this.btnSMThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btnSMThoat.Name = "btnSMThoat";
             this.btnSMThoat.Size = new System.Drawing.Size(119, 32);
@@ -97,7 +97,7 @@
             // 
             this.btnSMQuayLai.BackColor = System.Drawing.Color.Black;
             this.btnSMQuayLai.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSMQuayLai.BackgroundImage")));
-            this.btnSMQuayLai.Location = new System.Drawing.Point(842, 419);
+            this.btnSMQuayLai.Location = new System.Drawing.Point(610, 420);
             this.btnSMQuayLai.Name = "btnSMQuayLai";
             this.btnSMQuayLai.Size = new System.Drawing.Size(119, 32);
             this.btnSMQuayLai.TabIndex = 3;
@@ -110,6 +110,7 @@
             this.dtSMChonNgay.Margin = new System.Windows.Forms.Padding(2);
             this.dtSMChonNgay.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtSMChonNgay.Name = "dtSMChonNgay";
+            this.dtSMChonNgay.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtSMChonNgay.Size = new System.Drawing.Size(171, 29);
             this.dtSMChonNgay.TabIndex = 4;
             // 
@@ -125,17 +126,17 @@
             // 
             // txtbxTenNhanVien
             // 
-            this.txtbxTenNhanVien.Location = new System.Drawing.Point(500, 39);
+            this.txtbxTenNhanVien.Location = new System.Drawing.Point(435, 40);
             this.txtbxTenNhanVien.Name = "txtbxTenNhanVien";
             this.txtbxTenNhanVien.ReadOnly = true;
-            this.txtbxTenNhanVien.Size = new System.Drawing.Size(216, 23);
+            this.txtbxTenNhanVien.Size = new System.Drawing.Size(170, 23);
             this.txtbxTenNhanVien.TabIndex = 6;
             // 
             // btnChinhSua
             // 
             this.btnChinhSua.BackColor = System.Drawing.Color.Black;
             this.btnChinhSua.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnChinhSua.BackgroundImage")));
-            this.btnChinhSua.Location = new System.Drawing.Point(842, 218);
+            this.btnChinhSua.Location = new System.Drawing.Point(610, 219);
             this.btnChinhSua.Margin = new System.Windows.Forms.Padding(2);
             this.btnChinhSua.Name = "btnChinhSua";
             this.btnChinhSua.Size = new System.Drawing.Size(119, 32);
@@ -145,7 +146,7 @@
             // 
             // metroLabel1
             // 
-            this.metroLabel1.Location = new System.Drawing.Point(389, 39);
+            this.metroLabel1.Location = new System.Drawing.Point(324, 40);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(91, 20);
             this.metroLabel1.TabIndex = 7;
@@ -167,7 +168,7 @@
             this.dgvShift.Name = "dgvShift";
             this.dgvShift.ReadOnly = true;
             this.dgvShift.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvShift.Size = new System.Drawing.Size(792, 427);
+            this.dgvShift.Size = new System.Drawing.Size(590, 427);
             this.dgvShift.TabIndex = 10;
             this.dgvShift.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvShift_CellMouseDoubleClick);
             // 

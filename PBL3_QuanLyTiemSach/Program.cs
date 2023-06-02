@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using PBL3_QuanLyTiemSach.View;
 using PBL3_QuanLyTiemSach.View.SellUI;
 using PBL3_QuanLyTiemSach.View.ImportUI;
+using PBL3_QuanLyTiemSach.View.StatisticUI;
 
 namespace PBL3_QuanLyTiemSach
 {
@@ -21,11 +22,11 @@ namespace PBL3_QuanLyTiemSach
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+
             LoginForm loginForm = new LoginForm();
             if (loginForm.ShowDialog() == DialogResult.OK && loginForm.MaNV != -1)
             {
-                Application.Run(new Form1(loginForm.MaNV));
+                Application.Run(new Form5(loginForm.MaNV));
             }
             else
             {

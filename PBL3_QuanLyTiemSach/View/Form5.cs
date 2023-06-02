@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using PBL3_QuanLyTiemSach.BLL;
+using PBL3_QuanLyTiemSach.View.StatisticUI;
 
 namespace PBL3_QuanLyTiemSach.View
 {
@@ -64,7 +65,7 @@ namespace PBL3_QuanLyTiemSach.View
         }
         public void setName(int MaNV)
         {
-            if (MaNV != 0)
+            if (MaNV != 1)
             {
                 TaiKhoanBLL bll = new TaiKhoanBLL();
                 string[] fullName = bll.getNameFromMaNV(this.MaNV).Split(' ');
@@ -80,6 +81,8 @@ namespace PBL3_QuanLyTiemSach.View
         {
             label_ThongTinSach.ForeColor = Color.FromArgb(255, 70, 80);
             BookImg.Image = MainForm_Resource.book_click;
+
+            OpenForm(new BookInfo());
 
             BanHang_Leave();
             NhapHang_Leave();
@@ -138,6 +141,7 @@ namespace PBL3_QuanLyTiemSach.View
         {
             label_HoaDon.ForeColor = Color.FromArgb(255, 70, 80);
             hoadonImg.Image = MainForm_Resource.bill_click;
+
             OpenForm(new Bill());
 
             ThongTinSach_Leave();
@@ -158,6 +162,8 @@ namespace PBL3_QuanLyTiemSach.View
             label_CaLam.ForeColor = Color.FromArgb(255, 70, 80);
             calamImg.Image = MainForm_Resource.calam_click;
 
+            OpenForm(new ShiftManage(this, MaNV));
+
             ThongTinSach_Leave();
             BanHang_Leave();
             NhapHang_Leave();
@@ -175,6 +181,8 @@ namespace PBL3_QuanLyTiemSach.View
         {
             label_ThongKe.ForeColor = Color.FromArgb(255, 70, 80);
             thongkeImg.Image = MainForm_Resource.thongke_click;
+
+            OpenForm(new Statistic());
 
             ThongTinSach_Leave();
             BanHang_Leave();
