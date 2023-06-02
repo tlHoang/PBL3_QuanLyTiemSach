@@ -61,9 +61,10 @@ namespace PBL3_QuanLyTiemSach.View
             }
             else
             {
-                //this.Hide();
-                //Form5 f = new Form5(this.MaNV);
-                //f.ShowDialog();
+                this.Hide();
+                Form5 f = new Form5(this.MaNV);
+                f.ShowDialog();
+                f.setAvatar(bll.getGioiTinh(MaNV));
                 this.Close();
                 DialogResult = DialogResult.OK;
             }
