@@ -1,4 +1,4 @@
-﻿using MetroFramework;
+﻿using ComponentFactory.Krypton.Toolkit;
 using PBL3_QuanLyTiemSach.BLL;
 using PBL3_QuanLyTiemSach.View.StaffInfoUI;
 using PBL3_QuanLyTiemSach.View.StaffManager;
@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace PBL3_QuanLyTiemSach.View
 {
-    public partial class LoginForm : MetroFramework.Forms.MetroForm
+    public partial class LoginForm : KryptonForm
     {
         public LoginForm()
         {
@@ -42,7 +42,7 @@ namespace PBL3_QuanLyTiemSach.View
             string password = txt_password.Text;
             if (InvalidInput(username) || InvalidInput(password))
             {
-                MetroMessageBox.Show(this, "Tài khoản hoặc mật khẩu không hợp lệ");
+                KryptonMessageBox.Show(this, "Tài khoản hoặc mật khẩu không hợp lệ");
                 return;
             }
             TaiKhoanBLL bll = new TaiKhoanBLL();
