@@ -169,7 +169,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BookInfo";
             this.Padding = new System.Windows.Forms.Padding(13, 60, 13, 13);
-            this.Text = "Book Information";
+            this.Text = "Quản Lý Sách";
             this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookInfo)).EndInit();

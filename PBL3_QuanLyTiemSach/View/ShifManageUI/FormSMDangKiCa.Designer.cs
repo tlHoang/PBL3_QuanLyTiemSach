@@ -127,7 +127,6 @@
             // 
             // btnDangKiCa1
             // 
-            this.btnDangKiCa1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDangKiCa1.BackgroundImage")));
             this.btnDangKiCa1.Location = new System.Drawing.Point(744, 143);
             this.btnDangKiCa1.Margin = new System.Windows.Forms.Padding(2);
             this.btnDangKiCa1.Name = "btnDangKiCa1";
@@ -490,57 +489,64 @@
             // 
             // dtChonNgayLamCa1
             // 
-            this.dtChonNgayLamCa1.Location = new System.Drawing.Point(194, 142);
+            this.dtChonNgayLamCa1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtChonNgayLamCa1.Location = new System.Drawing.Point(136, 142);
             this.dtChonNgayLamCa1.Name = "dtChonNgayLamCa1";
-            this.dtChonNgayLamCa1.Size = new System.Drawing.Size(138, 21);
+            this.dtChonNgayLamCa1.Size = new System.Drawing.Size(196, 21);
             this.dtChonNgayLamCa1.TabIndex = 26;
             this.dtChonNgayLamCa1.ValueChanged += new System.EventHandler(this.dtChonNgayLamCa1_ValueChanged);
             // 
             // dtChonNgayLamCa2
             // 
-            this.dtChonNgayLamCa2.Location = new System.Drawing.Point(194, 188);
+            this.dtChonNgayLamCa2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtChonNgayLamCa2.Location = new System.Drawing.Point(136, 188);
             this.dtChonNgayLamCa2.Name = "dtChonNgayLamCa2";
-            this.dtChonNgayLamCa2.Size = new System.Drawing.Size(138, 21);
+            this.dtChonNgayLamCa2.Size = new System.Drawing.Size(196, 21);
             this.dtChonNgayLamCa2.TabIndex = 26;
             this.dtChonNgayLamCa2.ValueChanged += new System.EventHandler(this.dtChonNgayLamCa2_ValueChanged);
             // 
             // dtChonNgayLamCa3
             // 
-            this.dtChonNgayLamCa3.Location = new System.Drawing.Point(194, 236);
+            this.dtChonNgayLamCa3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtChonNgayLamCa3.Location = new System.Drawing.Point(136, 236);
             this.dtChonNgayLamCa3.Name = "dtChonNgayLamCa3";
-            this.dtChonNgayLamCa3.Size = new System.Drawing.Size(138, 21);
+            this.dtChonNgayLamCa3.Size = new System.Drawing.Size(196, 21);
             this.dtChonNgayLamCa3.TabIndex = 26;
             this.dtChonNgayLamCa3.ValueChanged += new System.EventHandler(this.dtChonNgayLamCa3_ValueChanged);
             // 
             // dtChonNgayLamCa4
             // 
-            this.dtChonNgayLamCa4.Location = new System.Drawing.Point(194, 284);
+            this.dtChonNgayLamCa4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtChonNgayLamCa4.Location = new System.Drawing.Point(136, 284);
             this.dtChonNgayLamCa4.Name = "dtChonNgayLamCa4";
-            this.dtChonNgayLamCa4.Size = new System.Drawing.Size(138, 21);
+            this.dtChonNgayLamCa4.Size = new System.Drawing.Size(196, 21);
             this.dtChonNgayLamCa4.TabIndex = 26;
             this.dtChonNgayLamCa4.ValueChanged += new System.EventHandler(this.dtChonNgayLamCa4_ValueChanged);
             // 
             // dtChonNgayLamCa5
             // 
-            this.dtChonNgayLamCa5.Location = new System.Drawing.Point(194, 334);
+            this.dtChonNgayLamCa5.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtChonNgayLamCa5.Location = new System.Drawing.Point(136, 334);
             this.dtChonNgayLamCa5.Name = "dtChonNgayLamCa5";
-            this.dtChonNgayLamCa5.Size = new System.Drawing.Size(138, 21);
+            this.dtChonNgayLamCa5.Size = new System.Drawing.Size(196, 21);
             this.dtChonNgayLamCa5.TabIndex = 26;
             this.dtChonNgayLamCa5.ValueChanged += new System.EventHandler(this.dtChonNgayLamCa5_ValueChanged);
             // 
             // dtChonNgayLamCa6
             // 
-            this.dtChonNgayLamCa6.Location = new System.Drawing.Point(194, 386);
+            this.dtChonNgayLamCa6.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtChonNgayLamCa6.Location = new System.Drawing.Point(136, 386);
             this.dtChonNgayLamCa6.Name = "dtChonNgayLamCa6";
-            this.dtChonNgayLamCa6.Size = new System.Drawing.Size(138, 21);
+            this.dtChonNgayLamCa6.Size = new System.Drawing.Size(196, 21);
             this.dtChonNgayLamCa6.TabIndex = 26;
             this.dtChonNgayLamCa6.ValueChanged += new System.EventHandler(this.dtChonNgayLamCa6_ValueChanged);
             // 
             // dtChonNgayLamCa7
             // 
-            this.dtChonNgayLamCa7.Location = new System.Drawing.Point(194, 433);
+            this.dtChonNgayLamCa7.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtChonNgayLamCa7.Location = new System.Drawing.Point(136, 433);
             this.dtChonNgayLamCa7.Name = "dtChonNgayLamCa7";
-            this.dtChonNgayLamCa7.Size = new System.Drawing.Size(138, 21);
+            this.dtChonNgayLamCa7.Size = new System.Drawing.Size(196, 21);
             this.dtChonNgayLamCa7.TabIndex = 26;
             this.dtChonNgayLamCa7.ValueChanged += new System.EventHandler(this.dtChonNgayLamCa7_ValueChanged);
             // 
@@ -578,64 +584,64 @@
             // 
             this.kryptonLabel7.Location = new System.Drawing.Point(30, 140);
             this.kryptonLabel7.Name = "kryptonLabel7";
-            this.kryptonLabel7.Size = new System.Drawing.Size(34, 20);
+            this.kryptonLabel7.Size = new System.Drawing.Size(17, 20);
             this.kryptonLabel7.TabIndex = 32;
-            this.kryptonLabel7.Values.Text = "Ca 1 ";
+            this.kryptonLabel7.Values.Text = "1 ";
             // 
             // kryptonLabel8
             // 
             this.kryptonLabel8.Location = new System.Drawing.Point(30, 187);
             this.kryptonLabel8.Name = "kryptonLabel8";
-            this.kryptonLabel8.Size = new System.Drawing.Size(34, 20);
+            this.kryptonLabel8.Size = new System.Drawing.Size(17, 20);
             this.kryptonLabel8.TabIndex = 32;
-            this.kryptonLabel8.Values.Text = "Ca 2";
+            this.kryptonLabel8.Values.Text = "2";
             // 
             // kryptonLabel9
             // 
             this.kryptonLabel9.Location = new System.Drawing.Point(30, 234);
             this.kryptonLabel9.Name = "kryptonLabel9";
-            this.kryptonLabel9.Size = new System.Drawing.Size(34, 20);
+            this.kryptonLabel9.Size = new System.Drawing.Size(17, 20);
             this.kryptonLabel9.TabIndex = 32;
-            this.kryptonLabel9.Values.Text = "Ca 3";
+            this.kryptonLabel9.Values.Text = "3";
             // 
             // kryptonLabel10
             // 
             this.kryptonLabel10.Location = new System.Drawing.Point(30, 282);
             this.kryptonLabel10.Name = "kryptonLabel10";
-            this.kryptonLabel10.Size = new System.Drawing.Size(34, 20);
+            this.kryptonLabel10.Size = new System.Drawing.Size(17, 20);
             this.kryptonLabel10.TabIndex = 32;
-            this.kryptonLabel10.Values.Text = "Ca 4";
+            this.kryptonLabel10.Values.Text = "4";
             // 
             // kryptonLabel11
             // 
             this.kryptonLabel11.Location = new System.Drawing.Point(30, 335);
             this.kryptonLabel11.Name = "kryptonLabel11";
-            this.kryptonLabel11.Size = new System.Drawing.Size(34, 20);
+            this.kryptonLabel11.Size = new System.Drawing.Size(17, 20);
             this.kryptonLabel11.TabIndex = 32;
-            this.kryptonLabel11.Values.Text = "Ca 5";
+            this.kryptonLabel11.Values.Text = "5";
             // 
             // kryptonLabel12
             // 
             this.kryptonLabel12.Location = new System.Drawing.Point(30, 386);
             this.kryptonLabel12.Name = "kryptonLabel12";
-            this.kryptonLabel12.Size = new System.Drawing.Size(34, 20);
+            this.kryptonLabel12.Size = new System.Drawing.Size(17, 20);
             this.kryptonLabel12.TabIndex = 32;
-            this.kryptonLabel12.Values.Text = "Ca 6";
+            this.kryptonLabel12.Values.Text = "6";
             // 
             // kryptonLabel13
             // 
             this.kryptonLabel13.Location = new System.Drawing.Point(30, 433);
             this.kryptonLabel13.Name = "kryptonLabel13";
-            this.kryptonLabel13.Size = new System.Drawing.Size(34, 20);
+            this.kryptonLabel13.Size = new System.Drawing.Size(17, 20);
             this.kryptonLabel13.TabIndex = 32;
-            this.kryptonLabel13.Values.Text = "Ca 7";
+            this.kryptonLabel13.Values.Text = "7";
             // 
             // kryptonDockableWorkspace1
             // 
             this.kryptonDockableWorkspace1.AutoHiddenHost = false;
             this.kryptonDockableWorkspace1.CompactFlags = ((ComponentFactory.Krypton.Workspace.CompactFlags)(((ComponentFactory.Krypton.Workspace.CompactFlags.RemoveEmptyCells | ComponentFactory.Krypton.Workspace.CompactFlags.RemoveEmptySequences) 
             | ComponentFactory.Krypton.Workspace.CompactFlags.PromoteLeafs)));
-            this.kryptonDockableWorkspace1.Location = new System.Drawing.Point(155, 128);
+            this.kryptonDockableWorkspace1.Location = new System.Drawing.Point(103, 128);
             this.kryptonDockableWorkspace1.Name = "kryptonDockableWorkspace1";
             // 
             // 
@@ -643,7 +649,7 @@
             this.kryptonDockableWorkspace1.Root.UniqueName = "C19E080EAF8E49997BB88E4A6CBA0CC4";
             this.kryptonDockableWorkspace1.Root.WorkspaceControl = this.kryptonDockableWorkspace1;
             this.kryptonDockableWorkspace1.ShowMaximizeButton = false;
-            this.kryptonDockableWorkspace1.Size = new System.Drawing.Size(188, 345);
+            this.kryptonDockableWorkspace1.Size = new System.Drawing.Size(240, 345);
             this.kryptonDockableWorkspace1.TabIndex = 33;
             this.kryptonDockableWorkspace1.TabStop = true;
             // 
@@ -660,7 +666,7 @@
             this.kryptonDockableWorkspace2.Root.UniqueName = "C19E080EAF8E49997BB88E4A6CBA0CC4";
             this.kryptonDockableWorkspace2.Root.WorkspaceControl = this.kryptonDockableWorkspace2;
             this.kryptonDockableWorkspace2.ShowMaximizeButton = false;
-            this.kryptonDockableWorkspace2.Size = new System.Drawing.Size(122, 345);
+            this.kryptonDockableWorkspace2.Size = new System.Drawing.Size(63, 345);
             this.kryptonDockableWorkspace2.TabIndex = 33;
             this.kryptonDockableWorkspace2.TabStop = true;
             // 
@@ -878,6 +884,7 @@
             this.Name = "FormSMDangKiCa";
             this.Padding = new System.Windows.Forms.Padding(13, 60, 13, 13);
             this.Text = "Đăng Kí Ca Trong Tuần";
+            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.cbbCaLam2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbCaLam3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbCaLam4)).EndInit();
