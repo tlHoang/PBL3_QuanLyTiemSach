@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShiftManage));
             this.btnSMLichLam = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnSMDangKiCa = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnXoaCa = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -38,9 +37,10 @@
             this.btnSMXem = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.txtbxTenNhanVien = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.btnChinhSua = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.metroLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lbtenNhv = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.cbbTimeShowCa = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.dgvShift = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.TimeAdminLichLam = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.cbbTimeShowCa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShift)).BeginInit();
             this.SuspendLayout();
@@ -48,7 +48,6 @@
             // btnSMLichLam
             // 
             this.btnSMLichLam.BackColor = System.Drawing.Color.Black;
-            this.btnSMLichLam.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSMLichLam.BackgroundImage")));
             this.btnSMLichLam.Location = new System.Drawing.Point(610, 73);
             this.btnSMLichLam.Margin = new System.Windows.Forms.Padding(2);
             this.btnSMLichLam.Name = "btnSMLichLam";
@@ -60,7 +59,6 @@
             // btnSMDangKiCa
             // 
             this.btnSMDangKiCa.BackColor = System.Drawing.Color.Black;
-            this.btnSMDangKiCa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSMDangKiCa.BackgroundImage")));
             this.btnSMDangKiCa.Location = new System.Drawing.Point(610, 125);
             this.btnSMDangKiCa.Margin = new System.Windows.Forms.Padding(2);
             this.btnSMDangKiCa.Name = "btnSMDangKiCa";
@@ -72,7 +70,6 @@
             // btnXoaCa
             // 
             this.btnXoaCa.BackColor = System.Drawing.Color.Black;
-            this.btnXoaCa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnXoaCa.BackgroundImage")));
             this.btnXoaCa.Location = new System.Drawing.Point(610, 171);
             this.btnXoaCa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoaCa.Name = "btnXoaCa";
@@ -84,7 +81,6 @@
             // btnSMThoat
             // 
             this.btnSMThoat.BackColor = System.Drawing.Color.Black;
-            this.btnSMThoat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSMThoat.BackgroundImage")));
             this.btnSMThoat.Location = new System.Drawing.Point(610, 468);
             this.btnSMThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btnSMThoat.Name = "btnSMThoat";
@@ -96,7 +92,6 @@
             // btnSMQuayLai
             // 
             this.btnSMQuayLai.BackColor = System.Drawing.Color.Black;
-            this.btnSMQuayLai.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSMQuayLai.BackgroundImage")));
             this.btnSMQuayLai.Location = new System.Drawing.Point(610, 420);
             this.btnSMQuayLai.Name = "btnSMQuayLai";
             this.btnSMQuayLai.Size = new System.Drawing.Size(119, 32);
@@ -106,11 +101,11 @@
             // 
             // dtSMChonNgay
             // 
+            this.dtSMChonNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtSMChonNgay.Location = new System.Drawing.Point(133, 34);
             this.dtSMChonNgay.Margin = new System.Windows.Forms.Padding(2);
             this.dtSMChonNgay.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtSMChonNgay.Name = "dtSMChonNgay";
-            this.dtSMChonNgay.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtSMChonNgay.Size = new System.Drawing.Size(171, 29);
             this.dtSMChonNgay.TabIndex = 4;
             // 
@@ -126,7 +121,7 @@
             // 
             // txtbxTenNhanVien
             // 
-            this.txtbxTenNhanVien.Location = new System.Drawing.Point(435, 40);
+            this.txtbxTenNhanVien.Location = new System.Drawing.Point(435, 34);
             this.txtbxTenNhanVien.Name = "txtbxTenNhanVien";
             this.txtbxTenNhanVien.ReadOnly = true;
             this.txtbxTenNhanVien.Size = new System.Drawing.Size(170, 23);
@@ -135,7 +130,6 @@
             // btnChinhSua
             // 
             this.btnChinhSua.BackColor = System.Drawing.Color.Black;
-            this.btnChinhSua.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnChinhSua.BackgroundImage")));
             this.btnChinhSua.Location = new System.Drawing.Point(610, 219);
             this.btnChinhSua.Margin = new System.Windows.Forms.Padding(2);
             this.btnChinhSua.Name = "btnChinhSua";
@@ -144,13 +138,13 @@
             this.btnChinhSua.Values.Text = "Chỉnh Sửa";
             this.btnChinhSua.Click += new System.EventHandler(this.btnChinhSua_Click);
             // 
-            // metroLabel1
+            // lbtenNhv
             // 
-            this.metroLabel1.Location = new System.Drawing.Point(324, 40);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(91, 20);
-            this.metroLabel1.TabIndex = 7;
-            this.metroLabel1.Values.Text = "Tên Nhân Viên";
+            this.lbtenNhv.Location = new System.Drawing.Point(324, 40);
+            this.lbtenNhv.Name = "lbtenNhv";
+            this.lbtenNhv.Size = new System.Drawing.Size(91, 20);
+            this.lbtenNhv.TabIndex = 7;
+            this.lbtenNhv.Values.Text = "Tên Nhân Viên";
             // 
             // cbbTimeShowCa
             // 
@@ -160,17 +154,34 @@
             this.cbbTimeShowCa.Name = "cbbTimeShowCa";
             this.cbbTimeShowCa.Size = new System.Drawing.Size(171, 21);
             this.cbbTimeShowCa.TabIndex = 9;
+            this.cbbTimeShowCa.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbbTimeShowCa_MouseClick);
             // 
             // dgvShift
             // 
             this.dgvShift.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvShift.HideOuterBorders = true;
             this.dgvShift.Location = new System.Drawing.Point(15, 72);
             this.dgvShift.Name = "dgvShift";
             this.dgvShift.ReadOnly = true;
             this.dgvShift.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvShift.Size = new System.Drawing.Size(590, 427);
             this.dgvShift.TabIndex = 10;
+            this.dgvShift.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShift_CellClick);
             this.dgvShift.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvShift_CellMouseDoubleClick);
+            this.dgvShift.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvShift_ColumnHeaderMouseClick);
+            this.dgvShift.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvShift_ColumnHeaderMouseDoubleClick);
+            // 
+            // TimeAdminLichLam
+            // 
+            this.TimeAdminLichLam.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.TimeAdminLichLam.Location = new System.Drawing.Point(435, 0);
+            this.TimeAdminLichLam.Margin = new System.Windows.Forms.Padding(2);
+            this.TimeAdminLichLam.MinimumSize = new System.Drawing.Size(0, 29);
+            this.TimeAdminLichLam.Name = "TimeAdminLichLam";
+            this.TimeAdminLichLam.Size = new System.Drawing.Size(171, 29);
+            this.TimeAdminLichLam.TabIndex = 4;
+            this.TimeAdminLichLam.ValueChanged += new System.EventHandler(this.TimeAdminLichLam_ValueChanged);
+            this.TimeAdminLichLam.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TimeAdminLichLam_MouseClick);
             // 
             // ShiftManage
             // 
@@ -179,9 +190,10 @@
             this.ClientSize = new System.Drawing.Size(999, 551);
             this.Controls.Add(this.dgvShift);
             this.Controls.Add(this.cbbTimeShowCa);
-            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.lbtenNhv);
             this.Controls.Add(this.txtbxTenNhanVien);
             this.Controls.Add(this.btnSMXem);
+            this.Controls.Add(this.TimeAdminLichLam);
             this.Controls.Add(this.dtSMChonNgay);
             this.Controls.Add(this.btnSMQuayLai);
             this.Controls.Add(this.btnSMThoat);
@@ -211,8 +223,9 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnSMXem;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtbxTenNhanVien;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnChinhSua;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel metroLabel1;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lbtenNhv;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbbTimeShowCa;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvShift;
+        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker TimeAdminLichLam;
     }
 }

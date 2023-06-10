@@ -81,5 +81,13 @@ namespace PBL3_QuanLyTiemSach.BLL
                 return db.NhanViens.Where(p => p.MaNV == MaNV).FirstOrDefault().TenNV;
             }
         }
+
+        public bool getGioiTinh(int MaNV)
+        {
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                return db.NhanViens.Where(p => p.MaNV == MaNV).FirstOrDefault().GioiTinh;
+            }
+        }
     }
 }
