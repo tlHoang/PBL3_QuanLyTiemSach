@@ -263,7 +263,7 @@
             this.labelTongTien.Name = "labelTongTien";
             this.labelTongTien.Size = new System.Drawing.Size(124, 19);
             this.labelTongTien.TabIndex = 19;
-            this.labelTongTien.Text = "0 đ";
+            this.labelTongTien.Text = "0 vnd";
             this.labelTongTien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // metroLabel5
@@ -406,19 +406,16 @@
             // 
             this.Column1.HeaderText = "     Tên sách";
             this.Column1.Name = "Column1";
-            this.Column1.Width = 235;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "    Đơn giá";
             this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "    Số lượng";
             this.Column3.Name = "Column3";
-            this.Column3.Width = 110;
             // 
             // kryptonButton1
             // 
