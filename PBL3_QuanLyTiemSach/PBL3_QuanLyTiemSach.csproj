@@ -367,6 +367,8 @@
     <Content Include="Resources\494bc269c50505bf626d2b79d4f6b4ef.jpg" />
     <Content Include="Resources\a8b0fcaf3c70960a9e76a32a49ea75b7.jpg" />
     <None Include="Resources\btnDangKiCa1.BackgroundImage.png" />
+    <None Include="Resources\management_28px_1.png" />
+    <None Include="Resources\management_28px.png" />
     <None Include="Resources\male_user_45px.png" />
     <None Include="Resources\female_profile_45px.png" />
     <None Include="Resources\clock.png" />
