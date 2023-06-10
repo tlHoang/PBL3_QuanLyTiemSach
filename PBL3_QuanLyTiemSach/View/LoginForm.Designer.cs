@@ -40,7 +40,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(59, 92);
+            this.metroLabel1.Location = new System.Drawing.Point(64, 55);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(95, 19);
             this.metroLabel1.TabIndex = 0;
@@ -49,7 +49,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(59, 144);
+            this.metroLabel2.Location = new System.Drawing.Point(64, 107);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(63, 19);
             this.metroLabel2.TabIndex = 1;
@@ -70,7 +70,7 @@
             this.txt_username.CustomButton.UseSelectable = true;
             this.txt_username.CustomButton.Visible = false;
             this.txt_username.Lines = new string[0];
-            this.txt_username.Location = new System.Drawing.Point(173, 92);
+            this.txt_username.Location = new System.Drawing.Point(178, 55);
             this.txt_username.MaxLength = 32767;
             this.txt_username.Name = "txt_username";
             this.txt_username.PasswordChar = '\0';
@@ -101,7 +101,7 @@
             this.txt_password.CustomButton.UseSelectable = true;
             this.txt_password.CustomButton.Visible = false;
             this.txt_password.Lines = new string[0];
-            this.txt_password.Location = new System.Drawing.Point(173, 144);
+            this.txt_password.Location = new System.Drawing.Point(178, 107);
             this.txt_password.MaxLength = 32767;
             this.txt_password.Name = "txt_password";
             this.txt_password.PasswordChar = '\0';
@@ -119,7 +119,7 @@
             // 
             // btnDangNhap
             // 
-            this.btnDangNhap.Location = new System.Drawing.Point(173, 200);
+            this.btnDangNhap.Location = new System.Drawing.Point(165, 169);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(75, 23);
             this.btnDangNhap.TabIndex = 3;
@@ -137,7 +137,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.Transparent;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(325, 144);
+            this.button1.Location = new System.Drawing.Point(330, 107);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(23, 23);
             this.button1.TabIndex = 4;
@@ -148,6 +148,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(420, 250);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnDangNhap);

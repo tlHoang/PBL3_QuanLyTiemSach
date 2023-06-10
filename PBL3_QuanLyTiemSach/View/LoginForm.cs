@@ -22,14 +22,15 @@ namespace PBL3_QuanLyTiemSach.View
             InitializeComponent();
             SetUI();
         }
-        public int MaNV { get; set; }
 
         private void SetUI()
         {
             txt_password.UseSystemPasswordChar = true;
         }
 
-        public bool InvalidInput(string input)
+        public int MaNV { get; set; }
+
+        private bool InvalidInput(string input)
         {
             return Regex.IsMatch(input, @"^\s*$");
         }
@@ -51,11 +52,11 @@ namespace PBL3_QuanLyTiemSach.View
             }
             else if (MaNV == 1)
             {
-                //this.Hide();
-                //Form5 f = new Form5(1);
-                //f.ShowDialog();
+                this.Hide();
+                Form5 f = new Form5(1);
+                f.ShowDialog();
                 this.Close();
-                DialogResult = DialogResult.OK;
+                //DialogResult = DialogResult.OK;
             }
             else
             {
@@ -64,7 +65,7 @@ namespace PBL3_QuanLyTiemSach.View
                 f.ShowDialog();
                 f.setAvatar(bll.getGioiTinh(MaNV));
                 this.Close();
-                DialogResult = DialogResult.OK;
+                //DialogResult = DialogResult.OK;
             }
         }
 
@@ -76,18 +77,20 @@ namespace PBL3_QuanLyTiemSach.View
                 btnDangNhap.PerformClick();
             }
         }
+        private bool ShowPass = false;
         private void button1_Click(object sender, EventArgs e)
         {
             txt_password.Select();
-            if (button1.Image == Login_Resource.show)
+            if (ShowPass == true)
             {
+                ShowPass = false;
                 button1.Image = Login_Resource.hide;
                 txt_password.UseSystemPasswordChar = true;
             }
             else
             {
+                ShowPass = true;
                 button1.Image = Login_Resource.show;
-                txt_password.PasswordChar = '\0';
                 txt_password.UseSystemPasswordChar = false;
             }
         }

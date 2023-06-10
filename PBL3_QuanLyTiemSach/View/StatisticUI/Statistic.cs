@@ -49,8 +49,9 @@ namespace PBL3_QuanLyTiemSach.View.StatisticUI
             dgv_luong.Columns[0].HeaderText = "Mã nhân viên";
             dgv_luong.Columns[1].HeaderText = "Tên nhân viên";
             dgv_luong.Columns[2].HeaderText = "Lương theo giờ";
-            dgv_luong.Columns[3].HeaderText = "Số ca đã làm";
+            dgv_luong.Columns[3].HeaderText = "Số ca trong tháng";
             dgv_luong.Columns[4].HeaderText = "Lương trong tháng";
+            dgv_luong.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgv_luong.Columns[0].Visible = false;
 
             dgv_sach.Columns["MaTheLoai"].Visible = false;

@@ -15,7 +15,6 @@ namespace PBL3_QuanLyTiemSach.View
 {
     public partial class BookInfo : KryptonForm
     {
-        Form1 f;
         public BookInfo()
         //public BookInfo(Form1 f1)
         {

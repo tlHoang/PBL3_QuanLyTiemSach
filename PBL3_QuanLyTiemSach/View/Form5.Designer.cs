@@ -32,125 +32,107 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
             this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.Panel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.Panel11 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.nhanvienImg = new System.Windows.Forms.PictureBox();
+            this.label_NV = new System.Windows.Forms.Label();
             this.Panel4 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.BookImg = new System.Windows.Forms.PictureBox();
             this.label_ThongTinSach = new System.Windows.Forms.Label();
             this.Panel3 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.avatarImg = new System.Windows.Forms.PictureBox();
             this.labelName = new System.Windows.Forms.Label();
             this.Panel10 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.dangxuatImg = new System.Windows.Forms.PictureBox();
             this.label_DangXuat = new System.Windows.Forms.Label();
             this.Panel9 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.thongkeImg = new System.Windows.Forms.PictureBox();
             this.label_ThongKe = new System.Windows.Forms.Label();
             this.Panel8 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.calamImg = new System.Windows.Forms.PictureBox();
             this.label_CaLam = new System.Windows.Forms.Label();
             this.Panel7 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.hoadonImg = new System.Windows.Forms.PictureBox();
             this.label_HoaDon = new System.Windows.Forms.Label();
             this.Panel6 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.nhaphangImg = new System.Windows.Forms.PictureBox();
             this.label_NhapHang = new System.Windows.Forms.Label();
             this.Panel5 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.banhangImg = new System.Windows.Forms.PictureBox();
             this.label_BanHang = new System.Windows.Forms.Label();
             this.Panel2 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.Panel11 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.label_NV = new System.Windows.Forms.Label();
-            this.nhanvienImg = new System.Windows.Forms.PictureBox();
-            this.BookImg = new System.Windows.Forms.PictureBox();
-            this.avatarImg = new System.Windows.Forms.PictureBox();
-            this.dangxuatImg = new System.Windows.Forms.PictureBox();
-            this.thongkeImg = new System.Windows.Forms.PictureBox();
-            this.calamImg = new System.Windows.Forms.PictureBox();
-            this.hoadonImg = new System.Windows.Forms.PictureBox();
-            this.nhaphangImg = new System.Windows.Forms.PictureBox();
-            this.banhangImg = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Panel1)).BeginInit();
             this.Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Panel4)).BeginInit();
-            this.Panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Panel3)).BeginInit();
-            this.Panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Panel10)).BeginInit();
-            this.Panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Panel9)).BeginInit();
-            this.Panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Panel8)).BeginInit();
-            this.Panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Panel7)).BeginInit();
-            this.Panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Panel6)).BeginInit();
-            this.Panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Panel5)).BeginInit();
-            this.Panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Panel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Panel11)).BeginInit();
             this.Panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nhanvienImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Panel4)).BeginInit();
+            this.Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BookImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Panel3)).BeginInit();
+            this.Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avatarImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Panel10)).BeginInit();
+            this.Panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dangxuatImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Panel9)).BeginInit();
+            this.Panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.thongkeImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Panel8)).BeginInit();
+            this.Panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.calamImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Panel7)).BeginInit();
+            this.Panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hoadonImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Panel6)).BeginInit();
+            this.Panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nhaphangImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Panel5)).BeginInit();
+            this.Panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.banhangImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Panel2)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette1
             // 
-            this.kryptonPalette1.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
             this.kryptonPalette1.ButtonSpecs.FormClose.Image = ((System.Drawing.Image)(resources.GetObject("kryptonPalette1.ButtonSpecs.FormClose.Image")));
             this.kryptonPalette1.ButtonSpecs.FormClose.ImageStates.ImagePressed = ((System.Drawing.Image)(resources.GetObject("kryptonPalette1.ButtonSpecs.FormClose.ImageStates.ImagePressed")));
             this.kryptonPalette1.ButtonSpecs.FormClose.ImageStates.ImageTracking = ((System.Drawing.Image)(resources.GetObject("kryptonPalette1.ButtonSpecs.FormClose.ImageStates.ImageTracking")));
-            this.kryptonPalette1.ButtonSpecs.FormClose.Orientation = ComponentFactory.Krypton.Toolkit.PaletteButtonOrientation.Inherit;
-            this.kryptonPalette1.ButtonSpecs.FormClose.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Inherit;
             this.kryptonPalette1.ButtonSpecs.FormMax.Image = ((System.Drawing.Image)(resources.GetObject("kryptonPalette1.ButtonSpecs.FormMax.Image")));
             this.kryptonPalette1.ButtonSpecs.FormMax.ImageStates.ImagePressed = ((System.Drawing.Image)(resources.GetObject("kryptonPalette1.ButtonSpecs.FormMax.ImageStates.ImagePressed")));
             this.kryptonPalette1.ButtonSpecs.FormMax.ImageStates.ImageTracking = ((System.Drawing.Image)(resources.GetObject("kryptonPalette1.ButtonSpecs.FormMax.ImageStates.ImageTracking")));
-            this.kryptonPalette1.ButtonSpecs.FormMax.Orientation = ComponentFactory.Krypton.Toolkit.PaletteButtonOrientation.Inherit;
-            this.kryptonPalette1.ButtonSpecs.FormMax.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Inherit;
             this.kryptonPalette1.ButtonSpecs.FormMin.Image = ((System.Drawing.Image)(resources.GetObject("kryptonPalette1.ButtonSpecs.FormMin.Image")));
             this.kryptonPalette1.ButtonSpecs.FormMin.ImageStates.ImagePressed = ((System.Drawing.Image)(resources.GetObject("kryptonPalette1.ButtonSpecs.FormMin.ImageStates.ImagePressed")));
             this.kryptonPalette1.ButtonSpecs.FormMin.ImageStates.ImageTracking = ((System.Drawing.Image)(resources.GetObject("kryptonPalette1.ButtonSpecs.FormMin.ImageStates.ImageTracking")));
-            this.kryptonPalette1.ButtonSpecs.FormMin.Orientation = ComponentFactory.Krypton.Toolkit.PaletteButtonOrientation.Inherit;
-            this.kryptonPalette1.ButtonSpecs.FormMin.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Inherit;
             this.kryptonPalette1.ButtonSpecs.FormRestore.Image = ((System.Drawing.Image)(resources.GetObject("kryptonPalette1.ButtonSpecs.FormRestore.Image")));
             this.kryptonPalette1.ButtonSpecs.FormRestore.ImageStates.ImagePressed = ((System.Drawing.Image)(resources.GetObject("kryptonPalette1.ButtonSpecs.FormRestore.ImageStates.ImagePressed")));
             this.kryptonPalette1.ButtonSpecs.FormRestore.ImageStates.ImageTracking = ((System.Drawing.Image)(resources.GetObject("kryptonPalette1.ButtonSpecs.FormRestore.ImageStates.ImageTracking")));
-            this.kryptonPalette1.ButtonSpecs.FormRestore.Orientation = ComponentFactory.Krypton.Toolkit.PaletteButtonOrientation.Inherit;
-            this.kryptonPalette1.ButtonSpecs.FormRestore.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Inherit;
             this.kryptonPalette1.ButtonStyles.ButtonForm.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.kryptonPalette1.ButtonStyles.ButtonForm.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.kryptonPalette1.ButtonStyles.ButtonForm.StateNormal.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.ButtonStyles.ButtonForm.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonPalette1.ButtonStyles.ButtonForm.StateNormal.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.ButtonStyles.ButtonForm.StateNormal.Border.Width = 0;
             this.kryptonPalette1.ButtonStyles.ButtonForm.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.kryptonPalette1.ButtonStyles.ButtonForm.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.kryptonPalette1.ButtonStyles.ButtonForm.StatePressed.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.ButtonStyles.ButtonForm.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonPalette1.ButtonStyles.ButtonForm.StatePressed.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.ButtonStyles.ButtonForm.StatePressed.Border.Width = 0;
             this.kryptonPalette1.ButtonStyles.ButtonForm.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.kryptonPalette1.ButtonStyles.ButtonForm.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.kryptonPalette1.ButtonStyles.ButtonForm.StateTracking.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.ButtonStyles.ButtonForm.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonPalette1.ButtonStyles.ButtonForm.StateTracking.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.ButtonStyles.ButtonForm.StateTracking.Border.Width = 0;
             this.kryptonPalette1.FormStyles.FormMain.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.kryptonPalette1.FormStyles.FormMain.StateActive.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.kryptonPalette1.FormStyles.FormMain.StateActive.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.FormStyles.FormMain.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonPalette1.FormStyles.FormMain.StateActive.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.None;
-            this.kryptonPalette1.FormStyles.FormMain.StateActive.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.FormStyles.FormMain.StateActive.Border.Rounding = 12;
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.ButtonEdgeInset = 10;
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, -1, -1, -1);
             // 
@@ -171,8 +153,43 @@
             this.Panel1.Size = new System.Drawing.Size(146, 465);
             this.Panel1.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.Panel1.StateCommon.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.Panel1.StateCommon.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.Panel1.TabIndex = 0;
+            // 
+            // Panel11
+            // 
+            this.Panel11.Controls.Add(this.nhanvienImg);
+            this.Panel11.Controls.Add(this.label_NV);
+            this.Panel11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Panel11.Location = new System.Drawing.Point(0, 395);
+            this.Panel11.Name = "Panel11";
+            this.Panel11.Size = new System.Drawing.Size(146, 50);
+            this.Panel11.StateNormal.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.Panel11.StateNormal.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.Panel11.TabIndex = 3;
+            this.Panel11.Click += new System.EventHandler(this.NhanVien_Click);
+            // 
+            // nhanvienImg
+            // 
+            this.nhanvienImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.nhanvienImg.Image = ((System.Drawing.Image)(resources.GetObject("nhanvienImg.Image")));
+            this.nhanvienImg.Location = new System.Drawing.Point(4, 10);
+            this.nhanvienImg.Name = "nhanvienImg";
+            this.nhanvienImg.Size = new System.Drawing.Size(35, 35);
+            this.nhanvienImg.TabIndex = 1;
+            this.nhanvienImg.TabStop = false;
+            this.nhanvienImg.Click += new System.EventHandler(this.NhanVien_Click);
+            // 
+            // label_NV
+            // 
+            this.label_NV.AutoSize = true;
+            this.label_NV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.label_NV.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_NV.Location = new System.Drawing.Point(34, 15);
+            this.label_NV.Name = "label_NV";
+            this.label_NV.Size = new System.Drawing.Size(80, 20);
+            this.label_NV.TabIndex = 0;
+            this.label_NV.Text = "Nhân viên";
+            this.label_NV.Click += new System.EventHandler(this.NhanVien_Click);
             // 
             // Panel4
             // 
@@ -184,9 +201,19 @@
             this.Panel4.Size = new System.Drawing.Size(146, 50);
             this.Panel4.StateNormal.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.Panel4.StateNormal.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.Panel4.StateNormal.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.Panel4.TabIndex = 2;
             this.Panel4.Click += new System.EventHandler(this.ThongTinSach_Click);
+            // 
+            // BookImg
+            // 
+            this.BookImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.BookImg.Image = ((System.Drawing.Image)(resources.GetObject("BookImg.Image")));
+            this.BookImg.Location = new System.Drawing.Point(4, 10);
+            this.BookImg.Name = "BookImg";
+            this.BookImg.Size = new System.Drawing.Size(35, 35);
+            this.BookImg.TabIndex = 1;
+            this.BookImg.TabStop = false;
+            this.BookImg.Click += new System.EventHandler(this.ThongTinSach_Click);
             // 
             // label_ThongTinSach
             // 
@@ -209,8 +236,18 @@
             this.Panel3.Size = new System.Drawing.Size(146, 73);
             this.Panel3.StateNormal.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.Panel3.StateNormal.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.Panel3.StateNormal.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.Panel3.TabIndex = 1;
+            // 
+            // avatarImg
+            // 
+            this.avatarImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.avatarImg.Image = ((System.Drawing.Image)(resources.GetObject("avatarImg.Image")));
+            this.avatarImg.Location = new System.Drawing.Point(8, 15);
+            this.avatarImg.Name = "avatarImg";
+            this.avatarImg.Size = new System.Drawing.Size(45, 45);
+            this.avatarImg.TabIndex = 1;
+            this.avatarImg.TabStop = false;
+            this.avatarImg.Click += new System.EventHandler(this.avatarImg_Click);
             // 
             // labelName
             // 
@@ -233,9 +270,19 @@
             this.Panel10.Size = new System.Drawing.Size(146, 37);
             this.Panel10.StateNormal.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.Panel10.StateNormal.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.Panel10.StateNormal.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.Panel10.TabIndex = 2;
             this.Panel10.Click += new System.EventHandler(this.DangXuat_Click);
+            // 
+            // dangxuatImg
+            // 
+            this.dangxuatImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.dangxuatImg.Image = ((System.Drawing.Image)(resources.GetObject("dangxuatImg.Image")));
+            this.dangxuatImg.Location = new System.Drawing.Point(95, 6);
+            this.dangxuatImg.Name = "dangxuatImg";
+            this.dangxuatImg.Size = new System.Drawing.Size(31, 25);
+            this.dangxuatImg.TabIndex = 1;
+            this.dangxuatImg.TabStop = false;
+            this.dangxuatImg.Click += new System.EventHandler(this.DangXuat_Click);
             // 
             // label_DangXuat
             // 
@@ -259,9 +306,19 @@
             this.Panel9.Size = new System.Drawing.Size(146, 50);
             this.Panel9.StateNormal.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.Panel9.StateNormal.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.Panel9.StateNormal.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.Panel9.TabIndex = 2;
             this.Panel9.Click += new System.EventHandler(this.ThongKe_Click);
+            // 
+            // thongkeImg
+            // 
+            this.thongkeImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.thongkeImg.Image = ((System.Drawing.Image)(resources.GetObject("thongkeImg.Image")));
+            this.thongkeImg.Location = new System.Drawing.Point(4, 10);
+            this.thongkeImg.Name = "thongkeImg";
+            this.thongkeImg.Size = new System.Drawing.Size(35, 35);
+            this.thongkeImg.TabIndex = 1;
+            this.thongkeImg.TabStop = false;
+            this.thongkeImg.Click += new System.EventHandler(this.ThongKe_Click);
             // 
             // label_ThongKe
             // 
@@ -285,9 +342,19 @@
             this.Panel8.Size = new System.Drawing.Size(146, 50);
             this.Panel8.StateNormal.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.Panel8.StateNormal.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.Panel8.StateNormal.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.Panel8.TabIndex = 2;
             this.Panel8.Click += new System.EventHandler(this.CaLam_Click);
+            // 
+            // calamImg
+            // 
+            this.calamImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.calamImg.Image = ((System.Drawing.Image)(resources.GetObject("calamImg.Image")));
+            this.calamImg.Location = new System.Drawing.Point(4, 10);
+            this.calamImg.Name = "calamImg";
+            this.calamImg.Size = new System.Drawing.Size(35, 35);
+            this.calamImg.TabIndex = 1;
+            this.calamImg.TabStop = false;
+            this.calamImg.Click += new System.EventHandler(this.CaLam_Click);
             // 
             // label_CaLam
             // 
@@ -311,9 +378,19 @@
             this.Panel7.Size = new System.Drawing.Size(146, 50);
             this.Panel7.StateNormal.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.Panel7.StateNormal.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.Panel7.StateNormal.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.Panel7.TabIndex = 2;
             this.Panel7.Click += new System.EventHandler(this.HoaDon_Click);
+            // 
+            // hoadonImg
+            // 
+            this.hoadonImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.hoadonImg.Image = ((System.Drawing.Image)(resources.GetObject("hoadonImg.Image")));
+            this.hoadonImg.Location = new System.Drawing.Point(4, 10);
+            this.hoadonImg.Name = "hoadonImg";
+            this.hoadonImg.Size = new System.Drawing.Size(35, 35);
+            this.hoadonImg.TabIndex = 1;
+            this.hoadonImg.TabStop = false;
+            this.hoadonImg.Click += new System.EventHandler(this.HoaDon_Click);
             // 
             // label_HoaDon
             // 
@@ -337,9 +414,19 @@
             this.Panel6.Size = new System.Drawing.Size(146, 50);
             this.Panel6.StateNormal.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.Panel6.StateNormal.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.Panel6.StateNormal.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.Panel6.TabIndex = 2;
             this.Panel6.Click += new System.EventHandler(this.NhapHang_Click);
+            // 
+            // nhaphangImg
+            // 
+            this.nhaphangImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.nhaphangImg.Image = ((System.Drawing.Image)(resources.GetObject("nhaphangImg.Image")));
+            this.nhaphangImg.Location = new System.Drawing.Point(4, 10);
+            this.nhaphangImg.Name = "nhaphangImg";
+            this.nhaphangImg.Size = new System.Drawing.Size(35, 35);
+            this.nhaphangImg.TabIndex = 1;
+            this.nhaphangImg.TabStop = false;
+            this.nhaphangImg.Click += new System.EventHandler(this.NhapHang_Click);
             // 
             // label_NhapHang
             // 
@@ -363,9 +450,19 @@
             this.Panel5.Size = new System.Drawing.Size(146, 50);
             this.Panel5.StateNormal.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.Panel5.StateNormal.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.Panel5.StateNormal.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.Panel5.TabIndex = 0;
             this.Panel5.Click += new System.EventHandler(this.BanHang_Click);
+            // 
+            // banhangImg
+            // 
+            this.banhangImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.banhangImg.Image = ((System.Drawing.Image)(resources.GetObject("banhangImg.Image")));
+            this.banhangImg.Location = new System.Drawing.Point(4, 10);
+            this.banhangImg.Name = "banhangImg";
+            this.banhangImg.Size = new System.Drawing.Size(35, 35);
+            this.banhangImg.TabIndex = 1;
+            this.banhangImg.TabStop = false;
+            this.banhangImg.Click += new System.EventHandler(this.BanHang_Click);
             // 
             // label_BanHang
             // 
@@ -387,129 +484,6 @@
             this.Panel2.Size = new System.Drawing.Size(734, 465);
             this.Panel2.TabIndex = 1;
             // 
-            // Panel11
-            // 
-            this.Panel11.Controls.Add(this.nhanvienImg);
-            this.Panel11.Controls.Add(this.label_NV);
-            this.Panel11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Panel11.Location = new System.Drawing.Point(0, 395);
-            this.Panel11.Name = "Panel11";
-            this.Panel11.Size = new System.Drawing.Size(146, 50);
-            this.Panel11.StateNormal.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.Panel11.StateNormal.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.Panel11.TabIndex = 3;
-            this.Panel11.Click += new System.EventHandler(this.NhanVien_Click);
-            // 
-            // label_NV
-            // 
-            this.label_NV.AutoSize = true;
-            this.label_NV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.label_NV.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_NV.Location = new System.Drawing.Point(34, 15);
-            this.label_NV.Name = "label_NV";
-            this.label_NV.Size = new System.Drawing.Size(80, 20);
-            this.label_NV.TabIndex = 0;
-            this.label_NV.Text = "Nhân viên";
-            this.label_NV.Click += new System.EventHandler(this.NhanVien_Click);
-            // 
-            // nhanvienImg
-            // 
-            this.nhanvienImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.nhanvienImg.Image = ((System.Drawing.Image)(resources.GetObject("nhanvienImg.Image")));
-            this.nhanvienImg.Location = new System.Drawing.Point(4, 10);
-            this.nhanvienImg.Name = "nhanvienImg";
-            this.nhanvienImg.Size = new System.Drawing.Size(35, 35);
-            this.nhanvienImg.TabIndex = 1;
-            this.nhanvienImg.TabStop = false;
-            this.nhanvienImg.Click += new System.EventHandler(this.NhanVien_Click);
-            // 
-            // BookImg
-            // 
-            this.BookImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.BookImg.Image = ((System.Drawing.Image)(resources.GetObject("BookImg.Image")));
-            this.BookImg.Location = new System.Drawing.Point(4, 10);
-            this.BookImg.Name = "BookImg";
-            this.BookImg.Size = new System.Drawing.Size(35, 35);
-            this.BookImg.TabIndex = 1;
-            this.BookImg.TabStop = false;
-            this.BookImg.Click += new System.EventHandler(this.ThongTinSach_Click);
-            // 
-            // avatarImg
-            // 
-            this.avatarImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.avatarImg.Image = ((System.Drawing.Image)(resources.GetObject("avatarImg.Image")));
-            this.avatarImg.Location = new System.Drawing.Point(8, 15);
-            this.avatarImg.Name = "avatarImg";
-            this.avatarImg.Size = new System.Drawing.Size(45, 45);
-            this.avatarImg.TabIndex = 1;
-            this.avatarImg.TabStop = false;
-            // 
-            // dangxuatImg
-            // 
-            this.dangxuatImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.dangxuatImg.Image = ((System.Drawing.Image)(resources.GetObject("dangxuatImg.Image")));
-            this.dangxuatImg.Location = new System.Drawing.Point(95, 6);
-            this.dangxuatImg.Name = "dangxuatImg";
-            this.dangxuatImg.Size = new System.Drawing.Size(31, 25);
-            this.dangxuatImg.TabIndex = 1;
-            this.dangxuatImg.TabStop = false;
-            this.dangxuatImg.Click += new System.EventHandler(this.DangXuat_Click);
-            // 
-            // thongkeImg
-            // 
-            this.thongkeImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.thongkeImg.Image = ((System.Drawing.Image)(resources.GetObject("thongkeImg.Image")));
-            this.thongkeImg.Location = new System.Drawing.Point(4, 10);
-            this.thongkeImg.Name = "thongkeImg";
-            this.thongkeImg.Size = new System.Drawing.Size(35, 35);
-            this.thongkeImg.TabIndex = 1;
-            this.thongkeImg.TabStop = false;
-            this.thongkeImg.Click += new System.EventHandler(this.ThongKe_Click);
-            // 
-            // calamImg
-            // 
-            this.calamImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.calamImg.Image = ((System.Drawing.Image)(resources.GetObject("calamImg.Image")));
-            this.calamImg.Location = new System.Drawing.Point(4, 10);
-            this.calamImg.Name = "calamImg";
-            this.calamImg.Size = new System.Drawing.Size(35, 35);
-            this.calamImg.TabIndex = 1;
-            this.calamImg.TabStop = false;
-            this.calamImg.Click += new System.EventHandler(this.CaLam_Click);
-            // 
-            // hoadonImg
-            // 
-            this.hoadonImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.hoadonImg.Image = ((System.Drawing.Image)(resources.GetObject("hoadonImg.Image")));
-            this.hoadonImg.Location = new System.Drawing.Point(4, 10);
-            this.hoadonImg.Name = "hoadonImg";
-            this.hoadonImg.Size = new System.Drawing.Size(35, 35);
-            this.hoadonImg.TabIndex = 1;
-            this.hoadonImg.TabStop = false;
-            this.hoadonImg.Click += new System.EventHandler(this.HoaDon_Click);
-            // 
-            // nhaphangImg
-            // 
-            this.nhaphangImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.nhaphangImg.Image = ((System.Drawing.Image)(resources.GetObject("nhaphangImg.Image")));
-            this.nhaphangImg.Location = new System.Drawing.Point(4, 10);
-            this.nhaphangImg.Name = "nhaphangImg";
-            this.nhaphangImg.Size = new System.Drawing.Size(35, 35);
-            this.nhaphangImg.TabIndex = 1;
-            this.nhaphangImg.TabStop = false;
-            this.nhaphangImg.Click += new System.EventHandler(this.NhapHang_Click);
-            // 
-            // banhangImg
-            // 
-            this.banhangImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.banhangImg.Image = ((System.Drawing.Image)(resources.GetObject("banhangImg.Image")));
-            this.banhangImg.Location = new System.Drawing.Point(4, 10);
-            this.banhangImg.Name = "banhangImg";
-            this.banhangImg.Size = new System.Drawing.Size(35, 35);
-            this.banhangImg.TabIndex = 1;
-            this.banhangImg.TabStop = false;
-            this.banhangImg.Click += new System.EventHandler(this.BanHang_Click);
-            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -526,43 +500,43 @@
             this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.Panel1)).EndInit();
             this.Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Panel4)).EndInit();
-            this.Panel4.ResumeLayout(false);
-            this.Panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Panel3)).EndInit();
-            this.Panel3.ResumeLayout(false);
-            this.Panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Panel10)).EndInit();
-            this.Panel10.ResumeLayout(false);
-            this.Panel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Panel9)).EndInit();
-            this.Panel9.ResumeLayout(false);
-            this.Panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Panel8)).EndInit();
-            this.Panel8.ResumeLayout(false);
-            this.Panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Panel7)).EndInit();
-            this.Panel7.ResumeLayout(false);
-            this.Panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Panel6)).EndInit();
-            this.Panel6.ResumeLayout(false);
-            this.Panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Panel5)).EndInit();
-            this.Panel5.ResumeLayout(false);
-            this.Panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Panel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Panel11)).EndInit();
             this.Panel11.ResumeLayout(false);
             this.Panel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nhanvienImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Panel4)).EndInit();
+            this.Panel4.ResumeLayout(false);
+            this.Panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BookImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Panel3)).EndInit();
+            this.Panel3.ResumeLayout(false);
+            this.Panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avatarImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Panel10)).EndInit();
+            this.Panel10.ResumeLayout(false);
+            this.Panel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dangxuatImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Panel9)).EndInit();
+            this.Panel9.ResumeLayout(false);
+            this.Panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.thongkeImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Panel8)).EndInit();
+            this.Panel8.ResumeLayout(false);
+            this.Panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.calamImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Panel7)).EndInit();
+            this.Panel7.ResumeLayout(false);
+            this.Panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hoadonImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Panel6)).EndInit();
+            this.Panel6.ResumeLayout(false);
+            this.Panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nhaphangImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Panel5)).EndInit();
+            this.Panel5.ResumeLayout(false);
+            this.Panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.banhangImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Panel2)).EndInit();
             this.ResumeLayout(false);
 
         }

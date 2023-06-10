@@ -25,7 +25,7 @@ namespace PBL3_QuanLyTiemSach.View
         public int MaNV { get; set; }
         private void setUI(int MaNV)
         {
-            if (MaNV != 0)
+            if (MaNV != 1)
             {
                 Panel9.Hide();
                 Panel11.Hide();
@@ -202,6 +202,8 @@ namespace PBL3_QuanLyTiemSach.View
             label_NV.ForeColor = Color.FromArgb(255, 70, 80);
             nhanvienImg.Image = MainForm_Resource.nhanvien_click;
 
+            OpenForm(new StaffManager.StaffManager());
+
             ThongTinSach_Leave();
             BanHang_Leave();
             NhapHang_Leave();
@@ -221,6 +223,19 @@ namespace PBL3_QuanLyTiemSach.View
             LoginForm f = new LoginForm();
             f.ShowDialog();
             this.Dispose();
+        }
+
+        private void avatarImg_Click(object sender, EventArgs e)
+        {
+            OpenForm(new StaffInfo(MaNV));
+
+            ThongTinSach_Leave();
+            BanHang_Leave();
+            NhapHang_Leave();
+            HoaDon_Leave();
+            CaLam_Leave();
+            ThongKe_Leave();
+            NhanVien_Leave();
         }
     }
 }

@@ -147,6 +147,7 @@
             this.btnQuayLai.Size = new System.Drawing.Size(90, 25);
             this.btnQuayLai.TabIndex = 12;
             this.btnQuayLai.Values.Text = "Quay Lại";
+            this.btnQuayLai.Visible = false;
             this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
             // 
             // BookInfo

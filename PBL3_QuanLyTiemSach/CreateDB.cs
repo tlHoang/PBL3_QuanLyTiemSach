@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace PBL3_QuanLyTiemSach
 {
-    public class CreateDB 
-          //: CreateDatabaseIfNotExists<DBQuanLyTiemSach>
+    public class CreateDB
+         : CreateDatabaseIfNotExists<DBQuanLyTiemSach>
          //: DropCreateDatabaseAlways<DBQuanLyTiemSach>
-         :DropCreateDatabaseIfModelChanges<DBQuanLyTiemSach>
+         //:DropCreateDatabaseIfModelChanges<DBQuanLyTiemSach>
     {
         protected override void Seed(DBQuanLyTiemSach context)
         {
@@ -21,13 +21,15 @@ namespace PBL3_QuanLyTiemSach
                 new TaiKhoan { MaNV = -2, Username = "admin", Password = "3d18e7c3f354879667c3964c6fd1ed01348b02eed41a321391dcfb01f07150ab", Salt = "cV6kF5idUxGu" },
                 new TaiKhoan { MaNV = 1, Username = "nhanvien0", Password = "3d18e7c3f354879667c3964c6fd1ed01348b02eed41a321391dcfb01f07150ab", Salt = "cV6kF5idUxGu" },
                 new TaiKhoan { MaNV = 2, Username = "nhanvien1", Password = "3d18e7c3f354879667c3964c6fd1ed01348b02eed41a321391dcfb01f07150ab", Salt = "cV6kF5idUxGu" },
-                new TaiKhoan { MaNV = 3, Username = "nhanvien2", Password = "87089c1da28a685648a603452fecaaa6bca8ef651861b9b5c512e81ff576a456", Salt = "WMAbPKk73KUh" },
+                new TaiKhoan { MaNV = 3, Username = "nhanvien2", Password = "3d18e7c3f354879667c3964c6fd1ed01348b02eed41a321391dcfb01f07150ab", Salt = "cV6kF5idUxGu" },
+                new TaiKhoan { MaNV = 4, Username = "nhanvien3", Password = "3d18e7c3f354879667c3964c6fd1ed01348b02eed41a321391dcfb01f07150ab", Salt = "cV6kF5idUxGu" },
             });
             context.NhanViens.AddRange(new NhanVien[]
             {
-                new NhanVien { MaNV = 1, TenNV = "Nguyễn Văn A", GioiTinh = true, NgaySinh = Convert.ToDateTime("2003-03-02"), DiaChi = "Đà Nẵng, Việt Nam", Luong = 100000.0, SDT = "0123456789"},
-                new NhanVien { MaNV = 2, TenNV = "Lê Ngọc Hạnh", GioiTinh = true, NgaySinh = new DateTime(2003,4,6), DiaChi = "Đà Nẵng", Luong = 20000000, SDT = "0123654789"},
-                new NhanVien { MaNV = 3, TenNV = "Trần Lê Huy Hoàng", GioiTinh = true, NgaySinh = new DateTime(2003,3,2), DiaChi = "Đà Nẵng", Luong = 30000000, SDT = "0147852369"}
+                new NhanVien { MaNV = 1, TenNV = "Nguyễn Thị Mốt", GioiTinh = false, NgaySinh = Convert.ToDateTime("2003-03-02"), DiaChi = "40 Trần Cao Vân, Thanh Khê, Đà Nẵng", Luong = 14000.0, SDT = "0123456789"},
+                new NhanVien { MaNV = 2, TenNV = "Lê Ngọc Hạnh", GioiTinh = true, NgaySinh = new DateTime(2003,4,6), DiaChi = "48 Ngô Sĩ Liên, Liên Chiểu, Đà Nẵng", Luong = 15000, SDT = "0123654789"},
+                new NhanVien { MaNV = 3, TenNV = "Trần Lê Huy Hoàng", GioiTinh = true, NgaySinh = new DateTime(2003,3,9), DiaChi = "70 Bạch Đằng, Hải Châu, Đà Nẵng", Luong = 14500, SDT = "0147852369"},
+                new NhanVien { MaNV = 4, TenNV = "Lê Trung Tấn Phát", GioiTinh = true, NgaySinh = new DateTime(2003,6,5), DiaChi = "800 Tôn Đức Thắng, Liên Chiểu, Đà Nẵng", Luong = 16000, SDT = "0147852369"}
             });
             //context.Cas.AddRange(new Ca[]
             //{
@@ -45,9 +47,13 @@ namespace PBL3_QuanLyTiemSach
             {
                 new SachTheLoai { MaTheLoai = 1, TenTheLoai ="Trinh Thám" },
                 new SachTheLoai { MaTheLoai = 2, TenTheLoai ="Tiểu Thuyết" },
-                new SachTheLoai { MaTheLoai = 3, TenTheLoai ="Cấp 3 " },
+                new SachTheLoai { MaTheLoai = 3, TenTheLoai ="Cấp 3" },
                 new SachTheLoai { MaTheLoai = 4, TenTheLoai ="Ngôn Tình" },
                 new SachTheLoai { MaTheLoai = 5, TenTheLoai ="Ngụ Ngôn" },
+                new SachTheLoai { MaTheLoai = 6, TenTheLoai ="Kinh dị" },
+                new SachTheLoai { MaTheLoai = 7, TenTheLoai ="Kinh tế" },
+                new SachTheLoai { MaTheLoai = 8, TenTheLoai ="Giáo khoa" },
+                new SachTheLoai { MaTheLoai = 9, TenTheLoai ="Cổ tích" },
                 //new SachTheLoai{ MaTheLoai = "", TenTheLoai ="" },
             });
             //context.KhachHangs.AddRange(new KhachHang[]
@@ -59,10 +65,10 @@ namespace PBL3_QuanLyTiemSach
             //});
             context.DonViCungCaps.AddRange(new DonViCungCap[]
             {
-                new DonViCungCap { TenDV = "Don Vi A" },
-                new DonViCungCap { TenDV = "Don Vi B" },
-                new DonViCungCap { TenDV = "Don Vi C" },
-                new DonViCungCap { TenDV = "Don Vi D" }
+                new DonViCungCap { TenDV = "CTY TNHH Đăng Nguyên" },
+                new DonViCungCap { TenDV = "CTY TNHH Văn Hóa Việt Long" },
+                new DonViCungCap { TenDV = "CTY Cổ Phần Sách Mcbooks" },
+                new DonViCungCap { TenDV = "Nhà Sách Nguyễn Du" }
             });
             //context.Sachs.AddRange(new Sach[]
             //{
