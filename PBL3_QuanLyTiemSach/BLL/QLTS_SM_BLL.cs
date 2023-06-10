@@ -194,13 +194,6 @@ namespace PBL3_QuanLyTiemSach.BLL
                 }
             }
         }
-        public bool checkDayExist(DateTime? day)
-        {
-            using(DBQuanLyTiemSach db = new DBQuanLyTiemSach())
-            {
-                return db.Cas.FirstOrDefault(c => DbFunctions.TruncateTime(c.Ngay) == day) != null;
-            }
-        }
         public void AddCa(Ca newCa, int maNV)
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
@@ -372,6 +365,43 @@ namespace PBL3_QuanLyTiemSach.BLL
             }
             return dt;
         }
+        public DataTable getAdminDataCaLam(DateTime day)
+        {
+            DataTable dt = new DataTable();
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                DateTime dateNow = DateTime.Now.Date;
+                var dataView = db.CaNVs
+                                .Join(db.Cas, cnv => cnv.MaCa, c => c.MaCa, (cnv, c) => new { cnv, c })
+                                .Join(db.NhanViens, canv => canv.cnv.MaNV, nv => nv.MaNV, (canv, nv) => new
+                                {
+                                    ID = nv.MaNV,
+                                    IDCa = canv.c.MaCa,
+                                    Ten = nv.TenNV,
+                                    NgayLam = canv.c.Ngay,
+                                    GioBatDau = canv.c.GioBatDau,
+                                    GioKetThuc = canv.c.GioKetThuc
+                                })
+                                .Where(p => p.NgayLam == day)
+                                .Select(ca => new
+                                {
+                                    MaCa = ca.IDCa,
+                                    NgayLam = ca.NgayLam,
+                                    GioBatDau = ca.GioBatDau,
+                                    GioKetThuc = ca.GioKetThuc
+                                }).Distinct();
+                dt.Columns.Add("MaCa");
+                dt.Columns.Add("SLNV");
+                dt.Columns.Add("NgayLam");
+                dt.Columns.Add("GBD");
+                dt.Columns.Add("GKT");
+                foreach (var item in dataView)
+                {
+                    dt.Rows.Add(item.MaCa, getSoLuongNhanVienTrongCa(item.MaCa), item.NgayLam.ToString("dd/MM/yyyy"), item.GioBatDau, item.GioKetThuc);
+                }
+            }
+            return dt;
+        }
         public DataTable getAdminDataCaLam(string mode)
         {
             DataTable dt = new DataTable();
@@ -403,7 +433,7 @@ namespace PBL3_QuanLyTiemSach.BLL
                                     NgayLam = ca.NgayLam,
                                     GioBatDau = ca.GioBatDau,
                                     GioKetThuc = ca.GioKetThuc
-                                });
+                                }).Distinct();
                 dt.Columns.Add("MaCa");
                 dt.Columns.Add("SLNV");
                 dt.Columns.Add("NgayLam");
@@ -461,44 +491,25 @@ namespace PBL3_QuanLyTiemSach.BLL
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
-                if (IsAdmin(adminID))
+                Ca delCa = new Ca();
+                CaNV delCaNV = new CaNV();
+                if (maCa != 0)
                 {
-                    Ca delCa = new Ca();
-                    CaNV delCaNV = new CaNV();
-                    delCa = db.Cas.Where(c => c.MaCa == maCa).FirstOrDefault();
-                    delCaNV = db.CaNVs.Where(cnv => cnv.MaCa == maCa && cnv.MaNV == maNV).FirstOrDefault();
-
-                    db.CaNVs.Remove(delCaNV);
-                    db.SaveChanges();
-                    KryptonMessageBox.Show("Xóa Thành công");
-                }
-                else
-                {
-                    Ca delCa = new Ca();
-                    CaNV delCaNV = new CaNV();
-                    if (maCa != 0)
+                    if (isValidDay(maCa))
                     {
-                        if (isValidDay(maCa))
-                        {
-                            delCa = db.Cas.Where(c => c.MaCa == maCa).FirstOrDefault();
-                            delCaNV = db.CaNVs.Where(cnv => cnv.MaCa == maCa && cnv.MaNV == maNV).FirstOrDefault();
+                        delCa = db.Cas.Where(c => c.MaCa == maCa).FirstOrDefault();
+                        delCaNV = db.CaNVs.Where(cnv => cnv.MaCa == maCa && cnv.MaNV == maNV).FirstOrDefault();
 
-                            db.CaNVs.Remove(delCaNV);
-                            db.SaveChanges();
-                            KryptonMessageBox.Show("Xóa Thành công");
-                        }
-                        else
-                        {
-                            KryptonMessageBox.Show("Không thể Xóa Ca Làm Này khi 2 ngày nữa là đến Ca làm \n" +
-                                            "hoặc Ca đã làm");
-                        }
+                        db.CaNVs.Remove(delCaNV);
+                        db.SaveChanges();
+                        KryptonMessageBox.Show("Xóa Thành công");
                     }
                     else
                     {
-                        KryptonMessageBox.Show("Không tìm thấy Ca làm có mã" + maCa);
+                        KryptonMessageBox.Show("Không thể Xóa Ca Làm Này khi 2 ngày nữa là đến Ca làm \n" +
+                                        "hoặc Ca đã làm");
                     }
-                }
-                
+                }     
             }
         }
         public void UpdateCa(Ca newCa, int maNV)

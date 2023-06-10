@@ -157,7 +157,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BookInfo_XemForm";
             this.Padding = new System.Windows.Forms.Padding(23, 74, 23, 25);
-            this.Text = "Book Information";
+            this.Text = "Thông tin sách";
             this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.Red;
             this.ResumeLayout(false);
