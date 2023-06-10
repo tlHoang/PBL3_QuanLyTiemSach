@@ -140,7 +140,6 @@ namespace PBL3_QuanLyTiemSach.BLL
                         .Where(p => p.Ca.Ngay.Year == year)
                         .ToList();
                 }
-                if (today.Month == month && today.Year == year) li = li.Where(p => p.Ca.Ngay.Date < today).ToList();
                 return li
                     .GroupBy(p => new { p.MaNV })
                     .Join(db.NhanViens, cnv => cnv.Key.MaNV, nv => nv.MaNV, (cnv, nv) => new StaffSalaryView
