@@ -32,6 +32,8 @@ namespace PBL3_QuanLyTiemSach
             {
                 Application.Exit();
             }
+
+            //Application.Run(new Statistic());
         }
     }
 }

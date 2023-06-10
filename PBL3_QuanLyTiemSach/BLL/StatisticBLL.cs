@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,12 +12,31 @@ namespace PBL3_QuanLyTiemSach.BLL
 {
     public class StatisticBLL
     {
-        public List<HoaDonBan> GetSellInvoiceByMonth(int month, int year)
+        public List<RevenueView> GetRevenueByMonth(int month, int year)
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
-                return db.HoaDonBans
-                    .Where(p => p.ThoiGianBan.Year == year && p.ThoiGianBan.Month == month)
+                List<HoaDonBan> li = new List<HoaDonBan>();
+                if (month != 0)
+                {
+                    li = db.HoaDonBans
+                        .Where(p => p.ThoiGianBan.Year == year && p.ThoiGianBan.Month == month)
+                        .ToList();
+                }
+                else
+                {
+                    li = db.HoaDonBans
+                        .Where(p => p.ThoiGianBan.Year == year)
+                        .ToList();
+                }
+                return li
+                    .GroupBy(p => p.ThoiGianBan.Date)
+                    .Select(gr => new RevenueView
+                    {
+                        SellDate = gr.Key,
+                        InvoiceNumber = gr.Count(),
+                        Revenue = gr.Sum(p => p.TongTien)
+                    })
                     .ToList();
             }
         }
@@ -32,25 +52,41 @@ namespace PBL3_QuanLyTiemSach.BLL
             }
         }
 
-        public List<Sach> GetAllBooks()
+        public List<BookView> GetAllBooks()
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
                 return db.Sachs
-                    .Select(p => p)
-                    .Include(p => p.SachTheLoai)
+                    .GroupBy(p => new { p.TenSach, p.TacGia, p.MaTheLoai, p.GiaBan })
+                    .Select(gr => new BookView
+                    {
+                        TenSach = gr.Key.TenSach,
+                        TacGia = gr.Key.TacGia,
+                        SLCL = gr.Sum(p => p.SoLuongConLai),
+                        GiaBan = gr.Key.GiaBan,
+                        MaTheLoai = gr.Key.MaTheLoai
+                    })
+                    .OrderBy(gr => gr.TenSach).ThenBy(gr => gr.GiaBan)
                     .ToList();
             }
         }
 
-        public List<Sach> GetBooksForDetail(string BookName, string Author, int Category)
+        public List<BookDetailView> GetBooksForDetail(string BookName, string Author, int Category)
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
-                return db.Sachs
+                List<Sach> li = db.Sachs
                     .Where(p => p.TenSach.ToLower() == BookName.ToLower() && p.TacGia.ToLower() == Author.ToLower() && p.MaTheLoai == Category)
-                    .Include(p => p.HoaDonNhapSachs)
-                    .Include(p => p.HoaDonBanSachs)
+                    .ToList();
+                return li
+                    .Select(p => new BookDetailView
+                    {
+                        MaSach = p.MaSach,
+                        TenSach = p.TenSach,
+                        GiaNhap = p.HoaDonNhapSachs.Where(hdn => hdn.MaSach == p.MaSach).Select(hdn => hdn.DonGiaNhap).FirstOrDefault(),
+                        GiaBan = p.GiaBan,
+                    })
+                    .OrderBy(p => p.GiaBan)
                     .ToList();
             }
         }
@@ -69,6 +105,7 @@ namespace PBL3_QuanLyTiemSach.BLL
                 db.SaveChanges();
             }
         }
+
         public void UpdateBookPriceInDetailForm(List<int> IdBooks, double NewPrice)
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
@@ -83,34 +120,49 @@ namespace PBL3_QuanLyTiemSach.BLL
                 db.SaveChanges();
             }
         }
-
-        public double AAA(string BookName, string Author, int Category, double Price)
+        
+        public List<StaffSalaryView> GetStaffSalaryByMonth(int month, int year)
         {
+            const int ThoiGianMotCa = 8;
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
-                //List<int> IdBooks = db.Sachs
-                List<int> Ids = db.Sachs
-                    .Where(p => p.TenSach.ToLower() == BookName.ToLower() && p.TacGia.ToLower() == Author.ToLower() && p.MaTheLoai == Category && p.GiaBan == Price)
-                    .Select(p => p.MaSach)
-                    .ToList();
-                var hdbs = db.HoaDonBanSachs
-                    .Where(p => Ids.Contains(p.MaSach))
-                    .Select(p => new { p.DonGiaBan, p.SoLuongBan })
-                    .ToList();
-                var hdns = db.HoaDonNhapSachs
-                    .Where(p => Ids.Contains(p.MaSach))
-                    .Select(p => new { p.DonGiaNhap })
-                    .ToList();
-                double result = 0;
-                foreach (var hdb in hdbs)
+                DateTime today = DateTime.Now.Date;
+                List<CaNV> li = new List<CaNV>();
+                if (month != 0)
                 {
-                    result += hdb.DonGiaBan * hdb.SoLuongBan;
+                    li = db.CaNVs
+                        .Where(p => p.Ca.Ngay.Year == year && p.Ca.Ngay.Month == month)
+                        .ToList();
                 }
-                foreach (var hdn in hdns)
+                else
                 {
-                    result -= hdn.DonGiaNhap;
+                    li = db.CaNVs
+                        .Where(p => p.Ca.Ngay.Year == year)
+                        .ToList();
                 }
-                return result;
+                if (today.Month == month && today.Year == year) li = li.Where(p => p.Ca.Ngay.Date < today).ToList();
+                return li
+                    .GroupBy(p => new { p.MaNV })
+                    .Join(db.NhanViens, cnv => cnv.Key.MaNV, nv => nv.MaNV, (cnv, nv) => new StaffSalaryView
+                    {
+                        MaNV = nv.MaNV,
+                        TenNV = nv.TenNV,
+                        LuongTheoGio = nv.Luong,
+                        SoCaLam = nv.CaNVs.Count(),
+                        LuongTong = nv.CaNVs.Count() * ThoiGianMotCa * nv.Luong
+                    })
+                    .ToList();
+                /*Tinh toan bo*/
+                //return db.NhanViens
+                //    .Select(p => new StaffSalaryView
+                //    {
+                //        MaNV = p.MaNV,
+                //        TenNV = p.TenNV,
+                //        LuongTheoGio = p.Luong,
+                //        SoCaLam = p.CaNVs.Count(),
+                //        LuongTong = p.CaNVs.Count() * THOIGIANMOTCA * p.Luong
+                //    })
+                //    .ToList();
             }
         }
     }

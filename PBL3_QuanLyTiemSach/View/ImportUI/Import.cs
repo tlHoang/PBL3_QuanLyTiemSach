@@ -103,7 +103,7 @@ namespace PBL3_QuanLyTiemSach.View
         }
         private void setLabelTongTien()
         {
-            labelTongTien.Text = dgvHoaDonNhap.Rows.Cast<DataGridViewRow>().Sum(t => (Convert.ToInt32(t.Cells[1].Value) * Convert.ToInt32(t.Cells[2].Value))).ToString("N0", CultureInfo.GetCultureInfo("vi-VN")) + " đ";
+            labelTongTien.Text = dgvHoaDonNhap.Rows.Cast<DataGridViewRow>().Sum(t => (Convert.ToInt32(t.Cells[1].Value) * Convert.ToInt32(t.Cells[2].Value))).ToString("N0", CultureInfo.GetCultureInfo("vi-VN")) + " vnd";
         }
         private void checkCBB()
         {

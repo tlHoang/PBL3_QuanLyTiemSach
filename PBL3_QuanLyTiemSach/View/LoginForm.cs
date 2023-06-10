@@ -31,12 +31,10 @@ namespace PBL3_QuanLyTiemSach.View
 
         public bool InvalidInput(string input)
         {
-            //string pattern = @"(\s|^$)";
-            string pattern = @"^\s*$";
-            return Regex.IsMatch(input, pattern);
+            return Regex.IsMatch(input, @"^\s*$");
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void btnDangNhap_Click(object sender, EventArgs e)
         {
             string username = txt_username.Text;
             string password = txt_password.Text;
@@ -46,7 +44,7 @@ namespace PBL3_QuanLyTiemSach.View
                 return;
             }
             TaiKhoanBLL bll = new TaiKhoanBLL();
-            MaNV = bll.CheckPassword(username, password);
+            MaNV = bll.CheckUsernameAndPassword(username, password);
             if (MaNV == -1)
             {
                 MessageBox.Show("Sai tài khoản hoặc mật khẩu");

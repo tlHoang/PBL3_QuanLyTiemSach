@@ -20,6 +20,8 @@ namespace PBL3_QuanLyTiemSach.View.StatisticUI
         public string TenSach { get; set; }
         public string TacGia { get; set; }
         public int TheLoai { get; set; }
+        public delegate void updateForm();
+        public updateForm updateBook;
         Statistic F;
         public StatisticDetail(Statistic f)
         {
@@ -32,7 +34,7 @@ namespace PBL3_QuanLyTiemSach.View.StatisticUI
             dgv_detail.DataSource = SellInvoices
                 .Select(p => new { p.ThoiGianBan.TimeOfDay, p.NhanVien.TenNV, p.TongTien })
                 .ToList();
-            SetUIForDGVDoanhThu();
+            SetUIForDGVRevenue();
         }
 
         public void DisplayForBook(string tenSach, string tacGia, int theLoai)
@@ -41,18 +43,26 @@ namespace PBL3_QuanLyTiemSach.View.StatisticUI
             TacGia = tacGia;
             TheLoai = theLoai;
             StatisticBLL statisticBLL = new StatisticBLL();
-            dgv_detail.DataSource = statisticBLL.GetBooksForDetail(TenSach, TacGia, TheLoai)
-                .Select(p => new { p.MaSach, p.TenSach, GiaNhap = p.HoaDonNhapSachs.Where(hdn => hdn.MaSach == p.MaSach).Select(hdn => hdn.DonGiaNhap).FirstOrDefault(), p.GiaBan, })
-                .OrderBy(p => p.GiaBan)
-                .ToList();
+            dgv_detail.DataSource = statisticBLL.GetBooksForDetail(TenSach, TacGia, TheLoai);
             btn_changeprice.Visible = true;
+            SetUIForDGVBook();
         }
 
-        private void SetUIForDGVDoanhThu()
+        private void SetUIForDGVRevenue()
         {
             dgv_detail.Columns[0].HeaderText = "Thời gian bán";
             dgv_detail.Columns[1].HeaderText = "Nhân viên bán";
             dgv_detail.Columns[2].HeaderText = "Tổng tiền";
+            dgv_detail.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+
+        private void SetUIForDGVBook()
+        {
+            dgv_detail.Columns[0].HeaderText = "Mã sách";
+            dgv_detail.Columns[1].HeaderText = "Tên sách";
+            dgv_detail.Columns[2].HeaderText = "Giá nhập";
+            dgv_detail.Columns[3].HeaderText = "Giá bán";
+            dgv_detail.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void metroButton_back_Click(object sender, EventArgs e)
@@ -73,10 +83,8 @@ namespace PBL3_QuanLyTiemSach.View.StatisticUI
                 StatisticBLL statisticBLL = new StatisticBLL();
                 double NewPrice = changePriceForm.NewPrice;
                 statisticBLL.UpdateBookPriceInDetailForm(IdBooks, NewPrice);
-                dgv_detail.DataSource = statisticBLL.GetBooksForDetail(TenSach, TacGia, TheLoai)
-                    .Select(p => new { p.MaSach, p.TenSach, GiaNhap = p.HoaDonNhapSachs.Where(hdn => hdn.MaSach == p.MaSach).Select(hdn => hdn.DonGiaNhap).FirstOrDefault(), p.GiaBan, })
-                    .ToList();
-                //LoadDGVSach();
+                updateBook();
+                dgv_detail.DataSource = statisticBLL.GetBooksForDetail(TenSach, TacGia, TheLoai);
             }
         }
     }

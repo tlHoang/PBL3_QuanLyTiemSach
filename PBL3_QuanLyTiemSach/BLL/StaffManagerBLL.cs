@@ -14,66 +14,86 @@ namespace PBL3_QuanLyTiemSach.BLL
 {
     public class StaffManagerBLL
     {
-        public List<NhanVien> GetAllStaffList()
+        public List<StaffView> GetAllStaffs()
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
                 return db.NhanViens
-                    .Include(p => p.TaiKhoan)
+                    .Where(p => p.Luong >= 0)
+                    .Select(p => new StaffView { ID = p.MaNV, Username = p.TaiKhoan.Username, Name = p.TenNV, Salary = p.Luong, PhoneNumber = p.SDT })
                     .ToList();
             }
         }
 
-        public List<NhanVien> GetSearchStaffList(string searchTxt)
+        public List<StaffView> GetSearchStaffs(string searchTxt)
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
                 return db.NhanViens
-                    .Include(p => p.TaiKhoan)
-                    .Where(p => p.TenNV.Contains(searchTxt))
+                    .Where(p => p.Luong >= 0 && p.TenNV.Contains(searchTxt))
+                    .Select(p => new StaffView { ID = p.MaNV, Username = p.TaiKhoan.Username, Name = p.TenNV, Salary = p.Luong, PhoneNumber = p.SDT })
                     .ToList();
             }
         }
 
-        public List<NhanVien> GetStaffsByIDs(List<int> IDs)
+        public List<StaffView> GetStaffsByIDs(List<int> IDs, bool isActive = true)
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
-                List<NhanVien> nhanViens = db.NhanViens
-                    .Join(IDs, nv => nv.MaNV, li => li, (nv, li) => nv)
-                    .Include(p => p.TaiKhoan)
-                    .ToList();
-                //List<NhanVien> nhanViens = db.NhanViens
-                //    .Where(p => IDs.Contains(p.MaNV))
-                //    .ToList();
-                return nhanViens;
+                if (isActive)
+                {
+                    return db.NhanViens
+                        .Where(p => p.Luong >= 0 && IDs.Contains(p.MaNV))
+                        .Select(p => new StaffView { ID = p.MaNV, Username = p.TaiKhoan.Username, Name = p.TenNV, Salary = p.Luong, PhoneNumber = p.SDT })
+                        .ToList();
+                }
+                else
+                {
+                    return db.NhanViens
+                        .Where(p => p.Luong < 0 && IDs.Contains(p.MaNV))
+                        .Select(p => new StaffView { ID = p.MaNV, Username = p.TaiKhoan.Username, Name = p.TenNV, Salary = p.Luong * -1, PhoneNumber = p.SDT })
+                        .ToList();
+                }
             }
         }
 
-        public List<NhanVien> SortStaff(List<int> IDs, int sortby)
+        public List<StaffView> SortStaff(List<int> IDs, int sortby, bool isActive = true)
         {
-            List<NhanVien> result = new List<NhanVien>();
-            result = GetStaffsByIDs(IDs);
+            List<StaffView> result = new List<StaffView>();
+            result = GetStaffsByIDs(IDs, isActive);
             switch (sortby)
             {
                 case 0:
-                    result = result.OrderBy(p => p.MaNV).ToList(); break;
+                    result = result.OrderBy(p => p.Username).ToList(); break;
                 case 1:
-                    result = result.OrderBy(p => p.TaiKhoan.Username).ToList(); break;
+                    result = result.OrderBy(p => p.Name).ToList(); break;
                 case 2:
-                    result = result.OrderBy(p => p.TenNV).ToList(); break;
+                    result = result.OrderBy(p => p.Salary).ToList(); break;
             }
             return result;
         }
 
-        public void DeleteStaffs(List<int> IDs)
+        public List<string> CheckIfHaveShift(List<int> IDs)
+        {
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                DateTime today = DateTime.Now.Date;
+                return db.CaNVs
+                    .Where(p => IDs.Contains(p.MaNV) && p.Ca.Ngay >= today)
+                    .Select(p => p.NhanVien.TenNV)
+                    .Distinct()
+                    .ToList();
+            }
+        }
+
+        public void InactiveStaffs(List<int> IDs)
         {
             using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
             {
                 db.NhanViens
-                    .RemoveRange(db.NhanViens.Where(p => IDs.Contains(p.MaNV)));
-                db.TaiKhoans
-                    .RemoveRange(db.TaiKhoans.Where(p => IDs.Contains(p.MaNV)));
+                    .Where(p => IDs.Contains(p.MaNV))
+                    .ToList()
+                    .ForEach(p => p.Luong = p.Luong * -1);
                 db.SaveChanges();
             }
         }
@@ -115,6 +135,28 @@ namespace PBL3_QuanLyTiemSach.BLL
                 UpdateStaff.SDT = staff.SDT;
 
                 db.SaveChanges();
+            }
+        }
+
+        public List<StaffView> GetAllInactiveStaff()
+        {
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                return db.NhanViens
+                    .Where(p => p.Luong < 0)
+                    .Select(p => new StaffView { ID = p.MaNV, Username = p.TaiKhoan.Username, Name = p.TenNV, Salary = p.Luong * -1, PhoneNumber = p.SDT })
+                    .ToList();
+            }
+        }
+
+        public List<StaffView> GetSearchInactiveStaff(string txt)
+        {
+            using (DBQuanLyTiemSach db = new DBQuanLyTiemSach())
+            {
+                return db.NhanViens
+                    .Where(p => p.Luong < 0 && p.TenNV.Contains(txt))
+                    .Select(p => new StaffView { ID = p.MaNV, Username = p.TaiKhoan.Username, Name = p.TenNV, Salary = p.Luong * -1, PhoneNumber = p.SDT })
+                    .ToList();
             }
         }
     }
