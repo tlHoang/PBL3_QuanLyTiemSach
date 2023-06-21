@@ -1,4 +1,5 @@
-﻿using MetroFramework;
+﻿using ComponentFactory.Krypton.Toolkit;
+using MetroFramework;
 using PBL3_QuanLyTiemSach.BLL;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ using System.Windows.Forms;
 
 namespace PBL3_QuanLyTiemSach.View.StaffInfoUI
 {
-    public partial class ChangePassword : MetroFramework.Forms.MetroForm
+    public partial class ChangePassword : KryptonForm
     {
         public string Username { get; set; }
 
@@ -26,8 +27,6 @@ namespace PBL3_QuanLyTiemSach.View.StaffInfoUI
 
         private void SetUI()
         {
-            //metroPanel_pass.Visible = false;
-
             metroLabel_noti1.Text = "";
             metroLabel_noti2.Text = "";
             metroTextBox_mkcu.UseSystemPasswordChar = true;
@@ -37,21 +36,27 @@ namespace PBL3_QuanLyTiemSach.View.StaffInfoUI
 
         private bool ValidateNewPassword(string newPassword)
         {
-            // 1 Chu hoa, 1 so
             string pattern = @"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*$";
             return Regex.IsMatch(newPassword, pattern);
         }
 
         private void metroButton_pass_xacnhan_Click(object sender, EventArgs e)
         {
-            if (!ValidateNewPassword(metroTextBox_matkhau.Text)) return;
-            if (metroTextBox_matkhau.Text != metroTextBox_nhaplaimk.Text) return;
+            if (!ValidateNewPassword(metroTextBox_matkhau.Text))
+            {
+                MetroMessageBox.Show(this, "Mật khẩu không đúng chuẩn", "Thông báo");
+                return;
+            }
+            if (metroTextBox_matkhau.Text != metroTextBox_nhaplaimk.Text)
+            {
+                MetroMessageBox.Show(this, "Mật khẩu nhập lại không khớp", "Thông báo");
+                return;
+            }
             TaiKhoanBLL taiKhoanBLL = new TaiKhoanBLL();
-            if (taiKhoanBLL.CheckPassword(Username, metroTextBox_mkcu.Text) != -1 || true)
+            if (taiKhoanBLL.CheckUsernameAndPassword(Username, metroTextBox_mkcu.Text) != -1 || true)
             {
                 MetroMessageBox.Show(this, "Đổi mật khẩu thành công", "Thông báo");
                 taiKhoanBLL.UpdatePassword(Username, metroTextBox_matkhau.Text);
-                //SetUIAfterChangePassword();
                 this.Dispose();
             }
             else
@@ -82,6 +87,11 @@ namespace PBL3_QuanLyTiemSach.View.StaffInfoUI
             {
                 metroLabel_noti2.Text = "";
             }
+        }
+
+        private void metroButton_pass_huy_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

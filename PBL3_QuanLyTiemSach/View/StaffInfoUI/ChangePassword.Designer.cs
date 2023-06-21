@@ -97,6 +97,7 @@
             this.metroButton_pass_huy.TabIndex = 4;
             this.metroButton_pass_huy.Text = "Hủy";
             this.metroButton_pass_huy.UseSelectable = true;
+            this.metroButton_pass_huy.Click += new System.EventHandler(this.metroButton_pass_huy_Click);
             // 
             // metroButton_pass_xacnhan
             // 
@@ -230,11 +231,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(442, 379);
             this.ControlBox = false;
             this.Controls.Add(this.metroPanel_pass);
             this.Name = "ChangePassword";
-            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.Text = "Đổi mật khẩu";
             this.TopMost = true;
             this.metroPanel_pass.ResumeLayout(false);

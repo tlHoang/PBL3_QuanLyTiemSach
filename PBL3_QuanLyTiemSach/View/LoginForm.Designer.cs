@@ -125,7 +125,7 @@
             this.btnDangNhap.TabIndex = 3;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.UseSelectable = true;
-            this.btnDangNhap.Click += new System.EventHandler(this.metroButton1_Click);
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // button1
             // 

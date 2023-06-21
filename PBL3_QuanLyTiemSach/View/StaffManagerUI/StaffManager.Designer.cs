@@ -28,194 +28,133 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgv_nhanvien = new MetroFramework.Controls.MetroGrid();
-            this.metroButton_search = new MetroFramework.Controls.MetroButton();
-            this.metroTextBox_search = new MetroFramework.Controls.MetroTextBox();
-            this.metroButton_sort = new MetroFramework.Controls.MetroButton();
-            this.metroComboBox_sort = new MetroFramework.Controls.MetroComboBox();
-            this.metroButton_them = new MetroFramework.Controls.MetroButton();
-            this.metroButton_xoa = new MetroFramework.Controls.MetroButton();
-            this.metroButton_chinhsua = new MetroFramework.Controls.MetroButton();
+            this.txtBox_search = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.cbb_sort = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.btn_search = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.dgv_nhanvien = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.btn_sort = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.checkBox_showInactiveStaff = new ComponentFactory.Krypton.Toolkit.KryptonCheckBox();
+            this.btn_them = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btn_chinhsua = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btn_xoa = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            ((System.ComponentModel.ISupportInitialize)(this.cbb_sort)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_nhanvien)).BeginInit();
             this.SuspendLayout();
             // 
+            // txtBox_search
+            // 
+            this.txtBox_search.Location = new System.Drawing.Point(125, 74);
+            this.txtBox_search.Name = "txtBox_search";
+            this.txtBox_search.Size = new System.Drawing.Size(100, 23);
+            this.txtBox_search.TabIndex = 7;
+            // 
+            // cbb_sort
+            // 
+            this.cbb_sort.DropDownWidth = 121;
+            this.cbb_sort.Location = new System.Drawing.Point(384, 74);
+            this.cbb_sort.Name = "cbb_sort";
+            this.cbb_sort.Size = new System.Drawing.Size(121, 21);
+            this.cbb_sort.TabIndex = 8;
+            this.cbb_sort.Text = "Sắp xếp";
+            // 
+            // btn_search
+            // 
+            this.btn_search.Location = new System.Drawing.Point(231, 72);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(90, 25);
+            this.btn_search.TabIndex = 9;
+            this.btn_search.Values.Text = "Tìm";
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
+            // 
             // dgv_nhanvien
             // 
-            this.dgv_nhanvien.AllowUserToResizeRows = false;
-            this.dgv_nhanvien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_nhanvien.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgv_nhanvien.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv_nhanvien.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgv_nhanvien.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_nhanvien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_nhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_nhanvien.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgv_nhanvien.EnableHeadersVisualStyles = false;
-            this.dgv_nhanvien.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.dgv_nhanvien.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgv_nhanvien.Location = new System.Drawing.Point(90, 119);
+            this.dgv_nhanvien.Location = new System.Drawing.Point(102, 103);
             this.dgv_nhanvien.Name = "dgv_nhanvien";
-            this.dgv_nhanvien.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_nhanvien.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgv_nhanvien.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgv_nhanvien.ReadOnly = true;
             this.dgv_nhanvien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_nhanvien.Size = new System.Drawing.Size(711, 363);
-            this.dgv_nhanvien.TabIndex = 0;
-            this.dgv_nhanvien.UseCustomForeColor = true;
-            this.dgv_nhanvien.UseStyleColors = true;
+            this.dgv_nhanvien.Size = new System.Drawing.Size(607, 331);
+            this.dgv_nhanvien.TabIndex = 11;
             // 
-            // metroButton_search
+            // btn_sort
             // 
-            this.metroButton_search.FontWeight = MetroFramework.MetroButtonWeight.Light;
-            this.metroButton_search.Location = new System.Drawing.Point(231, 74);
-            this.metroButton_search.Name = "metroButton_search";
-            this.metroButton_search.Size = new System.Drawing.Size(53, 23);
-            this.metroButton_search.TabIndex = 4;
-            this.metroButton_search.Text = "Tìm";
-            this.metroButton_search.UseSelectable = true;
-            this.metroButton_search.Click += new System.EventHandler(this.metroButton_search_Click);
+            this.btn_sort.Location = new System.Drawing.Point(511, 72);
+            this.btn_sort.Name = "btn_sort";
+            this.btn_sort.Size = new System.Drawing.Size(90, 25);
+            this.btn_sort.TabIndex = 12;
+            this.btn_sort.Values.Text = "Sắp xếp";
+            this.btn_sort.Click += new System.EventHandler(this.btn_sort_Click);
             // 
-            // metroTextBox_search
+            // checkBox_showInactiveStaff
             // 
+            this.checkBox_showInactiveStaff.Location = new System.Drawing.Point(570, 440);
+            this.checkBox_showInactiveStaff.Name = "checkBox_showInactiveStaff";
+            this.checkBox_showInactiveStaff.Size = new System.Drawing.Size(123, 20);
+            this.checkBox_showInactiveStaff.TabIndex = 13;
+            this.checkBox_showInactiveStaff.Values.Text = "Nhân viên đã nghỉ";
+            this.checkBox_showInactiveStaff.CheckedChanged += new System.EventHandler(this.checkBox_showInactiveStaff_CheckedChanged);
             // 
+            // btn_them
             // 
+            this.btn_them.Location = new System.Drawing.Point(6, 143);
+            this.btn_them.Name = "btn_them";
+            this.btn_them.Size = new System.Drawing.Size(90, 25);
+            this.btn_them.TabIndex = 14;
+            this.btn_them.Values.Text = "Thêm";
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
-            this.metroTextBox_search.CustomButton.Image = null;
-            this.metroTextBox_search.CustomButton.Location = new System.Drawing.Point(113, 1);
-            this.metroTextBox_search.CustomButton.Name = "";
-            this.metroTextBox_search.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox_search.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox_search.CustomButton.TabIndex = 1;
-            this.metroTextBox_search.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox_search.CustomButton.UseSelectable = true;
-            this.metroTextBox_search.CustomButton.Visible = false;
-            this.metroTextBox_search.Lines = new string[0];
-            this.metroTextBox_search.Location = new System.Drawing.Point(90, 74);
-            this.metroTextBox_search.MaxLength = 32767;
-            this.metroTextBox_search.Name = "metroTextBox_search";
-            this.metroTextBox_search.PasswordChar = '\0';
-            this.metroTextBox_search.PromptText = "Tìm kiếm";
-            this.metroTextBox_search.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox_search.SelectedText = "";
-            this.metroTextBox_search.SelectionLength = 0;
-            this.metroTextBox_search.SelectionStart = 0;
-            this.metroTextBox_search.ShortcutsEnabled = true;
-            this.metroTextBox_search.Size = new System.Drawing.Size(135, 23);
-            this.metroTextBox_search.TabIndex = 3;
-            this.metroTextBox_search.UseSelectable = true;
-            this.metroTextBox_search.WaterMark = "Tìm kiếm";
-            this.metroTextBox_search.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox_search.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // btn_chinhsua
             // 
-            // metroButton_sort
+            this.btn_chinhsua.Location = new System.Drawing.Point(6, 174);
+            this.btn_chinhsua.Name = "btn_chinhsua";
+            this.btn_chinhsua.Size = new System.Drawing.Size(90, 25);
+            this.btn_chinhsua.TabIndex = 15;
+            this.btn_chinhsua.Values.Text = "Chỉnh sửa";
+            this.btn_chinhsua.Click += new System.EventHandler(this.btn_chinhsua_Click);
             // 
-            this.metroButton_sort.FontWeight = MetroFramework.MetroButtonWeight.Light;
-            this.metroButton_sort.Location = new System.Drawing.Point(493, 72);
-            this.metroButton_sort.Name = "metroButton_sort";
-            this.metroButton_sort.Size = new System.Drawing.Size(54, 25);
-            this.metroButton_sort.TabIndex = 6;
-            this.metroButton_sort.Text = "Sắp xếp";
-            this.metroButton_sort.UseSelectable = true;
-            this.metroButton_sort.Click += new System.EventHandler(this.metroButton_sort_Click);
+            // btn_xoa
             // 
-            // metroComboBox_sort
-            // 
-            this.metroComboBox_sort.FontSize = MetroFramework.MetroComboBoxSize.Small;
-            this.metroComboBox_sort.FormattingEnabled = true;
-            this.metroComboBox_sort.ItemHeight = 19;
-            this.metroComboBox_sort.Location = new System.Drawing.Point(362, 72);
-            this.metroComboBox_sort.Name = "metroComboBox_sort";
-            this.metroComboBox_sort.PromptText = "Xếp theo";
-            this.metroComboBox_sort.Size = new System.Drawing.Size(125, 25);
-            this.metroComboBox_sort.TabIndex = 5;
-            this.metroComboBox_sort.UseSelectable = true;
-            this.metroComboBox_sort.SelectedIndexChanged += new System.EventHandler(this.metroComboBox_sort_SelectedIndexChanged);
-            // 
-            // metroButton_them
-            // 
-            this.metroButton_them.Location = new System.Drawing.Point(9, 119);
-            this.metroButton_them.Name = "metroButton_them";
-            this.metroButton_them.Size = new System.Drawing.Size(75, 23);
-            this.metroButton_them.TabIndex = 0;
-            this.metroButton_them.Text = "Thêm";
-            this.metroButton_them.UseSelectable = true;
-            this.metroButton_them.Click += new System.EventHandler(this.metroButton_them_Click);
-            // 
-            // metroButton_xoa
-            // 
-            this.metroButton_xoa.Location = new System.Drawing.Point(9, 198);
-            this.metroButton_xoa.Name = "metroButton_xoa";
-            this.metroButton_xoa.Size = new System.Drawing.Size(75, 23);
-            this.metroButton_xoa.TabIndex = 2;
-            this.metroButton_xoa.Text = "Xóa";
-            this.metroButton_xoa.UseSelectable = true;
-            this.metroButton_xoa.Click += new System.EventHandler(this.metroButton_xoa_Click);
-            // 
-            // metroButton_chinhsua
-            // 
-            this.metroButton_chinhsua.Location = new System.Drawing.Point(9, 154);
-            this.metroButton_chinhsua.Name = "metroButton_chinhsua";
-            this.metroButton_chinhsua.Size = new System.Drawing.Size(75, 23);
-            this.metroButton_chinhsua.TabIndex = 1;
-            this.metroButton_chinhsua.Text = "Chỉnh sửa";
-            this.metroButton_chinhsua.UseSelectable = true;
-            this.metroButton_chinhsua.Click += new System.EventHandler(this.metroButton_chinhsua_Click);
+            this.btn_xoa.Location = new System.Drawing.Point(6, 258);
+            this.btn_xoa.Name = "btn_xoa";
+            this.btn_xoa.Size = new System.Drawing.Size(90, 25);
+            this.btn_xoa.TabIndex = 16;
+            this.btn_xoa.Values.Text = "Xóa";
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // StaffManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(824, 524);
             this.ControlBox = false;
-            this.Controls.Add(this.metroButton_chinhsua);
-            this.Controls.Add(this.metroButton_xoa);
-            this.Controls.Add(this.metroButton_them);
-            this.Controls.Add(this.metroComboBox_sort);
-            this.Controls.Add(this.metroButton_sort);
-            this.Controls.Add(this.metroTextBox_search);
-            this.Controls.Add(this.metroButton_search);
+            this.Controls.Add(this.btn_xoa);
+            this.Controls.Add(this.btn_chinhsua);
+            this.Controls.Add(this.btn_them);
+            this.Controls.Add(this.checkBox_showInactiveStaff);
+            this.Controls.Add(this.btn_sort);
             this.Controls.Add(this.dgv_nhanvien);
+            this.Controls.Add(this.btn_search);
+            this.Controls.Add(this.cbb_sort);
+            this.Controls.Add(this.txtBox_search);
             this.Name = "StaffManager";
-            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.Text = "Quản lý nhân viên";
+            ((System.ComponentModel.ISupportInitialize)(this.cbb_sort)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_nhanvien)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private MetroFramework.Controls.MetroGrid dgv_nhanvien;
-        private MetroFramework.Controls.MetroButton metroButton_search;
-        private MetroFramework.Controls.MetroTextBox metroTextBox_search;
-        private MetroFramework.Controls.MetroButton metroButton_sort;
-        private MetroFramework.Controls.MetroComboBox metroComboBox_sort;
-        private MetroFramework.Controls.MetroButton metroButton_them;
-        private MetroFramework.Controls.MetroButton metroButton_xoa;
-        private MetroFramework.Controls.MetroButton metroButton_chinhsua;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtBox_search;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbb_sort;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btn_search;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgv_nhanvien;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btn_sort;
+        private ComponentFactory.Krypton.Toolkit.KryptonCheckBox checkBox_showInactiveStaff;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btn_them;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btn_chinhsua;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btn_xoa;
     }
 }

@@ -95,6 +95,8 @@
     <Compile Include="BLL\TaiKhoanBLL.cs" />
     <Compile Include="CreateDB.cs" />
     <Compile Include="DBQuanLyTiemSach.cs" />
+    <Compile Include="DTO\BookDetailView.cs" />
+    <Compile Include="DTO\BookView.cs" />
     <Compile Include="DTO\CBBItem.cs" />
     <Compile Include="DTO\CodeFirst\Ca.cs" />
     <Compile Include="DTO\CodeFirst\CaNV.cs" />
@@ -110,7 +112,10 @@
     <Compile Include="DTO\CodeFirst\TaiKhoan.cs" />
     <Compile Include="DTO\BookInfo.cs" />
     <Compile Include="DTO\HoaDon.cs" />
+    <Compile Include="DTO\RevenueView.cs" />
     <Compile Include="DTO\SMCBBItems_Start_End_Time.cs" />
+    <Compile Include="DTO\StaffSalaryView.cs" />
+    <Compile Include="DTO\StaffView.cs" />
     <Compile Include="MainForm_Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -275,6 +280,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\BookInfoUI\BookInfo_XemForm.resx">
       <DependentUpon>BookInfo_XemForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

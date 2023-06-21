@@ -202,7 +202,7 @@ namespace PBL3_QuanLyTiemSach.View
             {
                 GUI_LichLam();
             }
-            else if (flagButton == "Main") ;
+            else if (flagButton == "Main")
             {
                 offGUIButton();
                 flagButton = "Main";

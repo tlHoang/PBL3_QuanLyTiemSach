@@ -461,7 +461,6 @@
             this.Controls.Add(this.metroButton_thoat);
             this.Controls.Add(this.tabControl_nhanvien);
             this.Name = "StaffInfo";
-            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.Text = "Thông tin chi tiết";
             this.TopMost = true;
             this.tabControl_nhanvien.ResumeLayout(false);

@@ -29,18 +29,18 @@ namespace PBL3_QuanLyTiemSach
                 new NhanVien { MaNV = 2, TenNV = "Lê Ngọc Hạnh", GioiTinh = true, NgaySinh = new DateTime(2003,4,6), DiaChi = "Đà Nẵng", Luong = 20000000, SDT = "0123654789"},
                 new NhanVien { MaNV = 3, TenNV = "Trần Lê Huy Hoàng", GioiTinh = true, NgaySinh = new DateTime(2003,3,2), DiaChi = "Đà Nẵng", Luong = 30000000, SDT = "0147852369"}
             });
-            context.Cas.AddRange(new Ca[]
-            {
-                new Ca {MaCa = 1, Ngay = new DateTime(2023, 5, 5), GioBatDau = new TimeSpan (8,0,0), GioKetThuc = new TimeSpan(17,0,0) },
-                new Ca {MaCa = 2, Ngay = new DateTime(2023, 5, 6), GioBatDau = new TimeSpan(8,0,0), GioKetThuc = new TimeSpan(17,0,0) },
-                new Ca {MaCa = 3, Ngay = new DateTime(2023, 5, 7), GioBatDau = new TimeSpan(8,0,0), GioKetThuc = new TimeSpan(17,0,0) }
+            //context.Cas.AddRange(new Ca[]
+            //{
+            //    new Ca {MaCa = 1, Ngay = new DateTime(2023, 5, 5), GioBatDau = new TimeSpan (8,0,0), GioKetThuc = new TimeSpan(17,0,0) },
+            //    new Ca {MaCa = 2, Ngay = new DateTime(2023, 5, 6), GioBatDau = new TimeSpan(8,0,0), GioKetThuc = new TimeSpan(17,0,0) },
+            //    new Ca {MaCa = 3, Ngay = new DateTime(2023, 5, 7), GioBatDau = new TimeSpan(8,0,0), GioKetThuc = new TimeSpan(17,0,0) }
                // new Ca {MaCa = "", Ngay = new DateTime(, , ), GioBatDau = new TimeSpan(,,), GioKetThuc = new TimeSpan(,,) },
-            });
-            context.CaNVs.AddRange(new CaNV[]
-            {
-                new CaNV {MaCaNV = 1, MaCa = 1, MaNV= 2},
-                new CaNV {MaCaNV = 2, MaCa = 2, MaNV= 3}
-            });
+            //});
+            //context.CaNVs.AddRange(new CaNV[]
+            //{
+            //    new CaNV {MaCaNV = 1, MaCa = 1, MaNV= 2},
+            //    new CaNV {MaCaNV = 2, MaCa = 2, MaNV= 3}
+            //});
             context.SachTheLoais.AddRange(new SachTheLoai[]
             {
                 new SachTheLoai { MaTheLoai = 1, TenTheLoai ="Trinh Thám" },
@@ -50,13 +50,13 @@ namespace PBL3_QuanLyTiemSach
                 new SachTheLoai { MaTheLoai = 5, TenTheLoai ="Ngụ Ngôn" },
                 //new SachTheLoai{ MaTheLoai = "", TenTheLoai ="" },
             });
-            context.KhachHangs.AddRange(new KhachHang[]
-            {
-                new KhachHang { TenKH = "Khach Hang 1", SDT = "0123456789" },
-                new KhachHang { TenKH = "Khach Hang 2", SDT = "0223456789" },
-                new KhachHang { TenKH = "Khach Hang 3", SDT = "0323456789" },
-                new KhachHang { TenKH = "Khach Hang 4", SDT = "0423456789" },
-            });
+            //context.KhachHangs.AddRange(new KhachHang[]
+            //{
+            //    new KhachHang { TenKH = "Khach Hang 1", SDT = "0123456789" },
+            //    new KhachHang { TenKH = "Khach Hang 2", SDT = "0223456789" },
+            //    new KhachHang { TenKH = "Khach Hang 3", SDT = "0323456789" },
+            //    new KhachHang { TenKH = "Khach Hang 4", SDT = "0423456789" },
+            //});
             context.DonViCungCaps.AddRange(new DonViCungCap[]
             {
                 new DonViCungCap { TenDV = "Don Vi A" },
@@ -64,23 +64,23 @@ namespace PBL3_QuanLyTiemSach
                 new DonViCungCap { TenDV = "Don Vi C" },
                 new DonViCungCap { TenDV = "Don Vi D" }
             });
-            context.Sachs.AddRange(new Sach[]
-            {
-                new Sach { MaSach = 1, TenSach = "Sach A", TacGia = "Tac gia A", SoLuongConLai = 100, GiaBan = 22000, MaTheLoai = 1 },
-                new Sach { MaSach = 2, TenSach = "Sach B", TacGia = "Tac gia B", SoLuongConLai = 140, GiaBan = 26000, MaTheLoai = 2 },
-            });
-             context.Sachs.AddRange(new Sach[]
-            {
-                new Sach {MaSach =1, TenSach = "Duy Tân", TacGia = "Huy Cận", MaTheLoai =1, GiaBan =50000, SoLuongConLai = 600},
-                new Sach {MaSach =2, TenSach = "Đạt Ma Thích Ca", TacGia = "Tú Mỡ", MaTheLoai =2, GiaBan =60000, SoLuongConLai = 700},
-                new Sach {MaSach =3, TenSach = "John Wick", TacGia = "Antony SanTos", MaTheLoai =3, GiaBan =65000, SoLuongConLai = 900},
-                new Sach {MaSach =6, TenSach = "John Wick", TacGia = "Antony SanTos", MaTheLoai =3, GiaBan =65000, SoLuongConLai = 600},
-                new Sach {MaSach =7, TenSach = "John Wick", TacGia = "Antony SanTos", MaTheLoai =3, GiaBan =65000, SoLuongConLai = 543},
-                new Sach {MaSach =8, TenSach = "Ngủ Trong Nhà", TacGia = "Pep Quardiorla", MaTheLoai =1, GiaBan =50000, SoLuongConLai = 633},
-                new Sach {MaSach =4, TenSach = "Tây Du Kí", TacGia = "Ngô Thừa Ân", MaTheLoai =4, GiaBan =620000, SoLuongConLai = 234},
-                new Sach {MaSach =5, TenSach = "Cô Gái Quàng Khăn Đỏ", TacGia = "Erik ten Hag", MaTheLoai =5, GiaBan =100000, SoLuongConLai =1234}
-                //new Sach {MaSach ="", MaKho ="", TenSach = "", TacGia = "", MaTheLoai ="", GiaBan =},
-            });
+            //context.Sachs.AddRange(new Sach[]
+            //{
+            //    new Sach { MaSach = 1, TenSach = "Sach A", TacGia = "Tac gia A", SoLuongConLai = 100, GiaBan = 22000, MaTheLoai = 1 },
+            //    new Sach { MaSach = 2, TenSach = "Sach B", TacGia = "Tac gia B", SoLuongConLai = 140, GiaBan = 26000, MaTheLoai = 2 },
+            //});
+            // context.Sachs.AddRange(new Sach[]
+            //{
+            //    new Sach {MaSach =1, TenSach = "Duy Tân", TacGia = "Huy Cận", MaTheLoai =1, GiaBan =50000, SoLuongConLai = 600},
+            //    new Sach {MaSach =2, TenSach = "Đạt Ma Thích Ca", TacGia = "Tú Mỡ", MaTheLoai =2, GiaBan =60000, SoLuongConLai = 700},
+            //    new Sach {MaSach =3, TenSach = "John Wick", TacGia = "Antony SanTos", MaTheLoai =3, GiaBan =65000, SoLuongConLai = 900},
+            //    new Sach {MaSach =6, TenSach = "John Wick", TacGia = "Antony SanTos", MaTheLoai =3, GiaBan =65000, SoLuongConLai = 600},
+            //    new Sach {MaSach =7, TenSach = "John Wick", TacGia = "Antony SanTos", MaTheLoai =3, GiaBan =65000, SoLuongConLai = 543},
+            //    new Sach {MaSach =8, TenSach = "Ngủ Trong Nhà", TacGia = "Pep Quardiorla", MaTheLoai =1, GiaBan =50000, SoLuongConLai = 633},
+            //    new Sach {MaSach =4, TenSach = "Tây Du Kí", TacGia = "Ngô Thừa Ân", MaTheLoai =4, GiaBan =620000, SoLuongConLai = 234},
+            //    new Sach {MaSach =5, TenSach = "Cô Gái Quàng Khăn Đỏ", TacGia = "Erik ten Hag", MaTheLoai =5, GiaBan =100000, SoLuongConLai =1234}
+            //    //new Sach {MaSach ="", MaKho ="", TenSach = "", TacGia = "", MaTheLoai ="", GiaBan =},
+            //});
         }
     }
 }

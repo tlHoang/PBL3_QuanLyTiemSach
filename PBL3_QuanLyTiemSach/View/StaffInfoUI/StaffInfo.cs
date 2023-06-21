@@ -1,4 +1,5 @@
-﻿using MetroFramework;
+﻿using ComponentFactory.Krypton.Toolkit;
+using MetroFramework;
 using PBL3_QuanLyTiemSach.BLL;
 using PBL3_QuanLyTiemSach.DTO;
 using PBL3_QuanLyTiemSach.DTO.CodeFirst;
@@ -16,7 +17,7 @@ using System.Windows.Forms;
 
 namespace PBL3_QuanLyTiemSach.View
 {
-    public partial class StaffInfo : MetroFramework.Forms.MetroForm
+    public partial class StaffInfo : KryptonForm
     {
         Form f;
         public int StaffID { get; set; }
@@ -51,13 +52,13 @@ namespace PBL3_QuanLyTiemSach.View
 
         public void SetUIAlway()
         {
+            this.BackColor = Color.White;
             metroTextBox_ma.Enabled = false;
         }
 
         private void SetUIForStaff()
         {
             this.ControlBox = false;
-            this.Style = MetroFramework.MetroColorStyle.White;
 
             metroPanel_thongtin.Enabled = false;
             metroTextBox_taikhoan.Enabled = false;
@@ -125,10 +126,7 @@ namespace PBL3_QuanLyTiemSach.View
         private void metroButton_xacnhan_Click(object sender, EventArgs e)
         {
             if (!ValidateInfo())
-            {
-                MetroMessageBox.Show(this, "Dữ liệu không hợp lệ", "Cảnh báo");
                 return;
-            }
             StaffManagerBLL staffManagerBLL = new StaffManagerBLL();
             if (StaffID == -1)
             {
@@ -181,17 +179,25 @@ namespace PBL3_QuanLyTiemSach.View
 
         private bool ValidateInfo()
         {
+            string txt = "";
+            if (Regex.IsMatch(metroTextBox_taikhoan.Text, @"(^\s*$)"))
+                txt = "tài khoản";
             if (Regex.IsMatch(metroTextBox_ten.Text, @"(^\s*$|\d)"))
-                return false;
+                txt = "tên";
             if (metroRadioButton_nam.Checked == false && metroRadioButton_nu.Checked == false)
-                return false;
+                txt = "giới tính";
             if (Regex.IsMatch(metroTextBox_diachi.Text, @"^\s*$"))
-                return false;
+                txt = "địa chỉ";
             if (Regex.IsMatch(metroTextBox_luong.Text, @"^\s*$|\D"))
-                return false;
+                txt = "lương";
             if (!Regex.IsMatch(metroTextBox_sdt.Text, @"^\d{10}$"))
+                txt = "số điện thoại";
+            if (txt == "") return true;
+            else
+            {
+                KryptonMessageBox.Show("Vui lòng kiểm tra lại " + txt);
                 return false;
-            return true;
+            }
         }
     }
 }
